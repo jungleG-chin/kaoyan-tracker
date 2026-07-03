@@ -1,7 +1,7 @@
 // 考研追踪 - 数据备份（用于 file:// 双击打开的场景）
 // 主数据源是 data/data.json（fetch 加载）
 // 当 fetch 失败时（如双击 file://），用本文件作为 fallback
-// 自动生成：2026-07-03T09:31:07.397Z — 修改 data.json 后运行 build_fallback.js
+// 自动生成：2026-07-03T10:02:57.473Z — 修改 data.json 后运行 build_fallback.js
 globalThis.APP_DATA = {
   "syllabus": {
     "408": {

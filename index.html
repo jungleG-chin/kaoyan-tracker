@@ -599,15 +599,35 @@ function locateToLog(weakId) {
   setTimeout(() => {
     const qid = w.qIds[0];
     const target = findLogByQid(qid, w.subject);
-    if (target) {
-      const idx = LOGS_RAW.indexOf(target.log);
-      const detail = document.getElementById('log-detail-' + idx);
-      if (detail) detail.style.display = 'block';
+    if (!target) { showToast('未找到对应日志：' + qid); return; }
+    const idx = LOGS_RAW.indexOf(target.log);
+    const detail = document.getElementById('log-detail-' + idx);
+    if (detail) detail.style.display = 'block';
+    const isK = String(qid).startsWith('K_') || String(qid).startsWith('K-') || String(qid).startsWith('INSIGHT_');
+    const realId = (target.q._uid || (target.log.date + '_' + target.q.id));
+    const candidates = [
+      'qblock-' + realId,
+      'qblock-' + qid
+    ];
+    let el = null;
+    for (const cid of candidates) {
+      el = document.getElementById(cid);
+      if (el) break;
     }
-    const targetId = target ? 'qblock-' + target.log.date + '_' + qid : 'qblock-' + qid;
-    const el = document.getElementById(targetId);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      // 知识卡：滚到所在 log 卡片顶部 + 偏移，让用户能一眼看到 log 标题
+      if (isK) {
+        const logCard = el.closest('.card');
+        if (logCard) {
+          const rect = logCard.getBoundingClientRect();
+          window.scrollBy({ top: rect.top - 60, behavior: 'smooth' });
+        } else {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          window.scrollBy(0, -60);
+        }
+      } else {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
       document.querySelectorAll('.q-block.highlight').forEach(n => n.classList.remove('highlight'));
       el.classList.add('highlight');
       setTimeout(() => el.classList.remove('highlight'), 4000);
