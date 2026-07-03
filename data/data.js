@@ -1,4 +1,4 @@
-// 自动生成于 2026-07-02T10:35:24
+// 自动生成于 2026-07-03T03:42:18
 // 由 build.js 扫描 data_src/*.md 生成
 // 请勿手动编辑此文件！修改 MD 源文件后运行 node build.js 重新生成
 const APP_DATA = {
@@ -92,7 +92,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "不会系统分类 4 类间断点",
-            "keyAnswer": "✓ 间断点 4 类判据："
+            "keyAnswer": "✓ 间断点 4 类判据：",
+            "thinking": ""
           },
           {
             "id": "Q23",
@@ -107,7 +108,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "卡在 g·(f-1) 这一步",
-            "keyAnswer": "1^∞ 三步法："
+            "keyAnswer": "1^∞ 三步法：",
+            "thinking": ""
           },
           {
             "id": "Q25",
@@ -122,7 +124,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "放缩的'度'控制不住",
-            "keyAnswer": "夹逼放缩的'度'："
+            "keyAnswer": "夹逼放缩的'度'：",
+            "thinking": ""
           },
           {
             "id": "Q27",
@@ -137,7 +140,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "1/(1+bx) 几何级数展错",
-            "keyAnswer": "(1+ax)/(1+bx) = (1+ax)·(1-bx+b²x²-b³x³+...)"
+            "keyAnswer": "(1+ax)/(1+bx) = (1+ax)·(1-bx+b²x²-b³x³+...)",
+            "thinking": ""
           },
           {
             "id": "Q32",
@@ -152,7 +156,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "差的主导项识别",
-            "keyAnswer": "x^x = e^(x ln x) ≈ 1 + x ln x"
+            "keyAnswer": "x^x = e^(x ln x) ≈ 1 + x ln x",
+            "thinking": ""
           },
           {
             "id": "Q34",
@@ -167,7 +172,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "积分上限函数求导 + 变上限代换",
-            "keyAnswer": "分子：t²(e^(1/t)-1) - t ≈ t²·(1/t) - t = 0（等价无穷小）"
+            "keyAnswer": "分子：t²(e^(1/t)-1) - t ≈ t²·(1/t) - t = 0（等价无穷小）",
+            "thinking": ""
           },
           {
             "id": "Q(2)",
@@ -182,7 +188,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "未识别 1^∞ 型",
-            "keyAnswer": "底 A = x^(1/x) - 1 → 1⁺，指数 B = 1/ln x → 0"
+            "keyAnswer": "底 A = x^(1/x) - 1 → 1⁺，指数 B = 1/ln x → 0",
+            "thinking": ""
           },
           {
             "id": "Q(4)",
@@ -197,7 +204,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "1^∞ 标准处理",
-            "keyAnswer": "tan(π/4 + 2/n) → 1，n→∞，是 1^∞"
+            "keyAnswer": "tan(π/4 + 2/n) → 1，n→∞，是 1^∞",
+            "thinking": ""
           }
         ]
       },
@@ -219,7 +227,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "错题",
             "missing": "",
-            "keyAnswer": "✓ 标准答案："
+            "keyAnswer": "✓ 标准答案：",
+            "thinking": ""
           },
           {
             "id": "Q2",
@@ -234,7 +243,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "线程共享的是堆（heap），不共享栈（stack）。栈是线程私有的。",
-            "keyAnswer": "✓ 标准答案："
+            "keyAnswer": "✓ 标准答案：",
+            "thinking": ""
           },
           {
             "id": "Q3",
@@ -249,7 +259,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "错题",
             "missing": "turn 变量的'谦让'语义没讲清楚。",
-            "keyAnswer": "✓ 标准答案："
+            "keyAnswer": "✓ 标准答案：",
+            "thinking": ""
           },
           {
             "id": "Q4",
@@ -264,7 +275,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "TSL 也是忙等，'不忙等'不是优势。真正优势：硬件原子性，可在多 CPU 上正确工作。",
-            "keyAnswer": "✓ 标准答案："
+            "keyAnswer": "✓ 标准答案：",
+            "thinking": ""
           },
           {
             "id": "Q5",
@@ -279,7 +291,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "C 是对的（同一进程内线程共享页表），D 是错的（中断处理后可能切回原进程）。",
-            "keyAnswer": "✓ 标准答案：D 错误。"
+            "keyAnswer": "✓ 标准答案：D 错误。",
+            "thinking": ""
           },
           {
             "id": "Q6",
@@ -294,7 +307,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "缺核心条件'小 ≤ 目标 ≤ 大'（夹在中间）；不要求连续。",
-            "keyAnswer": "✓ 标准答案："
+            "keyAnswer": "✓ 标准答案：",
+            "thinking": ""
           },
           {
             "id": "Q7",
@@ -309,7 +323,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "错题",
             "missing": "没说清楚定积分定义的判据：'Σ f(xk)·Δx' 形式 + Δx→0 + xk 走遍 [a,b]。",
-            "keyAnswer": "✓ 标准答案："
+            "keyAnswer": "✓ 标准答案：",
+            "thinking": ""
           },
           {
             "id": "Q8",
@@ -324,7 +339,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "会写：k²/√(n⁶+k²) ≤ k²/√(n⁶) = k²/n³；Σ 上界 = (1/n³)·Σk² = (1/n³)·n(n+1)(2n+1)/6 → 0。",
-            "keyAnswer": "✓ 标准答案："
+            "keyAnswer": "✓ 标准答案：",
+            "thinking": ""
           }
         ]
       },
@@ -346,7 +362,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "把'专利垄断限制了基因检测'这一现象当成反对者主张，实际反对者主张是'基因是自然产物，不应被专利'",
-            "keyAnswer": "正确答案 B. only man-made products are patentable。反对者认为基因是自然产物，只有人造物才该被授予专利。"
+            "keyAnswer": "正确答案 B. only man-made products are patentable。反对者认为基因是自然产物，只有人造物才该被授予专利。",
+            "thinking": ""
           },
           {
             "id": "Q33",
@@ -361,7 +378,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "把'研究过程'（how genes interact）当成了'专利目标'（connecting the dots = disease correlations）",
-            "keyAnswer": "正确答案 A. establishing disease correlations。原文说公司在研究基因如何相互作用，寻找疾病关联，而想拿专利的是'把这些关联点连起来'"
+            "keyAnswer": "正确答案 A. establishing disease correlations。原文说公司在研究基因如何相互作用，寻找疾病关联，而想拿专利的是'把这些关联点连起来'",
+            "thinking": ""
           },
           {
             "id": "Q34",
@@ -376,7 +394,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "停留在字面'律师参会积极'，没有理解深层含义'基因专利话题备受关注'",
-            "keyAnswer": "正确答案 C. gene patenting was a great concern。'座无虚席'指会议爆满，反映基因专利问题是热点。"
+            "keyAnswer": "正确答案 C. gene patenting was a great concern。'座无虚席'指会议爆满，反映基因专利问题是热点。",
+            "thinking": ""
           }
         ]
       },
@@ -398,7 +417,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "充要条件：f'₋(x₀) = f'₊(x₀) 且都是有限值。"
+            "keyAnswer": "充要条件：f'₋(x₀) = f'₊(x₀) 且都是有限值。",
+            "thinking": ""
           },
           {
             "id": "K2",
@@ -413,7 +433,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "可导 ⇒ 连续（必要条件）。"
+            "keyAnswer": "可导 ⇒ 连续（必要条件）。",
+            "thinking": ""
           },
           {
             "id": "K3",
@@ -428,7 +449,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "漏了'导函数极限定理'的完整叙述。",
-            "keyAnswer": "充分条件（能推出可导）："
+            "keyAnswer": "充分条件（能推出可导）：",
+            "thinking": ""
           },
           {
             "id": "K4",
@@ -443,7 +465,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "连续 ⇏ 可导（必要非充分）。"
+            "keyAnswer": "连续 ⇏ 可导（必要非充分）。",
+            "thinking": ""
           },
           {
             "id": "K5",
@@ -458,7 +481,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "分段函数求导规则："
+            "keyAnswer": "分段函数求导规则：",
+            "thinking": ""
           },
           {
             "id": "K6",
@@ -473,7 +497,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "缺反例：若不连续，导函数极限存在但函数在该点不可导。",
-            "keyAnswer": "导函数极限定理："
+            "keyAnswer": "导函数极限定理：",
+            "thinking": ""
           },
           {
             "id": "K7",
@@ -488,7 +513,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "补充：若 g(x₀)=0 且 g'(x₀)=0，则 f(x)=|g(x)| 在 x₀ 可导（且导数为0）",
-            "keyAnswer": "f(x) = |g(x)| 在 x₀ 的可导性："
+            "keyAnswer": "f(x) = |g(x)| 在 x₀ 的可导性：",
+            "thinking": ""
           },
           {
             "id": "K8",
@@ -503,7 +529,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "补充：⑤ 抽象函数用导数定义凑已知极限",
-            "keyAnswer": "考研高频考点："
+            "keyAnswer": "考研高频考点：",
+            "thinking": ""
           }
         ]
       },
@@ -525,7 +552,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "不会识别幂指型极限 + 反推 f(0) + 凑导数定义。",
-            "keyAnswer": "答案：D. ln2 - 1。"
+            "keyAnswer": "答案：D. ln2 - 1。",
+            "thinking": ""
           },
           {
             "id": "高数研选题_第2章_Q7",
@@ -540,7 +568,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "对 |x-x²|(e^x-1) 在 x=0 处的'磨平'现象判断失误。",
-            "keyAnswer": "答案：C. 2 个。"
+            "keyAnswer": "答案：C. 2 个。",
+            "thinking": ""
           }
         ]
       },
@@ -562,7 +591,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "✓ 顿悟正确！"
+            "keyAnswer": "✓ 顿悟正确！",
+            "thinking": ""
           }
         ]
       },
@@ -584,7 +614,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "没有先用 max 化简极限函数就直接猜不可导点。",
-            "keyAnswer": "答案：C. 2 个。"
+            "keyAnswer": "答案：C. 2 个。",
+            "thinking": ""
           },
           {
             "id": "高数研选题_第2章_Q9",
@@ -599,7 +630,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "Q9③ 不确定：由已知条件无法推出 f''(0) 存在。你在选项③ 后打？说明你意识到这一点，是对的直觉。",
-            "keyAnswer": "答案：B. 2个（①②）。"
+            "keyAnswer": "答案：B. 2个（①②）。",
+            "thinking": ""
           },
           {
             "id": "高数研选题_第2章_Q11",
@@ -614,7 +646,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "驻点和极值点概念混淆。",
-            "keyAnswer": "答案：D. m=3, n=2。"
+            "keyAnswer": "答案：D. m=3, n=2。",
+            "thinking": ""
           },
           {
             "id": "高数研选题_第2章_Q12",
@@ -629,7 +662,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "完全不会莱布尼茨公式处理含参变限积分。",
-            "keyAnswer": "解法：对 f(x) 求导（莱布尼茨公式）："
+            "keyAnswer": "解法：对 f(x) 求导（莱布尼茨公式）：",
+            "thinking": ""
           },
           {
             "id": "高数研选题_第2章_Q13",
@@ -644,7 +678,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "由第二个极限推出 f''(0)=1>0，应是极小值，但误判为极大值。极值判据：f'(0)=0 且 f''(0)>0 → 极小值。",
-            "keyAnswer": "答案：B。"
+            "keyAnswer": "答案：B。",
+            "thinking": ""
           },
           {
             "id": "高数研选题_第2章_Q14",
@@ -659,7 +694,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "只判断了极值点部分正确，但拐点部分判断错了。",
-            "keyAnswer": "答案：C（x=0 是 |f(x)| 的极值点，且 (0,f(0)) 是拐点）。"
+            "keyAnswer": "答案：C（x=0 是 |f(x)| 的极值点，且 (0,f(0)) 是拐点）。",
+            "thinking": ""
           }
         ]
       },
@@ -681,7 +717,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "【核心结论】构造函数不是天赋，是一套可学习的反向工程。"
+            "keyAnswer": "【核心结论】构造函数不是天赋，是一套可学习的反向工程。",
+            "thinking": ""
           }
         ]
       },
@@ -703,7 +740,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "【通用解题套路 — 极限等式反推 f 信息】"
+            "keyAnswer": "【通用解题套路 — 极限等式反推 f 信息】",
+            "thinking": ""
           }
         ]
       },
@@ -725,7 +763,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "【文件系统磁盘布局（以ext2/Unix风格为例）】"
+            "keyAnswer": "【文件系统磁盘布局（以ext2/Unix风格为例）】",
+            "thinking": ""
           },
           {
             "id": "K_拐点判定方法",
@@ -740,7 +779,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "✓ 标准答案："
+            "keyAnswer": "✓ 标准答案：",
+            "thinking": ""
           }
         ]
       },
@@ -762,7 +802,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "【一、文件I/O完整流程】"
+            "keyAnswer": "【一、文件I/O完整流程】",
+            "thinking": ""
           }
         ]
       },
@@ -784,7 +825,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "错题",
             "missing": "",
-            "keyAnswer": "正确。关键步骤："
+            "keyAnswer": "正确。关键步骤：",
+            "thinking": ""
           },
           {
             "id": "Q16",
@@ -799,7 +841,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "偶函数 y=f(x) 当 x→+∞ 和 x→-∞ 若各有一条斜渐近线，由于偶函数对称性，两侧斜渐近线斜率互为相反数，即共2条不同的斜渐近线。另外还有竖直渐近线 x=±1，所以共4条。",
-            "keyAnswer": "答案(D)4条。分析："
+            "keyAnswer": "答案(D)4条。分析：",
+            "thinking": ""
           },
           {
             "id": "K_斜渐近线偶函数",
@@ -814,7 +857,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "若 f(x) 是偶函数，且 x→+∞ 时有斜渐近线 y=ax+b，则 x→-∞ 时斜渐近线为 y=-ax+b（斜率符号相反），因此偶函数有斜渐近线时一定是2条（不是1条）。"
+            "keyAnswer": "若 f(x) 是偶函数，且 x→+∞ 时有斜渐近线 y=ax+b，则 x→-∞ 时斜渐近线为 y=-ax+b（斜率符号相反），因此偶函数有斜渐近线时一定是2条（不是1条）。",
+            "thinking": ""
           },
           {
             "id": "Q18",
@@ -829,7 +873,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "两个关键方法没想到：",
-            "keyAnswer": "解题步骤："
+            "keyAnswer": "解题步骤：",
+            "thinking": ""
           },
           {
             "id": "Q19",
@@ -844,7 +889,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "f(1)=0（分子含(x-1)因子，x=1时为0）。利用导数定义：f'(1)=lim_{x→1}[f(x)-0]/(x-1)=lim_{x→1}[(x-2)...(x-n)]/[(x+1)...(x+n)]，直接代x=1即可。",
-            "keyAnswer": "f'(1) = [(1-2)(1-3)...(1-n)] / [(1+1)(1+2)...(1+n)]"
+            "keyAnswer": "f'(1) = [(1-2)(1-3)...(1-n)] / [(1+1)(1+2)...(1+n)]",
+            "thinking": ""
           },
           {
             "id": "Q20",
@@ -859,7 +905,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "错题",
             "missing": "",
-            "keyAnswer": "1. 由(0,0)知 x=0 → ∫₀^t e^{-u²}du=0 → t=0"
+            "keyAnswer": "1. 由(0,0)知 x=0 → ∫₀^t e^{-u²}du=0 → t=0",
+            "thinking": ""
           },
           {
             "id": "Q22",
@@ -874,7 +921,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "链式法则：y'=[f(f(x))]' = f'(f(x))·f'(x)。代入x=e：f(e)=ln√e=1/2<1，所以用第二段求f'(f(x))；f'(e)用第一段求。不需要分段讨论整个y，直接代就行。",
-            "keyAnswer": "y'=f'(f(x))·f'(x)"
+            "keyAnswer": "y'=f'(f(x))·f'(x)",
+            "thinking": ""
           },
           {
             "id": "Q23",
@@ -889,7 +937,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "反函数求导公式没有熟练掌握。",
-            "keyAnswer": "反函数求导公式："
+            "keyAnswer": "反函数求导公式：",
+            "thinking": ""
           },
           {
             "id": "K_反函数二阶导公式",
@@ -904,7 +953,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "设 y=f(x) 的反函数为 x=φ(y)，则："
+            "keyAnswer": "设 y=f(x) 的反函数为 x=φ(y)，则：",
+            "thinking": ""
           }
         ]
       },
@@ -926,7 +976,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "✓ 文件读取完整流程："
+            "keyAnswer": "✓ 文件读取完整流程：",
+            "thinking": ""
           },
           {
             "id": "K_分式处理方法论",
@@ -941,7 +992,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "分式处理方法论（数学二高频技巧）："
+            "keyAnswer": "分式处理方法论（数学二高频技巧）：",
+            "thinking": ""
           },
           {
             "id": "K_fd本质",
@@ -956,7 +1008,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "✓ fd 本质："
+            "keyAnswer": "✓ fd 本质：",
+            "thinking": ""
           },
           {
             "id": "K_硬链接误区",
@@ -971,7 +1024,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "✓ 正确答案："
+            "keyAnswer": "✓ 正确答案：",
+            "thinking": ""
           },
           {
             "id": "K_偏移量换算",
@@ -986,7 +1040,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "✓ 偏移量换算完整流程："
+            "keyAnswer": "✓ 偏移量换算完整流程：",
+            "thinking": ""
           },
           {
             "id": "K_成组链接法",
@@ -1001,7 +1056,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "✓ 成组链接法（UNIX专用，408高频）："
+            "keyAnswer": "✓ 成组链接法（UNIX专用，408高频）：",
+            "thinking": ""
           },
           {
             "id": "K_磁盘布局标准",
@@ -1016,7 +1072,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "✓ 标准磁盘布局（ext2/ext3）："
+            "keyAnswer": "✓ 标准磁盘布局（ext2/ext3）：",
+            "thinking": ""
           }
         ]
       },
@@ -1038,7 +1095,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "✓ 答案：B"
+            "keyAnswer": "✓ 答案：B",
+            "thinking": ""
           },
           {
             "id": "K_可导充要条件判定_总结",
@@ -1053,7 +1111,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "✓ 武忠祥老师总结框架："
+            "keyAnswer": "✓ 武忠祥老师总结框架：",
+            "thinking": ""
           },
           {
             "id": "K_绝对值可导与函数可导互推",
@@ -1068,7 +1127,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": "✓ 武忠祥总结（【注】部分）："
+            "keyAnswer": "✓ 武忠祥总结（【注】部分）：",
+            "thinking": ""
           }
         ]
       },
@@ -1090,7 +1150,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "没识别 'more mean-spirited and less inclusive' 中 mean-spirited 与 'bring out more evils of human nature' 的同义替换关系；虽然注意到 less inclusive 是负面词，但前面 more mean-spirited 的对应关系没建立",
-            "keyAnswer": "正确答案 B. bring out more evils of human nature。原文 'more mean-spirited and less inclusive' 是并列负面描述，mean-spirited = 刻薄/邪恶，对应 'evils of human nature'。"
+            "keyAnswer": "正确答案 B. bring out more evils of human nature。原文 'more mean-spirited and less inclusive' 是并列负面描述，mean-spirited = 刻薄/邪恶，对应 'evils of human nature'。",
+            "thinking": ""
           },
           {
             "id": "Q40",
@@ -1105,7 +1166,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "最后一段最后一句 'But they certainly will reshape it, and all the more so the longer they extend.' 没读全，这句话表明作者认为困难时期会重塑社会（偏积极），而非毁灭性；同时没注意到前文 'more socially tolerant' 等正面描述",
-            "keyAnswer": "正确答案 B. positive。作者认为困难时期虽有负面影响，但最终会让社会变得更宽容、重塑社会结构，整体态度是积极的。"
+            "keyAnswer": "正确答案 B. positive。作者认为困难时期虽有负面影响，但最终会让社会变得更宽容、重塑社会结构，整体态度是积极的。",
+            "thinking": ""
           }
         ]
       },
@@ -1127,7 +1189,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "需要强化记忆 1024 倍关系（2¹⁰），以及磁盘/内存/网络常见容量单位的对应",
-            "keyAnswer": "【数据单位换算】（2¹⁰ 倍数）"
+            "keyAnswer": "【数据单位换算】（2¹⁰ 倍数）",
+            "thinking": ""
           },
           {
             "id": "K_多级页表大小限制",
@@ -1142,7 +1205,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "理解方向正确，但需要补充「为什么」的底层原因：① 顶级页表有专用基址寄存器（如 x86 的 CR3），始终驻留内存，无需被换入换出，所以可以跨多页；② 内部各级页表必须恰好占一页，是因为它们本身也要受分页机制管理——只有占一页，才能被换入换出，由上一级页表项指向其所在页框。",
-            "keyAnswer": "【核心结论】"
+            "keyAnswer": "【核心结论】",
+            "thinking": ""
           },
           {
             "id": "K_OS操作并行vs串行计时",
@@ -1157,7 +1221,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "总结方向正确，补充常见场景判断规则",
-            "keyAnswer": "【核心要点】"
+            "keyAnswer": "【核心要点】",
+            "thinking": ""
           }
         ]
       },
@@ -1179,7 +1244,8 @@ const APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "",
-            "keyAnswer": ""
+            "keyAnswer": "",
+            "thinking": "含参积分（积分号里出现外变量 x）→ 换元把 x 移到积分限里，常用 u = x - t"
           },
           {
             "id": "Q41",
@@ -1194,7 +1260,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "错题",
             "missing": "",
-            "keyAnswer": ""
+            "keyAnswer": "",
+            "thinking": "变上限积分除以 (x-a) 的极限等于函数在该点的值，这是连接积分和函数值的桥梁"
           },
           {
             "id": "K_含参积分换元思路",
@@ -1209,7 +1276,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": ""
+            "keyAnswer": "",
+            "thinking": "必换元，把 x 从被积函数里移到积分限"
           },
           {
             "id": "K_积分型极限思路",
@@ -1224,7 +1292,8 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": ""
+            "keyAnswer": "",
+            "thinking": ""
           }
         ]
       },
@@ -1238,7 +1307,7 @@ const APP_DATA = {
             "subject": "408",
             "chapter": "【CO】四、指令系统",
             "topic": "指令系统学习方法",
-            "question": "",
+            "question": "指令系统这一章的复习重点是什么？",
             "userAnswer": "",
             "score": 10,
             "max": 10,
@@ -1246,21 +1315,22 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": ""
+            "keyAnswer": "",
+            "thinking": ""
           }
         ]
       },
       {
         "date": "2026-07-02",
         "title": "408 · 指令系统-有效地址本质",
-        "summary": "CPU算出来的有效地址=虚拟地址(不是物理地址)",
+        "summary": "CPU算出来的有效地址=虚拟地址(不是物理地址);PC存虚拟地址;跳转指令=虚拟地址+偏移",
         "questions": [
           {
-            "id": "K_有效地址=虚拟地址",
+            "id": "K_PC和跳转指令中的虚拟地址",
             "subject": "408",
             "chapter": "【CO】四、指令系统",
             "topic": "指令系统中的地址概念",
-            "question": "",
+            "question": "CPU 算出的有效地址是什么？PC 寄存器存的是什么？jump 指令的跳转目标是什么地址？",
             "userAnswer": "",
             "score": 10,
             "max": 10,
@@ -1268,7 +1338,31 @@ const APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "",
-            "keyAnswer": ""
+            "keyAnswer": "",
+            "thinking": ""
+          }
+        ]
+      },
+      {
+        "date": "2026-07-03",
+        "title": "408 · 指令系统-PC与跳转指令中的虚拟地址",
+        "summary": "PC存虚拟地址;jump指令跳转目标=虚拟地址±偏移量",
+        "questions": [
+          {
+            "id": "K_PC与跳转指令中的虚拟地址",
+            "subject": "408",
+            "chapter": "【CO】四、指令系统",
+            "topic": "PC和jmp指令的地址本质",
+            "question": "PC 寄存器存的是什么地址？jump 指令的跳转目标是什么地址？",
+            "userAnswer": "",
+            "score": 10,
+            "max": 10,
+            "status": "pass",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "",
+            "thinking": ""
           }
         ]
       }

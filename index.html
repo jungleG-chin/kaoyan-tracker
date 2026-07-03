@@ -2053,6 +2053,7 @@ function renderQBlock(q) {
       </div>
       <div class="q-body">
         <div class="q-you"><b>问题/触发：</b>${q.question || ''}</div>
+        ${q.thinking ? `<div class="q-you"><b>思路/方法论：</b>${q.thinking}</div>` : ''}
         ${q.keyAnswer ? `<div class="q-key">${q.keyAnswer}</div>` : ''}
         <div class="q-actions" onclick="event.stopPropagation()">
           ${linkedWeak ? `<button class="mastered-btn ${resolved ? 'on' : ''}" onclick="toggleMastered('${weakIdAttr}')">${resolved ? '↺ 已掌握 · 恢复' : '✓ 标记已掌握'}</button>

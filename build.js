@@ -122,6 +122,7 @@ function parseLogs() {
       const chapter = pick(lines, '章节');
       const keyAnswer = pick(lines, '标准答案');
       const missing = pick(lines, '缺漏');
+      const thinking = pick(lines, '思路');
       const isWrongStr = pick(lines, '错误');
       const isWrong = isWrongStr === '是';
       const typeStr = pick(lines, '类型');
@@ -148,7 +149,8 @@ function parseLogs() {
         isWrong,
         knowledgeType,
         missing: missing || '',
-        keyAnswer: keyAnswer || ''
+        keyAnswer: keyAnswer || '',
+        thinking: thinking || ''
       });
     }
 
