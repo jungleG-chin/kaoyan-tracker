@@ -1,6 +1,6 @@
-// 自动生成于 2026-07-03T03:50:14
-// 由 build.js 扫描 data_src/*.md 生成
-// 请勿手动编辑此文件！修改 MD 源文件后运行 node build.js 重新生成
+// 自动生成于 2026-07-03T04:15:03
+// 由 build.js 扫描 data_src/复习日志/*.md 生成
+// 字段约定：question/你的回答/missing(错因)/keyAnswer(正确答案)/thinking(总结)/image(单图)/images(多图)
 const APP_DATA = {
   "syllabus": {
     "408": {
@@ -93,7 +93,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "不会系统分类 4 类间断点",
             "keyAnswer": "✓ 间断点 4 类判据：",
-            "thinking": ""
+            "thinking": "判间断点的 4 类：(1) 第一类：左右极限存在且相等→可去；不等→跳跃。(2) 第二类：左右极限至少一个不存在→无穷/振荡。关键看 lim₋f(x₀) 和 lim₊f(x₀) 各自存在否。",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q23",
@@ -109,7 +111,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "卡在 g·(f-1) 这一步",
             "keyAnswer": "1^∞ 三步法：",
-            "thinking": ""
+            "thinking": "1^∞ 三步：(1) 判型 f→1 且 g→∞。(2) 取对数 ln y = g·ln f。(3) 用等价 ln f ~ f-1 替换 → ln y ~ g·(f-1)。(4) 原极限 = e^lim g·(f-1)。切忌直接洛必达。",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q25",
@@ -125,7 +129,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "放缩的'度'控制不住",
             "keyAnswer": "夹逼放缩的'度'：",
-            "thinking": ""
+            "thinking": "夹逼放缩要\"贴\"：左边 ≤ 目标 ≤ 右边，且左右极限同值 → 夹出。放太宽（上界放成 +∞）等于没放；放太紧（下界过强）则不等式不成立。常见陷阱：分母含 n²/³ 等会显著变小，不能简单替换。",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q27",
@@ -141,7 +147,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "1/(1+bx) 几何级数展错",
             "keyAnswer": "(1+ax)/(1+bx) = (1+ax)·(1-bx+b²x²-b³x³+...)",
-            "thinking": ""
+            "thinking": "(1+ax)/(1+bx) = (1+ax)·(1-bx+b²x²-...)，几何级数 1/(1+u)=1-u+u²-...。用 a=分子系数，b=分母系数，展到 x 阶对应取前 n+1 项。",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q32",
@@ -157,7 +165,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "差的主导项识别",
             "keyAnswer": "x^x = e^(x ln x) ≈ 1 + x ln x",
-            "thinking": ""
+            "thinking": "x^x = e^(x ln x)，把幂指函数先变 e 形式再泰勒展开：e^(x ln x) ≈ 1 + x ln x + (x ln x)²/2。x ln x 在 x→0+ 时是 x·负无穷 = 0，可视为 x 级。",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q34",
@@ -173,7 +183,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "积分上限函数求导 + 变上限代换",
             "keyAnswer": "分子：t²(e^(1/t)-1) - t ≈ t²·(1/t) - t = 0（等价无穷小）",
-            "thinking": ""
+            "thinking": "变上限积分求导：d/dx ∫ₐ^u(x) f(t)dt = f(u(x))·u'(x)。本题 t²(e^(1/t)-1) - t 中 t²·(e^(1/t)-1) 用等价 e^u-1~u 得 t²·(1/t) = t，相减 → 0/0，再用洛必达。",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q(2)",
@@ -189,7 +201,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "未识别 1^∞ 型",
             "keyAnswer": "底 A = x^(1/x) - 1 → 1⁺，指数 B = 1/ln x → 0",
-            "thinking": ""
+            "thinking": "嵌套极限 1^∞ 变体：lim [1 + a(x)]^(1/b(x)) = e^lim a(x)/b(x)，其中 a→0, b→0。直接套用 lim f^g = e^lim g(f-1)。",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q(4)",
@@ -205,7 +219,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "1^∞ 标准处理",
             "keyAnswer": "tan(π/4 + 2/n) → 1，n→∞，是 1^∞",
-            "thinking": ""
+            "thinking": "tan(π/4+2/n) → 1, n→∞，是 1^∞。口诀：底→1 且 指数→∞ 就是 1^∞。",
+            "image": "",
+            "images": []
           }
         ]
       },
@@ -226,9 +242,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "错题",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "✓ 标准答案：",
-            "thinking": ""
+            "thinking": "OS 三种运行模式：内核态/用户态/中断态。用户态不能直接访问硬件，必须通过系统调用切到内核态。R1 (RISC) vs CISC 区别是另一种，不要混。",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q2",
@@ -244,7 +262,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "线程共享的是堆（heap），不共享栈（stack）。栈是线程私有的。",
             "keyAnswer": "✓ 标准答案：",
-            "thinking": ""
+            "thinking": "进程 = 资源分配单位（独立地址空间）；线程 = CPU 调度单位（共享进程资源）。线程切换不切换地址空间，所以比进程切换快。",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q3",
@@ -260,7 +280,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "turn 变量的'谦让'语义没讲清楚。",
             "keyAnswer": "✓ 标准答案：",
-            "thinking": ""
+            "thinking": "Peterson：两个进程 P0/P1 通过 flag[2] 和 turn 变量实现互斥。P0 想进 → flag[0]=true → 看 flag[1]？turn 是否是自己？忙等。优点：纯软件、容易理解。缺点：单核可用，多核有内存可见性问题。",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q4",
@@ -276,7 +298,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "TSL 也是忙等，'不忙等'不是优势。真正优势：硬件原子性，可在多 CPU 上正确工作。",
             "keyAnswer": "✓ 标准答案：",
-            "thinking": ""
+            "thinking": "TSL 指令 = Test & Set Lock，硬件原子操作。优点：可在多 CPU 上正确工作（硬件原子保证）；缺点：也是忙等。\"不忙等\"不是 TSL 的优势，是其他锁（如信号量）的优势。",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q5",
@@ -292,7 +316,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "C 是对的（同一进程内线程共享页表），D 是错的（中断处理后可能切回原进程）。",
             "keyAnswer": "✓ 标准答案：D 错误。",
-            "thinking": ""
+            "thinking": "进程切换触发：时间片到、阻塞 I/O、高优先级进程就绪、当前进程退出/终止。**不触发**：纯计算型系统调用（如 getpid）、中断处理结束（只是恢复现场）。",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q6",
@@ -308,7 +334,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "缺核心条件'小 ≤ 目标 ≤ 大'（夹在中间）；不要求连续。",
             "keyAnswer": "✓ 标准答案：",
-            "thinking": ""
+            "thinking": "夹逼定理三件套：左边 ≤ 目标 ≤ 右边，左右极限同值 → 夹出。常见应用：sin x ≤ x ≤ tan x 推 lim(sin x/x)=1。",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q7",
@@ -324,7 +352,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "没说清楚定积分定义的判据：'Σ f(xk)·Δx' 形式 + Δx→0 + xk 走遍 [a,b]。",
             "keyAnswer": "✓ 标准答案：",
-            "thinking": ""
+            "thinking": "定积分定义识别：形如 lim_{n→∞} Σ_{k=1}^n f(xk)·Δx，且 Δx→0，xk 走遍 [a,b]。看到 \"Σ\" + \"1/n\" + \"等分\" 三件套就是定积分。",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q8",
@@ -340,7 +370,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "会写：k²/√(n⁶+k²) ≤ k²/√(n⁶) = k²/n³；Σ 上界 = (1/n³)·Σk² = (1/n³)·n(n+1)(2n+1)/6 → 0。",
             "keyAnswer": "✓ 标准答案：",
-            "thinking": ""
+            "thinking": "n 项求和极限：先提 1/n^m，凑 Σ f(k/n)，再认作 ∫₀¹ f(x)dx。Σk=n(n+1)/2, Σk²=n(n+1)(2n+1)/6, Σk³=[n(n+1)/2]²。",
+            "image": "",
+            "images": []
           }
         ]
       },
@@ -363,7 +395,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "把'专利垄断限制了基因检测'这一现象当成反对者主张，实际反对者主张是'基因是自然产物，不应被专利'",
             "keyAnswer": "正确答案 B. only man-made products are patentable。反对者认为基因是自然产物，只有人造物才该被授予专利。",
-            "thinking": ""
+            "thinking": "x^x = e^(x ln x)，把幂指函数先变 e 形式再泰勒展开：e^(x ln x) ≈ 1 + x ln x + (x ln x)²/2。x ln x 在 x→0+ 时是 x·负无穷 = 0，可视为 x 级。",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q33",
@@ -379,7 +413,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "把'研究过程'（how genes interact）当成了'专利目标'（connecting the dots = disease correlations）",
             "keyAnswer": "正确答案 A. establishing disease correlations。原文说公司在研究基因如何相互作用，寻找疾病关联，而想拿专利的是'把这些关联点连起来'",
-            "thinking": ""
+            "thinking": "",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q34",
@@ -395,7 +431,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "停留在字面'律师参会积极'，没有理解深层含义'基因专利话题备受关注'",
             "keyAnswer": "正确答案 C. gene patenting was a great concern。'座无虚席'指会议爆满，反映基因专利问题是热点。",
-            "thinking": ""
+            "thinking": "变上限积分求导：d/dx ∫ₐ^u(x) f(t)dt = f(u(x))·u'(x)。本题 t²(e^(1/t)-1) - t 中 t²·(e^(1/t)-1) 用等价 e^u-1~u 得 t²·(1/t) = t，相减 → 0/0，再用洛必达。",
+            "image": "",
+            "images": []
           }
         ]
       },
@@ -416,9 +454,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "充要条件：f'₋(x₀) = f'₊(x₀) 且都是有限值。",
-            "thinking": ""
+            "thinking": "可导充要条件：lim_{h→0} [f(x₀+h)-f(x₀)]/h 存在。**等价叙述**：f'₋(x₀) = f'₊(x₀) 且都是有限值。左右导数都存在且相等 → 可导。",
+            "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
+            "images": []
           },
           {
             "id": "K2",
@@ -432,9 +472,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "可导 ⇒ 连续（必要条件）。",
-            "thinking": ""
+            "thinking": "可导 ⇒ 连续（必要条件）。但连续 ⇏ 可导（连续是可导的必要非充分条件）。f(x)=|x| 在 x=0 连续但不可导是经典反例。",
+            "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
+            "images": []
           },
           {
             "id": "K3",
@@ -450,7 +492,9 @@ const APP_DATA = {
             "knowledgeType": "总结",
             "missing": "漏了'导函数极限定理'的完整叙述。",
             "keyAnswer": "充分条件（能推出可导）：",
-            "thinking": ""
+            "thinking": "可导充分条件（可推出可导）：(1) f'₋(x₀) = f'₊(x₀) 都存在且相等；(2) 导函数极限定理：f 在邻域可导且 lim f'(x) 存在 → f 在 x₀ 可导。",
+            "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
+            "images": []
           },
           {
             "id": "K4",
@@ -464,9 +508,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "连续 ⇏ 可导（必要非充分）。",
-            "thinking": ""
+            "thinking": "连续 ⇏ 可导（必要非充分）。核心区别：可导要求极限值唯一且有限，连续只要求 lim f(x) = f(x₀)。",
+            "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
+            "images": []
           },
           {
             "id": "K5",
@@ -480,9 +526,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "分段函数求导规则：",
-            "thinking": ""
+            "thinking": "分段函数求导规则：分段点 f(x₀) = lim₋f = lim₊f（连续），然后 f'(x₀) = lim₋f' = lim₊f'（导数连续则可直接用，非连续则需用定义求）。",
+            "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
+            "images": []
           },
           {
             "id": "K6",
@@ -498,7 +546,9 @@ const APP_DATA = {
             "knowledgeType": "总结",
             "missing": "缺反例：若不连续，导函数极限存在但函数在该点不可导。",
             "keyAnswer": "导函数极限定理：",
-            "thinking": ""
+            "thinking": "导函数极限定理（达布定理逆）：若 f 在 (x₀-δ, x₀+δ) 可导，且 lim_{x→x₀} f'(x) = A 存在，则 f 在 x₀ 可导且 f'(x₀)=A。**反例**：f 不连续时此定理失效。",
+            "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
+            "images": []
           },
           {
             "id": "K7",
@@ -514,7 +564,9 @@ const APP_DATA = {
             "knowledgeType": "总结",
             "missing": "补充：若 g(x₀)=0 且 g'(x₀)=0，则 f(x)=|g(x)| 在 x₀ 可导（且导数为0）",
             "keyAnswer": "f(x) = |g(x)| 在 x₀ 的可导性：",
-            "thinking": ""
+            "thinking": "f(x)=|g(x)| 在 x₀ 可导性：(1) g(x₀)≠0 → 不影响 g 的符号 → |g| 可导且 f'(x₀)=g'(x₀)·sgn(g(x₀))。(2) g(x₀)=0 且 g'(x₀)=0 → 可导且 f'=0。(3) g(x₀)=0 且 g'(x₀)≠0 → 不可导。",
+            "image": "gaoshu_jueduizhi_kedao_zongjie.png",
+            "images": []
           },
           {
             "id": "K8",
@@ -530,7 +582,9 @@ const APP_DATA = {
             "knowledgeType": "总结",
             "missing": "补充：⑤ 抽象函数用导数定义凑已知极限",
             "keyAnswer": "考研高频考点：",
-            "thinking": ""
+            "thinking": "考研高频套路：(1) 看到 |f| 立即想到零点讨论；(2) 看到分段函数立即分段点讨论；(3) 看到抽象函数 f'(x₀) = lim 凑定义；(4) 看到 f²、f³ 用 (a+b)²=a²+2ab+b² 拆开。",
+            "image": "gaoshu_jueduizhi_kedao_zongjie.png",
+            "images": []
           }
         ]
       },
@@ -553,7 +607,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "不会识别幂指型极限 + 反推 f(0) + 凑导数定义。",
             "keyAnswer": "答案：D. ln2 - 1。",
-            "thinking": ""
+            "thinking": "幂指函数极限 f(x)^g(x) → 必先取对数化为 e^g·ln f，再凑导数定义。f(0) 反推：lim xf(x) = 1 → f(0)=1。f'(0) = lim f(x)/x = ln 2。",
+            "image": "gaoshu_yanxuan_ch2_q5.jpg",
+            "images": []
           },
           {
             "id": "高数研选题_第2章_Q7",
@@ -569,7 +625,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "对 |x-x²|(e^x-1) 在 x=0 处的'磨平'现象判断失误。",
             "keyAnswer": "答案：C. 2 个。",
-            "thinking": ""
+            "thinking": "|x-x²|(e^x-1) 在 x=0 处的阶数判断：|x-x²| ~ |x|（x→0 时 x² 主导项为 0），e^x-1 ~ x。乘积 = |x|·x = x²（去绝对值后）。不可导点个数 = 阶数突变点。本题：f(x) = |x-x²|(e^x-1)/x² 在 x=0 不可导点个数为 2。",
+            "image": "gaoshu_yanxuan_ch2_q7.jpg",
+            "images": []
           }
         ]
       },
@@ -590,9 +648,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "✓ 顿悟正确！",
-            "thinking": ""
+            "thinking": "含绝对值函数可导性本质：绝对值函数 |u| 在 u=0 处是\"尖角\"。若 u(x₀)=0 且 u'(x₀)≠0，则 |u| 在 x₀ 不可导（左导数 ≠ 右导数）；若 u(x₀)=0 且 u'(x₀)=0，则 |u| 在 x₀ 可导（\"磨平\"尖角）。",
+            "image": "gaoshu_jueduizhi_kedao_zongjie.png",
+            "images": []
           }
         ]
       },
@@ -615,7 +675,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "没有先用 max 化简极限函数就直接猜不可导点。",
             "keyAnswer": "答案：C. 2 个。",
-            "thinking": ""
+            "thinking": "极限函数化简 + 不可导点判断：① 简化 |f(x)| 函数 ② 找导数不存在的点：lim₋f' ≠ lim₊f' 的点。常见简化：max(0, x) = (x+|x|)/2。",
+            "image": "gaoshu_yanxuan_ch2_q8.jpg",
+            "images": []
           },
           {
             "id": "高数研选题_第2章_Q9",
@@ -631,7 +693,9 @@ const APP_DATA = {
             "knowledgeType": "总结",
             "missing": "Q9③ 不确定：由已知条件无法推出 f''(0) 存在。你在选项③ 后打？说明你意识到这一点，是对的直觉。",
             "keyAnswer": "答案：B. 2个（①②）。",
-            "thinking": ""
+            "thinking": "极限等式反推函数性质：① 看到 lim f(x)/x 形式 = f'(0) ② 看到 f(x)-f(0) 凑导数定义 ③ 看到 lim [f(x)-f(0)]/(x²) = 0 是 f'(0) 存在。",
+            "image": "gaoshu_yanxuan_ch2_q9.jpg",
+            "images": []
           },
           {
             "id": "高数研选题_第2章_Q11",
@@ -647,7 +711,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "驻点和极值点概念混淆。",
             "keyAnswer": "答案：D. m=3, n=2。",
-            "thinking": ""
+            "thinking": "含绝对值多项式驻点：① 找 f'(x) 零点 ② 驻点 ≠ 极值点（必要非充分） ③ 用 f'(x₀-ε)·f'(x₀+ε) < 0 判极值。",
+            "image": "gaoshu_yanxuan_ch2_q11.jpg",
+            "images": []
           },
           {
             "id": "高数研选题_第2章_Q12",
@@ -663,7 +729,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "完全不会莱布尼茨公式处理含参变限积分。",
             "keyAnswer": "解法：对 f(x) 求导（莱布尼茨公式）：",
-            "thinking": ""
+            "thinking": "变限积分 + 极值点：莱布尼茨公式 d/dx ∫_{a(x)}^{b(x)} f(t)dt = f(b(x))·b'(x) - f(a(x))·a'(x)。极值点：f'(x₀)=0 且左右变号。",
+            "image": "gaoshu_yanxuan_ch2_q12.jpg",
+            "images": []
           },
           {
             "id": "高数研选题_第2章_Q13",
@@ -679,7 +747,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "由第二个极限推出 f''(0)=1>0，应是极小值，但误判为极大值。极值判据：f'(0)=0 且 f''(0)>0 → 极小值。",
             "keyAnswer": "答案：B。",
-            "thinking": ""
+            "thinking": "二阶导极限 + 极值拐点联合判断：lim f'(x) = A → f'(x₀) = A (达布定理逆)；f''(x₀)>0 → 极小值；f'(x₀) 变号 → 拐点。",
+            "image": "gaoshu_yanxuan_ch2_q13.jpg",
+            "images": []
           },
           {
             "id": "高数研选题_第2章_Q14",
@@ -695,7 +765,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "只判断了极值点部分正确，但拐点部分判断错了。",
             "keyAnswer": "答案：C（x=0 是 |f(x)| 的极值点，且 (0,f(0)) 是拐点）。",
-            "thinking": ""
+            "thinking": "|f(x)| 的极值点与拐点判断：f(x₀)=0 时 |f| 在 x₀ 不可导但可能是极值点；f(x) 的极值点不一定是 |f| 的，但 |f| 的极值点必是 f 的零点。",
+            "image": "gaoshu_yanxuan_ch2_q14.jpg",
+            "images": []
           }
         ]
       },
@@ -716,9 +788,11 @@ const APP_DATA = {
             "status": "fail",
             "isWrong": true,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "是",
             "keyAnswer": "【核心结论】构造函数不是天赋，是一套可学习的反向工程。",
-            "thinking": ""
+            "thinking": "构造反例函数的通用框架：① 看清题目要否定/证明的命题 ② 找最小反例（最简单形式）③ 验证反例满足题设但不满足结论 ④ 总结：反例越简单越好，但必须破坏结论。",
+            "image": "",
+            "images": []
           }
         ]
       },
@@ -739,9 +813,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "【通用解题套路 — 极限等式反推 f 信息】",
-            "thinking": ""
+            "thinking": "通用解题套路：lim f(x)/x = A → f(0)=0 且 f'(0)=A；lim [f(x)-f(0)]/x = A → f'(0)=A；lim [f(x)-f(x₀)]/(x-x₀) = A → f'(x₀)=A。看到 lim 形式立即凑导数定义。",
+            "image": "",
+            "images": []
           }
         ]
       },
@@ -762,9 +838,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "【文件系统磁盘布局（以ext2/Unix风格为例）】",
-            "thinking": ""
+            "thinking": "ext2 磁盘布局：MBR→超级块(文件系统元信息)→inode 位图→数据块位图→inode 表(每个文件一个)→数据块(实际内容)。inode 包含：文件类型、权限、时间戳、数据块指针(12直+1间+2双+1三)。",
+            "image": "",
+            "images": []
           },
           {
             "id": "K_拐点判定方法",
@@ -778,9 +856,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "✓ 标准答案：",
-            "thinking": ""
+            "thinking": "拐点定义：曲线凹凸分界点 (f''(x₀)=0 且左右 f'' 变号)。**易错**：f''(x₀)=0 不一定是拐点（需变号）；f''(x₀) 不存在也可能是拐点。",
+            "image": "",
+            "images": []
           }
         ]
       },
@@ -801,9 +881,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "【一、文件I/O完整流程】",
-            "thinking": ""
+            "thinking": "文件 I/O 流程：open(path) → 解析路径(查目录) → 找 inode → 校验权限 → 创建 fd → 返回用户；read(fd, buf, n) → 查 fd 表 → open file 表 → inode → 读数据块。目录访存次数：路径分量数 + 1。",
+            "image": "",
+            "images": []
           }
         ]
       },
@@ -824,9 +906,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "错题",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "正确。关键步骤：",
-            "thinking": ""
+            "thinking": "定积分比较：先看积分区间，再看被积函数单调性。若 a<b 时 f(a)<f(b)，则 ∫_a^b f 存在主次关系。",
+            "image": "gaoshu_yanxuan_ch2_q15.jpg",
+            "images": []
           },
           {
             "id": "Q16",
@@ -842,7 +926,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "偶函数 y=f(x) 当 x→+∞ 和 x→-∞ 若各有一条斜渐近线，由于偶函数对称性，两侧斜渐近线斜率互为相反数，即共2条不同的斜渐近线。另外还有竖直渐近线 x=±1，所以共4条。",
             "keyAnswer": "答案(D)4条。分析：",
-            "thinking": ""
+            "thinking": "变上限积分求导公式：d/dx ∫_0^x f(t)dt = f(x)。链式版本：d/dx ∫_0^{g(x)} f(t)dt = f(g(x))·g'(x)。",
+            "image": "gaoshu_yanxuan_ch2_q16.jpg",
+            "images": []
           },
           {
             "id": "K_斜渐近线偶函数",
@@ -856,9 +942,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "若 f(x) 是偶函数，且 x→+∞ 时有斜渐近线 y=ax+b，则 x→-∞ 时斜渐近线为 y=-ax+b（斜率符号相反），因此偶函数有斜渐近线时一定是2条（不是1条）。",
-            "thinking": ""
+            "thinking": "偶函数斜渐近线规律：若 f 是偶函数且 x→+∞ 有 y=ax+b，则 x→-∞ 必有 y=-ax+b。所以偶函数的斜渐近线一定是 2 条（或 0 条）。",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q18",
@@ -874,7 +962,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "两个关键方法没想到：",
             "keyAnswer": "解题步骤：",
-            "thinking": ""
+            "thinking": "判间断点的 4 类：(1) 第一类：左右极限存在且相等→可去；不等→跳跃。(2) 第二类：左右极限至少一个不存在→无穷/振荡。关键看 lim₋f(x₀) 和 lim₊f(x₀) 各自存在否。",
+            "image": "gaoshu_yanxuan_ch2_q18.jpg",
+            "images": []
           },
           {
             "id": "Q19",
@@ -890,7 +980,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "f(1)=0（分子含(x-1)因子，x=1时为0）。利用导数定义：f'(1)=lim_{x→1}[f(x)-0]/(x-1)=lim_{x→1}[(x-2)...(x-n)]/[(x+1)...(x+n)]，直接代x=1即可。",
             "keyAnswer": "f'(1) = [(1-2)(1-3)...(1-n)] / [(1+1)(1+2)...(1+n)]",
-            "thinking": ""
+            "thinking": "复合函数极限：先看内层，再看外层。lim_{x→x₀} f(g(x)) = f(lim g(x)) 要求 f 连续或 g(x₀) 在 f 的连续点。",
+            "image": "gaoshu_yanxuan_ch2_q19.jpg",
+            "images": []
           },
           {
             "id": "Q20",
@@ -904,9 +996,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "错题",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "1. 由(0,0)知 x=0 → ∫₀^t e^{-u²}du=0 → t=0",
-            "thinking": ""
+            "thinking": "极限存在条件：左右极限都存在且相等。分段点求极限必须分左右。",
+            "image": "gaoshu_yanxuan_ch2_q20.jpg",
+            "images": []
           },
           {
             "id": "Q22",
@@ -922,7 +1016,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "链式法则：y'=[f(f(x))]' = f'(f(x))·f'(x)。代入x=e：f(e)=ln√e=1/2<1，所以用第二段求f'(f(x))；f'(e)用第一段求。不需要分段讨论整个y，直接代就行。",
             "keyAnswer": "y'=f'(f(x))·f'(x)",
-            "thinking": ""
+            "thinking": "洛必达适用：0/0 或 ∞/∞ 形式。多次洛必达要逐步验证形式，否则会失败。",
+            "image": "gaoshu_yanxuan_ch2_q22.jpg",
+            "images": []
           },
           {
             "id": "Q23",
@@ -938,7 +1034,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "反函数求导公式没有熟练掌握。",
             "keyAnswer": "反函数求导公式：",
-            "thinking": ""
+            "thinking": "1^∞ 三步：(1) 判型 f→1 且 g→∞。(2) 取对数 ln y = g·ln f。(3) 用等价 ln f ~ f-1 替换 → ln y ~ g·(f-1)。(4) 原极限 = e^lim g·(f-1)。切忌直接洛必达。",
+            "image": "gaoshu_yanxuan_ch2_q23.jpg",
+            "images": []
           },
           {
             "id": "K_反函数二阶导公式",
@@ -952,9 +1050,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "设 y=f(x) 的反函数为 x=φ(y)，则：",
-            "thinking": ""
+            "thinking": "反函数求导公式：设 y=f(x) 反函数为 x=φ(y)，则 φ'(y) = 1/f'(x)，φ''(y) = -f''(x)/[f'(x)]³。记忆：二阶导 = -f''/(f'³)，符号负、立方。",
+            "image": "",
+            "images": []
           }
         ]
       },
@@ -975,9 +1075,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "✓ 文件读取完整流程：",
-            "thinking": ""
+            "thinking": "文件读取：用户 read() → 内核读 fd 表 → 查 open file 表 → 找 inode → 读数据块(可能要从磁盘)→ 写入页缓存 → 复制到用户缓冲区 → 返回。**关键**：open() 会创建 fd 和 open file 表项。",
+            "image": "",
+            "images": []
           },
           {
             "id": "K_分式处理方法论",
@@ -991,9 +1093,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "分式处理方法论（数学二高频技巧）：",
-            "thinking": ""
+            "thinking": "分式化简方法论：① 拆项（部分分式）② 凑导数（分母是分子导数倍）③ 等价（无穷小替换）④ 洛必达（兜底）。看到复杂分式先尝试凑导数。",
+            "image": "",
+            "images": []
           },
           {
             "id": "K_fd本质",
@@ -1007,9 +1111,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "✓ fd 本质：",
-            "thinking": ""
+            "thinking": "fd 本质：进程 fd 表的索引（0/1/2 = stdin/stdout/stderr）。fd → open file 表项（含文件偏移、状态标志）→ vnode/inode 指针。多个 fd 可指向同一 open file（dup）。",
+            "image": "",
+            "images": []
           },
           {
             "id": "K_硬链接误区",
@@ -1023,9 +1129,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "✓ 正确答案：",
-            "thinking": ""
+            "thinking": "硬链接 vs 软链接：硬链接 = 同一 inode 多个目录项（删除原文件不影响硬链接，因为 inode 还在；不能跨文件系统；不能链目录）。软链接 = 独立文件存目标路径（删原文件软链失效；可跨文件系统和链目录）。",
+            "image": "",
+            "images": []
           },
           {
             "id": "K_偏移量换算",
@@ -1039,9 +1147,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "✓ 偏移量换算完整流程：",
-            "thinking": ""
+            "thinking": "read 偏移量换算：逻辑块号 = 偏移量 / 块大小。例：偏移 10240B，块大小 4096B → 块号 2。块内偏移 = 偏移量 % 块大小。",
+            "image": "",
+            "images": []
           },
           {
             "id": "K_成组链接法",
@@ -1055,9 +1165,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "✓ 成组链接法（UNIX专用，408高频）：",
-            "thinking": ""
+            "thinking": "成组链接法（UNIX 专用，408 高频）：空闲块分组管理，每组最后一块存下一组块号。分配：取当前组首块，更新超级块指针。释放：链入当前组，满则新建组。优点：连续分配快。",
+            "image": "",
+            "images": []
           },
           {
             "id": "K_磁盘布局标准",
@@ -1071,9 +1183,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "✓ 标准磁盘布局（ext2/ext3）：",
-            "thinking": ""
+            "thinking": "标准磁盘布局：MBR(主引导) → 超级块(元信息) → 空闲空间管理(位图/链表) → inode 表 → 数据块。inode 编号从 1 开始（0 不用），数据块号从 0 开始。",
+            "image": "",
+            "images": []
           }
         ]
       },
@@ -1094,9 +1208,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "✓ 答案：B",
-            "thinking": ""
+            "thinking": "抽象极限式判定可导性：lim [f(x)-f(0)]/x = A → f'(0)=A 存在；lim f(x)/x = A → f(0)=0 且 f'(0)=A；看到 lim g(x) 含 f 就用导数定义凑。",
+            "image": "",
+            "images": []
           },
           {
             "id": "K_可导充要条件判定_总结",
@@ -1110,9 +1226,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "✓ 武忠祥老师总结框架：",
-            "thinking": ""
+            "thinking": "武忠祥总结框架：① 看到 f(x)-f(0) 凑导数定义 ② 看到 f(x)/x 想到 f'(0) ③ 看到 [f(x)-f(x₀)]/(x-x₀) 想到 f'(x₀) ④ 综合应用。",
+            "image": "",
+            "images": []
           },
           {
             "id": "K_绝对值可导与函数可导互推",
@@ -1126,9 +1244,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "✓ 武忠祥总结（【注】部分）：",
-            "thinking": ""
+            "thinking": "f(x) 与 |f(x)| 可导性互推：① f 可导 → |f| 未必可导（f(x₀)=0 时可能尖角）② |f| 可导 → f 可导（绝对值连续 → 原函数连续；绝对值可导 → 原函数可导）③ 关键看零点：f(x₀)≠0 → |f| 在 x₀ 可导。",
+            "image": "",
+            "images": []
           }
         ]
       },
@@ -1151,7 +1271,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "没识别 'more mean-spirited and less inclusive' 中 mean-spirited 与 'bring out more evils of human nature' 的同义替换关系；虽然注意到 less inclusive 是负面词，但前面 more mean-spirited 的对应关系没建立",
             "keyAnswer": "正确答案 B. bring out more evils of human nature。原文 'more mean-spirited and less inclusive' 是并列负面描述，mean-spirited = 刻薄/邪恶，对应 'evils of human nature'。",
-            "thinking": ""
+            "thinking": "",
+            "image": "",
+            "images": []
           },
           {
             "id": "Q40",
@@ -1167,7 +1289,9 @@ const APP_DATA = {
             "knowledgeType": "错题",
             "missing": "最后一段最后一句 'But they certainly will reshape it, and all the more so the longer they extend.' 没读全，这句话表明作者认为困难时期会重塑社会（偏积极），而非毁灭性；同时没注意到前文 'more socially tolerant' 等正面描述",
             "keyAnswer": "正确答案 B. positive。作者认为困难时期虽有负面影响，但最终会让社会变得更宽容、重塑社会结构，整体态度是积极的。",
-            "thinking": ""
+            "thinking": "含参变限积分 f(x) = (1/x)∫₀^x (x-t)φ(t)dt：先换元 u=x-t → f(x) = ∫₀^x u·φ(x-u)du/x，再求导。积分型 f(x) 求导 = 莱布尼茨公式。",
+            "image": "",
+            "images": []
           }
         ]
       },
@@ -1190,7 +1314,9 @@ const APP_DATA = {
             "knowledgeType": "总结",
             "missing": "需要强化记忆 1024 倍关系（2¹⁰），以及磁盘/内存/网络常见容量单位的对应",
             "keyAnswer": "【数据单位换算】（2¹⁰ 倍数）",
-            "thinking": ""
+            "thinking": "2¹⁰=1024 倍数：1KB=1024B, 1MB=1024KB, 1GB=1024MB, 1TB=1024GB, 1PB=1024TB。易错：磁盘厂商用 1000 倍数（1KB=1000B），所以买 500GB 硬盘实际 ≈ 465GiB。考研按 1024 算。",
+            "image": "jizu_danweihuhsuan.png",
+            "images": []
           },
           {
             "id": "K_多级页表大小限制",
@@ -1206,7 +1332,9 @@ const APP_DATA = {
             "knowledgeType": "总结",
             "missing": "理解方向正确，但需要补充「为什么」的底层原因：① 顶级页表有专用基址寄存器（如 x86 的 CR3），始终驻留内存，无需被换入换出，所以可以跨多页；② 内部各级页表必须恰好占一页，是因为它们本身也要受分页机制管理——只有占一页，才能被换入换出，由上一级页表项指向其所在页框。",
             "keyAnswer": "【核心结论】",
-            "thinking": ""
+            "thinking": "多级页表大小限制：① 顶级页表可跨多页（基址寄存器常驻，不被换出）② 内部各级页表必须恰好一页（因为受分页机制管理，由上一级页表项指向其页框）③ 单级页表必须整页连续。",
+            "image": "",
+            "images": []
           },
           {
             "id": "K_OS操作并行vs串行计时",
@@ -1222,7 +1350,9 @@ const APP_DATA = {
             "knowledgeType": "总结",
             "missing": "总结方向正确，补充常见场景判断规则",
             "keyAnswer": "【核心要点】",
-            "thinking": ""
+            "thinking": "OS 时间计算：① 串行：时间相加 ② 并行：时间取 max（多个操作同时进行）③ 流水线：分阶段重叠 ④ 排队：先到先服务。例：磁盘读 5ms + 处理 2ms（串行）= 7ms；（读+处理并行）= max(5,2)=5ms。",
+            "image": "",
+            "images": []
           }
         ]
       },
@@ -1243,9 +1373,11 @@ const APP_DATA = {
             "status": "fail",
             "isWrong": true,
             "knowledgeType": "错题",
-            "missing": "",
+            "missing": "是",
             "keyAnswer": "",
-            "thinking": "含参积分（积分号里出现外变量 x）→ 换元把 x 移到积分限里，常用 u = x - t"
+            "thinking": "含参积分（积分号里出现外变量 x）→ 换元把 x 移到积分限里，常用 u = x - t",
+            "image": "gaoshu_yanxuan_ch3_q40_q41_xiaojifenjiqiudao.jpg",
+            "images": []
           },
           {
             "id": "Q41",
@@ -1259,9 +1391,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "错题",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "",
-            "thinking": "变上限积分除以 (x-a) 的极限等于函数在该点的值，这是连接积分和函数值的桥梁"
+            "thinking": "变上限积分除以 (x-a) 的极限等于函数在该点的值，这是连接积分和函数值的桥梁",
+            "image": "gaoshu_yanxuan_ch3_q40_q41_xiaojifenjiqiudao.jpg",
+            "images": []
           },
           {
             "id": "K_含参积分换元思路",
@@ -1275,9 +1409,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "",
-            "thinking": "必换元，把 x 从被积函数里移到积分限"
+            "thinking": "必换元，把 x 从被积函数里移到积分限",
+            "image": "gaoshu_yanxuan_ch3_q40_q41_xiaojifenjiqiudao.jpg",
+            "images": []
           },
           {
             "id": "K_积分型极限思路",
@@ -1291,9 +1427,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "",
-            "thinking": ""
+            "thinking": "∫ₐˣf(t)dt/(x-a) → f(a) 的套路：① 0/0 型 ② 洛必达：分子导数 = f(x)，分母导数 = 1 → lim f(x) = f(a) 要求 f 连续。③ 或用导数定义凑。",
+            "image": "gaoshu_yanxuan_ch3_q40_q41_xiaojifenjiqiudao.jpg",
+            "images": []
           }
         ]
       },
@@ -1314,9 +1452,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "",
-            "thinking": ""
+            "thinking": "指令系统复习：① 寻址方式 9 种必背 ② x86 重点（考试常考）③ ARM/MIPS 看注释 ④ 指令格式：操作码+地址码 ⑤ 指令执行流程：取指→译码→执行→访存→写回。",
+            "image": "",
+            "images": []
           }
         ]
       },
@@ -1337,9 +1477,11 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "",
-            "thinking": ""
+            "thinking": "PC 存的是虚拟地址（CPU 视角所有地址都是虚拟的）。跳转指令 jump X = 跳到 X（虚拟地址）；相对跳转 beq rs, rt, offset = 当前PC+4+offset×4。绝对地址由 MMU 转物理地址。",
+            "image": "408_pc_jump_address.png",
+            "images": []
           }
         ]
       },
@@ -1360,9 +1502,36 @@ const APP_DATA = {
             "status": "pass",
             "isWrong": false,
             "knowledgeType": "总结",
-            "missing": "",
+            "missing": "否",
             "keyAnswer": "",
-            "thinking": ""
+            "thinking": "PC 寄存器里存的是虚拟地址（VA），不是物理地址。jump 指令的目标地址也是虚拟地址。CPU 只认虚拟地址，物理地址由 MMU（内存管理单元）查页表后转。",
+            "image": "images/408_pc_jump_address.png",
+            "images": []
+          }
+        ]
+      },
+      {
+        "date": "2026-07-03",
+        "title": "无标题",
+        "summary": "大端：高位字节放低地址（符合人类视角）；小端：低位字节放低地址（高低倒过来）。最小块是字节(8bit)，按字节编址。",
+        "questions": [
+          {
+            "id": "K_大端小端存储",
+            "subject": "408",
+            "chapter": "【CO】四、指令系统",
+            "topic": "指令系统 · 边界对齐与存放方式",
+            "question": "复习数据存放方式，对比大端存储 vs 小端存储",
+            "userAnswer": "",
+            "score": 10,
+            "max": 10,
+            "status": "pass",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "之前没系统化\"高对低/低对低\"口诀，容易画反。",
+            "keyAnswer": "",
+            "thinking": "大端\"高对低\"：高位字节放低地址，符合人类视角。小端\"低对低\"：低位字节放低地址，x86 用小端（加减法高效）。TCP/IP 用大端（网络字节序）。易混点：和\"按边界对齐\"是并列两组分类。",
+            "image": "408_endian_storage.png",
+            "images": []
           }
         ]
       }
