@@ -1,8 +1,4 @@
-// 考研追踪 - 数据备份（用于 file:// 双击打开的场景）
-// 主数据源是 data/data.json（fetch 加载）
-// 当 fetch 失败时（如双击 file://），用本文件作为 fallback
-// 自动生成：2026-07-03T09:31:07.397Z — 修改 data.json 后运行 build_fallback.js
-globalThis.APP_DATA = {
+{
   "syllabus": {
     "408": {
       "name": "408",
@@ -1687,4 +1683,4 @@ globalThis.APP_DATA = {
       "tip": "n 项求和极限 → 提 1/n → Σ(k/n)^m → ∫₀¹ x^m dx = 1/(m+1)"
     }
   ]
-};
+}
