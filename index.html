@@ -100,9 +100,18 @@
   .q-block .q-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
   .q-block .q-score { font-size: 11px; padding: 1px 6px; border-radius: 3px; font-weight: 500; }
   .q-block .q-score.pass { background: #eaf3de; color: #0f6e56; }
-  .q-block .q-score.warn { background: #faeeda; color: #854f0b; }
+  .q-block .q-score.warn { background: #e8f4fc; color: #185fa5; }
   .q-block .q-score.fail { background: #fcebeb; color: #a32d2d; }
   .q-block .q-title { font-weight: 500; font-size: 13px; }
+  /* 状态徽章（3 档可切换）：不懂红 / 知道蓝 / 掌握绿 */
+  .q-block .q-status { display: inline-flex; align-items: center; gap: 0; border: 0.5px solid #ccc; border-radius: 4px; overflow: hidden; font-size: 11px; font-weight: 500; }
+  .q-block .q-status button { padding: 3px 8px; border: none; background: #fff; cursor: pointer; color: #888; font-size: 11px; font-weight: 500; transition: all 0.15s; border-right: 0.5px solid #eee; }
+  .q-block .q-status button:last-child { border-right: none; }
+  .q-block .q-status button:hover { background: #f0f0eb; }
+  .q-block .q-status button.on.fail { background: #a32d2d; color: #fff; }
+  .q-block .q-status button.on.warn { background: #185fa5; color: #fff; }
+  .q-block .q-status button.on.pass { background: #0f6e56; color: #fff; }
+  .q-block .q-status button.on { cursor: default; }
   .q-block .q-body { font-size: 12px; color: #555; white-space: pre-wrap; }
   .q-block .q-you { color: #2c2c2a; margin-bottom: 4px; }
   .q-block .q-you::before { content: "你："; color: #888; font-size: 11px; }
@@ -237,6 +246,9 @@
 
 <div class="toast" id="toast"></div>
 
+<!-- 浮动按钮：导出最新 data.json（含 localStorage 状态覆盖） -->
+<button onclick="exportDataJson()" title="把 localStorage 里的最新状态写回 data.json" style="position:fixed;bottom:24px;left:24px;padding:8px 14px;font-size:12px;background:#185fa5;color:#fff;border:none;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;z-index:100;">📥 导出 data.json</button>
+
 <!-- ===== 核心：数据加载（支持 file:// 双击 + HTTP 部署） ===== -->
 <!-- 1) 先尝试加载 data/data.js（同步，file:// 下也能用） -->
 <script src="data/data.js"></script>
@@ -345,24 +357,30 @@ function buildWeaksFromLogs(force) {
     if (!log.questions) continue;
     for (const q of log.questions) {
       const qid = String(q.id || '');
-      const isKnowledge = qid.startsWith('K_') || qid.startsWith('K-') || qid.startsWith('INSIGHT_');
+      // 【兼容新旧】旧: id 以 K_/K-/INSIGHT_ 开头; 新: name 以「总结:」开头
+      const isKnowledge = qid.startsWith('K_') || qid.startsWith('K-') || qid.startsWith('INSIGHT_') || (q.name || '').startsWith('总结:');
+      // 新结构下没有 topic, 用 name 去掉「总结:」前缀作 topic
+      const displayTopic = (q.name || '').startsWith('总结:') ? q.name.slice(3) : (q.topic || '');
 
       if (isKnowledge) {
+        // 【v3】知识卡掌握时也跳过弱点库
+        if (q.status === '掌握' || q.status === 'pass') continue;
         const normSubject = normalizeSubject(q.subject);
         const normChapter = normalizeChapter(q.subject, q.chapter);
         knowledgeItems.push({
           id: 'auto_k_' + qid + '_' + log.date,
           subject: normSubject, chapter: normChapter,
-          type: q.topic || '知识点',
-          knowledgeType: q.knowledgeType || '总结',
-          detail: q.keyAnswer || q.question || '',
+          type: displayTopic || '知识点',
+          knowledgeType: '总结',
+          detail: q.note || q.keyAnswer || q.question || '',
           sev: '知', count: 1, date: log.date, ref: qid, qIds: [qid],
           resolved: false, _isKnowledge: true, _auto: true
         });
         continue;
       }
 
-      if (!q.isWrong && q.status === 'pass') continue;
+      // 【v3】普通题 status 3 档: 不懂/知道/掌握。掌握 = 跳过弱点
+      if (q.status === '掌握' || q.status === 'pass') continue;
 
       const chapter = normalizeChapter(q.subject, q.chapter);
       const type = q.topic || '未知类型';
@@ -380,7 +398,7 @@ function buildWeaksFromLogs(force) {
   for (const key in groups) {
     const g = groups[key];
     g.items.sort((a, b) => a.log.date.localeCompare(b.log.date));
-    const hasFail = g.items.some(i => i.q.status === 'fail');
+    const hasFail = g.items.some(i => i.q.status === '不懂' || i.q.status === 'fail');
     const latest = g.items[g.items.length - 1];
     const stableId = 'auto_' + Math.abs(hashCode(g.subject + '|||' + g.chapter + '|||' + g.type)).toString(36);
     result.push({
@@ -595,45 +613,70 @@ function locateWeak(weakId) {
 function locateToLog(weakId) {
   const w = getWeaks().find(x => x.id === weakId);
   if (!w || !w.qIds || w.qIds.length === 0) { showToast('该弱点未关联具体题目'); return; }
+  const qid = w.qIds[0];
   switchTab('log');
   setTimeout(() => {
-    const qid = w.qIds[0];
-    const target = findLogByQid(qid, w.subject);
-    if (!target) { showToast('未找到对应日志：' + qid); return; }
-    const idx = LOGS_RAW.indexOf(target.log);
-    const detail = document.getElementById('log-detail-' + idx);
-    if (detail) detail.style.display = 'block';
-    const isK = String(qid).startsWith('K_') || String(qid).startsWith('K-') || String(qid).startsWith('INSIGHT_');
-    const realId = (target.q._uid || (target.log.date + '_' + target.q.id));
-    const candidates = [
-      'qblock-' + realId,
-      'qblock-' + qid
-    ];
-    let el = null;
-    for (const cid of candidates) {
-      el = document.getElementById(cid);
-      if (el) break;
+    let el = findByQid(qid);
+    if (!el) {
+      // 目标题可能被 filter 掉了（如「已掌握」filter 不渲染知识卡），切到「全部」再试
+      currentLogFilter = 'all';
+      const pills = document.querySelectorAll('#page-log .filter-pill');
+      pills.forEach(p => p.classList.remove('active'));
+      if (pills[1]) pills[1].classList.add('active');
+      renderLog();
+      el = findByQid(qid);
     }
-    if (el) {
-      // 知识卡：滚到所在 log 卡片顶部 + 偏移，让用户能一眼看到 log 标题
-      if (isK) {
-        const logCard = el.closest('.card');
-        if (logCard) {
+    if (!el) { showToast('题目块未找到：' + qid); return; }
+    // 展开所在 log 卡片
+    const detail = el.closest('[id^="log-detail-"]');
+    if (detail) detail.style.display = 'block';
+    // 滚动定位
+    // 【兼容新旧】旧: id 以 K_/K-/INSIGHT_ 开头; 新: name 以「总结:」开头
+    const target = LOGS_RAW.flatMap(l => (l.questions||[]).map(q => q)).find(q => q.id === qid);
+    const isK = String(qid).startsWith('K_') || String(qid).startsWith('K-') || String(qid).startsWith('INSIGHT_') || (target && (target.name || '').startsWith('总结:'));
+    if (isK) {
+      const logCard = el.closest('.card');
+      if (logCard) {
+        logCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => window.scrollBy(0, -60), 50);
+        // 保底：600ms 后如果还没滚到位（smooth 动画被中断），强制滚到正确位置
+        setTimeout(() => {
           const rect = logCard.getBoundingClientRect();
-          window.scrollBy({ top: rect.top - 60, behavior: 'smooth' });
-        } else {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          window.scrollBy(0, -60);
-        }
+          if (Math.abs(rect.top + 60) > 10) {
+            const top = logCard.getBoundingClientRect().top + window.scrollY - 60;
+            window.scrollTo({ top, behavior: 'auto' });
+          }
+        }, 600);
       } else {
         el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => {
+          const rect = el.getBoundingClientRect();
+          if (Math.abs(rect.top - 400) > 50) {
+            const top = el.getBoundingClientRect().top + window.scrollY - 400;
+            window.scrollTo({ top, behavior: 'auto' });
+          }
+        }, 600);
       }
-      document.querySelectorAll('.q-block.highlight').forEach(n => n.classList.remove('highlight'));
-      el.classList.add('highlight');
-      setTimeout(() => el.classList.remove('highlight'), 4000);
-      showToast('已定位到 ' + qid);
-    } else { showToast('题目块未找到：' + qid); }
-  }, 220);
+    } else {
+      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        const rect = el.getBoundingClientRect();
+        if (Math.abs(rect.top - 400) > 50) {
+          const top = el.getBoundingClientRect().top + window.scrollY - 400;
+          window.scrollTo({ top, behavior: 'auto' });
+        }
+      }, 600);
+    }
+    document.querySelectorAll('.q-block.highlight').forEach(n => n.classList.remove('highlight'));
+    el.classList.add('highlight');
+    setTimeout(() => el.classList.remove('highlight'), 4000);
+    showToast('已定位到 ' + qid);
+  }, 250);
+}
+
+// 通过 data-qid 属性直接查找 DOM 元素（不依赖 _uid 时序，不依赖 filter 状态）
+function findByQid(qid) {
+  return Array.from(document.querySelectorAll('[data-qid]')).find(n => n.getAttribute('data-qid') === qid);
 }
 
 function locateToWeakFromLog(qid, subject) {
@@ -666,9 +709,10 @@ function filterLogByStatus(status, el) {
 
 function isQResolved(q) {
   const qid = String(q.id || '');
-  if (qid.startsWith('K_') || qid.startsWith('K-') || qid.startsWith('INSIGHT_')) return false;
-  const w = getWeaks().find(x => x.subject === q.subject && (x.qIds || []).includes(q.id));
-  return w ? w.resolved : false;
+  // 【兼容新旧】旧: id 以 K_/K-/INSIGHT_ 开头; 新: name 以「总结:」开头
+  if (qid.startsWith('K_') || qid.startsWith('K-') || qid.startsWith('INSIGHT_') || (q.name || '').startsWith('总结:')) return false;
+  // v3: status 3 档，掌握 = 已解决
+  return q.status === '掌握' || q.status === 'pass';
 }
 
 function renderLog() {
@@ -683,14 +727,16 @@ function renderLog() {
       : currentLogFilter === 'resolved' ? allQs.filter(q => isQResolved(q))
       : allQs.filter(q => {
           const qid = String(q.id || '');
-          if (qid.startsWith('K_') || qid.startsWith('K-') || qid.startsWith('INSIGHT_')) return true;
-          return !isQResolved(q);
+          // 【兼容新旧】旧: id 以 K_/K-/INSIGHT_ 开头; 新: name 以「总结:」开头
+          if (qid.startsWith('K_') || qid.startsWith('K-') || qid.startsWith('INSIGHT_') || (q.name || '').startsWith('总结:')) return true;
+          // v3: status 3 档，不懂/知道 = 未掌握（unresolved）
+          const s = q.status;
+          return s !== '掌握' && s !== 'pass';
         });
     if (filteredQs.length === 0) return;
 
     const totalQ = allQs.length;
     const unresolvedCount = allQs.filter(q => !isQResolved(q)).length;
-    const avgScore = totalQ > 0 ? (allQs.reduce((s, q) => s + (q.score || 0), 0) / totalQ).toFixed(1) : '-';
     const headerHint = currentLogFilter === 'unresolved'
       ? `<span style="color:#a32d2d;">● ${unresolvedCount} 题未掌握</span>`
       : currentLogFilter === 'resolved'
@@ -700,7 +746,7 @@ function renderLog() {
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
       <div>
         <div style="font-weight:500;font-size:14px;">${l.date} · ${l.title}</div>
-        <div class="log-row-summary" style="margin-top:2px;">${headerHint} · 平均分 ${avgScore}</div>
+        <div class="log-row-summary" style="margin-top:2px;">${headerHint}</div>
       </div>
       <button onclick="toggleLogDetail(${i})" style="font-size:11px;padding:4px 12px;border:0.5px solid #ccc;border-radius:4px;background:#fff;cursor:pointer;color:#555;">收起题目 ▲</button>
       </div>
@@ -717,34 +763,50 @@ function renderLog() {
 }
 
 function renderQBlock(q) {
-  const isKnowledge = String(q.id || '').startsWith('K_') || String(q.id || '').startsWith('K-');
-  const scoreClass = q.status || (q.score >= 8 ? 'pass' : q.score >= 5 ? 'warn' : 'fail');
-  const scoreLabel = q.status === 'pass' ? '✅ 合格' : q.status === 'warn' ? '⚠️ 缺漏' : q.status === 'fail' ? '❌ 不合格' : (q.score >= 8 ? '✅' : q.score >= 5 ? '⚠️' : '❌');
+  // 【兼容新旧结构】
+  // 旧结构: id 以 K_/K- 开头 → 知识卡
+  // 新结构: name 以「总结:」开头 → 知识卡 (id 是数字 Q42)
+  const isKnowledge = String(q.id || '').startsWith('K_') || String(q.id || '').startsWith('K-') || (q.name || '').startsWith('总结:');
+  // note 字段（新结构合并 keyAnswer+thinking）; 旧结构保留 thinking
+  const note = q.note || q.thinking || '';
+  // images 数组统一: 新结构有 images[], 旧结构有 image 单值
+  const imgs = (q.images && q.images.length) ? q.images : (q.image ? [q.image] : []);
+  const imgHtml = imgs.length ? `<div class="q-images">${imgs.map(src => `<img src="images/${src}" loading="lazy" onclick="window.open('images/${src}')" />`).join('')}</div>` : '';
+  // status 3 档: 不懂/知道/掌握（兼容旧 pass/warn/fail 字符串）
+  const statusAlias = { 'fail': '不懂', 'warn': '知道', 'pass': '掌握' };
+  const curStatus = statusAlias[q.status] || q.status || '知道';
+  const statusClassMap = { '不懂': 'fail', '知道': 'warn', '掌握': 'pass' };
+  const sCls = statusClassMap[curStatus];
+  // 显示标题：旧用 topic, 新用 name 去掉「总结:」前缀
+  const displayTitle = (q.name || '').startsWith('总结:') ? q.name.slice(3) : (q.topic || '');
+
+  // 状态徽章（3 档可切换）
+  const statusBadge = `<span class="q-status" onclick="event.stopPropagation()">
+    <button class="${curStatus==='不懂'?'on ':''}fail" onclick="setQStatus('${q.id}','不懂')" title="标记为不懂">🔴 不懂</button>
+    <button class="${curStatus==='知道'?'on ':''}warn" onclick="setQStatus('${q.id}','知道')" title="标记为知道">🔵 知道</button>
+    <button class="${curStatus==='掌握'?'on ':''}pass" onclick="setQStatus('${q.id}','掌握')" title="标记为掌握">🟢 掌握</button>
+  </span>`;
 
   if (isKnowledge) {
     const linkedWeak = getWeaks().find(w => w.subject === q.subject && (w.qIds || []).includes(q.id));
     const resolved = linkedWeak ? linkedWeak.resolved : false;
     const weakIdAttr = linkedWeak ? linkedWeak.id : '';
     const uid = q._uid || q.id;
-    const imgs = (q.images && q.images.length) ? q.images : (q.image ? [q.image] : []);
-    const imgHtml = imgs.length ? `<div class="q-images">${imgs.map(src => `<img src="images/${src}" loading="lazy" onclick="window.open('images/${src}')" />`).join('')}</div>` : '';
-    return `<div class="q-block" id="qblock-${uid}" style="border-left-color:#5494c9;">
+    return `<div class="q-block" id="qblock-${uid}" data-qid="${q.id}" style="border-left-color:#5494c9;">
       <div class="q-head">
         <span class="k-tag" style="font-size:10px;padding:1px 6px;border-radius:3px;background:#e8f4fc;color:#185fa5;font-weight:500;">💡 知识卡</span>
-        <span class="q-title">${q.topic || q.id || ''}</span>
+        ${statusBadge}
+        <span class="q-title">${displayTitle}</span>
         <span style="font-size:10px;color:#888;margin-left:auto;">${q.subject || ''}</span>
       </div>
       <div class="q-body">
         <div class="q-you"><b>问题/触发：</b>${q.question || ''}</div>
-        ${q.thinking ? `<div class="q-you"><b>思路/方法论：</b>${q.thinking}</div>` : ''}
+        ${note ? `<div class="q-you"><b>思路/方法论：</b>${note}</div>` : ''}
         ${q.missing ? `<div class="q-err"><b>缺漏/错因：</b>${q.missing}</div>` : ''}
         ${q.keyAnswer ? `<div class="q-key">${q.keyAnswer}</div>` : ''}
         ${imgHtml}
         <div class="q-actions" onclick="event.stopPropagation()">
-          ${linkedWeak ? `<button class="mastered-btn ${resolved ? 'on' : ''}" onclick="toggleMastered('${weakIdAttr}')">${resolved ? '↺ 已掌握 · 恢复' : '✓ 标记已掌握'}</button>
-          <button class="again-btn" onclick="addCount('${weakIdAttr}')">+1 再次命中</button>` : ''}
           <button class="locate-btn" onclick="locateToWeakFromLog('${q.id}', '${q.subject}')">📍 定位到弱点库</button>
-          ${linkedWeak && resolved ? '<span class="resolved-flag">已从弱点库移除</span>' : ''}
         </div>
       </div>
     </div>`;
@@ -754,28 +816,23 @@ function renderQBlock(q) {
   const resolved = linkedWeak ? linkedWeak.resolved : false;
   const weakIdAttr = linkedWeak ? linkedWeak.id : '';
   const uid = q._uid || (q.subject + '_' + q.id);
-  const imgs = (q.images && q.images.length) ? q.images : (q.image ? [q.image] : []);
-  const imgHtml = imgs.length ? `<div class="q-images">${imgs.map(src => `<img src="images/${src}" loading="lazy" onclick="window.open('images/${src}')" />`).join('')}</div>` : '';
-  return `<div class="q-block" id="qblock-${uid}">
+  return `<div class="q-block" id="qblock-${uid}" data-qid="${q.id}">
     <div class="q-head">
       <span class="q-chip ${String(q.id).toLowerCase().replace(/[()]/g,'')}">${q.id}</span>
-      <span class="q-score ${scoreClass}">${scoreLabel} ${q.score || 0}/${q.max || 10}</span>
-      <span class="q-title">${q.topic || ''}</span>
+      ${statusBadge}
+      <span class="q-title">${displayTitle}</span>
       <span style="font-size:10px;color:#888;margin-left:auto;">${q.subject || ''}</span>
     </div>
     <div class="q-body">
       <div class="q-you"><b>题目：</b>${q.question || ''}</div>
       <div class="q-you"><b>你的回答：</b>${q.userAnswer || '（未作答）'}</div>
-      ${q.thinking ? `<div class="q-you"><b>思路/方法论：</b>${q.thinking}</div>` : ''}
-      ${q.isWrong || q.missing ? `<div class="q-err"><b>缺漏/错因：</b>${q.missing || ''}</div>` : ''}
+      ${note ? `<div class="q-you"><b>思路/方法论：</b>${note}</div>` : ''}
+      ${q.missing ? `<div class="q-err"><b>缺漏/错因：</b>${q.missing}</div>` : ''}
       ${q.keyAnswer ? `<div class="q-key">${q.keyAnswer}</div>` : ''}
       ${imgHtml}
-      ${linkedWeak ? `<div class="q-actions" onclick="event.stopPropagation()">
-        <button class="mastered-btn ${resolved ? 'on' : ''}" onclick="toggleMastered('${weakIdAttr}')">${resolved ? '↺ 已掌握 · 恢复' : '✓ 标记已掌握'}</button>
-        <button class="again-btn" onclick="addCount('${weakIdAttr}')">+1 再次命中</button>
+      <div class="q-actions" onclick="event.stopPropagation()">
         <button class="locate-btn" onclick="locateToWeakFromLog('${q.id}', '${q.subject}')">📍 定位到弱点库</button>
-        ${resolved ? '<span class="resolved-flag">已从弱点库移除</span>' : ''}
-      </div>` : ''}
+      </div>
     </div>
   </div>`;
 }
@@ -786,21 +843,86 @@ function toggleLogDetail(i) {
   row.style.display = row.style.display === 'none' ? 'block' : 'none';
 }
 
-function toggleMastered(id) {
-  const weaks = getWeaks();
-  const w = weaks.find(x => x.id === id);
-  if (!w) return;
-  w.resolved = !w.resolved;
-  saveWeaks(weaks);
-  renderWeakTree();
-  renderLog();
-  showToast(w.resolved ? '✓ 已标记掌握' : '↺ 已恢复');
+// ========== 状态切换（3 档：不懂/知道/掌握）持久化策略 ==========
+// 1) 状态变化时直接修改内存中的 LOGS_RAW
+// 2) 同步写入 localStorage（刷新不丢）
+// 3) 提供「导出 data.json」按钮，下载最新数据让用户覆盖到项目目录（手动 commit）
+let _saveStatusPending = null;  // 防抖：合并短时间内的多次保存
+const STATUS_OVERRIDE_KEY = 'kaoyan_status_override_v1';
+
+function loadStatusOverride() {
+  try { return JSON.parse(localStorage.getItem(STATUS_OVERRIDE_KEY) || '{}'); } catch(e) { return {}; }
+}
+function saveStatusOverride(map) {
+  try { localStorage.setItem(STATUS_OVERRIDE_KEY, JSON.stringify(map || {})); } catch(e) {}
 }
 
-function addCount(id) {
-  const weaks = getWeaks();
-  const w = weaks.find(x => x.id === id);
-  if (w) { w.count += 1; saveWeaks(weaks); renderWeakTree(); renderLog(); showToast('+1 命中'); }
+function setQStatus(qid, newStatus) {
+  // 找到对应的题
+  let target = null;
+  for (const l of LOGS_RAW) {
+    for (const q of (l.questions || [])) {
+      if (q.id === qid) { target = q; break; }
+    }
+    if (target) break;
+  }
+  if (!target) { showToast('题未找到：' + qid); return; }
+  if (target.status === newStatus) { showToast('已是「' + newStatus + '」状态'); return; }
+  target.status = newStatus;
+
+  // 持久化到 localStorage（防抖 200ms）
+  if (_saveStatusPending) clearTimeout(_saveStatusPending);
+  _saveStatusPending = setTimeout(() => {
+    const overrides = loadStatusOverride();
+    overrides[qid] = newStatus;
+    saveStatusOverride(overrides);
+  }, 200);
+
+  // 失效弱点缓存
+  _cachedAutoWeaks = null;
+  // 重新渲染
+  renderWeakTree();
+  renderLog();
+  showToast('✓ ' + qid + ' → ' + newStatus);
+}
+
+// 初始化时把 localStorage 的状态覆盖到 LOGS_RAW
+function applyStatusOverride() {
+  const overrides = loadStatusOverride();
+  const keys = Object.keys(overrides);
+  if (keys.length === 0) return;
+  let cnt = 0;
+  for (const l of LOGS_RAW) {
+    for (const q of (l.questions || [])) {
+      if (overrides[q.id] && overrides[q.id] !== q.status) {
+        q.status = overrides[q.id];
+        cnt++;
+      }
+    }
+  }
+  if (cnt > 0) console.log(`[kaoyan] 从 localStorage 恢复 ${cnt} 个状态覆盖`);
+}
+
+// 导出当前 LOGS_RAW（包含最新状态）到 data.json 文件
+function exportDataJson() {
+  // 把 localStorage 的状态覆盖同步到 APP_DATA.logs.list
+  const overrides = loadStatusOverride();
+  for (const l of APP_DATA.logs.list) {
+    for (const q of (l.questions || [])) {
+      if (overrides[q.id]) q.status = overrides[q.id];
+    }
+  }
+  const json = JSON.stringify(APP_DATA, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'data.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast('📥 data.json 已下载，请覆盖到项目 data/ 目录');
 }
 
 // ========== 速记卡渲染 ==========
@@ -828,6 +950,7 @@ function renderMemo() {
 // ========== 初始化（等数据加载完再渲染） ==========
 function onDataLoaded() {
   try {
+    applyStatusOverride();
     updateCountdown();
     renderWeakTree();
     renderMemo();
