@@ -1,7 +1,9 @@
-// 考研追踪 - 数据备份（用于 file:// 双击打开的场景）
-// 主数据源是 data/data.json（fetch 加载）
-// 当 fetch 失败时（如双击 file://），用本文件作为 fallback
-// 自动生成：2026-07-09T02:35:25.254Z — 修改 data.json 后运行 build_fallback.js
+// 考研追踪数据 - 唯一数据源（GitHub Pages 兼容）
+// 更新时间: 2026-07-31 21:50
+// 总知识点: 127 条 | 日志数: 43 条 | 专题数: 4 个
+// 数据源：仅此文件，index.html 通过 <script src="data/data.js"> 加载
+// GitHub Pages 部署后手机/电脑均可访问
+
 globalThis.APP_DATA = {
   "syllabus": {
     "408": {
@@ -81,7 +83,7 @@ globalThis.APP_DATA = {
         "summary": "5 张速记卡 + 6 大弱项归类",
         "questions": [
           {
-            "id": "Q1",
+            "id": "001",
             "subject": "数学二",
             "chapter": "一、函数、极限、连续",
             "topic": "分段函数 + 间断点",
@@ -95,10 +97,12 @@ globalThis.APP_DATA = {
             "thinking": "判间断点的 4 类：(1) 第一类：左右极限存在且相等→可去；不等→跳跃。(2) 第二类：左右极限至少一个不存在→无穷/振荡。关键看 lim₋f(x₀) 和 lim₊f(x₀) 各自存在否。",
             "image": "",
             "images": [],
-            "name": "分段函数 + 间断点"
+            "name": "分段函数 + 间断点",
+            "score": "良",
+            "lastReview": "2026-07-30T21:47:31"
           },
           {
-            "id": "Q2",
+            "id": "002",
             "subject": "数学二",
             "chapter": "一、函数、极限、连续",
             "topic": "1^∞ 型 + 泰勒联用",
@@ -112,10 +116,12 @@ globalThis.APP_DATA = {
             "thinking": "1^∞ 三步：(1) 判型 f→1 且 g→∞。(2) 取对数 ln y = g·ln f。(3) 用等价 ln f ~ f-1 替换 → ln y ~ g·(f-1)。(4) 原极限 = e^lim g·(f-1)。切忌直接洛必达。",
             "image": "",
             "images": [],
-            "name": "1^∞ 型 + 泰勒联用"
+            "name": "1^∞ 型 + 泰勒联用",
+            "score": "良",
+            "lastReview": "2026-07-30T21:47:31"
           },
           {
-            "id": "Q3",
+            "id": "003",
             "subject": "数学二",
             "chapter": "一、函数、极限、连续",
             "topic": "夹逼放缩过宽",
@@ -129,10 +135,12 @@ globalThis.APP_DATA = {
             "thinking": "夹逼放缩要\"贴\"：左边 ≤ 目标 ≤ 右边，且左右极限同值 → 夹出。放太宽（上界放成 +∞）等于没放；放太紧（下界过强）则不等式不成立。常见陷阱：分母含 n²/³ 等会显著变小，不能简单替换。",
             "image": "",
             "images": [],
-            "name": "夹逼放缩过宽"
+            "name": "夹逼放缩过宽",
+            "score": "差",
+            "lastReview": "2026-07-30T21:47:31"
           },
           {
-            "id": "Q4",
+            "id": "004",
             "subject": "数学二",
             "chapter": "一、函数、极限、连续",
             "topic": "分式泰勒展开 + 待定系数",
@@ -146,12 +154,14 @@ globalThis.APP_DATA = {
             "thinking": "(1+ax)/(1+bx) = (1+ax)·(1-bx+b²x²-...)，几何级数 1/(1+u)=1-u+u²-...。用 a=分子系数，b=分母系数，展到 x 阶对应取前 n+1 项。",
             "image": "",
             "images": [],
-            "name": "分式泰勒展开 + 待定系数"
+            "name": "分式泰勒展开 + 待定系数",
+            "score": "中",
+            "lastReview": "2026-07-30T21:47:31"
           },
           {
-            "id": "Q5",
+            "id": "005",
             "subject": "数学二",
-            "chapter": "",
+            "chapter": "未分类",
             "topic": "x^x 型极限 + 差",
             "question": "lim x→0⁺ [x^x - (sin x)^x] / [x² ln(1+x)]",
             "userAnswer": "写不下去，不知道拆主导项",
@@ -163,12 +173,14 @@ globalThis.APP_DATA = {
             "thinking": "x^x = e^(x ln x)，把幂指函数先变 e 形式再泰勒展开：e^(x ln x) ≈ 1 + x ln x + (x ln x)²/2。x ln x 在 x→0+ 时是 x·负无穷 = 0，可视为 x 级。",
             "image": "",
             "images": [],
-            "name": "x^x 型极限 + 差"
+            "name": "x^x 型极限 + 差",
+            "score": "良",
+            "lastReview": "2026-07-30T21:47:31"
           },
           {
-            "id": "Q6",
+            "id": "006",
             "subject": "数学二",
-            "chapter": "",
+            "chapter": "未分类",
             "topic": "积分上限函数",
             "question": "lim x→+∞ ∫₁ˣ [t²(e^(1/t)-1) - t]dt / [x² ln(1+1/x)]",
             "userAnswer": "未动笔",
@@ -180,41 +192,9 @@ globalThis.APP_DATA = {
             "thinking": "变上限积分求导：d/dx ∫ₐ^u(x) f(t)dt = f(u(x))·u'(x)。本题 t²(e^(1/t)-1) - t 中 t²·(e^(1/t)-1) 用等价 e^u-1~u 得 t²·(1/t) = t，相减 → 0/0，再用洛必达。",
             "image": "",
             "images": [],
-            "name": "积分上限函数"
-          },
-          {
-            "id": "Q7",
-            "subject": "数学二",
-            "chapter": "",
-            "topic": "嵌套极限 1^∞ 变体",
-            "question": "lim x→+∞ (x^(1/x) - 1)^(1/ln x)",
-            "userAnswer": "尝试 e^x 代换，方向跑偏",
-            "status": "不懂",
-            "isWrong": true,
-            "knowledgeType": "错题",
-            "missing": "未识别 1^∞ 型",
-            "keyAnswer": "底 A = x^(1/x) - 1 → 1⁺，指数 B = 1/ln x → 0",
-            "thinking": "嵌套极限 1^∞ 变体：lim [1 + a(x)]^(1/b(x)) = e^lim a(x)/b(x)，其中 a→0, b→0。直接套用 lim f^g = e^lim g(f-1)。",
-            "image": "",
-            "images": [],
-            "name": "嵌套极限 1^∞ 变体"
-          },
-          {
-            "id": "Q8",
-            "subject": "数学二",
-            "chapter": "",
-            "topic": "1^∞ 型 (tan^n)",
-            "question": "lim n→∞ tan^n(π/4 + 2/n)",
-            "userAnswer": "未动笔",
-            "status": "不懂",
-            "isWrong": true,
-            "knowledgeType": "错题",
-            "missing": "1^∞ 标准处理",
-            "keyAnswer": "tan(π/4 + 2/n) → 1，n→∞，是 1^∞",
-            "thinking": "tan(π/4+2/n) → 1, n→∞，是 1^∞。口诀：底→1 且 指数→∞ 就是 1^∞。",
-            "image": "",
-            "images": [],
-            "name": "1^∞ 型 (tan^n)"
+            "name": "积分上限函数",
+            "score": "良",
+            "lastReview": "2026-07-30T21:47:31"
           }
         ]
       },
@@ -224,7 +204,7 @@ globalThis.APP_DATA = {
         "summary": "408 5 题 + 数学 3 题，2 高危 + 4 中危",
         "questions": [
           {
-            "id": "Q9",
+            "id": "007",
             "subject": "408",
             "chapter": "【OS】一、操作系统概述与运行环境",
             "topic": "OS 运行模式",
@@ -238,10 +218,12 @@ globalThis.APP_DATA = {
             "thinking": "OS 三种运行模式：内核态/用户态/中断态。用户态不能直接访问硬件，必须通过系统调用切到内核态。R1 (RISC) vs CISC 区别是另一种，不要混。",
             "image": "",
             "images": [],
-            "name": "OS 运行模式"
+            "name": "OS 运行模式",
+            "score": "良",
+            "lastReview": "2026-07-30T21:47:31"
           },
           {
-            "id": "Q10",
+            "id": "008",
             "subject": "408",
             "chapter": "【OS】二、进程管理",
             "topic": "进程 vs 线程",
@@ -255,16 +237,18 @@ globalThis.APP_DATA = {
             "thinking": "进程 = 资源分配单位（独立地址空间）；线程 = CPU 调度单位（共享进程资源）。线程切换不切换地址空间，所以比进程切换快。",
             "image": "",
             "images": [],
-            "name": "进程 vs 线程"
+            "name": "进程 vs 线程",
+            "score": "中",
+            "lastReview": "2026-07-30T21:47:31"
           },
           {
-            "id": "Q11",
+            "id": "009",
             "subject": "408",
             "chapter": "【OS】二、进程管理",
             "topic": "Peterson 算法",
             "question": "Peterson 算法解决的是几个进程的互斥问题？它用了哪两个共享变量？",
-            "userAnswer": "Peterson 算法是解决两个进程互斥问题，通过 turn 也就是轮到谁进。另一个变量应该是 flag。就是相当于两个人进门的时候互相客套一下。",
-            "status": "知道",
+            "userAnswer": "Peterson用turn+flag两共享变量实现两进程互斥，互相谦让，但认为会有饥饿、无法避免饥饿。",
+            "status": "需复习",
             "isWrong": false,
             "knowledgeType": "错题",
             "missing": "turn 变量的'谦让'语义没讲清楚。",
@@ -272,16 +256,19 @@ globalThis.APP_DATA = {
             "thinking": "Peterson：两个进程 P0/P1 通过 flag[2] 和 turn 变量实现互斥。P0 想进 → flag[0]=true → 看 flag[1]？turn 是否是自己？忙等。优点：纯软件、容易理解。缺点：单核可用，多核有内存可见性问题。",
             "image": "",
             "images": [],
-            "name": "Peterson 算法"
+            "name": "Peterson 算法",
+            "score": 1,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【错】Peterson算法解决两进程互斥，且保证无死锁、无饥饿（有限等待）。说有饥饿是错的。正确：flag[i]=T;turn=j;while(flag[j]&&turn==j); 退出flag[i]=F。仅限两进程，多进程用面包房算法/硬件指令。"
           },
           {
-            "id": "Q12",
+            "id": "010",
             "subject": "408",
             "chapter": "【OS】二、进程管理",
             "topic": "TSL 指令",
             "question": "TSL 指令的原子性是怎么保证的？它和 Peterson 算法相比，最大的优势是什么？",
-            "userAnswer": "原子性是通过这个进程进来之后先读取也就是 test 一下锁。如果不等于 0 就等待直到锁等于 0 再进去。优势应该是忙着等待吧。",
-            "status": "不懂",
+            "userAnswer": "TSL原子性靠底层硬件实现，但不知道比Peterson优势在哪。",
+            "status": "需复习",
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "TSL 也是忙等，'不忙等'不是优势。真正优势：硬件原子性，可在多 CPU 上正确工作。",
@@ -289,16 +276,19 @@ globalThis.APP_DATA = {
             "thinking": "TSL 指令 = Test & Set Lock，硬件原子操作。优点：可在多 CPU 上正确工作（硬件原子保证）；缺点：也是忙等。\"不忙等\"不是 TSL 的优势，是其他锁（如信号量）的优势。",
             "image": "",
             "images": [],
-            "name": "TSL 指令"
+            "name": "TSL 指令",
+            "score": 1,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【缺关键】TSL(test-and-set)读出并置1原子完成(总线锁)。优势：①硬件保证原子性不靠软件技巧 ②可推广多进程( Peterson仅2进程) ③实现简单。缺点仍可能忙等。"
           },
           {
-            "id": "Q13",
+            "id": "011",
             "subject": "408",
             "chapter": "【OS】二、进程管理",
             "topic": "进程切换",
             "question": "以下关于进程切换的说法，哪项错误？ A. 需要保存 PCB B. 一定发生在内核态 C. 线程切换开销比进程切换小 D. 中断处理结束后一定会触发进程切换",
-            "userAnswer": "A 应该也是对的 B 应该也是对的 C 我不太确定 D 应该不对",
-            "status": "不懂",
+            "userAnswer": "进程切换要保存PCB、在内核态发生；认为C对、D对、B错。",
+            "status": "需复习",
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "C 是对的（同一进程内线程共享页表），D 是错的（中断处理后可能切回原进程）。",
@@ -306,10 +296,13 @@ globalThis.APP_DATA = {
             "thinking": "进程切换触发：时间片到、阻塞 I/O、高优先级进程就绪、当前进程退出/终止。**不触发**：纯计算型系统调用（如 getpid）、中断处理结束（只是恢复现场）。",
             "image": "",
             "images": [],
-            "name": "进程切换"
+            "name": "进程切换",
+            "score": 1,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【判断反了】正确选D错误。A保存PCB(对) B一定在内核态(对,调度是内核功能) C线程切换开销小(对) D中断结束一定触发进程切换(错,可能返回原进程)。你把B和D搞反了。"
           },
           {
-            "id": "Q14",
+            "id": "012",
             "subject": "数学二",
             "chapter": "一、函数、极限、连续",
             "topic": "夹逼定理使用条件",
@@ -323,10 +316,12 @@ globalThis.APP_DATA = {
             "thinking": "夹逼定理三件套：左边 ≤ 目标 ≤ 右边，左右极限同值 → 夹出。常见应用：sin x ≤ x ≤ tan x 推 lim(sin x/x)=1。",
             "image": "",
             "images": [],
-            "name": "夹逼定理使用条件"
+            "name": "夹逼定理使用条件",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q15",
+            "id": "013",
             "subject": "数学二",
             "chapter": "一、函数、极限、连续",
             "topic": "定积分定义识别",
@@ -340,10 +335,12 @@ globalThis.APP_DATA = {
             "thinking": "定积分定义识别：形如 lim_{n→∞} Σ_{k=1}^n f(xk)·Δx，且 Δx→0，xk 走遍 [a,b]。看到 \"Σ\" + \"1/n\" + \"等分\" 三件套就是定积分。",
             "image": "",
             "images": [],
-            "name": "定积分定义识别"
+            "name": "定积分定义识别",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q16",
+            "id": "014",
             "subject": "数学二",
             "chapter": "一、函数、极限、连续",
             "topic": "n项求和 + 高次量级",
@@ -357,7 +354,9 @@ globalThis.APP_DATA = {
             "thinking": "n 项求和极限：先提 1/n^m，凑 Σ f(k/n)，再认作 ∫₀¹ f(x)dx。Σk=n(n+1)/2, Σk²=n(n+1)(2n+1)/6, Σk³=[n(n+1)/2]²。",
             "image": "",
             "images": [],
-            "name": "n项求和 + 高次量级"
+            "name": "n项求和 + 高次量级",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           }
         ]
       },
@@ -367,7 +366,7 @@ globalThis.APP_DATA = {
         "summary": "5 题对 2 题，3 题全栽在观点辨析、动作目的、句意推断",
         "questions": [
           {
-            "id": "Q17",
+            "id": "015",
             "subject": "英语二",
             "chapter": "一、阅读理解",
             "topic": "观点辨析",
@@ -381,10 +380,12 @@ globalThis.APP_DATA = {
             "thinking": "x^x = e^(x ln x)，把幂指函数先变 e 形式再泰勒展开：e^(x ln x) ≈ 1 + x ln x + (x ln x)²/2。x ln x 在 x→0+ 时是 x·负无穷 = 0，可视为 x 级。",
             "image": "",
             "images": [],
-            "name": "观点辨析"
+            "name": "观点辨析",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q18",
+            "id": "016",
             "subject": "英语二",
             "chapter": "一、阅读理解",
             "topic": "动作目的辨析",
@@ -398,10 +399,12 @@ globalThis.APP_DATA = {
             "thinking": "",
             "image": "",
             "images": [],
-            "name": "动作目的辨析"
+            "name": "动作目的辨析",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q19",
+            "id": "017",
             "subject": "英语二",
             "chapter": "一、阅读理解",
             "topic": "句意推断",
@@ -415,7 +418,9 @@ globalThis.APP_DATA = {
             "thinking": "变上限积分求导：d/dx ∫ₐ^u(x) f(t)dt = f(u(x))·u'(x)。本题 t²(e^(1/t)-1) - t 中 t²·(e^(1/t)-1) 用等价 e^u-1~u 得 t²·(1/t) = t，相减 → 0/0，再用洛必达。",
             "image": "",
             "images": [],
-            "name": "句意推断"
+            "name": "句意推断",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           }
         ]
       },
@@ -425,7 +430,7 @@ globalThis.APP_DATA = {
         "summary": "可导的充要条件、充分/必要条件、考试套路、易错点",
         "questions": [
           {
-            "id": "Q20",
+            "id": "018",
             "subject": "数学二",
             "chapter": "一、函数、极限、连续",
             "topic": "可导的充要条件",
@@ -439,10 +444,12 @@ globalThis.APP_DATA = {
             "thinking": "可导充要条件：lim_{h→0} [f(x₀+h)-f(x₀)]/h 存在。**等价叙述**：f'₋(x₀) = f'₊(x₀) 且都是有限值。左右导数都存在且相等 → 可导。",
             "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
             "images": [],
-            "name": "可导的充要条件"
+            "name": "可导的充要条件",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q21",
+            "id": "019",
             "subject": "数学二",
             "chapter": "一、函数、极限、连续",
             "topic": "可导的必要条件",
@@ -456,10 +463,12 @@ globalThis.APP_DATA = {
             "thinking": "可导 ⇒ 连续（必要条件）。但连续 ⇏ 可导（连续是可导的必要非充分条件）。f(x)=|x| 在 x=0 连续但不可导是经典反例。",
             "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
             "images": [],
-            "name": "可导的必要条件"
+            "name": "可导的必要条件",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q22",
+            "id": "020",
             "subject": "数学二",
             "chapter": "一、函数、极限、连续",
             "topic": "可导的充分条件",
@@ -473,10 +482,12 @@ globalThis.APP_DATA = {
             "thinking": "可导充分条件（可推出可导）：(1) f'₋(x₀) = f'₊(x₀) 都存在且相等；(2) 导函数极限定理：f 在邻域可导且 lim f'(x) 存在 → f 在 x₀ 可导。",
             "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
             "images": [],
-            "name": "可导的充分条件"
+            "name": "可导的充分条件",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q23",
+            "id": "021",
             "subject": "数学二",
             "chapter": "一、函数、极限、连续",
             "topic": "连续 vs 可导",
@@ -490,10 +501,12 @@ globalThis.APP_DATA = {
             "thinking": "连续 ⇏ 可导（必要非充分）。核心区别：可导要求极限值唯一且有限，连续只要求 lim f(x) = f(x₀)。",
             "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
             "images": [],
-            "name": "连续 vs 可导"
+            "name": "连续 vs 可导",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q24",
+            "id": "022",
             "subject": "数学二",
             "chapter": "一、函数、极限、连续",
             "topic": "分段函数求导",
@@ -507,10 +520,12 @@ globalThis.APP_DATA = {
             "thinking": "分段函数求导规则：分段点 f(x₀) = lim₋f = lim₊f（连续），然后 f'(x₀) = lim₋f' = lim₊f'（导数连续则可直接用，非连续则需用定义求）。",
             "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
             "images": [],
-            "name": "分段函数求导"
+            "name": "分段函数求导",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q25",
+            "id": "023",
             "subject": "数学二",
             "chapter": "一、函数、极限、连续",
             "topic": "导函数极限定理",
@@ -524,10 +539,12 @@ globalThis.APP_DATA = {
             "thinking": "导函数极限定理（达布定理逆）：若 f 在 (x₀-δ, x₀+δ) 可导，且 lim_{x→x₀} f'(x) = A 存在，则 f 在 x₀ 可导且 f'(x₀)=A。**反例**：f 不连续时此定理失效。",
             "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
             "images": [],
-            "name": "导函数极限定理"
+            "name": "导函数极限定理",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q26",
+            "id": "024",
             "subject": "数学二",
             "chapter": "一、函数、极限、连续",
             "topic": "含绝对值函数可导性",
@@ -541,10 +558,12 @@ globalThis.APP_DATA = {
             "thinking": "f(x)=|g(x)| 在 x₀ 可导性：(1) g(x₀)≠0 → 不影响 g 的符号 → |g| 可导且 f'(x₀)=g'(x₀)·sgn(g(x₀))。(2) g(x₀)=0 且 g'(x₀)=0 → 可导且 f'=0。(3) g(x₀)=0 且 g'(x₀)≠0 → 不可导。",
             "image": "gaoshu_jueduizhi_kedao_zongjie.png",
             "images": [],
-            "name": "含绝对值函数可导性"
+            "name": "含绝对值函数可导性",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q27",
+            "id": "025",
             "subject": "数学二",
             "chapter": "一、函数、极限、连续",
             "topic": "考试高频套路总结",
@@ -558,7 +577,9 @@ globalThis.APP_DATA = {
             "thinking": "考研高频套路：(1) 看到 |f| 立即想到零点讨论；(2) 看到分段函数立即分段点讨论；(3) 看到抽象函数 f'(x₀) = lim 凑定义；(4) 看到 f²、f³ 用 (a+b)²=a²+2ab+b² 拆开。",
             "image": "gaoshu_jueduizhi_kedao_zongjie.png",
             "images": [],
-            "name": "考试高频套路总结"
+            "name": "考试高频套路总结",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           }
         ]
       },
@@ -568,7 +589,7 @@ globalThis.APP_DATA = {
         "summary": "2 题做错：Q5 幂指极限 + 导数定义；Q7 含绝对值函数不可导点",
         "questions": [
           {
-            "id": "Q28",
+            "id": "026",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "幂指极限 + 导数定义",
@@ -582,10 +603,12 @@ globalThis.APP_DATA = {
             "thinking": "幂指函数极限 f(x)^g(x) → 必先取对数化为 e^g·ln f，再凑导数定义。f(0) 反推：lim xf(x) = 1 → f(0)=1。f'(0) = lim f(x)/x = ln 2。",
             "image": "gaoshu_yanxuan_ch2_q5.jpg",
             "images": [],
-            "name": "幂指极限 + 导数定义"
+            "name": "幂指极限 + 导数定义",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q29",
+            "id": "027",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "含绝对值函数不可导点",
@@ -599,7 +622,9 @@ globalThis.APP_DATA = {
             "thinking": "|x-x²|(e^x-1) 在 x=0 处的阶数判断：|x-x²| ~ |x|（x→0 时 x² 主导项为 0），e^x-1 ~ x。乘积 = |x|·x = x²（去绝对值后）。不可导点个数 = 阶数突变点。本题：f(x) = |x-x²|(e^x-1)/x² 在 x=0 不可导点个数为 2。",
             "image": "gaoshu_yanxuan_ch2_q7.jpg",
             "images": [],
-            "name": "含绝对值函数不可导点"
+            "name": "含绝对值函数不可导点",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           }
         ]
       },
@@ -609,7 +634,7 @@ globalThis.APP_DATA = {
         "summary": "核心结论：绝对值外的系数在零点也为零时，可能把尖角磨平使该点可导",
         "questions": [
           {
-            "id": "Q30",
+            "id": "028",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "含绝对值函数可导性：零点系数磨平尖角",
@@ -623,7 +648,9 @@ globalThis.APP_DATA = {
             "thinking": "含绝对值函数可导性本质：绝对值函数 |u| 在 u=0 处是\"尖角\"。若 u(x₀)=0 且 u'(x₀)≠0，则 |u| 在 x₀ 不可导（左导数 ≠ 右导数）；若 u(x₀)=0 且 u'(x₀)=0，则 |u| 在 x₀ 可导（\"磨平\"尖角）。",
             "image": "gaoshu_jueduizhi_kedao_zongjie.png",
             "images": [],
-            "name": "含绝对值函数可导性：零点系数磨平尖角"
+            "name": "含绝对值函数可导性：零点系数磨平尖角",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           }
         ]
       },
@@ -633,7 +660,7 @@ globalThis.APP_DATA = {
         "summary": "5 题做错（Q8/Q9/Q11/Q12/Q14），Q13 正确",
         "questions": [
           {
-            "id": "Q31",
+            "id": "029",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "极限函数化简 + 不可导点判断",
@@ -647,10 +674,12 @@ globalThis.APP_DATA = {
             "thinking": "极限函数化简 + 不可导点判断：① 简化 |f(x)| 函数 ② 找导数不存在的点：lim₋f' ≠ lim₊f' 的点。常见简化：max(0, x) = (x+|x|)/2。",
             "image": "gaoshu_yanxuan_ch2_q8.jpg",
             "images": [],
-            "name": "极限函数化简 + 不可导点判断"
+            "name": "极限函数化简 + 不可导点判断",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q32",
+            "id": "030",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "极限等式反推函数性质 + 导数定义",
@@ -664,10 +693,12 @@ globalThis.APP_DATA = {
             "thinking": "极限等式反推函数性质：① 看到 lim f(x)/x 形式 = f'(0) ② 看到 f(x)-f(0) 凑导数定义 ③ 看到 lim [f(x)-f(0)]/(x²) = 0 是 f'(0) 存在。",
             "image": "gaoshu_yanxuan_ch2_q9.jpg",
             "images": [],
-            "name": "极限等式反推函数性质 + 导数定义"
+            "name": "极限等式反推函数性质 + 导数定义",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q33",
+            "id": "031",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "含绝对值多项式的驻点与极值点判断",
@@ -681,10 +712,12 @@ globalThis.APP_DATA = {
             "thinking": "含绝对值多项式驻点：① 找 f'(x) 零点 ② 驻点 ≠ 极值点（必要非充分） ③ 用 f'(x₀-ε)·f'(x₀+ε) < 0 判极值。",
             "image": "gaoshu_yanxuan_ch2_q11.jpg",
             "images": [],
-            "name": "含绝对值多项式的驻点与极值点判断"
+            "name": "含绝对值多项式的驻点与极值点判断",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q34",
+            "id": "032",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "变限积分 + 极值点判断（莱布尼茨公式）",
@@ -698,10 +731,12 @@ globalThis.APP_DATA = {
             "thinking": "变限积分 + 极值点：莱布尼茨公式 d/dx ∫_{a(x)}^{b(x)} f(t)dt = f(b(x))·b'(x) - f(a(x))·a'(x)。极值点：f'(x₀)=0 且左右变号。",
             "image": "gaoshu_yanxuan_ch2_q12.jpg",
             "images": [],
-            "name": "变限积分 + 极值点判断（莱布尼茨公式）"
+            "name": "变限积分 + 极值点判断（莱布尼茨公式）",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q35",
+            "id": "033",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "二阶导数极限 + 极值拐点联合判断",
@@ -715,10 +750,12 @@ globalThis.APP_DATA = {
             "thinking": "二阶导极限 + 极值拐点联合判断：lim f'(x) = A → f'(x₀) = A (达布定理逆)；f''(x₀)>0 → 极小值；f'(x₀) 变号 → 拐点。",
             "image": "gaoshu_yanxuan_ch2_q13.jpg",
             "images": [],
-            "name": "二阶导数极限 + 极值拐点联合判断"
+            "name": "二阶导数极限 + 极值拐点联合判断",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q36",
+            "id": "034",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "|f(x)| 的极值点与拐点判断",
@@ -732,7 +769,9 @@ globalThis.APP_DATA = {
             "thinking": "|f(x)| 的极值点与拐点判断：f(x₀)=0 时 |f| 在 x₀ 不可导但可能是极值点；f(x) 的极值点不一定是 |f| 的，但 |f| 的极值点必是 f 的零点。",
             "image": "gaoshu_yanxuan_ch2_q14.jpg",
             "images": [],
-            "name": "|f(x)| 的极值点与拐点判断"
+            "name": "|f(x)| 的极值点与拐点判断",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           }
         ]
       },
@@ -742,7 +781,7 @@ globalThis.APP_DATA = {
         "summary": "构造反例函数不是天赋，是可学习的反向工程。核心：主项骨架 + 扰动项破坏。",
         "questions": [
           {
-            "id": "Q37",
+            "id": "035",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "选择题构造反例函数的通用思维框架",
@@ -756,7 +795,9 @@ globalThis.APP_DATA = {
             "thinking": "构造反例函数的通用框架：① 看清题目要否定/证明的命题 ② 找最小反例（最简单形式）③ 验证反例满足题设但不满足结论 ④ 总结：反例越简单越好，但必须破坏结论。",
             "image": "",
             "images": [],
-            "name": "总结:选择题构造反例函数的通用思维框架"
+            "name": "总结:选择题构造反例函数的通用思维框架",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           }
         ]
       },
@@ -766,7 +807,7 @@ globalThis.APP_DATA = {
         "summary": "分式极限为常数且分母→0 ⇒ 分子也必须→0，借此反推 f(0)、f撇(0)、f两撇(0)",
         "questions": [
           {
-            "id": "Q38",
+            "id": "036",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "极限等式反推抽象函数信息（Q9、Q13核心套路）",
@@ -780,7 +821,9 @@ globalThis.APP_DATA = {
             "thinking": "通用解题套路：lim f(x)/x = A → f(0)=0 且 f'(0)=A；lim [f(x)-f(0)]/x = A → f'(0)=A；lim [f(x)-f(x₀)]/(x-x₀) = A → f'(x₀)=A。看到 lim 形式立即凑导数定义。",
             "image": "",
             "images": [],
-            "name": "总结:极限等式反推抽象函数信息（Q9、Q13核心套路）"
+            "name": "总结:极限等式反推抽象函数信息（Q9、Q13核心套路）",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           }
         ]
       },
@@ -790,13 +833,13 @@ globalThis.APP_DATA = {
         "summary": "inode区/数据块区/空闲空间管理/MBR/超级块/根目录位置 — 布局梳理与纠错；拐点判定方法",
         "questions": [
           {
-            "id": "Q39",
+            "id": "037",
             "subject": "408",
             "chapter": "【OS】四、文件管理",
             "topic": "文件系统磁盘布局：MBR、超级块、inode区、数据区、空闲空间管理",
             "question": "文件系统的磁盘布局是什么样的？各区域的数据结构和作用分别是什么？",
-            "userAnswer": "1. 不同区域数据结构不同，inode区数据结构统一 ✓",
-            "status": "知道",
+            "userAnswer": "超级块存文件系统磁盘信息；inode是索引表；数据区存数据；空闲空间空闲的；位图法表示空闲；MBR不知道是什么。",
+            "status": "需复习",
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "否",
@@ -804,10 +847,13 @@ globalThis.APP_DATA = {
             "thinking": "ext2 磁盘布局：MBR→超级块(文件系统元信息)→inode 位图→数据块位图→inode 表(每个文件一个)→数据块(实际内容)。inode 包含：文件类型、权限、时间戳、数据块指针(12直+1间+2双+1三)。",
             "image": "",
             "images": [],
-            "name": "总结:文件系统磁盘布局：MBR、超级块、inode区、数据区、空闲空间管理"
+            "name": "总结:文件系统磁盘布局：MBR、超级块、inode区、数据区、空闲空间管理",
+            "score": 2,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【中】主要区域都对。补：MBR(主引导记录)在磁盘0扇区，存引导程序+分区表，属磁盘级不属于文件系统内部。文件系统内：引导块/超级块(元信息:块数,inode数,空闲栈)/inode区(索引节点表)/数据区/空闲管理(位图或成组链接)。"
           },
           {
-            "id": "Q40",
+            "id": "038",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "拐点判定",
@@ -821,7 +867,9 @@ globalThis.APP_DATA = {
             "thinking": "拐点定义：曲线凹凸分界点 (f''(x₀)=0 且左右 f'' 变号)。**易错**：f''(x₀)=0 不一定是拐点（需变号）；f''(x₀) 不存在也可能是拐点。",
             "image": "",
             "images": [],
-            "name": "总结:拐点判定"
+            "name": "总结:拐点判定",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           }
         ]
       },
@@ -831,13 +879,13 @@ globalThis.APP_DATA = {
         "summary": "文件描述符FD的本质、读写流程、多级目录下open的磁盘访存次数",
         "questions": [
           {
-            "id": "Q41",
+            "id": "039",
             "subject": "408",
             "chapter": "【OS】四、文件管理",
             "topic": "文件系统：open/read/write 系统调用 + 目录结构访存计算",
             "question": "操作系统如何通过 FD（文件描述符）进行文件读写？多级目录下打开一个文件需要几次磁盘访问？",
-            "userAnswer": "open得到FD → read/write操作这个FD变量相当于生成文件副本 → write修改副本后覆盖源文件。三级目录下open需要访存5次。",
-            "status": "知道",
+            "userAnswer": "fd是标识符；认为read需要传文件名；open文件后把地址传到fd；一级目录缓存2次二级3次。",
+            "status": "需复习",
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "否",
@@ -845,7 +893,10 @@ globalThis.APP_DATA = {
             "thinking": "文件 I/O 流程：open(path) → 解析路径(查目录) → 找 inode → 校验权限 → 创建 fd → 返回用户；read(fd, buf, n) → 查 fd 表 → open file 表 → inode → 读数据块。目录访存次数：路径分量数 + 1。",
             "image": "",
             "images": [],
-            "name": "总结:文件系统：open/read/write 系统调用 + 目录结构访存计算"
+            "name": "总结:文件系统：open/read/write 系统调用 + 目录结构访存计算",
+            "score": 1,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【核心混淆】read(fd,buf,count)传的是fd不是文件名！文件名只在open时用，open返回fd。fd是进程打开文件表索引→系统打开文件表→inode。目录访存:单级=读目录块1次+读inode1次=2次(对);二级(/a/b/file)=每级1次目录块+最后1次inode=3次(对)。"
           }
         ]
       },
@@ -855,7 +906,7 @@ globalThis.APP_DATA = {
         "summary": "Q15拐点判定；Q16斜渐近线条数（偶函数陷阱）；Q18导数定义+特殊函数；Q19导数定义带公式；Q20参数方程求切线；Q22复合函数求导；Q23反函数二阶导",
         "questions": [
           {
-            "id": "Q42",
+            "id": "040",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "拐点判定（二/三阶导判断）",
@@ -869,10 +920,12 @@ globalThis.APP_DATA = {
             "thinking": "定积分比较：先看积分区间，再看被积函数单调性。若 a<b 时 f(a)<f(b)，则 ∫_a^b f 存在主次关系。",
             "image": "gaoshu_yanxuan_ch2_q15.jpg",
             "images": [],
-            "name": "拐点判定（二/三阶导判断）"
+            "name": "拐点判定（二/三阶导判断）",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q43",
+            "id": "041",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "渐近线条数（偶函数斜渐近线）",
@@ -886,10 +939,12 @@ globalThis.APP_DATA = {
             "thinking": "变上限积分求导公式：d/dx ∫_0^x f(t)dt = f(x)。链式版本：d/dx ∫_0^{g(x)} f(t)dt = f(g(x))·g'(x)。",
             "image": "gaoshu_yanxuan_ch2_q16.jpg",
             "images": [],
-            "name": "渐近线条数（偶函数斜渐近线）"
+            "name": "渐近线条数（偶函数斜渐近线）",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q44",
+            "id": "042",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "渐近线条数（偶函数）",
@@ -903,10 +958,12 @@ globalThis.APP_DATA = {
             "thinking": "偶函数斜渐近线规律：若 f 是偶函数且 x→+∞ 有 y=ax+b，则 x→-∞ 必有 y=-ax+b。所以偶函数的斜渐近线一定是 2 条（或 0 条）。",
             "image": "",
             "images": [],
-            "name": "总结:渐近线条数（偶函数）"
+            "name": "总结:渐近线条数（偶函数）",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q45",
+            "id": "043",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "极限计算（导数定义 + 特殊函数构造）",
@@ -920,10 +977,12 @@ globalThis.APP_DATA = {
             "thinking": "判间断点的 4 类：(1) 第一类：左右极限存在且相等→可去；不等→跳跃。(2) 第二类：左右极限至少一个不存在→无穷/振荡。关键看 lim₋f(x₀) 和 lim₊f(x₀) 各自存在否。",
             "image": "gaoshu_yanxuan_ch2_q18.jpg",
             "images": [],
-            "name": "极限计算（导数定义 + 特殊函数构造）"
+            "name": "极限计算（导数定义 + 特殊函数构造）",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q46",
+            "id": "044",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "导数定义（积分型函数求导）",
@@ -937,10 +996,12 @@ globalThis.APP_DATA = {
             "thinking": "复合函数极限：先看内层，再看外层。lim_{x→x₀} f(g(x)) = f(lim g(x)) 要求 f 连续或 g(x₀) 在 f 的连续点。",
             "image": "gaoshu_yanxuan_ch2_q19.jpg",
             "images": [],
-            "name": "导数定义（积分型函数求导）"
+            "name": "导数定义（积分型函数求导）",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q47",
+            "id": "045",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "参数方程求切线",
@@ -954,10 +1015,12 @@ globalThis.APP_DATA = {
             "thinking": "极限存在条件：左右极限都存在且相等。分段点求极限必须分左右。",
             "image": "gaoshu_yanxuan_ch2_q20.jpg",
             "images": [],
-            "name": "参数方程求切线"
+            "name": "参数方程求切线",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q48",
+            "id": "046",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "复合函数求导（链式法则）",
@@ -971,10 +1034,12 @@ globalThis.APP_DATA = {
             "thinking": "洛必达适用：0/0 或 ∞/∞ 形式。多次洛必达要逐步验证形式，否则会失败。",
             "image": "gaoshu_yanxuan_ch2_q22.jpg",
             "images": [],
-            "name": "复合函数求导（链式法则）"
+            "name": "复合函数求导（链式法则）",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q49",
+            "id": "047",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "反函数二阶导",
@@ -988,10 +1053,12 @@ globalThis.APP_DATA = {
             "thinking": "1^∞ 三步：(1) 判型 f→1 且 g→∞。(2) 取对数 ln y = g·ln f。(3) 用等价 ln f ~ f-1 替换 → ln y ~ g·(f-1)。(4) 原极限 = e^lim g·(f-1)。切忌直接洛必达。",
             "image": "gaoshu_yanxuan_ch2_q23.jpg",
             "images": [],
-            "name": "反函数二阶导"
+            "name": "反函数二阶导",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q50",
+            "id": "048",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "反函数求导公式",
@@ -1005,7 +1072,9 @@ globalThis.APP_DATA = {
             "thinking": "反函数求导公式：设 y=f(x) 反函数为 x=φ(y)，则 φ'(y) = 1/f'(x)，φ''(y) = -f''(x)/[f'(x)]³。记忆：二阶导 = -f''/(f'³)，符号负、立方。",
             "image": "",
             "images": [],
-            "name": "总结:反函数求导公式"
+            "name": "总结:反函数求导公式",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           }
         ]
       },
@@ -1015,13 +1084,13 @@ globalThis.APP_DATA = {
         "summary": "文件读取过程（open路径解析+inode索引寻址）；分式处理方法论；fd本质；硬链接误区；偏移量换算；成组链接法；磁盘布局标准",
         "questions": [
           {
-            "id": "Q51",
+            "id": "049",
             "subject": "408",
             "chapter": "【OS】四、文件管理",
             "topic": "文件读取过程（open+inode索引）",
             "question": "操作系统读一个文件的完整过程是什么？",
-            "userAnswer": "open 通过路径逐层查找目录项，最终定位到目标文件的 inode；inode 通过直接、一级、二级、三级索引结构，按偏移量找到对应的数据块，完成读文件操作。",
-            "status": "知道",
+            "userAnswer": "读文件:open返回fd，fd通过inode找文件；删源文件无其他引用则硬链接访问不到，软链接是快捷方式能访问到。",
+            "status": "需复习",
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "否",
@@ -1029,10 +1098,13 @@ globalThis.APP_DATA = {
             "thinking": "文件读取：用户 read() → 内核读 fd 表 → 查 open file 表 → 找 inode → 读数据块(可能要从磁盘)→ 写入页缓存 → 复制到用户缓冲区 → 返回。**关键**：open() 会创建 fd 和 open file 表项。",
             "image": "",
             "images": [],
-            "name": "总结:文件读取过程（open+inode索引）"
+            "name": "总结:文件读取过程（open+inode索引）",
+            "score": 1,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【硬软链接说反!】读文件过程基本对(open→打开文件表f_offset→按offset查inode索引得逻辑块→+基址=物理块)。但硬软链接结论反了:硬链接(多目录项同inode)删源文件只要还有引用就能访问;软链接(存路径)删源文件变悬空链接访问不到。"
           },
           {
-            "id": "Q52",
+            "id": "050",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "分式化简与变形方法论",
@@ -1046,16 +1118,18 @@ globalThis.APP_DATA = {
             "thinking": "分式化简方法论：① 拆项（部分分式）② 凑导数（分母是分子导数倍）③ 等价（无穷小替换）④ 洛必达（兜底）。看到复杂分式先尝试凑导数。",
             "image": "",
             "images": [],
-            "name": "总结:分式化简与变形方法论"
+            "name": "总结:分式化简与变形方法论",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q53",
+            "id": "051",
             "subject": "408",
             "chapter": "【OS】四、文件管理",
             "topic": "fd与打开文件表",
             "question": "fd（文件描述符）的本质是什么？它和inode的关系？",
-            "userAnswer": "fd是指向inode的指针（错误理解）",
-            "status": "知道",
+            "userAnswer": "(未单独口述，同039/049合并，认为fd本质是指针通过inode找文件)",
+            "status": "需复习",
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "否",
@@ -1063,16 +1137,19 @@ globalThis.APP_DATA = {
             "thinking": "fd 本质：进程 fd 表的索引（0/1/2 = stdin/stdout/stderr）。fd → open file 表项（含文件偏移、状态标志）→ vnode/inode 指针。多个 fd 可指向同一 open file（dup）。",
             "image": "",
             "images": [],
-            "name": "总结:fd与打开文件表"
+            "name": "总结:fd与打开文件表",
+            "score": 2,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【中】方向对。精确:fd是进程打开文件描述符表的小整数下标，该表项指向系统级打开文件表项(含f_offset、指向inode)，inode才指向数据块。fd≠指针但是间接索引到inode。"
           },
           {
-            "id": "Q54",
+            "id": "052",
             "subject": "408",
             "chapter": "【OS】四、文件管理",
             "topic": "硬链接vs软链接（删除源文件后）",
             "question": "删除源文件后，硬链接和软链接分别还能访问吗？",
-            "userAnswer": "删除源文件后好像两个都没法访问（错误）",
-            "status": "知道",
+            "userAnswer": "RAID时偏移量转磁盘块基于基础指针/地址;虚拟地址分地址号和偏移量,在cache/内存对应找物理地址号拼接得磁盘块号。",
+            "status": "需复习",
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "否",
@@ -1080,16 +1157,19 @@ globalThis.APP_DATA = {
             "thinking": "硬链接 vs 软链接：硬链接 = 同一 inode 多个目录项（删除原文件不影响硬链接，因为 inode 还在；不能跨文件系统；不能链目录）。软链接 = 独立文件存目标路径（删原文件软链失效；可跨文件系统和链目录）。",
             "image": "",
             "images": [],
-            "name": "总结:硬链接vs软链接（删除源文件后）"
+            "name": "总结:硬链接vs软链接（删除源文件后）",
+            "score": 1,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【混淆虚拟地址翻译】正确:read偏移量f_offset转逻辑块号:块大小B,逻辑块号=f_offset/B,块内偏移=f_offset%B;再用inode索引(直接/一/二级间接)查该逻辑块号→物理盘块号。与虚拟地址→物理地址翻译是两套独立机制,不要混。"
           },
           {
-            "id": "Q55",
+            "id": "053",
             "subject": "408",
             "chapter": "【OS】四、文件管理",
             "topic": "read系统调用：偏移量→逻辑块号",
             "question": "read(fd, buf, count) 时，系统怎么把文件偏移量转换成具体的磁盘块？",
-            "userAnswer": "知道按直接/一级/二级顺序查，但偏移量换算不清楚",
-            "status": "知道",
+            "userAnswer": "成组链接法可往后延(链表),不好找,相比位图法。",
+            "status": "需复习",
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "否",
@@ -1097,16 +1177,19 @@ globalThis.APP_DATA = {
             "thinking": "read 偏移量换算：逻辑块号 = 偏移量 / 块大小。例：偏移 10240B，块大小 4096B → 块号 2。块内偏移 = 偏移量 % 块大小。",
             "image": "",
             "images": [],
-            "name": "总结:read系统调用：偏移量→逻辑块号"
+            "name": "总结:read系统调用：偏移量→逻辑块号",
+            "score": 2,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【中】基本对。补:UNIX空闲块管理,每组N块,每组首块存(下组块号+本组块数)形成链。优点:不需连续大位图,大磁盘友好;缺点:不能O(1)判断某块是否空闲,检索慢。位图O(1)查询但需连续存放位图。"
           },
           {
-            "id": "Q56",
+            "id": "054",
             "subject": "408",
             "chapter": "【OS】四、文件管理",
             "topic": "空闲块管理：成组链接法",
             "question": "成组链接法（UNIX）的思想是什么？和位图法比有什么优劣？",
-            "userAnswer": "只提到位图法，不知道成组链接法",
-            "status": "知道",
+            "userAnswer": "相邻数据单位之间2的10次方。",
+            "status": "掌握",
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "否",
@@ -1114,16 +1197,19 @@ globalThis.APP_DATA = {
             "thinking": "成组链接法（UNIX 专用，408 高频）：空闲块分组管理，每组最后一块存下一组块号。分配：取当前组首块，更新超级块指针。释放：链入当前组，满则新建组。优点：连续分配快。",
             "image": "",
             "images": [],
-            "name": "总结:空闲块管理：成组链接法"
+            "name": "总结:空闲块管理：成组链接法",
+            "score": 4,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【优】完全正确。K/M/G/T/P/E/Z 均为 2^10 递进(1K=2^10B等)。"
           },
           {
-            "id": "Q57",
+            "id": "055",
             "subject": "408",
             "chapter": "【OS】四、文件管理",
             "topic": "文件系统磁盘布局（标准版）",
             "question": "典型UNIX/ext2文件系统的磁盘布局是哪几个区？超级块存什么？",
-            "userAnswer": "引导区、超级块区、索引区、根目录区、数据区（根目录区不准确）",
-            "status": "知道",
+            "userAnswer": "(未单独口述,磁盘布局合并在037)",
+            "status": "需复习",
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "否",
@@ -1131,7 +1217,10 @@ globalThis.APP_DATA = {
             "thinking": "标准磁盘布局：MBR(主引导) → 超级块(元信息) → 空闲空间管理(位图/链表) → inode 表 → 数据块。inode 编号从 1 开始（0 不用），数据块号从 0 开始。",
             "image": "",
             "images": [],
-            "name": "总结:文件系统磁盘布局（标准版）"
+            "name": "总结:文件系统磁盘布局（标准版）",
+            "score": 2,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【中】沿用037批改。标准ext2布局:引导块+超级块+块组描述符+保留GDT+块位图+inode位图+inode表+数据块。超级块存:块/inode总数、空闲数、块大小、挂载时间等。"
           }
         ]
       },
@@ -1141,7 +1230,7 @@ globalThis.APP_DATA = {
         "summary": "通过抽象极限式判定 f(x) 在 x=0 可导的充要条件，Δx 必须双侧且严格凑成导数定义",
         "questions": [
           {
-            "id": "Q58",
+            "id": "056",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "抽象极限式判定可导性",
@@ -1155,10 +1244,12 @@ globalThis.APP_DATA = {
             "thinking": "抽象极限式判定可导性：lim [f(x)-f(0)]/x = A → f'(0)=A 存在；lim f(x)/x = A → f(0)=0 且 f'(0)=A；看到 lim g(x) 含 f 就用导数定义凑。",
             "image": "",
             "images": [],
-            "name": "总结:抽象极限式判定可导性"
+            "name": "总结:抽象极限式判定可导性",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q59",
+            "id": "057",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "抽象极限式判定可导性：武忠祥总结框架",
@@ -1172,10 +1263,12 @@ globalThis.APP_DATA = {
             "thinking": "武忠祥总结框架：① 看到 f(x)-f(0) 凑导数定义 ② 看到 f(x)/x 想到 f'(0) ③ 看到 [f(x)-f(x₀)]/(x-x₀) 想到 f'(x₀) ④ 综合应用。",
             "image": "",
             "images": [],
-            "name": "总结:抽象极限式判定可导性：武忠祥总结框架"
+            "name": "总结:抽象极限式判定可导性：武忠祥总结框架",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q60",
+            "id": "058",
             "subject": "数学二",
             "chapter": "二、一元函数微分学",
             "topic": "绝对值函数可导性：f(x) 与 |f(x)| 的互推关系",
@@ -1189,7 +1282,9 @@ globalThis.APP_DATA = {
             "thinking": "f(x) 与 |f(x)| 可导性互推：① f 可导 → |f| 未必可导（f(x₀)=0 时可能尖角）② |f| 可导 → f 可导（绝对值连续 → 原函数连续；绝对值可导 → 原函数可导）③ 关键看零点：f(x₀)≠0 → |f| 在 x₀ 可导。",
             "image": "",
             "images": [],
-            "name": "总结:绝对值函数可导性：f(x) 与 |f(x)| 的互推关系"
+            "name": "总结:绝对值函数可导性：f(x) 与 |f(x)| 的互推关系",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           }
         ]
       },
@@ -1199,7 +1294,7 @@ globalThis.APP_DATA = {
         "summary": "5 题对 3 题，38 题同义替换没识别，40 题最后一句没读全",
         "questions": [
           {
-            "id": "Q61",
+            "id": "059",
             "subject": "英语二",
             "chapter": "一、阅读理解",
             "topic": "观点态度题（同义替换）",
@@ -1213,10 +1308,12 @@ globalThis.APP_DATA = {
             "thinking": "",
             "image": "",
             "images": [],
-            "name": "观点态度题（同义替换）"
+            "name": "观点态度题（同义替换）",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q62",
+            "id": "060",
             "subject": "英语二",
             "chapter": "一、阅读理解",
             "topic": "主旨态度题（最后一句漏读）",
@@ -1230,7 +1327,9 @@ globalThis.APP_DATA = {
             "thinking": "含参变限积分 f(x) = (1/x)∫₀^x (x-t)φ(t)dt：先换元 u=x-t → f(x) = ∫₀^x u·φ(x-u)du/x，再求导。积分型 f(x) 求导 = 莱布尼茨公式。",
             "image": "",
             "images": [],
-            "name": "主旨态度题（最后一句漏读）"
+            "name": "主旨态度题（最后一句漏读）",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           }
         ]
       },
@@ -1240,13 +1339,13 @@ globalThis.APP_DATA = {
         "summary": "K/M/G/T/P/E/Z 单位换算与读写速度单位",
         "questions": [
           {
-            "id": "Q63",
+            "id": "061",
             "subject": "408",
             "chapter": "【CO】一、计算机系统概述",
             "topic": "数据单位换算（K/M/G/T/P/E/Z）",
             "question": "计组大纲要求掌握的数据单位 K、M、G、T、P、E、Z 的换算关系？",
-            "userAnswer": "需要复习",
-            "status": "知道",
+            "userAnswer": "(用户未单列,多级页表合并在062口述)",
+            "status": "需复习",
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "需要强化记忆 1024 倍关系（2¹⁰），以及磁盘/内存/网络常见容量单位的对应",
@@ -1254,16 +1353,19 @@ globalThis.APP_DATA = {
             "thinking": "2¹⁰=1024 倍数：1KB=1024B, 1MB=1024KB, 1GB=1024MB, 1TB=1024GB, 1PB=1024TB。易错：磁盘厂商用 1000 倍数（1KB=1000B），所以买 500GB 硬盘实际 ≈ 465GiB。考研按 1024 算。",
             "image": "jizu_danweihuhsuan.png",
             "images": [],
-            "name": "总结:数据单位换算（K/M/G/T/P/E/Z）"
+            "name": "总结:数据单位换算（K/M/G/T/P/E/Z）",
+            "score": 2,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【中】见062。"
           },
           {
-            "id": "Q64",
+            "id": "062",
             "subject": "408",
             "chapter": "【OS】三、内存管理",
             "topic": "多级页表：顶级页表 vs 内部页表的大小限制",
             "question": "多级页表中，为什么顶级页表可以超过一个页大小，而其他级别的页表不能？",
-            "userAnswer": "顶级页表支持超过一页大小，因为底层硬件支持；其他多级页表不支持单个页面超过一页大小",
-            "status": "知道",
+            "userAnswer": "顶级页表一级对应一个目录,即使超一页也不浪费;多级页表若占一页剩下也没法给别人用,原理不清。",
+            "status": "需复习",
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "理解方向正确，但需要补充「为什么」的底层原因：① 顶级页表有专用基址寄存器（如 x86 的 CR3），始终驻留内存，无需被换入换出，所以可以跨多页；② 内部各级页表必须恰好占一页，是因为它们本身也要受分页机制管理——只有占一页，才能被换入换出，由上一级页表项指向其所在页框。",
@@ -1271,16 +1373,19 @@ globalThis.APP_DATA = {
             "thinking": "多级页表大小限制：① 顶级页表可跨多页（基址寄存器常驻，不被换出）② 内部各级页表必须恰好一页（因为受分页机制管理，由上一级页表项指向其页框）③ 单级页表必须整页连续。",
             "image": "",
             "images": [],
-            "name": "总结:多级页表：顶级页表 vs 内部页表的大小限制"
+            "name": "总结:多级页表：顶级页表 vs 内部页表的大小限制",
+            "score": 2,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【模糊】核心:各级页表都要能放进整数个页框离散存放。顶级页表(页目录)项数受虚地址位数约束(如32位=1024项×4B=4KB=1页),常驻内存;二级页表按需建立,只建用到的省内存。用户说的\"顶级可超一页\"不准确,实际各级都≤整数页。"
           },
           {
-            "id": "Q65",
+            "id": "063",
             "subject": "408",
             "chapter": "【OS】三、内存管理",
             "topic": "OS时间计算：操作并行 vs 串行的细节",
             "question": "计算两个操作的总时间时，如何判断它们是并行还是串行？",
-            "userAnswer": "有时两个操作是并行的（同时进行），有时是一个操作完成后另一个才开始，计算总时间时要注意区分",
-            "status": "知道",
+            "userAnswer": "(未作答)",
+            "status": "需复习",
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "总结方向正确，补充常见场景判断规则",
@@ -1288,7 +1393,10 @@ globalThis.APP_DATA = {
             "thinking": "OS 时间计算：① 串行：时间相加 ② 并行：时间取 max（多个操作同时进行）③ 流水线：分阶段重叠 ④ 排队：先到先服务。例：磁盘读 5ms + 处理 2ms（串行）= 7ms；（读+处理并行）= max(5,2)=5ms。",
             "image": "",
             "images": [],
-            "name": "总结:OS时间计算：操作并行 vs 串行的细节"
+            "name": "总结:OS时间计算：操作并行 vs 串行的细节",
+            "score": 0,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【未测】OS时间计算:判断并行/串行看是否有资源依赖。可重叠(如CPU计算与I/O)算并行取max;有先后依赖(如先读后算)算串行相加。"
           }
         ]
       },
@@ -1298,7 +1406,7 @@ globalThis.APP_DATA = {
         "summary": "Q40含参积分不会化简;Q41积分型极限用∫ₐˣf(t)dt/(x-a)→f(a)思路",
         "questions": [
           {
-            "id": "Q66",
+            "id": "064",
             "subject": "数学二",
             "chapter": "三、一元函数积分学",
             "topic": "含参积分化简（不会做）",
@@ -1308,14 +1416,16 @@ globalThis.APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "是",
-            "keyAnswer": "",
+            "keyAnswer": "**含参积分化简（变限积分+参数处理）**\n\n核心技巧：\n1. Leibniz积分法则 d/dx ∫f(x,t)dt\n2. 常见题型：∫(x-t)f(t)dt 拆开再求导\n3. t替换法：令u=x-t\n\n⚠️ 需对照严选题第3章第40题核对。",
             "thinking": "含参积分（积分号里出现外变量 x）→ 换元把 x 移到积分限里，常用 u = x - t",
             "image": "gaoshu_yanxuan_ch3_q40_q41_xiaojifenjiqiudao.jpg",
             "images": [],
-            "name": "含参积分化简（不会做）"
+            "name": "含参积分化简（不会做）",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q67",
+            "id": "065",
             "subject": "数学二",
             "chapter": "三、一元函数积分学",
             "topic": "积分型极限（思路正确）",
@@ -1325,14 +1435,16 @@ globalThis.APP_DATA = {
             "isWrong": false,
             "knowledgeType": "错题",
             "missing": "否",
-            "keyAnswer": "",
+            "keyAnswer": "**积分型极限/可导性**\n\n1. lim F(x)/(x-a) = f(a)（洛必达/中值定理）\n2. F(x)=∫f(t)dt 则 F=f(x)（变上限求导）\n3. 被积函数端点连续性影响结论\n\n⚠️ 需对照第41题核对。",
             "thinking": "变上限积分除以 (x-a) 的极限等于函数在该点的值，这是连接积分和函数值的桥梁",
             "image": "gaoshu_yanxuan_ch3_q40_q41_xiaojifenjiqiudao.jpg",
             "images": [],
-            "name": "积分型极限（思路正确）"
+            "name": "积分型极限（思路正确）",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           },
           {
-            "id": "Q68",
+            "id": "066",
             "subject": "数学二",
             "chapter": "三、一元函数积分学",
             "topic": "积分号里出现外变量x",
@@ -1343,10 +1455,13 @@ globalThis.APP_DATA = {
               "gaoshu_yanxuan_ch3_q40_q41_xiaojifenjiqiudao.jpg"
             ],
             "name": "总结:含参积分换元思路",
-            "note": "必换元，把 x 从被积函数里移到积分限"
+            "note": "必换元，把 x 从被积函数里移到积分限",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50",
+            "keyAnswer": "**积分号内外变量同名**\n当∫f(x,t)dt中t和x同时出现：换元u=x-t或将x视为常数。\n标准形式F(x)=∫f(t)dt内部不应有x（除非参数）。\n\n⚠️ 需结合具体题目确认。"
           },
           {
-            "id": "Q69",
+            "id": "067",
             "subject": "数学二",
             "chapter": "三、一元函数积分学",
             "topic": "∫ₐˣf(t)dt/(x-a)→f(a)",
@@ -1357,7 +1472,10 @@ globalThis.APP_DATA = {
               "gaoshu_yanxuan_ch3_q40_q41_xiaojifenjiqiudao.jpg"
             ],
             "name": "总结:积分型极限思路",
-            "note": "∫ₐˣf(t)dt/(x-a) → f(a) 的套路：① 0/0 型 ② 洛必达：分子导数 = f(x)，分母导数 = 1 → lim f(x) = f(a) 要求 f 连续。③ 或用导数定义凑。"
+            "note": "∫ₐˣf(t)dt/(x-a) → f(a) 的套路：① 0/0 型 ② 洛必达：分子导数 = f(x)，分母导数 = 1 → lim f(x) = f(a) 要求 f 连续。③ 或用导数定义凑。",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50",
+            "keyAnswer": "**变上限积分极限公式**\nlim_{x→a} [∫_a^x f(t)dt]/(x-a) = f(a)\n推导：积分中值定理或洛必达。推广：[∫f(t)dt]^k/(x-a)^k → f(a)^k"
           }
         ]
       },
@@ -1367,21 +1485,24 @@ globalThis.APP_DATA = {
         "summary": "Intel指令格式重点记;其他指令格式(ARM/MIPS)学会看注释",
         "questions": [
           {
-            "id": "Q70",
+            "id": "068",
             "subject": "408",
             "chapter": "【CO】四、指令系统",
             "topic": "指令系统学习方法",
             "question": "指令系统这一章的复习重点是什么？",
-            "userAnswer": "",
-            "status": "知道",
+            "userAnswer": "指令系统复习重点:指令结构;一条指令运行5阶段(对应时钟周期和操作);结合硬件图;一组指令对应C语言程序看。要求整理成专题(翻历年真题小题大题)。",
+            "status": "掌握",
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "否",
-            "keyAnswer": "",
+            "keyAnswer": "**指令系统复习重点**\n1. 指令格式：操作码+地址码\n2. 7种寻址方式及EA公式\n3. CISC vs RISC对比\n4. 流水线5阶段+冒险解决\n5. PC存下一条指令地址\n\n配合「指令系统专题」复习。",
             "thinking": "指令系统复习：① 寻址方式 9 种必背 ② x86 重点（考试常考）③ ARM/MIPS 看注释 ④ 指令格式：操作码+地址码 ⑤ 指令执行流程：取指→译码→执行→访存→写回。",
             "image": "",
             "images": [],
-            "name": "总结:指令系统学习方法"
+            "name": "总结:指令系统学习方法",
+            "score": 3,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【良】方向对。已记录待整理指令系统专题。5阶段:取指IF/间址ID/执行EX/中断INT(或 取指-译码-执行-访存-写回)。"
           }
         ]
       },
@@ -1391,21 +1512,24 @@ globalThis.APP_DATA = {
         "summary": "CPU算出来的有效地址=虚拟地址(不是物理地址);PC存虚拟地址;跳转指令=虚拟地址+偏移",
         "questions": [
           {
-            "id": "Q71",
+            "id": "069",
             "subject": "408",
             "chapter": "【CO】四、指令系统",
             "topic": "指令系统中的地址概念",
             "question": "CPU 算出的有效地址是什么？PC 寄存器存的是什么？jump 指令的跳转目标是什么地址？",
-            "userAnswer": "",
-            "status": "知道",
+            "userAnswer": "有效地址能直接找到数据地址;PC存地址的地址;PC是程序计数器指当前指令;jump目标不知。",
+            "status": "需复习",
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "否",
-            "keyAnswer": "",
+            "keyAnswer": "**CPU地址三概念**\n| 概念 | 定义 |\n|------|------|\n| EA | 寻址方式算出的操作数主存实际地址 |\n| PC | 下一条要执行指令的地址 |\n| jump目标 | 跳转到的目标指令地址 |\nEA是数据地址，PC是指令地址。call返回地址=当前PC压栈。",
             "thinking": "PC 存的是虚拟地址（CPU 视角所有地址都是虚拟的）。跳转指令 jump X = 跳到 X（虚拟地址）；相对跳转 beq rs, rt, offset = 当前PC+4+offset×4。绝对地址由 MMU 转物理地址。",
             "image": "408_pc_jump_address.png",
             "images": [],
-            "name": "总结:指令系统中的地址概念"
+            "name": "总结:指令系统中的地址概念",
+            "score": 1,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【不清】有效地址EA=寻址方式算出的操作数在主存实际地址;PC存下一条要执行指令的地址(非地址的地址);jump目标=跳转到的指令地址(常=PC+偏移,相对寻址)。"
           }
         ]
       },
@@ -1415,46 +1539,42 @@ globalThis.APP_DATA = {
         "summary": "PC存虚拟地址;jump指令跳转目标=虚拟地址±偏移量",
         "questions": [
           {
-            "id": "Q72",
-            "subject": "408",
-            "chapter": "【CO】四、指令系统",
-            "topic": "PC和jmp指令的地址本质",
-            "question": "PC 寄存器存的是什么地址？jump 指令的跳转目标是什么地址？",
-            "userAnswer": "",
-            "status": "知道",
-            "images": [
-              "408_pc_jump_address.png"
-            ],
-            "name": "总结:PC与跳转指令中的虚拟地址",
-            "note": "PC 寄存器里存的是虚拟地址（VA），不是物理地址。jump 指令的目标地址也是虚拟地址。CPU 只认虚拟地址，物理地址由 MMU（内存管理单元）查页表后转。"
-          },
-          {
-            "id": "Q73",
+            "id": "071",
             "subject": "408",
             "chapter": "【CO】四、指令系统",
             "topic": "RISC vs CISC 两条判断依据",
-            "status": "知道",
+            "status": "需复习",
             "question": "从两条维度对比 RISC 和 CISC：\n① 指令字是否定长？\n② 除了 Load/Store 之外是否还有其他指令可以访存？",
             "date": "2026-07-03",
             "name": "总结:RISC与CISC对比",
             "note": "两条核心判断依据是 RISC 的\"灵魂\"——定长便于单周期/流水线解码，仅 Load/Store 访存把访存操作从 ALU 指令里剥离出来，让数据通路更规整。\n\n**MIPS / RISC-V 是 RISC**（定长 + 仅 Load/Store 访存）；**x86 是 CISC**（不定长 + 大量访存指令）。\n\n判断题口诀：① 指令字是否定长？② 除了 Load/Store 之外是否还有其他指令可以访存？两个都\"是\"就是 RISC。",
             "images": [
               "408_risc_cisc_compare.png"
-            ]
+            ],
+            "score": 2,
+            "lastReview": "2026-07-31 21:08:26",
+            "userAnswer": "CISC复杂不定长;RISC简单定长执行快;第二小问不记得。",
+            "reviewNote": "【中】第一问对。第二问:RISC只有Load/Store可访存,其余指令操作寄存器;CISC多数指令可直接访存。",
+            "keyAnswer": "**RISC vs CISC**\nRISC：定长+仅Load/Store访存\nCISC：不定长+多数指令可直接访存\n口诀：RISC=定长+只有LS访存"
           },
           {
-            "id": "Q74",
+            "id": "072",
             "subject": "408",
             "chapter": "【CO】四、指令系统",
             "topic": "函数调用时 VA 栈帧布局与参数访问",
-            "status": "知道",
+            "status": "需复习",
             "question": "调用 `int func(a, b, c)` 时，函数栈帧在虚拟地址空间（VA）里如何布局？PC 值 = ebp+4 为什么是返回地址？参数 a/b/c 在哪？",
             "date": "2026-07-03",
             "name": "总结:函数调用虚拟地址与栈帧",
             "note": "**图的理解**：右边是 VA 视角的栈，越往上地址越高。从 main 调 func 时栈帧从 main 顶端向下\"长出\"一块 func 自己的区域。\n\n**几个关键点**：\n1. **PC = ebp+4** 是返回地址。call 指令的本质就是\"把 PC 压栈然后跳\"，压栈时 ESP -= 4，所以压入的 PC 值就在 ebp+4 这个位置。\n2. **参数 a/b/c** 在 ebp+8/12/16，从右往左压栈（c 最先压）。\n3. **EBP 不\"存\"局部变量**，是\"指向\"局部变量区域。局部变量通过 [EBP - offset] 访问，参数通过 [EBP + offset] 访问。\n4. **栈帧增长方向**是从高地址向低地址（与\"越高越低\"对应）。",
             "images": [
               "408_funcall_va_stackframe.png"
-            ]
+            ],
+            "score": 0,
+            "lastReview": "2026-07-31 21:08:26",
+            "userAnswer": "(自己看,未作答)",
+            "reviewNote": "【未测】函数栈帧:调用func(a,b,c)时,参数从右到左压栈,返回地址在ebp+4,旧ebp在ebp,局部变量在ebp-偏移。PC=ebp+4是返回地址因call指令把返回地址压栈后ebp+4即该处。",
+            "keyAnswer": "**函数调用栈帧（x86）**\n栈帧（高→低）：参数c/b/a → 返回RA(call压栈) → 旧ebp(push ebp) → 局部变量(ebp-N)\nPC在ebp+4：call先push返回地址；进入后push ebp；故[ebp]=旧ebp,[ebp+4]=PC,[ebp+8]=参数a"
           }
         ]
       },
@@ -1464,18 +1584,22 @@ globalThis.APP_DATA = {
         "summary": "大端：高位字节放低地址（符合人类视角）；小端：低位字节放低地址（高低倒过来）。最小块是字节(8bit)，按字节编址。",
         "questions": [
           {
-            "id": "Q75",
+            "id": "073",
             "subject": "408",
             "chapter": "【CO】四、指令系统",
             "topic": "指令系统 · 边界对齐与存放方式",
             "question": "复习数据存放方式，对比大端存储 vs 小端存储",
-            "userAnswer": "",
-            "status": "知道",
+            "userAnswer": "小端符合人类视角,数据在右边是小端,数据在左边是大端,其他不知。",
+            "status": "需复习",
             "images": [
               "408_endian_storage.png"
             ],
             "name": "总结:大端小端存储",
-            "note": "大端\"高对低\"：高位字节放低地址，符合人类视角。小端\"低对低\"：低位字节放低地址，x86 用小端（加减法高效）。TCP/IP 用大端（网络字节序）。易混点：和\"按边界对齐\"是并列两组分类。"
+            "note": "大端\"高对低\"：高位字节放低地址，符合人类视角。小端\"低对低\"：低位字节放低地址，x86 用小端（加减法高效）。TCP/IP 用大端（网络字节序）。易混点：和\"按边界对齐\"是并列两组分类。",
+            "score": 2,
+            "lastReview": "2026-07-31 21:08:26",
+            "reviewNote": "【中】能区分但表述需精确。大端:高位字节存低地址(与人类书写一致);小端:低位字节存低地址(x86)。用户\"小端数据在右\"按数值书写视角算对。",
+            "keyAnswer": "**大端 vs 小端**\n大端：高位字节存低地址（与人类书写一致）\n小端：低位字节存低地址（x86默认）\n边界对齐：起始地址=自身大小整数倍。\n⚠️ 以王道/天勤为准。"
           }
         ]
       },
@@ -1485,9 +1609,9 @@ globalThis.APP_DATA = {
         "summary": "① 根号下 a²-x² 三角换元 x=asinθ；② 凑微分：把外变量凑进 d(内)；③ 复杂分式 = 部分分式（待定系数法）；④ 不同阶分式加减凑项；⑤ 1+sinx+cosx 半角换元 t=tan(x/2) → 万能公式",
         "questions": [
           {
-            "id": "Q76",
+            "id": "074",
             "subject": "数学二",
-            "chapter": "高数 · 一元函数积分学",
+            "chapter": "三、一元函数积分学",
             "topic": "不定积分常见处理技巧（5种）",
             "question": "遇到复杂不定积分题时怎么判断用哪种方法？",
             "userAnswer": "",
@@ -1495,11 +1619,13 @@ globalThis.APP_DATA = {
             "isWrong": false,
             "knowledgeType": "总结",
             "missing": "之前遇到 √(a²-x²) 只会硬算，复杂分式不知道先用部分分式分解。",
-            "keyAnswer": "",
+            "keyAnswer": "**不定积分5种方法**\n1.基本公式表 2.凑微分 3.分部积分(反对幂指三) 4.第二类换元 5.有理函数分解\n判断：复合→凑微分 / 乘积→分部 / 根号→换元 / 有理→分解\n⚠️ 以张宇/汤家凤为准。",
             "thinking": "五种常见处理：\n① 根号下 a²-x² 型 → 三角换元 x=asinθ（dx=a cosθ dθ），把根号化掉。注意 \"凑形式\"：dx/√(4-x²) = d(x/2)/√(1-(x/2)²)，先凑 a²。\n② 凑微分：看到 ∫f(1+x²)·2x dx 这种，先把外面凑成 d(1+x²)，变成 ∫f(u) du。原则：分母简化出 d(积分式)，分子有 f(积分式) 的导数倍。\n③ 复杂分式（如 (x+1)(x²-2x+2)）→ 部分分式分解：A/(x+1) + (Bx+C)/(x²-2x+2)，用待定系数法。\n④ 不同阶分式 (1+x²)/(1+x⁴)：加 0 凑项，把分子变 1-x²+x⁴，再拆成 (1-x²+x⁴)/((1+x²)(1-x²+x⁴)) + (1/3)·d(x³)/(1+x²)²。\n⑤ 1+sinx+cosx 分母：令 t=tan(x/2)，万能公式 sinx=2t/(1+t²), cosx=(1-t²)/(1+t²), dx=2/(1+t²) dt，常用于分母有三角和的积分。",
             "image": "gaoshu_budingjifen_5zhongchangjian.jpg",
             "images": [],
-            "name": "总结:不定积分常见处理技巧（5种）"
+            "name": "总结:不定积分常见处理技巧（5种）",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
           }
         ]
       },
@@ -1509,16 +1635,19 @@ globalThis.APP_DATA = {
         "summary": "408常考寄存器归纳：EAX/EBX/ECX/EDX/ESI/EDI/EBP/ESP + EIP/EFLAGS + 段寄存器 + 栈帧布局",
         "questions": [
           {
-            "id": "Q77",
+            "id": "075",
             "name": "总结:408常考寄存器及栈帧布局",
             "subject": "408",
-            "chapter": "【CO】五、CPU结构",
+            "chapter": "【CO】五、中央处理器",
             "question": "408常考哪些寄存器？EBP/ESP/EIP/通用寄存器各自的功能？",
             "userAnswer": "",
             "status": "知道",
             "missing": "之前误以为EBP存的是局部变量本身（其实是指向局部变量区的指针），误以为ECX传参（cdecl下参数走栈，ECX是循环计数器）。",
             "note": "【通用寄存器】\n• EAX：累加器，函数返回值/乘除法被除数/I/O指令\n• EBX：基址寄存器，408考得少\n• ECX：计数器，LOOP每轮ECX-1为0跳出，REP前缀重复次数。≠传参寄存器（cdecl参数走栈）\n• EDX：数据寄存器，乘法高位/除法余数/I/O端口地址，与EAX配对\n• ESI：源变址，字符串操作源地址（MOVSB从哪搬）\n• EDI：目的变址，字符串操作目的地址（MOVSB搬到哪）\n• EBP：栈帧基准指针，函数体内不动。[EBP-offset]访问局部变量，[EBP+offset]访问参数。不存变量，是指向变量区的锚\n• ESP：栈顶指针，push减4/pop加4，随push/pop动态移动\n\n【特殊寄存器】\n• EIP：指令指针=PC，下一条要执行的指令地址。x86叫EIP，MIPS叫PC\n• EFLAGS：标志寄存器，含ZF(零)/SF(符号)/CF(进位)/OF(溢出)，条件跳转靠它\n\n【段寄存器】\n• CS：代码段（指令从哪取）/ DS：数据段 / SS：栈段 / ES：附加段（字符串操作目的段）\n\n【栈帧布局】\n高地址→低地址：参数c[EBP+12] → 参数b[EBP+8] → 返回地址[EBP+4] → 旧EBP[EBP+0] → 局部变量1[EBP-4] → 局部变量2[EBP-8] → ESP\n口诀：EBP是锚（不动），ESP是浪（随push/pop动）；参数在锚上方(+offset)，局部变量在锚下方(-offset)",
-            "images": []
+            "images": [],
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50",
+            "keyAnswer": "**408常考寄存器**\nPC/EIP=下条指令地址 SP/ESP=栈顶 BP/EBP=帧指针 MAR=主存地址 MDR=数据 PSW=状态标志\nESP浮动EBP稳定。⚠️ 以王道组原为准。"
           }
         ]
       },
@@ -1527,10 +1656,10 @@ globalThis.APP_DATA = {
         "title": "高数·多元函数微分学（4道经典例题）",
         "questions": [
           {
-            "id": "Q78",
+            "id": "076",
             "name": "多元函数连续/偏导/可微关系判断（第1题）",
             "subject": "数学二",
-            "chapter": "高数·多元函数微分学",
+            "chapter": "四、多元函数微分学",
             "question": "多元函数在某点处连续、偏导数存在、可微三者关系的判断题（见图片）",
             "userAnswer": "见图片手写过程",
             "status": "知道",
@@ -1538,13 +1667,16 @@ globalThis.APP_DATA = {
             "note": "多元函数连续、偏导数存在、可微三者关系：\n• 可微 → 连续（可微必连续）\n• 可微 → 偏导数存在（可微必偏导存在）\n• 偏导数连续 → 可微（充分条件，非必要）\n• 偏导数存在 ≠ 连续（反例：f(x,y)=xy/(x²+y²)）\n• 连续 ≠ 偏导数存在（反例：f(x,y)=|x|+|y|）\n• 偏导数存在 ≠ 可微（偏导存在但增量极限≠0则不可微）\n核心：可微是最强的，能推出连续和偏导存在；但反过来都不成立。",
             "images": [
               "gaoshu_duoyuan_q1q2_xingzhi.jpg"
-            ]
+            ],
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50",
+            "keyAnswer": "**多元函数三关系**\n偏导连续→可微→连续 且 可微→偏导存在\n反例各方向独立不互推。唯一确定：可微⇒连续。\n可微定义：Δz=AΔx+BΔy+o(ρ)\n⚠️ 以张宇30讲为准。"
           },
           {
-            "id": "Q79",
+            "id": "077",
             "name": "多元函数连续/偏导/可微关系判断（第2题）",
             "subject": "数学二",
-            "chapter": "高数·多元函数微分学",
+            "chapter": "四、多元函数微分学",
             "question": "多元函数性质判断题，给出某点处连续/偏导/可微的条件，判断哪些成立（见图片）",
             "userAnswer": "见图片手写过程",
             "status": "知道",
@@ -1552,13 +1684,16 @@ globalThis.APP_DATA = {
             "note": "同第1题，考察连续/偏导/可微的推导链。关键：记住「可微是最强条件」，能推出其他两个；其他两个各自独立，不能互推。做题时逐项验证：①是否连续？②偏导是否存在？③是否可微？分别独立判断。",
             "images": [
               "gaoshu_duoyuan_q1q2_xingzhi.jpg"
-            ]
+            ],
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50",
+            "keyAnswer": "**多元函数续**\nSchwarz定理：f_xy,f_yx连续→相等\n方向导数D_u f=∇f·u\n极值：驻点→AC-B²判别（>0且A<0极大/A>0极小/<0鞍点）\n条件极值：Lagrange乘数法"
           },
           {
-            "id": "Q80",
+            "id": "078",
             "name": "多元函数经典例题（第3题）",
             "subject": "数学二",
-            "chapter": "高数·多元函数微分学",
+            "chapter": "四、多元函数微分学",
             "question": "多元函数经典例题（见图片），用户熟悉这道题的题型和解法，涉及可微性判断",
             "userAnswer": "",
             "status": "知道",
@@ -1566,13 +1701,16 @@ globalThis.APP_DATA = {
             "note": "这是一道经典例题，用户已知道解题方法和思路。涉及多元函数可微性判断，解题用两步法：先判偏导是否存在，再用定义验证增量极限。\n\n【两步法判断可微】\n第一步：先判偏导数是否存在\n  检查 f_x(x0,y0) 和 f_y(x0,y0) 是否存在。\n  如果不存在 → 直接判定不可微，结束。\n\n第二步：偏导存在时，用定义验证\n  计算 Δz = f(x0+Δx, y0+Δy) - f(x0, y0)\n  验证极限：\n    lim_{(Δx,Δy)→(0,0)} [Δz - f_x·Δx - f_y·Δy] / √(Δx²+Δy²) = 0？\n  • 等于 0 → 可微\n  • 不等于 0（或极限不存在）→ 不可微\n\n口诀：先看偏导在不在，再用定义验增量。",
             "images": [
               "gaoshu_duoyuan_q6_jingdian.jpg"
-            ]
+            ],
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50",
+            "keyAnswer": "**多元函数解题模板**\n1.定义域 2.一阶偏导找驻点 3.AC-B²判别 4.边界拉格朗日 5.条件极值Lagrange\n陷阱：分段函数分界点用定义求偏导；对称性简化；隐函数∂z/∂x=-F_x/F_z\n⚠️ 需对照具体题目图片确认。"
           },
           {
-            "id": "Q81",
+            "id": "079",
             "name": "多元函数未知题型（第6题）",
             "subject": "数学二",
-            "chapter": "高数·多元函数微分学",
+            "chapter": "四、多元函数微分学",
             "question": "第六题（见图片），用户不确定对应知识点是什么",
             "userAnswer": "见图片手写过程",
             "status": "不懂",
@@ -1580,7 +1718,1060 @@ globalThis.APP_DATA = {
             "note": "用户卡点：看到题目无法快速对应到知识点。需要对照图片确认题型，归类后补充对应方法论，再做同类题巩固。",
             "images": [
               "gaoshu_duoyuan_q3_kewei.jpg"
-            ]
+            ],
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50",
+            "keyAnswer": "**未知题型应对**\n1.归类(极限/偏导/极值?) 2.画图 3.回溯知识点 4.特殊值测试 5.联系已知题型\n新题型记录为薄弱点后续补强。请提供题目图片以便精确分析。"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-29",
+        "title": "408 2011年真题薄弱点梳理（7 个知识点）",
+        "summary": "循环队列指针逻辑 / 遍历还原二叉树 / ROM-RAM区分 / 主存物理结构 / 标志寄存器4标志位 / IO请求流程 / 随机访问MAC 4协议",
+        "questions": [
+          {
+            "id": "080",
+            "subject": "408",
+            "chapter": "【DS】二、栈、队列和数组",
+            "topic": "循环队列指针逻辑",
+            "question": "循环队列 front/rear 指针含义、入队出队、判空判满、元素个数计算",
+            "userAnswer": "指针移动与判满条件混乱，常把空满判据搞混",
+            "status": "不懂",
+            "isWrong": true,
+            "knowledgeType": "错题",
+            "missing": "指针逻辑混乱；判满条件记不住，常误以为 front==rear 既能判空又能判满",
+            "keyAnswer": "队空：front==rear。队满（牺牲单元法）：(rear+1)%maxSize==front。入队：rear=(rear+1)%maxSize 后写入。出队：front=(front+1)%maxSize 后读取。元素个数：(rear-front+maxSize)%maxSize。替代判满：① 增设 size 计数器；② 增设 tag 标志（最近入队→满、最近出队→空）。",
+            "thinking": "核心口诀：循环靠取模，所有指针移动都走 (p±1+maxSize)%maxSize。判满必须牺牲一个单元或用 size/tag，否则空满同判（front==rear）。画图把数组首尾相接成环，约定 rear 指向队尾元素的下一个空位。",
+            "image": "",
+            "images": [],
+            "name": "循环队列指针逻辑",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "081",
+            "subject": "408",
+            "chapter": "【DS】四、树与二叉树",
+            "topic": "由两种遍历还原二叉树并推导第三种",
+            "question": "已知先序+中序、或后序+中序唯一确定二叉树并写出另一种遍历；先序+后序能否确定中序？",
+            "userAnswer": "还原步骤不清，前后序推中序易错",
+            "status": "不懂",
+            "isWrong": true,
+            "knowledgeType": "错题",
+            "missing": "还原二叉树的递归切分步骤不清；不知道先序+后序不能唯一确定中序",
+            "keyAnswer": "先序+中序：先序首元素=根；在中序中按根切分左右子树，递归构造。后序+中序：后序尾元素=根；同法切分。⚠️ 先序+后序：不能唯一确定中序（当存在度为1的节点时左右难辨）；仅当每个节点度≠1 时可唯一确定。",
+            "thinking": "口诀：先序看头、后序看尾、中序切左右。永远先用根把中序劈成两半，再递归。真题常挖坑：给先序+后序让你求中序——先判断有没有度为1的节点，有则答案不唯一。",
+            "image": "",
+            "images": [],
+            "name": "遍历还原二叉树",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "082",
+            "subject": "408",
+            "chapter": "【CO】三、存储系统",
+            "topic": "ROM 与 RAM 概念区分",
+            "question": "ROM 和 RAM 的易失性、读写特性、用途区别；SRAM/DRAM/Flash 的归属",
+            "userAnswer": "ROM/RAM 混淆，分不清易失性与用途",
+            "status": "不懂",
+            "isWrong": true,
+            "knowledgeType": "错题",
+            "missing": "混淆易失性、读写权限与典型用途；不知 Cache/主存/BIOS 各用什么",
+            "keyAnswer": "RAM（随机存取存储器）：易失（断电丢失）；可读可写；SRAM 做 Cache，DRAM 做主存。ROM（只读存储器）：非易失；出厂写入/可有限改写（PROM/EPROM/EEPROM/Flash）；存 BIOS、固件。注意随机存取指按地址随机访问（相对顺序存取），RAM 和 ROM 都支持随机存取。",
+            "thinking": "三维度区分：① 易失性（RAM 丢 / ROM 不丢，记 RAM 要电）；② 读写（RAM 读写 / ROM 基本只读）；③ 用途（RAM=运行内存，ROM=固件）。常考：Cache 用 SRAM、主存用 DRAM、BIOS 用 ROM/Flash。",
+            "image": "",
+            "images": [],
+            "name": "ROM与RAM区分",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "083",
+            "subject": "408",
+            "chapter": "【CO】三、存储系统",
+            "topic": "主存（内存）的物理存储结构",
+            "question": "存储元→存储单元→存储体的层次；地址线/数据线/片选/读写；字扩展与位扩展",
+            "userAnswer": "物理层次不清，地址线条数与容量关系搞混",
+            "status": "不懂",
+            "isWrong": true,
+            "knowledgeType": "错题",
+            "missing": "存储元-单元-阵列层次混乱；地址线条数、数据线条数与容量换算不清",
+            "keyAnswer": "层次：存储元(1 bit)→存储单元(1字/1字节)→存储体(阵列)。芯片引脚：地址线(2^地址线条数=单元数)、数据线(每单元位数)、CS 片选、WE/RD 读写。容量=单元数×每单元位数（如 1K×4 位）。扩展：位扩展(加数据宽度)、字扩展(加容量，靠片选)、字位同时扩展。",
+            "thinking": "口诀：地址定单元数，数据定宽度。地址线 a 条→2^a 个单元；数据线 b 条→每单元 b 位。算总容量先算单芯片，再乘扩展倍数。字扩展靠片选信号选通不同芯片。",
+            "image": "",
+            "images": [],
+            "name": "主存物理存储结构",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "084",
+            "subject": "408",
+            "chapter": "【CO】五、中央处理器",
+            "topic": "标志寄存器 4 个状态标志位在真题中的应用",
+            "question": "CF/ZF/SF/OF 的含义，及在运算结果判断、条件转移指令中的应用",
+            "userAnswer": "4 个标志位含义混，不知真题怎么考",
+            "status": "不懂",
+            "isWrong": true,
+            "knowledgeType": "错题",
+            "missing": "分不清 CF/OF 谁管有符号谁管无符号；不知条件跳转看哪些标志",
+            "keyAnswer": "CF（进位/借位）：无符号数运算溢出（加有进位/减有借位）置1。ZF（零）：结果全0 置1。SF（符号）：结果最高位（符号位）为1 置1（针对有符号）。OF（溢出）：有符号数运算溢出（正+正=负 或 负+负=正）置1。应用：无符号数比较看 CF/ZF；有符号数比较看 SF/OF；条件转移(jg/jl等)据此判。",
+            "thinking": "口诀：CF 管无符号、OF 管有符号、ZF 管相等、SF 看正负。真题先判定数是有符号还是无符号，再选标志。CF 与 OF 独立：无符号溢出=CF，有符号溢出=OF。",
+            "image": "",
+            "images": [],
+            "name": "标志寄存器4状态位",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "085",
+            "subject": "408",
+            "chapter": "【CO】七、输入/输出系统",
+            "topic": "I/O 请求完整流程（含中断/DMA）",
+            "question": "一次 I/O 请求从用户程序发出到完成的完整流程；三种 I/O 控制方式区别",
+            "userAnswer": "流程步骤顺序不清，DMA/中断/通道混淆",
+            "status": "不懂",
+            "isWrong": true,
+            "knowledgeType": "错题",
+            "missing": "流程顺序乱；DMA、中断驱动、通道的区别与适用场景不清",
+            "keyAnswer": "流程：用户程序发 I/O 系统调用→陷入内核→设备独立性软件/文件系统转命令→设备驱动设寄存器、启动 I/O（或 DMA）→设备执行、CPU 并行干别的→完成发中断→CPU 响应、中断处理程序拷数据入内核缓冲、唤醒进程→进程取数据返用户态。三种控制方式：程序直接控制(忙等)、中断驱动、DMA(块传输仅收尾中断)、通道(专用 I/O 处理器)。",
+            "thinking": "口诀：系统调用→驱动启动→设备干、CPU 溜→中断收尾→唤醒进程。I/O 软件层次自上而下：用户层 I/O→设备独立性软件→设备驱动→中断处理。易混：DMA 全程不占 CPU 计算，仅块传输完发一次中断；通道是更独立的 I/O 处理器。",
+            "image": "",
+            "images": [],
+            "name": "IO请求流程",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "086",
+            "subject": "408",
+            "chapter": "【CN】三、数据链路层",
+            "topic": "随机访问介质访问控制（4 个协议）",
+            "question": "随机访问 MAC 的 4 类协议及特点；CSMA/CD 与 CSMA/CA 区别",
+            "userAnswer": "4 个协议记不全，CSMA/CD 与 CSMA/CA 分不清",
+            "status": "不懂",
+            "isWrong": true,
+            "knowledgeType": "错题",
+            "missing": "记不全 4 个随机访问协议；分不清 CSMA/CD（有线）与 CSMA/CA（无线）",
+            "keyAnswer": "① 纯 ALOHA：任意时刻发，冲突重发，利用率≤18.4%。② 时隙 ALOHA：仅时隙起点发，利用率≤36.8%。③ CSMA：发送前先载波侦听，仍可能因传播延迟冲突。④ CSMA/CD（冲突检测，有线以太网）：先听后发、边发边听、冲突停发+二进制指数退避，半双工。另 CSMA/CA（冲突避免，无线 WiFi）：无法边发边听，用 RTS/CTS+随机退避避免冲突，全双工。",
+            "thinking": "口诀：ALOHA 盲发→CSMA 先听→CD 边听边撞→CA 提前避。CSMA/CD(有线)与 CSMA/CA(无线)最根本区别：能否检测冲突——有线可(CD)，无线难(故用 CA 避免)。退避：CD 用二进制指数退避，CA 用随机退避窗口。",
+            "image": "",
+            "images": [],
+            "name": "随机访问MAC 4协议",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-29",
+        "title": "晚间复盘·细节突击（Jungle自测）",
+        "summary": "循环队列判满/元素个数 + OF/CF标志位分工 + CSMA/CD与CSMA/CA区别",
+        "questions": [
+          {
+            "id": "087",
+            "subject": "408",
+            "chapter": "【DS】二、栈、队列和数组",
+            "topic": "循环队列判满与元素个数",
+            "question": "循环队列（牺牲单元法）判满条件？元素个数怎么算？",
+            "userAnswer": "rear==front-1 判满；front-rear 得元素个数",
+            "status": "模糊",
+            "isWrong": true,
+            "knowledgeType": "错题",
+            "missing": "元素个数写反：应为 (rear-front+maxSize)%maxSize，不是 front-rear；判满 rear==front-1 等价于 (rear+1)%maxSize==front（方向对但非标准写法）",
+            "keyAnswer": "判满（牺牲单元法）：(rear+1)%maxSize==front。元素个数：(rear-front+maxSize)%maxSize。",
+            "thinking": "口诀：循环靠取模。判满必须牺牲一个单元，否则空满同判（front==rear）。元素个数永远 rear 减 front 再补 maxSize 取模，避免负数。标准写法用 (rear+1)%maxSize==front，别写 front-1 容易在边界出错。",
+            "image": "",
+            "images": [],
+            "name": "循环队列判满/元素个数",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "088",
+            "subject": "408",
+            "chapter": "【CO】五、中央处理器",
+            "topic": "标志寄存器 CF/OF 分工",
+            "question": "CF 和 OF 分别管有符号还是无符号数溢出？比大小分别看哪些标志？",
+            "userAnswer": "OF=outflow 管无符号；CF 管有符号（说反了）",
+            "status": "不懂",
+            "isWrong": true,
+            "knowledgeType": "错题",
+            "missing": "CF/OF 分工完全记反：OF 管有符号数溢出，CF 管无符号数溢出",
+            "keyAnswer": "CF（进位/借位）：无符号数运算溢出（加有进位/减有借位）置1。OF（溢出）：有符号数运算溢出（正+正=负 或 负+负=正）置1。无符号比大小看 CF/ZF；有符号比大小看 SF/OF。",
+            "thinking": "口诀：CF 管无符号、OF 管有符号、ZF 管相等、SF 看正负。OF=Overflow（溢出）不是 outflow；先判定数是有符号还是无符号，再选标志。CF 与 OF 独立。",
+            "image": "",
+            "images": [],
+            "name": "CF/OF标志位分工",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "089",
+            "subject": "408",
+            "chapter": "【CN】三、数据链路层",
+            "topic": "CSMA/CD 与 CSMA/CA 区别",
+            "question": "随机访问 MAC 有哪 4 类协议？CSMA/CD 与 CSMA/CA 根本区别？",
+            "userAnswer": "CD=碰撞检测，CA=碰撞允许；CD会停止，CA不会停止",
+            "status": "模糊",
+            "isWrong": true,
+            "knowledgeType": "错题",
+            "missing": "本质区别没说到点：根本是『能否检测冲突』——有线可边发边听(CD)，无线难检测故用避免(CA)；两者都会退避停止，不是CA不停止",
+            "keyAnswer": "4 类：①纯ALOHA ②时隙ALOHA ③CSMA ④CSMA/CD（有线）与 CSMA/CA（无线）。根本区别：能否检测冲突——CD(Collision Detection)有线以太网可边发边听、冲突即停+二进制指数退避；CA(Collision Avoidance)无线WiFi无法检测冲突，用RTS/CTS+随机退避避免冲突。两者都会退避/停止，不是CA不停止。",
+            "thinking": "口诀：ALOHA盲发→CSMA先听→CD边听边撞→CA提前避。最根本区别：能否检测冲突（有线可/无线难）。退避：CD二进制指数退避，CA随机退避窗口。",
+            "image": "",
+            "images": [],
+            "name": "CSMA/CD与CSMA/CA",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-30",
+        "title": "408 选择题知识点漏洞梳理（15 个）",
+        "summary": "B树/栈求值/Prim-Dijkstra/图存储/插入排序/USB/微程序/大小端/总线/中断隐指令/用户态/主存读写/网络协议/Flash",
+        "questions": [
+          {
+            "id": "090",
+            "subject": "408",
+            "chapter": "【DS】四、树与二叉树",
+            "topic": "B树的插入、删除与查找",
+            "question": "m阶B树的定义、查找路径、插入时的分裂、删除时的借位/合并分别怎么做？",
+            "userAnswer": "",
+            "status": "待巩固",
+            "isWrong": true,
+            "knowledgeType": "知识卡",
+            "missing": "选择题暴露的薄弱点，需建立完整增删操作流程",
+            "keyAnswer": "定义：每节点最多m棵子树(m-1关键字)；根≥2棵(或1)；非根非叶≥⌈m/2⌉棵(⌈m/2⌉-1关键字)；所有叶同层。查找：从根沿关键字区间下降,O(log n)。插入：在叶插入,若关键字>m-1则分裂(中位数上移父,左右成两节点),可递归到根(增高)。删除：在叶删；删后<⌈m/2⌉-1先向兄弟借(旋转),不够则与兄弟+父关键字合并(树可能变矮)；非叶删除用前驱/后继替换再按叶处理。",
+            "thinking": "口诀：插入看\"溢出→分裂上移\"，删除看\"不足→先借后并\"。B+树：非叶只存索引、叶串链表、叶存全部数据。",
+            "image": "",
+            "images": [],
+            "name": "B树增删改查",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "091",
+            "subject": "408",
+            "chapter": "【DS】二、栈、队列和数组",
+            "topic": "栈实现表达式求值（中缀转后缀、后缀求值）",
+            "question": "如何用栈将中缀表达式转后缀？又如何用栈对后缀表达式求值？",
+            "userAnswer": "",
+            "status": "待巩固",
+            "isWrong": true,
+            "knowledgeType": "知识卡",
+            "missing": "对\"栈用于表达式求值\"这一应用概念模糊",
+            "keyAnswer": "中缀→后缀(运算符栈)：遇操作数直接输出；遇运算符与栈顶比优先级，栈顶≥当前且非\"(\"则弹出输出再压入；\"(\"压栈；\")\"弹出至\"(\"。后缀求值(操作数栈)：遇操作数压栈；遇运算符弹栈顶两元素(先弹右操作数)运算后压回，栈顶即结果。",
+            "thinking": "关键：中缀转后缀时\"(\"优先级最低但压栈后最高；后缀求值是\"后弹出的先 operand\"。",
+            "image": "",
+            "images": [],
+            "name": "栈-表达式求值",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "092",
+            "subject": "408",
+            "chapter": "【DS】五、图",
+            "topic": "Prim（最小生成树）与 Dijkstra（最短路径）的异同",
+            "question": "Prim 和 Dijkstra 算法思想相似，它们的目标、适用、核心数组、能否处理负权有何区别？",
+            "userAnswer": "",
+            "status": "待巩固",
+            "isWrong": true,
+            "knowledgeType": "知识卡",
+            "missing": "混淆两者目标与核心维护量",
+            "keyAnswer": "同：都贪心、都用\"集合/距离\"选最小、朴素O(V²)/堆O(ElogV)。异：Prim目标=最小生成树(连通无向带权,选最小权边扩展已连集合),维护\"到集合最小边权\"；Dijkstra目标=单源最短路径(可含向,dist[v]到源距),维护\"到源距离\"并松弛邻边。关键：Prim用边权扩展、Dijkstra用距离松弛；Dijkstra不能处理负权边(会错),Prim无此限制(只要非负权建树)。",
+            "thinking": "记法：Prim\"连点成树看边权\"，Dijkstra\"算距离看路径\"。都从起点开始，一个长树一个长路。",
+            "image": "",
+            "images": [],
+            "name": "Prim vs Dijkstra",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "093",
+            "subject": "408",
+            "chapter": "【DS】五、图",
+            "topic": "最小生成树（MST）定义与性质",
+            "question": "什么是最小生成树？有哪些性质？Prim 与 Kruskal 怎么求？",
+            "userAnswer": "",
+            "status": "待巩固",
+            "isWrong": true,
+            "knowledgeType": "知识卡",
+            "missing": "对MST基本概念与求法不熟",
+            "keyAnswer": "定义：连通带权无向图的生成子图，含全部V顶点、V-1边、连通无环、边权和最小。性质：①边数固定V-1；②边权互异则MST唯一；③割性质：任一切割跨切割的最小权边必在MST中。求法：Prim(加点,O(V²))、Kruskal(加边+并查集判环,O(ElogE))。",
+            "thinking": "MST vs 最短路径树：MST是全局边权和最小，不是到根距离和最小。",
+            "image": "",
+            "images": [],
+            "name": "最小生成树",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "094",
+            "subject": "408",
+            "chapter": "【DS】五、图",
+            "topic": "图的存储结构（邻接矩阵/表/十字链表/邻接多重表）",
+            "question": "图有哪些存储结构？各自空间、适用、查边效率？",
+            "userAnswer": "",
+            "status": "待巩固",
+            "isWrong": true,
+            "knowledgeType": "知识卡",
+            "missing": "对四种存储方式对比不清",
+            "keyAnswer": "邻接矩阵：|V|×|V|，无向对称；空间O(V²)，查边O(1)，适稠密。邻接表：数组+链表，空间O(V+E)，查边O(度)，适稀疏；有向出边易入边难。十字链表(有向专用，出入边都方便)。邻接多重表(无向，每边只存一次，删边方便)。",
+            "thinking": "无向用邻接表/多重表；有向重出边用邻接表、重出入用十字链表；稠密用矩阵。",
+            "image": "",
+            "images": [],
+            "name": "图的存储方式",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "095",
+            "subject": "408",
+            "chapter": "【DS】七、排序",
+            "topic": "插入排序家族（直接/折半/希尔）",
+            "question": "直接插入排序怎么排？时间复杂度与稳定性？希尔排序为什么快？",
+            "userAnswer": "",
+            "status": "待巩固",
+            "isWrong": true,
+            "knowledgeType": "知识卡",
+            "missing": "对插入排序家族及稳定性不熟",
+            "keyAnswer": "直接插入：第i个插入前i-1已排序序列(从后往前比,大则后移),最坏/平均O(n²),最好O(n)(已序),稳定,基本有序时高效。折半插入：找位用折半,比较少但移动仍O(n²)。希尔：按gap分组插入,gap递减至1,O(n^1.3),不稳定(跨距交换破坏稳定)。",
+            "thinking": "插排\"稳定+自适应\"；希尔是插排加速版，但失去稳定。",
+            "image": "",
+            "images": [],
+            "name": "插入排序",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "096",
+            "subject": "408",
+            "chapter": "【CO】六、总线",
+            "topic": "USB 总线的特性与传输类型",
+            "question": "USB 总线有哪些关键特性？有哪几种传输类型？",
+            "userAnswer": "",
+            "status": "待巩固",
+            "isWrong": true,
+            "knowledgeType": "知识卡",
+            "missing": "对USB总线特性(尤其传输类型)不清",
+            "keyAnswer": "特性：串行、差分信号抗干扰；拓扑分层星型(主机—集线器—设备)；热插拔即插即用；通信由主机轮询发起(从机不能主动)；半双工(USB3.0起有全双工)。四种传输：控制(命令配置小量可靠)、批量(大文件可靠如U盘)、中断(少量定时如键鼠)、等时(实时音视频不重传)。",
+            "thinking": "记：USB\"主机主导、串行差分、四类传输\"。中断传输不是硬件中断，是定时轮询。",
+            "image": "",
+            "images": [],
+            "name": "USB总线特性",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "097",
+            "subject": "408",
+            "chapter": "【CO】五、中央处理器",
+            "topic": "微程序控制器操作控制字段编码",
+            "question": "微程序控制器中，操作控制字段有哪几种编码方式？水平/垂直微指令是什么？",
+            "userAnswer": "",
+            "status": "待巩固",
+            "isWrong": true,
+            "knowledgeType": "知识卡",
+            "missing": "对操作控制字段编码方式不熟",
+            "keyAnswer": "编码：①直接编码(每位直接对应一微命令,无需译码快但字长很长)；②字段直接编码(互斥微命令分组,每组译码出一个命令,缩短字长)；③字段间接编码；④混合。微指令格式：水平微指令(一次发多并行微命令,并行度高字长长)、垂直微指令(类似机器指令经译码,字长短并行度低)。另含\"下址字段\"指下条微指令地址。",
+            "thinking": "直接=快但长；字段=省但需译码。水平并行高、垂直串行感强。",
+            "image": "",
+            "images": [],
+            "name": "微程序操作控制字段",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "098",
+            "subject": "408",
+            "chapter": "【CO】二、数据的表示和运算",
+            "topic": "大端序 / 小端序",
+            "question": "什么是大端存储、小端存储？如何判断机器字节序？",
+            "userAnswer": "",
+            "status": "待巩固",
+            "isWrong": true,
+            "knowledgeType": "知识卡",
+            "missing": "对大小端概念及判断不清",
+            "keyAnswer": "大端(Big-Endian)：最高有效字节存最低地址(网络/Java常用)。小端(Little-Endian)：最低有效字节存最低地址(x86用)。例0x12345678,地址0存12(大端)/78(小端)。判断：int a=1,取char*看首字节==1即小端。注意字内字节序与字间地址顺序是两个维度。",
+            "thinking": "口诀\"大端高字节在低址，小端低字节在低址\"。网络传输用大端(htons转换)。",
+            "image": "",
+            "images": [],
+            "name": "大小端存储",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "099",
+            "subject": "408",
+            "chapter": "【CO】六、总线",
+            "topic": "数据总线 / 地址总线 / 控制总线分工",
+            "question": "数据总线在总线事务中传输哪些内容？它与地址、控制总线如何分工？",
+            "userAnswer": "",
+            "status": "待巩固",
+            "isWrong": true,
+            "knowledgeType": "知识卡",
+            "missing": "对三类总线分工、尤其数据总线也传指令不清",
+            "keyAnswer": "数据总线(双向)：传输\"数据\"——读出操作数、写入数据、取指阶段取出的指令代码、中断类型号等。地址总线(单向CPU→)：传输访存/IO地址。控制总线：传输读/写、就绪、中断请求、总线请求等。注：指令本身也经数据总线在取指时送CPU(地址由地址总线给出)。",
+            "thinking": "一句话：地址总线给\"位置\"，数据总线给\"内容(数/指令/状态)\"，控制总线给\"动作\"。",
+            "image": "",
+            "images": [],
+            "name": "三类总线分工",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "100",
+            "subject": "408",
+            "chapter": "【OS】二、进程管理",
+            "topic": "中断隐指令（硬件自动完成的中断响应）",
+            "question": "中断响应时由硬件自动完成的\"中断隐指令\"包含哪些动作？",
+            "userAnswer": "",
+            "status": "待巩固",
+            "isWrong": true,
+            "knowledgeType": "知识卡",
+            "missing": "对中断隐指令具体动作不熟",
+            "keyAnswer": "中断隐指令是CPU响应中断时由硬件自动完成、不在用户程序出现的一串操作，含三步：①关中断(防嵌套丢失)；②保存断点(PC压栈或存特定寄存器)；③引出中断服务程序(据中断向量表取入口地址送PC)。之后才进ISR(保护现场→处理→恢复现场→开中断→中断返回)。",
+            "thinking": "隐指令三动作记\"关中断→存断点→取入口\"。用户不可见不可编程。",
+            "image": "",
+            "images": [],
+            "name": "中断隐指令",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "101",
+            "subject": "408",
+            "chapter": "【OS】一、操作系统概述与运行环境",
+            "topic": "用户态（目态）的权限边界",
+            "question": "CPU 处于用户态时，能做什么、不能做什么？什么事件会陷入内核态？",
+            "userAnswer": "",
+            "status": "待巩固",
+            "isWrong": true,
+            "knowledgeType": "知识卡",
+            "missing": "对用户态权限边界不清",
+            "keyAnswer": "用户态(目态)：执行用户程序,只能执行非特权指令,访问受限用户空间；不能直接执行I/O、改PSW/中断屏蔽、清TLB等特权指令。陷入内核态三方式：①系统调用(有意如read/write)；②异常(缺页、除零)；③中断(时钟/IO完成)。进内核态后权限提升可执行特权指令。",
+            "thinking": "口诀\"用户态跑自己代码、碰特权就陷内核\"。用户态→内核态必经中断/异常/自陷机制。",
+            "image": "",
+            "images": [],
+            "name": "用户态边界",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "102",
+            "subject": "408",
+            "chapter": "【CO】三、存储系统",
+            "topic": "主存读/写周期与涉及参数",
+            "question": "主存进行一次读/写操作涉及哪些参数（地址、数据、控制信号、时序）？",
+            "userAnswer": "",
+            "status": "待巩固",
+            "isWrong": true,
+            "knowledgeType": "知识卡",
+            "missing": "对读写涉及的地址/数据/控制参数及存取时间vs周期不清",
+            "keyAnswer": "一次访存(读)：①CPU将地址送地址总线(MAR)；②发读命令(控制总线Read)；③存储体译码选中单元；④数据送数据总线(MBR)；⑤CPU采样。时序参数：存取时间TA(发地址到数据有效)、存取周期TC(连续两次独立访问最小间隔,TC≥TA)、恢复时间。写：地址+数据送总线,发Write,数据写入。TC>TA(写后需恢复)。",
+            "thinking": "参数链\"地址(MAR)→读/写控制→数据(MBR)\"；TC≥TA是高频考点。",
+            "image": "",
+            "images": [],
+            "name": "主存读写参数",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "103",
+            "subject": "408",
+            "chapter": "未分类",
+            "topic": "TCP/IP 各层核心协议速查",
+            "question": "请汇总 TCP/IP 各层关键协议及作用（ARP/DHCP/DNS/ICMP/TCP/UDP/HTTP/FTP/SMTP…）？",
+            "userAnswer": "",
+            "status": "待巩固",
+            "isWrong": true,
+            "knowledgeType": "知识卡",
+            "missing": "对分层协议汇总记忆不全",
+            "keyAnswer": "应用层：HTTP(网页)FTP(文件)SMTP/POP3/IMAP(邮件)DNS(域名)DHCP(分配IP)TELNET。传输层：TCP(可靠连接)UDP(无连接尽力)。网络层：IP、ICMP(差错报告ping)、ARP(已知IP求MAC)、IGMP、OSPF/RIP/BGP(路由)。链路层：PPP、以太网(CSMA/CD)、WiFi(CSMA/CA)、HDLC。端口：HTTP80/FTP21/SMTP25/DNS53(用UDP)/DHCP67-68。",
+            "thinking": "按层背：应(HTTP/FTP/DNS/DHCP)-传(TCP/UDP)-网(IP/ICMP/ARP)-链(PPP/以太)-物。ARP\"IP→MAC\"高频。",
+            "image": "",
+            "images": [],
+            "name": "网络协议汇总",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          },
+          {
+            "id": "104",
+            "subject": "408",
+            "chapter": "【CO】三、存储系统",
+            "topic": "Flash 闪存的特性与归类",
+            "question": "闪存（Flash）属于哪类存储器？有什么特性、优缺点、用途？",
+            "userAnswer": "",
+            "status": "待巩固",
+            "isWrong": true,
+            "knowledgeType": "知识卡",
+            "missing": "对Flash归类与特性不清",
+            "keyAnswer": "Flash属非易失性半导体存储器(ROM家族/EEPROM演进)，掉电不丢。特性：可电擦除重写,但\"按块(Block)擦除、按页/字节编程(写)\",读快写慢擦最慢；有擦写寿命限制(约万~十万次)；无机械。用途：U盘、SSD、SD卡、BIOS固件。与RAM比：非易失但慢有寿命；与磁盘比：无机械速度快但贵容量小。",
+            "thinking": "口诀\"Flash非易失、块擦页写、读快写慢有寿命\"。考题常混：Flash是ROM类不是RAM类。",
+            "image": "",
+            "images": [],
+            "name": "闪存Flash性质",
+            "score": "未测",
+            "lastReview": "2026-07-30T21:32:50"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "title": "线性代数：矩阵乘积的秩与可逆性证明",
+        "summary": "可逆矩阵乘不改变秩（rank(AB)=rank(B)）；证明可逆的等价判定（|A|!=0 为枢纽） + 方阵秩/行秩列秩/非方阵秩与解的关系 + 含参矩阵秩分类讨论 + AB=0转方程组 + 二阶/分块求逆",
+        "questions": [
+          {
+            "id": "Q1",
+            "subject": "数学二",
+            "chapter": "八、线性代数（矩阵）",
+            "topic": "矩阵乘积的秩",
+            "question": "若 A 可逆，rank(AB) 与 rank(B) 的关系？",
+            "userAnswer": "若一个矩阵可逆，则乘积的秩等于另一个矩阵的秩（正确）",
+            "status": "知道",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "若 A 可逆（且与 B 可乘），rank(AB)=rank(B)；若 B 可逆，rank(AB)=rank(A)。即左乘或右乘可逆矩阵，矩阵的秩不变。",
+            "thinking": "口诀：可逆矩阵乘，秩不变。证明：rank(AB)≤rank(B)；又 A⁻¹(AB)=B ⇒ rank(B)≤rank(AB)，夹逼得相等。真题里遇到分块矩阵或要降维，先想这条。",
+            "image": "",
+            "images": [],
+            "name": "矩阵乘积的秩",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          },
+          {
+            "id": "Q2",
+            "subject": "数学二",
+            "chapter": "八、线性代数（矩阵）",
+            "topic": "证明矩阵可逆的等价判定",
+            "question": "证明一个矩阵 A 可逆，有哪些等价条件？",
+            "userAnswer": "定义法(AB=I)、增广矩阵法([A|I]→[I|A⁻¹])、以及行列式等于某可逆阵的行列式",
+            "status": "知道",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "把'行列式等于另一个可逆矩阵的行列式'当成独立判定，没落到 |A|!=0 这一根本枢纽",
+            "keyAnswer": "A 可逆 ⟺ 以下任一：① |A|!=0（行列式法，最常用、最偷懒）；② r(A)=n（满秩）；③ Ax=0 只有零解；④ A 的列/行向量组线性无关；⑤ 存在 B 使 AB=I（或 BA=I，方阵时等价）；⑥ A 无零特征值；⑦ [A|I] 经初等行变换化为 [I|A⁻¹]（增广矩阵法）。注：若 |A|=|B| 且 B 可逆，则 |A|!=0 ⇒ A 可逆，但这只是'|A|!=0'的间接形式，并非独立方法。",
+            "thinking": "行列式非零是枢纽：满秩、零解、向量无关、无零特征，全都绕回 |A|!=0。做题优先算 |A|；算不出再退而用定义(AB=I)或秩。别把'等于某可逆阵行列式'当独立招式，本质还是看 |A| 是不是 0。",
+            "image": "",
+            "images": [],
+            "name": "证明矩阵可逆",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          },
+          {
+            "id": "105",
+            "subject": "数学二",
+            "chapter": "七、线性代数（行列式）",
+            "topic": "秩与行列式",
+            "question": "n阶方阵A，rank(A)<n 能推出什么？",
+            "userAnswer": "",
+            "status": "知道",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "rank(A)=n（满秩）⟺ |A|≠0 ⟺ A可逆；rank(A)<n ⟺ |A|=0 ⟺ A不可逆。用户原话\"秩小于行数则行列式为零\"即 rank(A)<n ⇒ |A|=0。",
+            "thinking": "记忆链：满秩(n) ⇔ |A|≠0 ⇔ 可逆 ⇔ Ax=0只有零解 ⇔ 列向量线性无关 ⇔ 无零特征值。任一项成立则全成立，秩掉下来（<n）则全翻面。",
+            "image": "",
+            "images": [],
+            "name": "方阵秩与行列式、可逆性的等价关系",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          },
+          {
+            "id": "106",
+            "subject": "数学二",
+            "chapter": "九、线性代数（向量）",
+            "topic": "秩与线性相关性",
+            "question": "矩阵的秩小于行数或列数，行/列向量组分别怎样？",
+            "userAnswer": "",
+            "status": "知道",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "矩阵的行秩=列秩=矩阵的秩。rank(A)<行数 ⇒ 行向量组线性相关；rank(A)<列数 ⇒ 列向量组线性相关。",
+            "thinking": "一句话：秩=行秩=列秩。任何一个不够数（行数或列数），多出来的向量就被前面的线性表出了（相关）。",
+            "image": "",
+            "images": [],
+            "name": "秩与行/列向量组相关性的关系",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          },
+          {
+            "id": "107",
+            "subject": "数学二",
+            "chapter": "十、线性代数（方程组）",
+            "topic": "秩与解的结构",
+            "question": "非方阵A(m×n)，设 r=rank(A)、r'=rank(A|b)，Ax=b 的解如何由秩决定？",
+            "userAnswer": "",
+            "status": "不懂",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "存在性：有解 ⟺ r=r'（增广秩=系数秩）。个数：唯一解 ⟺ r=r'=n；无穷多解 ⟺ r=r'<n；无解 ⟺ r<r'。齐次Ax=0总有零解，有非零解 ⟺ r<n（基础解系含 n-r 个向量）。特例：列满秩(r=n≤m)→Ax=0只有零解、Ax=b有解则唯一；行满秩(r=m≤n)→Ax=b必有无穷多解。",
+            "thinking": "口诀\"先看有没有（r vs r'），再看几个解（r vs n）\"。r 管自由变量数(n-r)，r' 是有没有解的信号。",
+            "image": "",
+            "images": [],
+            "name": "非方阵秩与线性方程组解的关系",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          },
+          {
+            "id": "108",
+            "subject": "数学二",
+            "chapter": "七、线性代数（行列式）",
+            "topic": "含参矩阵的秩",
+            "question": "矩阵元素含参数时，求秩要注意什么？",
+            "userAnswer": "",
+            "status": "知道",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "含参矩阵求秩，秩会随参数取值变化，必须分类讨论。做法：①先算 |A|（方阵情形），|A|≠0 ⇒ 满秩；②令 |A|=0 解出的每个参数关键值单独拎出来，代入原矩阵逐个算秩；③其余使 |A|≠0 的参数值归为一类（满秩）。若是 Ax=b 含参，还要把关键值代入增广矩阵比较 r 与 r'。",
+            "thinking": "口诀\"参数让秩变，关键值单独拎；|A|=0 的点必须逐个代回算\"。千万别想当然认为秩固定。",
+            "image": "",
+            "images": [],
+            "name": "含参矩阵的秩问题需分类讨论",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          },
+          {
+            "id": "109",
+            "subject": "数学二",
+            "chapter": "十、线性代数（方程组）",
+            "topic": "矩阵方程与方程组",
+            "question": "已知 AB=0，或把某矩阵看成解向量，如何转化为方程组性质解题？",
+            "userAnswer": "",
+            "status": "知道",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "AB=0 ⟹ B 的每一列 b_j 都是齐次方程 Ax=0 的解（因为 A[b_1…b_n]=[Ab_1…Ab_n]=0）。若 B≠0（非零矩阵），则至少一列非零 ⟹ Ax=0 有非零解 ⟹（A 为方阵时）|A|=0、rank(A)<n。推广秩不等式：rank(A)+rank(B)≤n（n=A 的列数=B 的行数）。类似 AX=B：X 的每一列是 Ax=b_j 的解。",
+            "thinking": "口诀\"乘积为零，列即解；B 非零则有非零解\"。把抽象矩阵乘积翻译成\"每列都是方程组的解\"，是真题常考的桥梁，常用来反推 |A|=0 或求参数范围。",
+            "image": "",
+            "images": [],
+            "name": "矩阵乘积 AB=0 与齐次方程组的转化",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          },
+          {
+            "id": "110",
+            "subject": "数学二",
+            "chapter": "八、线性代数（矩阵）",
+            "topic": "求逆公式",
+            "question": "二阶矩阵怎么快速求逆？",
+            "userAnswer": "",
+            "status": "知道",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "A=[[a,b],[c,d]] 时，A⁻¹ = 1/(ad-bc) · [[d,-b],[-c,a]]。即\"主对角互换、副对角变号、整体除以行列式\"。前提 ad-bc≠0（|A|≠0，方可逆）。",
+            "thinking": "口诀\"主对角互换，副对角变号，除行列式\"。选择题秒杀，不必走初等行变换。",
+            "image": "",
+            "images": [],
+            "name": "二阶矩阵求逆（伴随法）",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          },
+          {
+            "id": "111",
+            "subject": "数学二",
+            "chapter": "八、线性代数（矩阵）",
+            "topic": "求逆（分块）",
+            "question": "分块矩阵怎么求逆？",
+            "userAnswer": "",
+            "status": "知道",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "记三类特殊结构即可（各子块需可逆）：①分块对角 diag(A,B)⁻¹ = diag(A⁻¹,B⁻¹)；②分块上三角 [[A,B],[0,D]]⁻¹ = [[A⁻¹, -A⁻¹BD⁻¹],[0, D⁻¹]]；③分块下三角 [[A,0],[C,D]]⁻¹ = [[A⁻¹, 0],[-D⁻¹CA⁻¹, D⁻¹]]。考试多考这三类，不必背一般四块公式。",
+            "thinking": "记特殊结构比背一般公式划算；验证方法：乘回原矩阵看是否得单位阵 I。",
+            "image": "",
+            "images": [],
+            "name": "分块矩阵求逆公式",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "title": "408 薄弱知识点汇总导入",
+        "questions": [
+          {
+            "id": "112",
+            "subject": "408",
+            "chapter": "【CO】二、数据的表示和运算",
+            "topic": "数据运算与表示",
+            "question": "补码 8 位定点整数能表示的范围是 [__, __]？为什么比原码多表示一个最负数？双符号位判溢出时 01 和 10 分别代表什么？IEEE754 单精度阶码 bias 是多少、尾数隐含最高位 1 的作用是什么？",
+            "userAnswer": "",
+            "status": "不懂",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "8 位补码范围 -128~+127；比原码多表示一个最负，因为补码 0 唯一且 [-128]补=10000000 无原码对应；双符号位 01=正溢、10=负溢；IEEE754 单精 bias=127，尾数隐含最高位 1（规格化，省一位，实际尾数=1.xxxx）。溢出判据 Cf⊕Cs=1。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "总结:数据运算与表示",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "title": "408 薄弱知识点汇总导入",
+        "questions": [
+          {
+            "id": "113",
+            "subject": "408",
+            "chapter": "【CO】二、数据的表示和运算",
+            "topic": "海明码",
+            "question": "信息位 n=8，要纠正 1 位错至少需要几个校验位 k？校验位放在哪些位置？若接收端算出的综合征为 5，说明第几位出错？",
+            "userAnswer": "",
+            "status": "不懂",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "满足 2^k ≥ n+k+1；n=8 → 2^4=16 ≥ 8+4+1=13 ✓，k=4；校验位放第 1,2,4,8 位（2^i）；接收端重算各校验组得综合征，其值直接=出错位号，综合征=5 即第 5 位出错，0 则无错。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "总结:海明码",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "title": "408 薄弱知识点汇总导入",
+        "questions": [
+          {
+            "id": "114",
+            "subject": "408",
+            "chapter": "【CO】五、中央处理器",
+            "topic": "指令流水线",
+            "question": "k 段流水线执行 n 条指令，总耗时公式是什么（含装入/排空）？吞吐率 TP 最大值是多少？数据相关 RAW 用什么技术缓解？",
+            "userAnswer": "",
+            "status": "不懂",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "总时间 = (k + n - 1) × 段长（装入 k-1 段 + 排空 k-1 段 + n 段执行）；最大 TP = 1/段长；RAW（写后读）用转发/旁路(forwarding)或阻塞缓解；加速比=非流水时间/流水时间；效率=有效时空区/总时空区。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "总结:指令流水线",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "title": "408 薄弱知识点汇总导入",
+        "questions": [
+          {
+            "id": "115",
+            "subject": "408",
+            "chapter": "【CO】三、存储系统",
+            "topic": "RAID 可靠性措施",
+            "question": "RAID 0/1/5/6 分别允许坏几块盘？空间利用率各是多少（假设 N 块同容量）？RAID 5 的校验信息存在哪里？",
+            "userAnswer": "",
+            "status": "不懂",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "RAID0：坏 0 块、利用率 100%（无冗余）；RAID1：坏 1 块、50%；RAID5：坏 1 块、利用率 (N-1)/N（校验分布式，无单独校验盘）；RAID6：坏 2 块、(N-2)/N（双校验）。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "总结:RAID 可靠性措施",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "title": "408 薄弱知识点汇总导入",
+        "questions": [
+          {
+            "id": "116",
+            "subject": "408",
+            "chapter": "【CO】三、存储系统",
+            "topic": "磁盘相关计算",
+            "question": "磁盘转速 7200rpm，平均寻道 5ms，读 20 个随机扇区大约要多久？平均旋转延迟是多少？",
+            "userAnswer": "",
+            "status": "不懂",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "转一圈 = 60/7200 ≈ 8.33ms，平均旋转延迟 = 半圈 ≈ 4.17ms；存取时间 = 寻道 + 旋转延迟 + 传输；随机读 20 扇区≈20×(平均寻道+平均旋转+单扇区传输)，顺序读则只首扇区寻道+旋转，后续连续。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "总结:磁盘相关计算",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "title": "408 薄弱知识点汇总导入",
+        "questions": [
+          {
+            "id": "117",
+            "subject": "408",
+            "chapter": "【CO】七、输入/输出系统",
+            "topic": "中断 I/O 与 DMA 比较",
+            "question": "中断方式和 DMA 方式数据传输单位分别是什么？各自每传一次数据中断 CPU 几次？DMA 方式下数据是谁在搬？",
+            "userAnswer": "",
+            "status": "不懂",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "中断：单位=字节/字，每传 1 单位中断 1 次，CPU 在中断服务程序里搬数据；DMA：单位=数据块，整块传完才中断 1 次，DMA 控制器搬数据，CPU 不搬、地址自增。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "总结:中断 I/O 与 DMA 比较",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "title": "408 薄弱知识点汇总导入",
+        "questions": [
+          {
+            "id": "118",
+            "subject": "408",
+            "chapter": "【CO】三、存储系统",
+            "topic": "存储概念",
+            "question": "SRAM 和 DRAM 的区别（原理/速度/用途/是否刷新）？Cache 三种映射方式是什么？写回和写直达的区别？",
+            "userAnswer": "",
+            "status": "不懂",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "SRAM：触发器，快、贵、不需刷新，Cache 用；DRAM：电容，慢、便宜、需刷新，主存用。Cache 映射：直接/全相联/组相联；写回（仅当被替换才写回主存）vs 写直达（每次写同时写主存）。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "总结:存储概念",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "title": "408 薄弱知识点汇总导入",
+        "questions": [
+          {
+            "id": "119",
+            "subject": "408",
+            "chapter": "【OS】二、进程管理",
+            "topic": "死锁与银行家算法",
+            "question": "死锁四个必要条件是什么？银行家算法里 Need、Available、Allocation 三者关系？什么情况下系统处于\"安全状态\"？",
+            "userAnswer": "",
+            "status": "不懂",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "四必要条件：互斥、占有并等待、不可抢占、循环等待（全满足才死锁）。Need = Max − Allocation；Available 为当前可用资源；试分配后若仍存在一条安全序列（所有进程能按序推进完成需求）则系统安全，才真分配，否则等待。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "总结:死锁与银行家算法",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "title": "408 薄弱知识点汇总导入",
+        "questions": [
+          {
+            "id": "120",
+            "subject": "408",
+            "chapter": "【CN】三、数据链路层",
+            "topic": "介质访问控制",
+            "question": "CSMA/CD 和 CSMA/CA 最根本的区别？分别用在什么网络（有线/无线）？CSMA 有哪三种坚持策略？",
+            "userAnswer": "",
+            "status": "不懂",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "CSMA/CD（以太网·有线）冲突检测，边发边听，冲突停发+拥塞序列+二进制指数退避；CSMA/CA（802.11·无线）冲突避免，RTS/CTS 预约+ACK 确认（无法边发边听）。根本区别=检测 vs 避免、有线 vs 无线。CSMA 坚持：1-坚持/非坚持/p-坚持。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "总结:介质访问控制",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "title": "408 薄弱知识点汇总导入",
+        "questions": [
+          {
+            "id": "121",
+            "subject": "408",
+            "chapter": "【CN】三、数据链路层",
+            "topic": "HDLC 协议",
+            "question": "HDLC 是面向比特还是面向字符的协议？零比特填充规则是什么？控制字段里 I 帧、S 帧、U 帧分别以什么比特开头？",
+            "userAnswer": "",
+            "status": "不懂",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "面向比特；零比特填充：信息段遇 5 个连续 1 就插 1 个 0，接收端去 0，保证标志 F(01111110) 不误判。I 帧以 0 开头（捎带 N(S)/N(R)）、S 帧以 10 开头（RR/RNR/REJ/SREJ）、U 帧以 11 开头（SNRM 建链/拆链等）。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "总结:HDLC 协议",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "title": "408 薄弱知识点汇总导入",
+        "questions": [
+          {
+            "id": "122",
+            "subject": "408",
+            "chapter": "【CN】四、网络层",
+            "topic": "以太网帧",
+            "question": "以太网最小帧长是多少字节？为什么必须这么长（和 CSMA/CD 什么关系）？MTU 是多少？最大帧长多少字节？",
+            "userAnswer": "",
+            "status": "不懂",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "最小帧长 64B（保证 CSMA/CD 在帧发完前能检测到冲突，争用期=2τ，冲突信号要传回）；不足填空填充；MTU=1500B；最大帧 1518B（含 MAC+FCS）；MAC 48 位，前 24 位 OUI。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "总结:以太网帧",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "title": "408 薄弱知识点汇总导入",
+        "questions": [
+          {
+            "id": "123",
+            "subject": "408",
+            "chapter": "【DS】五、图",
+            "topic": "AOE 网（关键路径）",
+            "question": "AOE 网中顶点和边分别代表什么？关键路径为什么是最长路径？活动 (i,j) 的关键判定条件 e==l 中 e 和 l 分别怎么算？",
+            "userAnswer": "",
+            "status": "不懂",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "顶点=事件，边=活动（带权=工期）；关键路径=源到汇最长路径，决定总工期（最长路径上的活动串行，决定最短总工期）。ve(v)=max(前驱 ve+权)（最早），vl(v)=min(后继 vl−权)（最迟）；边(i,j)的 e=ve(i)、l=vl(j)−w，e==l 则该活动关键。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "总结:AOE 网（关键路径）",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "title": "408 薄弱知识点汇总导入",
+        "questions": [
+          {
+            "id": "124",
+            "subject": "408",
+            "chapter": "【DS】七、排序",
+            "topic": "基数排序",
+            "question": "基数排序 LSD 和 MSD 的区别？它是稳定排序吗？时间复杂度怎么表示（d/n/k 含义）？",
+            "userAnswer": "",
+            "status": "不懂",
+            "isWrong": false,
+            "knowledgeType": "总结",
+            "missing": "",
+            "keyAnswer": "LSD 低位优先（从个位开始，每趟按位分配桶 0-9 再收集，到最高位）；MSD 高位优先（先排高位再递归子桶）。稳定排序；时间 O(d(n+k))：d=趟数/关键字位数，n=元素数，k=基数桶数；空间 O(n+k)。不比较，按位分配收集。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "总结:基数排序",
+            "score": "未测",
+            "lastReview": "2026-07-31T20:47:48"
+          }
+        ]
+      },
+      {
+        "date": "2026-07-31",
+        "title": "英二翻译真题（2021）",
+        "questions": [
+          {
+            "id": "125",
+            "subject": "英语二",
+            "chapter": "四、翻译（英译汉）",
+            "topic": "翻译真题·2021",
+            "question": "We tend to think that friends and family members are our biggest sources of connection, laughter, and warmth. While that may well be true, researchers have also recently found that interacting with strangers actually brings a boost in mood and feelings of belonging that we didn't expect. In one series of studies, researchers instructed Chicago-area commuters using public transportation to strike up a conversation with someone near them. On average, participants who followed this instruction felt better than those who had been told to stand or sit in silence. The researchers also argued that when we shy away from casual interactions with strangers, it is often due to a misplaced anxiety that they might not want to talk to us. Much of the time, however, this belief is false. As it turns out, many people are actually perfectly willing to talk—and may even be flattered to receive your attention.",
+            "userAnswer": "我们往往认为朋友和家人成员是我们最大的连接欢乐和温暖的来源，但这可能并不是真的研究人员最近发现和陌生人交流事实上能让情绪变得不错并且能感受到一种我们从没想过的归属感在一组研究中研究人员指引墨西哥地区的通勤人员使用公共的运输工具去突然和他们附近的人交流平均的来看遵循这项指定的参与者会比那些被让站或者坐着就是安静的站着或者坐着的人感觉更好研究人员也讨论了当我们因为腼腆害羞而拒绝了一次和陌生人随意交流的机会时这也常常只是本不存在的一个焦虑就是认为他们可能不想和我们说话多次研究表明这个观念是错误的就像这个研究结果一样很多人是非常愿意去交谈并且非常愿意去接受你的注意力",
+            "status": "需复习",
+            "isWrong": false,
+            "knowledgeType": "翻译",
+            "missing": "",
+            "keyAnswer": "【参考译文/标准答案】\n我们往往认为，朋友和家人是我们获得联结、欢笑与温暖的最大来源。尽管这很可能是事实，但研究人员最近也发现，与陌生人交流实际上能改善情绪，并带来我们未曾预料到的归属感。在一系列研究中，研究人员指示芝加哥地区的通勤者利用公共交通工具，与身边就近的人搭话。平均而言，遵循这一指示的参与者比那些被要求安静地站着或坐着的人感觉更好。研究人员还认为，当我们回避与陌生人的随意交流时，往往是因为一种多余的焦虑——担心他们可能不想和我们说话。然而，很多时候这种想法是错误的。事实证明，许多人其实非常乐意交谈——甚至可能因为得到你的关注而感到受宠若惊。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "翻译:2021英二",
+            "score": 2,
+            "lastReview": "2026-07-31 21:16:16",
+            "reviewNote": "【批改 评分: 9/15分(约60分)】大意抓到,但4处实质性错译:\n① 句2 While that may well be true 译但这可能并不是真的→逻辑反了!While此处表让步虽然这很可能是真的,不是但是不是真的。\n② 句3 Chicago-area 译墨西哥地区→严重地名错译!Chicago=芝加哥(美国),非墨西哥。strike up a conversation 译突然交流偏差,应为主动搭话/开始交谈。\n③ 句6 Much of the time 译多次研究表明→无中生有!原意大多数时候/往往,且本句无研究表明。\n④ 句7 flattered to receive your attention 译非常愿意去接受你的注意力→词义错!flattered=感到受宠若惊/荣幸,非willing(愿意)。\n次要:connection译连接生硬(应为联系/联结);boost in mood译变得不错偏弱(改善情绪);instruction译指定应为指令。\n建议:地名/专有名词必须准确;while让步、much of the time频率副词、flattered情感词是高频考点,重点背。"
+          }
+        ]
+      },
+      {
+        "id": "log-043",
+        "date": "2026-07-31",
+        "title": "408大题口述-找主元素(13分)",
+        "questions": [
+          {
+            "id": "128",
+            "subject": "408",
+            "chapter": "【DS】六、查找",
+            "topic": "找主元素（Boyer-Moore投票算法）",
+            "name": "找主元素算法",
+            "question": "已知整数序列A=(a0,...,a_{n-1})，0≤ai<n。若存在x出现次数m>n/2，则称x为主元素。设计尽可能高效的算法找出A的主元素，存在则输出，否则输出-1。",
+            "userAnswer": "【口述思路】开大小为n的计数数组count[0..n-1]全0；遍历A中每个元素，将元素值作为count数组下标对应位置+1；遍历完后遍历count数组，只要某下标对应值>n/2就确定为主元素。时间O(n)，空间O(n)。",
+            "thinking": "朴素计数法，思路正确但空间不是最优。最优解应为Boyer-Moore投票算法O(1)空间。",
+            "missing": "①未写出最优解（Boyer-Moore投票算法/消去法）②未提到第二遍验证步骤③边界处理不够完整",
+            "keyAnswer": "**最优解：Boyer-Moore投票算法 O(n)时间 O(1)空间**\n\n第一遍（候选投票）：\n初始化c=NULL, count=0\n遍历A:\n  if count==0: c=A[i], count=1\n  elif A[i]==c: count++\n  else: count--\n\n第二遍（验证）：\n重新遍历A统计c出现次数\n若>n/2返回c，否则返回-1\n\n核心思想：主元素> n/2 → 比其他所有元素加起来还多 → 配对消除后剩下的一定是候选\n\n**评分：9-10/13分**（思路正确拿基础分，但未写出最优解扣2-3分）",
+            "status": "需复习",
+            "images": [
+              " Clipboard_Screenshot.png"
+            ],
+            "score": 1,
+            "lastReview": "2026-07-31 20:54:47"
           }
         ]
       }
@@ -1593,112 +2784,22 @@ globalThis.APP_DATA = {
     "cs": 45,
     "updated": "2026-06-30"
   },
-  "memoCards": [
+  "topics": [
     {
-      "tag": "1^∞ 型",
-      "title": "1^∞ 型极限三件套",
-      "steps": [
-        "判型：lim f(x)^g(x)，f → 1, g → ∞",
-        "取对数：ln y = g · ln f",
-        "等价无穷小：f → 1 时，ln f ~ f - 1",
-        "ln y ~ g · (f - 1)",
-        "原极限 = e^[lim g(f-1)]"
-      ],
-      "example": "例：lim (1+sin 2x²)^(1/x⁴) = e^[lim (1/x⁴)·2x²] = e^∞ = +∞",
-      "tip": "关键：用 g·(f-1) 替代 g·ln f，否则会漏算"
+      "title": "408 专题 · 文件系统",
+      "content": "# 文件系统专题（408 真题匹配版）\n\n> 标注年份=历年408真题大题出处，公式以王道/天勤真题解析为准。\n\n## 一、真题提取的模板 / 公式 / 流程（置顶，先背这些）\n\n### [2014·43] 文件尺寸与混合索引计算\n- 已知文件大小 F、盘块大小 B、inode 中直接块 d 个、一级间接 1 个、二级间接 1 个：\n  - 总块数 N = F / B\n  - 一级间接可表示块数 = B / 4（每块存4B地址）→ 一级间接容量 = (B/4) × B\n  - 二级间接容量 = (B/4)² × B\n  - 文件最大长度 = d×B + (B/4)×B + (B/4)²×B（+ 三级…）\n- 例题锚点：F=10GB, B=4KB → N=2.5M；索引块占用 ≈ N/8 再 /B = 80 个索引块。\n\n### [2011·46] 目录项 → FCB → inode\n- 目录项存\"文件名 + inode 号\"；FCB 即目录项/inode 中的文件控制块（文件名、物理地址、长度等）。\n- 打开文件流程：目录项 → 读 FCB/inode → 装入内存打开文件表。\n\n### 通用模板（必背公式）\n- 访盘次数 = 1(查目录项) + 1(读 inode/FCB) + 索引级数 + 1(读数据块)\n- 位示图大小(bit) = 磁盘总块数；字节数 = 总块数 / 8\n- 成组链接法：每组 N 块，组首块存(下组块号 + 本组块数)\n- 混合索引最大文件长度 = Σ各级可寻址块数 × 块大小\n\n## 二、知识点（系统梳理）\n\n### 1. 文件系统磁盘布局（ext2/Unix 风格）\n引导块 → 超级块(存块数/inode数/空闲栈等元信息) → 块组描述符 → 块位图 → inode 位图 → inode 表 → 数据块。\n- MBR（主引导记录）在磁盘0扇区，存引导程序+分区表，属磁盘级，不在文件系统内。\n\n### 2. inode / FCB\n- inode 存：文件属性 + 12个直接块 + 1个一级间接 + 1个二级间接 + 1个三级间接指针。\n- 文件数据不在 inode 内，inode 只存索引。\n\n### 3. 文件物理结构（连续 / 链接 / 索引）\n- 索引结构最灵活，支持随机访问，混合索引兼顾小文件效率与大文件容量。\n\n### 4. 空闲空间管理\n- 位图法：O(1) 判某块是否空闲，但需连续存放位图。\n- 成组链接法（UNIX）：适合大磁盘，分配/回收只动组头，缺点是不能随机判空闲。\n\n### 5. 目录与路径解析\n- 单级目录：查目录1次 + 读inode1次 = 2次磁盘访问。\n- 二级目录(/a/b/file)：每级1次目录块 + 最后1次 inode ≈ 3次。\n\n### 6. 文件读写完整流程\nopen(path) → 返回 fd(打开文件表下标) → read(fd) 按 f_offset 查 inode 索引得逻辑块号 → + 基址 = 物理盘块 → 读入内存。\n\n### 7. 硬链接 vs 软链接\n- 硬链接：多目录项指向同一 inode，删源文件只要仍有引用就能访问。\n- 软链接(符号链接)：存源文件路径，删源文件后变悬空链接，访问不到。"
     },
     {
-      "tag": "泰勒",
-      "title": "4 个泰勒模板（必背）",
-      "formulas": [
-        "e^x = 1 + x + x²/2! + x³/3! + ...",
-        "1/(1+u) = 1 - u + u² - u³ + ...",
-        "sin u = u - u³/3! + u⁵/5! - ...",
-        "ln(1+u) = u - u²/2 + u³/3 - ..."
-      ],
-      "tip": "sin/ln 只展奇次或正负交替；1/(1+u) 用几何级数；展到 n 阶 → 取前 n+1 项"
+      "title": "408 专题 · I/O 设备",
+      "content": "# I/O 设备专题（408 真题匹配版）\n\n> 标注年份=历年408真题大题出处，公式以王道/天勤真题解析为准。\n\n## 一、真题提取的模板 / 公式 / 流程（置顶，先背这些）\n\n### [2013·22] 磁盘访问时间计算\n- 磁盘存取时间 T = 寻道时间 + 旋转延迟 + 传输时间\n- 例题锚点：寻道 6ms + 旋转(半圈)3ms + 传输 4KB/20MB/s=0.2ms → T=9.4ms\n- 平均旋转延迟 = 1/2 圈时间（如 10000rpm → 一圈6ms → 平均3ms）\n\n### [2009·43] 程序中断 vs DMA 的 CPU 占用率\n- 中断方式：每传若干数据触发一次中断，CPU 占用率 = 中断处理指令耗时 / 总传输时间\n- DMA 方式：每传一个数据块(如5000B)才中断一次，CPU 占用率 = (块数×单次处理) / 总传输时间\n- 结论：DMA 的 CPU 占用率远低于程序中断（真题算出 DMA 约0.1% vs 中断2.5%）\n\n### [2015·32] 磁盘调度 SCAN（电梯）算法\n- 磁道移动总量 = (最远端 − 当前) + (最远端 − 最近请求端)\n- 例题锚点：当前58，请求15/42/58/199，SCAN向上 → (199−58)+(199−15)=325\n- SSTF：每次选最近的；CSCAN：到头直接回起点。\n\n### 通用模板（必背公式）\n- 磁盘存取时间 T = 寻道 + 旋转延迟(平均半圈) + 传输时间(字节数/速率)\n- 调度总寻道距离：FCFS(按序累加) / SSTF(最近优先) / SCAN(单向到端再回) / CSCAN(到端回起点)\n- 中断/DMA CPU 利用率 = 1 − 设备占用时间 / CPU总可用时间\n\n## 二、知识点（系统梳理）\n\n### 1. I/O 控制方式（4 种）\n- 程序查询：CPU 轮询，最忙。\n- 程序中断：完成后发中断，CPU 可干别的。\n- DMA：块传输由 DMAC 完成，每块结束才中断一次。\n- 通道：专门 I/O 处理器，执行通道程序，最彻底解放 CPU。\n\n### 2. 中断 vs DMA 比较\n- 中断：每传1字/1字节可能中断；适合慢速、少量。\n- DMA：整块传完才中断；适合高速块设备（磁盘）。\n\n### 3. I/O 软件层次\n用户层 → 设备无关层 → 设备驱动层 → 中断处理层 → 硬件。\n- SPOOLing（假脱机）：用磁盘模拟独占设备，实现共享（典型：打印池）。\n\n### 4. 磁盘调度算法\nFCFS / SSTF / SCAN / CSCAN / LOOK（SCAN不走到头）。\n\n### 5. 磁盘性能参数\n- RPM → 转速；平均寻道时间；平均旋转延迟 = 1/(2×RPM/60)。\n\n### 6. RAID（简单了解）\nRAID0 条带(无冗余) / RAID1 镜像 / RAID5 分布式校验。"
     },
     {
-      "tag": "取舍",
-      "title": "等价 vs 夹逼 vs 洛必达",
-      "table": [
-        [
-          "单一因式相乘/相除",
-          "等价无穷小",
-          "题 23、34"
-        ],
-        [
-          "差的极限（求主导项）",
-          "取主项 + 等价",
-          "题 32"
-        ],
-        [
-          "n 项求和/求积",
-          "夹逼 或 定积分定义",
-          "题 25、38"
-        ],
-        [
-          "0/0 或 ∞/∞ 通用",
-          "洛必达（最笨但通用）",
-          "兜底"
-        ]
-      ],
-      "tip": "口诀：'单用等，多用夹，差取主，洛兜底'"
+      "title": "408 专题 · TCP 连接管理",
+      "content": "# TCP 连接管理专题（408 真题匹配版）\n\n> 标注年份=历年408真题大题出处，状态机/序号以王道/天勤真题解析为准。\n\n## 一、真题提取的模板 / 公式 / 流程（置顶，先背这些）\n\n### [2016·41] 三次握手（建立连接）\n- C → S：SYN=1, seq=x\n- S → C：SYN=1, ACK=1, seq=y, ack=x+1\n- C → S：ACK=1, seq=x+1, ack=y+1\n- 关键：第二次报文同时置 SYN+ACK；确认号 = 对方序号 + 1\n\n### [2011·39] 确认号计算\n- 确认号 ack = 收到的序号 seq + 收到的数据字节数（期望收到的下一个序号）\n- 例题锚点：收到 seq=1913、100字节数据 → ack=2013（或按真题给 ack=2046 等，以解析为准）\n\n### [2022·39] 连接释放状态机 + TIME_WAIT\n- 主动关闭方：FIN-WAIT-1 → FIN-WAIT-2 → TIME-WAIT → CLOSED\n- 被动关闭方：CLOSE-WAIT → LAST-ACK → CLOSED\n- TIME-WAIT 时长 = 2MSL（例题：1RTT + 2MSL = 50 + 800×2 = 1650ms）\n- 从 FIN-WAIT-1 到完全 CLOSED = 1RTT + 2MSL\n\n### 通用模板（必背）\n- 三次握手报文序列（见上 2016）\n- 确认号 ack = 收到的 seq + 收到的数据长度\n- 四次挥手：FIN(主动) → ACK → FIN(被动) → ACK\n- TIME_WAIT = 2MSL（保证最后 ACK 可达 + 旧报文消散）\n- 拥塞控制：慢开始 cwnd 指数增到 ssthresh，拥塞避免线性增；乘法减小\n\n## 二、知识点（系统梳理）\n\n### 1. TCP 报文段关键字段\n- seq(序号) / ack(确认号) / SYN / ACK / FIN / window(窗口) / MSS\n\n### 2. 三次握手为什么是三次\n- 两次不够（防失效连接请求）；三次确认双方收发能力正常。\n\n### 3. 四次挥手\n- TCP 全双工，关闭需双向各 FIN+ACK。\n\n### 4. 状态机（必画）\n- 建立：CLOSED→SYN-SENT→ESTABLISHED；LISTEN→SYN-RCVD→ESTABLISHED\n- 释放：FIN-WAIT-1→FIN-WAIT-2→TIME-WAIT→CLOSED\n\n### 5. 流量控制 vs 拥塞控制\n- 流量控制：滑动窗口，防发送方淹没接收方。\n- 拥塞控制：慢开始/拥塞避免/快重传/快恢复。\n\n### 6. 可靠传输\n- 序号、确认、重传、滑动窗口（GBN / 选择重传）。"
     },
     {
-      "tag": "408",
-      "title": "进程/线程共享 vs 私有",
-      "table": [
-        [
-          "共享",
-          "堆 / 代码段 / 数据段 / 文件描述符 / 全局变量"
-        ],
-        [
-          "私有",
-          "栈 / 寄存器 / PC / 线程局部存储"
-        ]
-      ],
-      "tip": "进程是资源分配单位；线程是 CPU 调度单位"
-    },
-    {
-      "tag": "408",
-      "title": "Peterson vs TSL",
-      "table": [
-        [
-          "Peterson",
-          "软件算法，单核可用，忙等 + 礼让"
-        ],
-        [
-          "TSL",
-          "硬件原子指令，多核可用，忙等但无饥饿"
-        ]
-      ],
-      "tip": "两者都忙等！TSL 优势是'硬件原子 + 可用于多核'，不是'不忙等'"
-    },
-    {
-      "tag": "408",
-      "title": "进程切换触发条件",
-      "table": [
-        [
-          "会触发",
-          "时间片用完 / 阻塞 I/O / 高优先级就绪 / 进程退出"
-        ],
-        [
-          "不触发",
-          "纯计算型系统调用 / 中断处理结束（仅恢复现场）"
-        ]
-      ],
-      "tip": "'中断处理结束一定切换'是错的——只是恢复现场"
-    },
-    {
-      "tag": "Σ公式",
-      "title": "求和公式（凑定积分必备）",
-      "formulas": [
-        "Σk (k=1..n) = n(n+1)/2",
-        "Σk² (k=1..n) = n(n+1)(2n+1)/6",
-        "Σk³ (k=1..n) = [n(n+1)/2]²"
-      ],
-      "tip": "n 项求和极限 → 提 1/n → Σ(k/n)^m → ∫₀¹ x^m dx = 1/(m+1)"
+      "title": "指令系统专题",
+      "content": "# 指令系统专题（408 真题匹配版）\n\n> 标注年份=历年408真题大题出处，寻址/数据存放以王道/天勤真题解析为准。\n\n## 一、真题提取的模板 / 公式 / 流程（置顶，先背这些）\n\n### [2012·46] 页表大小计算（计组，常结合指令/存储）\n- 逻辑空间 4TB、页大小 1KB → 页数 = 4TB/1KB = 2^32；页表项 4B\n- 顶级页表大小 = 页数 × 页表项大小（多级页表分散存放省内存）\n- 例题锚点：4TB/1KB=2^32 页，页表项4B，单级页表=2^32×4B\n\n### 通用寻址公式（必背）\n- 直接寻址：EA = A（地址码即有效地址）\n- 间接寻址：EA = (A)（A 指向的单元存地址）\n- 寄存器寻址：EA = Ri\n- 寄存器间接：EA = (Ri)\n- 基址寻址：EA = (BR) + A（面向系统，程序浮动）\n- 变址寻址：EA = (IX) + A（面向用户，数组遍历，IX 变）\n- 相对寻址：EA = (PC) + A（转移指令，与位置无关）\n\n### 大端 / 小端（真题高频）\n- 大端：高位字节存低地址（与人类书写一致）\n- 小端：低位字节存低地址（x86 采用）\n- 边界对齐：字/半字按自然边界存放，不对齐可能多次访存\n\n### 有效地址 / PC / 跳转\n- 有效地址 EA = 操作数在主存的实际地址\n- PC = 下一条要执行指令的地址\n- jump 目标 = PC + 偏移量（相对寻址）\n\n## 二、知识点（系统梳理）\n\n### 1. 指令格式\n- 操作码 + 地址码；定长/变长操作码；零/一/二/三地址指令；指令字长与机器字长关系。\n\n### 2. 一条指令的 5 个执行阶段\n取指 IF → 间址 ID(可选) → 执行 EX → 访存 MEM → 写回 WB（另有中断 INT）。\n- 各阶段对应 CPU 数据通路：PC→MAR→M→MDR→IR，PC+1。\n\n### 3. CISC vs RISC（两条判断维度）\n- ① 指令字定长？CISC 不定长 / RISC 定长\n- ② 除 Load/Store 外能否访存？CISC 能 / RISC 只有 Load/Store 访存\n\n### 4. 数据存放\n- 大端/小端、边界对齐（见上真题模板）。\n\n### 5. 函数调用栈帧（虚拟地址空间 VA）\n- 参数从右到左压栈；返回地址在 ebp+4；旧 ebp 在 ebp；局部变量在 ebp−偏移。\n- PC = ebp+4 是返回地址：call 指令把返回地址压栈后，ebp+4 即该处。\n\n### 6. 历年真题考点小结\n- 寻址方式算 EA 与操作数值（高频小题）\n- CISC/RISC 判断（选择题高频）\n- 大小端 + 边界对齐（给内存字节图判数值）\n- PC 与相对转移算跳转目标（小题/大题结合数据通路）\n- 变址/基址区分（数组、程序浮动场景）"
     }
   ]
 };

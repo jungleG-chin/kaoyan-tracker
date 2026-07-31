@@ -127,20 +127,6 @@
   .q-block .again-btn:hover { background: #faeeda; }
   .q-block .resolved-flag { font-size: 11px; color: #888; margin-left: auto; }
 
-  /* 速记卡 */
-  .memo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-top: 12px; }
-  .memo-card { background: linear-gradient(135deg, #f8fafd 0%, #fff 100%); border: 0.5px solid #d4dde8; border-radius: 10px; padding: 16px 20px; position: relative; overflow: hidden; }
-  .memo-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #185fa5 0%, #534ab7 100%); }
-  .memo-card h3 { font-size: 14px; color: #185fa5; margin-bottom: 8px; font-weight: 600; }
-  .memo-card .memo-tag { display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 3px; background: #534ab7; color: #fff; margin-bottom: 8px; }
-  .memo-card .memo-formula { font-family: 'Consolas', 'Monaco', 'Courier New', monospace; font-size: 13px; color: #2c2c2a; padding: 8px 12px; background: #fff; border: 0.5px solid #e0e0dc; border-radius: 6px; margin: 6px 0; display: block; }
-  .memo-card .memo-step { font-size: 12px; color: #555; padding: 4px 0 4px 16px; position: relative; }
-  .memo-card .memo-step::before { content: "→"; position: absolute; left: 4px; color: #185fa5; }
-  .memo-card .memo-tip { font-size: 11px; color: #993c1d; background: #faece7; padding: 6px 10px; border-radius: 4px; margin-top: 8px; }
-  .memo-card .memo-table { width: 100%; font-size: 12px; margin-top: 6px; border-collapse: collapse; }
-  .memo-card .memo-table td { padding: 4px 8px; border-bottom: 0.5px solid #e0e0dc; }
-  .memo-card .memo-table td:first-child { color: #185fa5; font-weight: 500; width: 30%; }
-
   .empty { padding: 32px; text-align: center; color: #aaa; font-size: 13px; }
 
   .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
@@ -197,7 +183,7 @@
 <div class="tabs">
   <div class="tab active" onclick="switchTab('weak')">弱点库</div>
   <div class="tab" onclick="switchTab('log')">复习回顾</div>
-  <div class="tab" onclick="switchTab('memo')">速记卡</div>
+  <div class="tab" onclick="switchTab('topic')">专题复习</div>
 </div>
 
 <div class="content">
@@ -236,39 +222,35 @@
   <div id="log-container"><div class="empty">暂无日志</div></div>
 </div>
 
-<!-- ==================== 速记卡 ==================== -->
-<div class="page" id="page-memo">
-  <div class="section-title">速记卡（核心公式 / 模板 / 易错口诀）</div>
-  <div class="card" id="memo-container"></div>
+<!-- ==================== 专题复习 ==================== -->
+<div class="page" id="page-topic">
+  <div class="section-title">专题复习（深入讲解 · 来自 408 真题薄弱点）</div>
+  <div class="card" id="topic-container"></div>
 </div>
 
 </div><!-- /content -->
 
 <div class="toast" id="toast"></div>
 
-<!-- 浮动按钮：导出最新 data.json（含 localStorage 状态覆盖） -->
-<button onclick="exportDataJson()" title="把 localStorage 里的最新状态写回 data.json" style="position:fixed;bottom:24px;left:24px;padding:8px 14px;font-size:12px;background:#185fa5;color:#fff;border:none;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,0.15);cursor:pointer;z-index:100;">📥 导出 data.json</button>
+<!-- 数据源已统一为 data/data.js（唯一数据源，GitHub Pages 兼容） -->
 
 <!-- ===== 核心：数据加载（支持 file:// 双击 + HTTP 部署） ===== -->
 <!-- 1) 先尝试加载 data/data.js（同步，file:// 下也能用） -->
 <script src="data/data.js"></script>
 
 <script>
-// 自动生成于 2026-07-03
-// 数据加载策略（智能 fallback）：
-//   1) 优先用 <script> 加载的 data/data.js（globalThis.APP_DATA）—— file:// 双击也能用
-//   2) 同时异步 fetch data/data.json —— GitHub Pages / HTTP 服务器下拿最新数据
-//   3) fetch 成功后用 json 覆盖，fetch 失败时保留 data.js 数据
+// 数据加载（纯 data.js 模式，GitHub Pages 兼容）
+// data/data.js 通过 <script> 标签加载，设置 globalThis.APP_DATA
 let APP_DATA = globalThis.APP_DATA || null;
-let SYLLABUS = {}, LOGS_RAW = [], PROGRESS = { math:0, eng:0, pol:0, cs:0 }, MEMO_CARDS = [];
+let SYLLABUS = {}, LOGS_RAW = [], PROGRESS = { math:0, eng:0, pol:0, cs:0 }, TOPICS = [];
 let _dataReady = false;
 
 function applyData(data) {
   APP_DATA = data;
   SYLLABUS = data.syllabus || {};
   LOGS_RAW = (data.logs && data.logs.list) || [];
+  TOPICS = data.topics || [];
   PROGRESS = data.progress || { math:0, eng:0, pol:0, cs:0 };
-  MEMO_CARDS = data.memoCards || [];
   _dataReady = true;
   if (typeof onDataLoaded === 'function') onDataLoaded();
 }
@@ -276,36 +258,21 @@ function applyData(data) {
 function showFatalError(err) {
   document.body.innerHTML = '<div style="padding:40px;font-family:sans-serif;max-width:800px;margin:0 auto;">'
     + '<h2 style="color:#a32d2d;">⚠️ 数据加载失败</h2>'
-    + '<p>请确认 <code>data/data.json</code> 和 <code>data/data.js</code> 都存在且可访问。</p>'
-    + '<p>GitHub Pages 部署后地址应为：<code>./data/data.json</code></p>'
-    + '<p>本地双击 index.html 打开时浏览器可能限制 fetch，需要通过 HTTP 服务器访问（如 <code>python -m http.server</code>）。</p>'
+    + '<p>请确认 <code>data/data.js</code> 文件存在且可访问。</p>'
+    + '<p>本地双击 <code>index.html</code> 即可使用；GitHub Pages 部署后直接访问。</p>'
     + '<pre style="background:#f5f5f0;padding:16px;border-radius:6px;overflow:auto;font-size:12px;">' + (err.stack || err.message) + '</pre>'
     + '</div>';
 }
 
-async function loadData() {
-  // 1) data.js 已通过 <script> 加载，立即用它的数据渲染（如果存在）
+function loadData() {
+  // 唯一数据源：data.js（通过 <script src="data/data.js"> 已加载）
   if (globalThis.APP_DATA) {
     applyData(globalThis.APP_DATA);
-  }
-
-  // 2) 异步 fetch data.json，拿到更新数据时覆盖
-  try {
-    const url = 'data/data.json?t=' + Date.now();
-    const res = await fetch(url, { cache: 'no-store' });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const jsonData = await res.json();
-    applyData(jsonData);
-    console.log('[kaoyan] data.json 加载成功，已用最新数据');
-  } catch (err) {
-    if (globalThis.APP_DATA) {
-      console.warn('[kaoyan] fetch data.json 失败，用 data.js 备份数据：', err.message);
-    } else {
-      showFatalError(err);
-    }
+    console.log('[kaoyan] data.js 加载成功');
+  } else {
+    showFatalError(new Error('globalThis.APP_DATA 未定义，请检查 data/data.js'));
   }
 }
-// SYLLABUS / LOGS_RAW / PROGRESS / MEMO_CARDS 在 loadData() 里赋值（见上方）
 
 // ========== helper: 科目标准化 ==========
 function normalizeSubject(subject) {
@@ -467,14 +434,14 @@ function showToast(msg) {
 let currentWeakFilter = 'all';
 function switchTab(name) {
   document.querySelectorAll('.tab').forEach((t, i) => {
-    const names = ['weak', 'log', 'memo'];
+    const names = ['weak', 'log', 'memo', 'topic'];
     t.classList.toggle('active', names[i] === name);
   });
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + name).classList.add('active');
   if (name === 'weak') renderWeakTree();
   if (name === 'log') renderLog();
-  if (name === 'memo') renderMemo();
+  if (name === 'topic') renderTopics();
 }
 
 // ========== 弱点库渲染 ==========
@@ -559,28 +526,27 @@ function renderWeakTree() {
         </div>`;
         html += '<div class="weak-items">';
         chWeaks.forEach(w => {
-          const isKnowledge = w._isKnowledge;
-          const qIdChips = isKnowledge ? '' : (w.qIds || []).map(q => {
+          const qIdChips = (w.qIds || []).map(q => {
             const safeQ = (q || '').toString();
-            const num = safeQ.replace('Q', '').replace('(', '').replace(')', '');
-            return `<span class="q-chip q${num}">${safeQ}</span>`;
+            return `<span class="q-chip">${safeQ}</span>`;
           }).join(' ');
           const logRef = findLogByQid(w.qIds && w.qIds[0], w.subject);
           const keyAns = logRef && logRef.q ? (logRef.q.keyAnswer || '') : '';
+          const sevShow = w.sev === '知' ? '中' : w.sev;
 
-          html += `<div class="weak-item ${w.resolved ? 'resolved' : ''} ${isKnowledge ? 'knowledge-item' : ''}" onclick="locateWeak('${w.id}')">
+          html += `<div class="weak-item ${w.resolved ? 'resolved' : ''}" id="weakitem-${w.id}" onclick="locateWeak('${w.id}')">
             <div class="top">
-              <span class="sev-tag ${isKnowledge ? '知' : w.sev}">${isKnowledge ? '💡' : w.sev}</span>
-              <span class="type-tag" style="font-size:11px;padding:1px 5px;border-radius:3px;margin-left:4px;${w.knowledgeType === '总结' ? 'background:#e8f4fc;color:#185fa5;' : 'background:#fce8e8;color:#a32d2d;'}">${w.knowledgeType || (isKnowledge ? '总结' : '错题')}</span>
+              <span class="sev-tag ${sevShow}">${sevShow}</span>
+              <span class="type-tag" style="font-size:11px;padding:1px 5px;border-radius:3px;margin-left:4px;background:#eef2f7;color:#5b6b7b;">知识点</span>
               <strong class="type">${w.type}</strong>
               ${qIdChips}
-              ${isKnowledge ? '' : `<span style="font-size:11px;color:#888;margin-left:auto;">×${w.count}</span>`}
+              <span style="font-size:11px;color:#888;margin-left:auto;">×${w.count}</span>
             </div>
             <div class="detail">${w.detail}</div>
-            ${keyAns ? `<div class="answer"><b>${isKnowledge ? '总结' : '标准答案'}：</b>${keyAns.split('\n')[0]}</div>` : ''}
-            <div class="meta">📅 ${w.date}${w.ref && !isKnowledge ? ' · 与 ' + w.ref + ' 同源' : (w.ref && isKnowledge ? ' · ' + w.ref : '')}</div>
+            ${keyAns ? `<div class="answer"><b>标准答案：</b>${keyAns.split('\n')[0]}</div>` : ''}
+            <div class="meta">📅 ${w.date}${w.ref ? ' · 编号 ' + w.ref : ''}</div>
             <div class="actions" onclick="event.stopPropagation()">
-              <button class="locate-btn" onclick="locateToLog('${w.id}')">📍 定位到日志</button>
+              <button class="locate-btn" onclick="locateToLog('${w.id}')">📍 定位到复习回顾</button>
             </div>
           </div>`;
         });
@@ -614,59 +580,28 @@ function locateToLog(weakId) {
   const w = getWeaks().find(x => x.id === weakId);
   if (!w || !w.qIds || w.qIds.length === 0) { showToast('该弱点未关联具体题目'); return; }
   const qid = w.qIds[0];
+  // 强制切到「全部」filter，确保目标题一定已渲染到 DOM
+  currentLogFilter = 'all';
+  const pills = document.querySelectorAll('#page-log .filter-pill');
+  pills.forEach(p => p.classList.remove('active'));
+  if (pills[1]) pills[1].classList.add('active');
   switchTab('log');
   setTimeout(() => {
-    let el = findByQid(qid);
-    if (!el) {
-      // 目标题可能被 filter 掉了（如「已掌握」filter 不渲染知识卡），切到「全部」再试
-      currentLogFilter = 'all';
-      const pills = document.querySelectorAll('#page-log .filter-pill');
-      pills.forEach(p => p.classList.remove('active'));
-      if (pills[1]) pills[1].classList.add('active');
-      renderLog();
-      el = findByQid(qid);
-    }
+    const el = findByQid(qid);
     if (!el) { showToast('题目块未找到：' + qid); return; }
-    // 展开所在 log 卡片
+    // 展开所在 log 卡片（若有折叠）
     const detail = el.closest('[id^="log-detail-"]');
     if (detail) detail.style.display = 'block';
-    // 滚动定位
-    // 【兼容新旧】旧: id 以 K_/K-/INSIGHT_ 开头; 新: name 以「总结:」开头
-    const target = LOGS_RAW.flatMap(l => (l.questions||[]).map(q => q)).find(q => q.id === qid);
-    const isK = String(qid).startsWith('K_') || String(qid).startsWith('K-') || String(qid).startsWith('INSIGHT_') || (target && (target.name || '').startsWith('总结:'));
-    if (isK) {
-      const logCard = el.closest('.card');
-      if (logCard) {
-        logCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        setTimeout(() => window.scrollBy(0, -60), 50);
-        // 保底：600ms 后如果还没滚到位（smooth 动画被中断），强制滚到正确位置
-        setTimeout(() => {
-          const rect = logCard.getBoundingClientRect();
-          if (Math.abs(rect.top + 60) > 10) {
-            const top = logCard.getBoundingClientRect().top + window.scrollY - 60;
-            window.scrollTo({ top, behavior: 'auto' });
-          }
-        }, 600);
-      } else {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        setTimeout(() => {
-          const rect = el.getBoundingClientRect();
-          if (Math.abs(rect.top - 400) > 50) {
-            const top = el.getBoundingClientRect().top + window.scrollY - 400;
-            window.scrollTo({ top, behavior: 'auto' });
-          }
-        }, 600);
+    // 滚动定位到该题块
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setTimeout(() => {
+      const rect = el.getBoundingClientRect();
+      if (Math.abs(rect.top - 400) > 60) {
+        const top = el.getBoundingClientRect().top + window.scrollY - 400;
+        window.scrollTo({ top, behavior: 'auto' });
       }
-    } else {
-      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      setTimeout(() => {
-        const rect = el.getBoundingClientRect();
-        if (Math.abs(rect.top - 400) > 50) {
-          const top = el.getBoundingClientRect().top + window.scrollY - 400;
-          window.scrollTo({ top, behavior: 'auto' });
-        }
-      }, 600);
-    }
+    }, 600);
+    // 高亮闪烁
     document.querySelectorAll('.q-block.highlight').forEach(n => n.classList.remove('highlight'));
     el.classList.add('highlight');
     setTimeout(() => el.classList.remove('highlight'), 4000);
@@ -796,6 +731,7 @@ function renderQBlock(q) {
       <div class="q-head">
         <span class="k-tag" style="font-size:10px;padding:1px 6px;border-radius:3px;background:#e8f4fc;color:#185fa5;font-weight:500;">💡 知识卡</span>
         ${statusBadge}
+        <span class="q-chip">${q.id}</span>
         <span class="q-title">${displayTitle}</span>
         <span style="font-size:10px;color:#888;margin-left:auto;">${q.subject || ''}</span>
       </div>
@@ -818,7 +754,7 @@ function renderQBlock(q) {
   const uid = q._uid || (q.subject + '_' + q.id);
   return `<div class="q-block" id="qblock-${uid}" data-qid="${q.id}">
     <div class="q-head">
-      <span class="q-chip ${String(q.id).toLowerCase().replace(/[()]/g,'')}">${q.id}</span>
+      <span class="q-chip">${q.id}</span>
       ${statusBadge}
       <span class="q-title">${displayTitle}</span>
       <span style="font-size:10px;color:#888;margin-left:auto;">${q.subject || ''}</span>
@@ -846,7 +782,7 @@ function toggleLogDetail(i) {
 // ========== 状态切换（3 档：不懂/知道/掌握）持久化策略 ==========
 // 1) 状态变化时直接修改内存中的 LOGS_RAW
 // 2) 同步写入 localStorage（刷新不丢）
-// 3) 提供「导出 data.json」按钮，下载最新数据让用户覆盖到项目目录（手动 commit）
+// 3) 数据源统一为 data.js，由 AI 维护更新（无需手动导出）
 let _saveStatusPending = null;  // 防抖：合并短时间内的多次保存
 const STATUS_OVERRIDE_KEY = 'kaoyan_status_override_v1';
 
@@ -903,48 +839,71 @@ function applyStatusOverride() {
   if (cnt > 0) console.log(`[kaoyan] 从 localStorage 恢复 ${cnt} 个状态覆盖`);
 }
 
-// 导出当前 LOGS_RAW（包含最新状态）到 data.json 文件
-function exportDataJson() {
-  // 把 localStorage 的状态覆盖同步到 APP_DATA.logs.list
-  const overrides = loadStatusOverride();
-  for (const l of APP_DATA.logs.list) {
-    for (const q of (l.questions || [])) {
-      if (overrides[q.id]) q.status = overrides[q.id];
-    }
-  }
-  const json = JSON.stringify(APP_DATA, null, 2);
-  const blob = new Blob([json], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'data.json';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-  showToast('📥 data.json 已下载，请覆盖到项目 data/ 目录');
+// ========== 专题复习渲染 ==========
+function inlineMd(t) {
+  return t.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
 }
-
-// ========== 速记卡渲染 ==========
-function renderMemo() {
-  const c = document.getElementById('memo-container');
-  c.innerHTML = `<div class="memo-grid">${MEMO_CARDS.map(m => {
-    let body = '';
-    if (m.steps) {
-      body = m.steps.map(s => `<div class="memo-step">${s}</div>`).join('');
-    } else if (m.formulas) {
-      body = m.formulas.map(f => `<span class="memo-formula">${f}</span>`).join('');
-    } else if (m.table) {
-      body = `<table class="memo-table">${m.table.map(row => `<tr><td>${row[0]}</td><td>${row[1]}${row[2] ? ' <span style="color:#888;font-size:10px;">[' + row[2] + ']</span>' : ''}</td></tr>`).join('')}</table>`;
+function mdToHtml(md) {
+  let s = md.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const lines = s.split('\n');
+  let html = '', i = 0, inCode = false, codeBuf = [];
+  while (i < lines.length) {
+    const line = lines[i];
+    if (line.trim().startsWith('```')) {
+      if (!inCode) { inCode = true; codeBuf = []; }
+      else { inCode = false; html += '<pre style="background:#1e293b;color:#e2e8f0;padding:12px;border-radius:6px;overflow:auto;font-size:12px;line-height:1.5;">' + codeBuf.join('\n') + '</pre>'; }
+      i++; continue;
     }
-    return `<div class="memo-card">
-      <span class="memo-tag">${m.tag}</span>
-      <h3>${m.title}</h3>
-      ${body}
-      ${m.example ? `<div class="memo-formula" style="background:#eef5fc;color:#185fa5;">${m.example}</div>` : ''}
-      ${m.tip ? `<div class="memo-tip">💡 ${m.tip}</div>` : ''}
-    </div>`;
-  }).join('')}</div>`;
+    if (inCode) { codeBuf.push(line); i++; continue; }
+    if (line.trim().startsWith('|') && i + 1 < lines.length && lines[i + 1].includes('---')) {
+      const rows = []; let j = i;
+      while (j < lines.length && lines[j].trim().startsWith('|')) { rows.push(lines[j]); j++; }
+      const pr = r => r.split('|').slice(1, -1).map(c => c.trim());
+      let t = '<table style="border-collapse:collapse;width:100%;margin:8px 0;font-size:13px;"><thead><tr>';
+      pr(rows[0]).forEach(c => t += '<th style="border:1px solid #cbd5e1;padding:4px 8px;background:#f1f5f9;text-align:left;">' + c + '</th>');
+      t += '</tr></thead><tbody>';
+      for (let r = 2; r < rows.length; r++) { t += '<tr>'; pr(rows[r]).forEach(c => t += '<td style="border:1px solid #cbd5e1;padding:4px 8px;">' + c + '</td>'); t += '</tr>'; }
+      t += '</tbody></table>';
+      html += t; i = j; continue;
+    }
+    if (line.startsWith('# ')) { html += '<h2 style="margin:14px 0 6px;font-size:17px;color:#1e3a5f;border-bottom:2px solid #5494c9;padding-bottom:4px;">' + inlineMd(line.slice(2)) + '</h2>'; i++; continue; }
+    if (line.startsWith('## ')) { html += '<h3 style="margin:12px 0 4px;font-size:15px;color:#185fa5;">' + inlineMd(line.slice(3)) + '</h3>'; i++; continue; }
+    if (line.startsWith('### ')) { html += '<h4 style="margin:10px 0 3px;font-size:13.5px;color:#2c5282;">' + inlineMd(line.slice(4)) + '</h4>'; i++; continue; }
+    if (line.startsWith('> ')) { html += '<div style="border-left:3px solid #f0b429;background:#fff8e6;padding:6px 12px;margin:6px 0;color:#7a5b00;font-size:13px;">' + inlineMd(line.slice(2)) + '</div>'; i++; continue; }
+    if (line.trim() === '---') { html += '<hr style="border:none;border-top:1px solid #e2e8f0;margin:10px 0;">'; i++; continue; }
+    if (line.startsWith('- ')) {
+      let lst = '';
+      while (i < lines.length && lines[i].startsWith('- ')) { lst += '<li style="margin:2px 0;">' + inlineMd(lines[i].slice(2)) + '</li>'; i++; }
+      html += '<ul style="margin:6px 0 6px 18px;padding:0;">' + lst + '</ul>'; continue;
+    }
+    if (line.trim() === '') { i++; continue; }
+    html += '<div style="margin:5px 0;line-height:1.6;font-size:13.5px;color:#334155;">' + inlineMd(line) + '</div>';
+    i++;
+  }
+  return html;
+}
+function toggleTopic(idx) {
+  const b = document.getElementById('topic-body-' + idx);
+  const a = document.getElementById('topic-arrow-' + idx);
+  if (!b) return;
+  if (b.style.display === 'none') { b.style.display = 'block'; a.textContent = '▾'; }
+  else { b.style.display = 'none'; a.textContent = '▸'; }
+}
+function renderTopics() {
+  const c = document.getElementById('topic-container');
+  if (!TOPICS || TOPICS.length === 0) {
+    c.innerHTML = '<div class="empty">暂无专题。把专题 markdown 导入 data.js 的 topics 字段即可显示。</div>';
+    return;
+  }
+  c.innerHTML = TOPICS.map((t, idx) => `
+    <div style="border:1px solid #e2e8f0;border-radius:8px;margin-bottom:10px;overflow:hidden;">
+      <div onclick="toggleTopic(${idx})" style="cursor:pointer;padding:12px 16px;background:#f1f5f9;font-weight:600;color:#1e3a5f;display:flex;justify-content:space-between;align-items:center;">
+        <span>${t.title}</span>
+        <span id="topic-arrow-${idx}" style="color:#888;">▸</span>
+      </div>
+      <div id="topic-body-${idx}" style="display:none;padding:12px 16px;">${mdToHtml(t.content)}</div>
+    </div>
+  `).join('');
 }
 
 // ========== 初始化（等数据加载完再渲染） ==========
@@ -953,7 +912,6 @@ function onDataLoaded() {
     applyStatusOverride();
     updateCountdown();
     renderWeakTree();
-    renderMemo();
   } catch(e) {
     document.body.innerHTML = '<div style="padding:40px;font-family:sans-serif;max-width:800px;margin:0 auto;"><h2 style="color:#a32d2d;">⚠️ 页面渲染出错</h2><p style="color:#666;">' + e.message + '</p><pre style="background:#f5f5f0;padding:16px;border-radius:6px;overflow:auto;font-size:12px;">' + (e.stack || '') + '</pre></div>';
   }
