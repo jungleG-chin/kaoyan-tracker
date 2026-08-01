@@ -1,8 +1,8 @@
 // 考研追踪数据 - 唯一数据源（GitHub Pages 兼容）
-// 更新时间: 2026-07-31 21:50
-// 总知识点: 127 条 | 日志数: 43 条 | 专题数: 4 个
+// 更新时间: 2026-07-31 22:30
+// 总知识点: 127 条 | 日志数: 43 条 | 专题数: 9 个
+// 抽测历史: quizHistory 字段（每次抽测自动追加一轮）
 // 数据源：仅此文件，index.html 通过 <script src="data/data.js"> 加载
-// GitHub Pages 部署后手机/电脑均可访问
 
 globalThis.APP_DATA = {
   "syllabus": {
@@ -98,7 +98,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "分段函数 + 间断点",
-            "score": "良",
+            "score": 3,
             "lastReview": "2026-07-30T21:47:31"
           },
           {
@@ -117,7 +117,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "1^∞ 型 + 泰勒联用",
-            "score": "良",
+            "score": 3,
             "lastReview": "2026-07-30T21:47:31"
           },
           {
@@ -136,7 +136,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "夹逼放缩过宽",
-            "score": "差",
+            "score": 1,
             "lastReview": "2026-07-30T21:47:31"
           },
           {
@@ -155,7 +155,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "分式泰勒展开 + 待定系数",
-            "score": "中",
+            "score": 2,
             "lastReview": "2026-07-30T21:47:31"
           },
           {
@@ -174,7 +174,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "x^x 型极限 + 差",
-            "score": "良",
+            "score": 3,
             "lastReview": "2026-07-30T21:47:31"
           },
           {
@@ -193,7 +193,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "积分上限函数",
-            "score": "良",
+            "score": 3,
             "lastReview": "2026-07-30T21:47:31"
           }
         ]
@@ -219,7 +219,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "OS 运行模式",
-            "score": "良",
+            "score": 3,
             "lastReview": "2026-07-30T21:47:31"
           },
           {
@@ -238,7 +238,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "进程 vs 线程",
-            "score": "中",
+            "score": 2,
             "lastReview": "2026-07-30T21:47:31"
           },
           {
@@ -317,7 +317,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "夹逼定理使用条件",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -336,7 +336,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "定积分定义识别",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -355,7 +355,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "n项求和 + 高次量级",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           }
         ]
@@ -381,7 +381,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "观点辨析",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -400,7 +400,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "动作目的辨析",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -419,7 +419,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "句意推断",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           }
         ]
@@ -445,7 +445,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
             "images": [],
             "name": "可导的充要条件",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -464,7 +464,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
             "images": [],
             "name": "可导的必要条件",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -483,7 +483,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
             "images": [],
             "name": "可导的充分条件",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -502,7 +502,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
             "images": [],
             "name": "连续 vs 可导",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -521,7 +521,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
             "images": [],
             "name": "分段函数求导",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -540,7 +540,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_daoshu_ch2_kedaopanding.jpg",
             "images": [],
             "name": "导函数极限定理",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -559,7 +559,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_jueduizhi_kedao_zongjie.png",
             "images": [],
             "name": "含绝对值函数可导性",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -578,7 +578,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_jueduizhi_kedao_zongjie.png",
             "images": [],
             "name": "考试高频套路总结",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           }
         ]
@@ -604,7 +604,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch2_q5.jpg",
             "images": [],
             "name": "幂指极限 + 导数定义",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -623,7 +623,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch2_q7.jpg",
             "images": [],
             "name": "含绝对值函数不可导点",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           }
         ]
@@ -649,7 +649,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_jueduizhi_kedao_zongjie.png",
             "images": [],
             "name": "含绝对值函数可导性：零点系数磨平尖角",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           }
         ]
@@ -675,7 +675,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch2_q8.jpg",
             "images": [],
             "name": "极限函数化简 + 不可导点判断",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -694,7 +694,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch2_q9.jpg",
             "images": [],
             "name": "极限等式反推函数性质 + 导数定义",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -713,7 +713,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch2_q11.jpg",
             "images": [],
             "name": "含绝对值多项式的驻点与极值点判断",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -732,7 +732,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch2_q12.jpg",
             "images": [],
             "name": "变限积分 + 极值点判断（莱布尼茨公式）",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -751,7 +751,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch2_q13.jpg",
             "images": [],
             "name": "二阶导数极限 + 极值拐点联合判断",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -770,7 +770,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch2_q14.jpg",
             "images": [],
             "name": "|f(x)| 的极值点与拐点判断",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           }
         ]
@@ -796,7 +796,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:选择题构造反例函数的通用思维框架",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           }
         ]
@@ -822,7 +822,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:极限等式反推抽象函数信息（Q9、Q13核心套路）",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           }
         ]
@@ -868,7 +868,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:拐点判定",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           }
         ]
@@ -921,7 +921,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch2_q15.jpg",
             "images": [],
             "name": "拐点判定（二/三阶导判断）",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -940,7 +940,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch2_q16.jpg",
             "images": [],
             "name": "渐近线条数（偶函数斜渐近线）",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -959,7 +959,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:渐近线条数（偶函数）",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -978,7 +978,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch2_q18.jpg",
             "images": [],
             "name": "极限计算（导数定义 + 特殊函数构造）",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -997,7 +997,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch2_q19.jpg",
             "images": [],
             "name": "导数定义（积分型函数求导）",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1016,7 +1016,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch2_q20.jpg",
             "images": [],
             "name": "参数方程求切线",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1035,7 +1035,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch2_q22.jpg",
             "images": [],
             "name": "复合函数求导（链式法则）",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1054,7 +1054,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch2_q23.jpg",
             "images": [],
             "name": "反函数二阶导",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1073,7 +1073,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:反函数求导公式",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           }
         ]
@@ -1119,7 +1119,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:分式化简与变形方法论",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1245,7 +1245,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:抽象极限式判定可导性",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1264,7 +1264,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:抽象极限式判定可导性：武忠祥总结框架",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1283,7 +1283,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:绝对值函数可导性：f(x) 与 |f(x)| 的互推关系",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           }
         ]
@@ -1309,7 +1309,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "观点态度题（同义替换）",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1328,7 +1328,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "主旨态度题（最后一句漏读）",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           }
         ]
@@ -1421,7 +1421,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch3_q40_q41_xiaojifenjiqiudao.jpg",
             "images": [],
             "name": "含参积分化简（不会做）",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1440,7 +1440,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_yanxuan_ch3_q40_q41_xiaojifenjiqiudao.jpg",
             "images": [],
             "name": "积分型极限（思路正确）",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1456,7 +1456,7 @@ globalThis.APP_DATA = {
             ],
             "name": "总结:含参积分换元思路",
             "note": "必换元，把 x 从被积函数里移到积分限",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50",
             "keyAnswer": "**积分号内外变量同名**\n当∫f(x,t)dt中t和x同时出现：换元u=x-t或将x视为常数。\n标准形式F(x)=∫f(t)dt内部不应有x（除非参数）。\n\n⚠️ 需结合具体题目确认。"
           },
@@ -1473,7 +1473,7 @@ globalThis.APP_DATA = {
             ],
             "name": "总结:积分型极限思路",
             "note": "∫ₐˣf(t)dt/(x-a) → f(a) 的套路：① 0/0 型 ② 洛必达：分子导数 = f(x)，分母导数 = 1 → lim f(x) = f(a) 要求 f 连续。③ 或用导数定义凑。",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50",
             "keyAnswer": "**变上限积分极限公式**\nlim_{x→a} [∫_a^x f(t)dt]/(x-a) = f(a)\n推导：积分中值定理或洛必达。推广：[∫f(t)dt]^k/(x-a)^k → f(a)^k"
           }
@@ -1624,7 +1624,7 @@ globalThis.APP_DATA = {
             "image": "gaoshu_budingjifen_5zhongchangjian.jpg",
             "images": [],
             "name": "总结:不定积分常见处理技巧（5种）",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           }
         ]
@@ -1645,7 +1645,7 @@ globalThis.APP_DATA = {
             "missing": "之前误以为EBP存的是局部变量本身（其实是指向局部变量区的指针），误以为ECX传参（cdecl下参数走栈，ECX是循环计数器）。",
             "note": "【通用寄存器】\n• EAX：累加器，函数返回值/乘除法被除数/I/O指令\n• EBX：基址寄存器，408考得少\n• ECX：计数器，LOOP每轮ECX-1为0跳出，REP前缀重复次数。≠传参寄存器（cdecl参数走栈）\n• EDX：数据寄存器，乘法高位/除法余数/I/O端口地址，与EAX配对\n• ESI：源变址，字符串操作源地址（MOVSB从哪搬）\n• EDI：目的变址，字符串操作目的地址（MOVSB搬到哪）\n• EBP：栈帧基准指针，函数体内不动。[EBP-offset]访问局部变量，[EBP+offset]访问参数。不存变量，是指向变量区的锚\n• ESP：栈顶指针，push减4/pop加4，随push/pop动态移动\n\n【特殊寄存器】\n• EIP：指令指针=PC，下一条要执行的指令地址。x86叫EIP，MIPS叫PC\n• EFLAGS：标志寄存器，含ZF(零)/SF(符号)/CF(进位)/OF(溢出)，条件跳转靠它\n\n【段寄存器】\n• CS：代码段（指令从哪取）/ DS：数据段 / SS：栈段 / ES：附加段（字符串操作目的段）\n\n【栈帧布局】\n高地址→低地址：参数c[EBP+12] → 参数b[EBP+8] → 返回地址[EBP+4] → 旧EBP[EBP+0] → 局部变量1[EBP-4] → 局部变量2[EBP-8] → ESP\n口诀：EBP是锚（不动），ESP是浪（随push/pop动）；参数在锚上方(+offset)，局部变量在锚下方(-offset)",
             "images": [],
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50",
             "keyAnswer": "**408常考寄存器**\nPC/EIP=下条指令地址 SP/ESP=栈顶 BP/EBP=帧指针 MAR=主存地址 MDR=数据 PSW=状态标志\nESP浮动EBP稳定。⚠️ 以王道组原为准。"
           }
@@ -1668,7 +1668,7 @@ globalThis.APP_DATA = {
             "images": [
               "gaoshu_duoyuan_q1q2_xingzhi.jpg"
             ],
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50",
             "keyAnswer": "**多元函数三关系**\n偏导连续→可微→连续 且 可微→偏导存在\n反例各方向独立不互推。唯一确定：可微⇒连续。\n可微定义：Δz=AΔx+BΔy+o(ρ)\n⚠️ 以张宇30讲为准。"
           },
@@ -1685,7 +1685,7 @@ globalThis.APP_DATA = {
             "images": [
               "gaoshu_duoyuan_q1q2_xingzhi.jpg"
             ],
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50",
             "keyAnswer": "**多元函数续**\nSchwarz定理：f_xy,f_yx连续→相等\n方向导数D_u f=∇f·u\n极值：驻点→AC-B²判别（>0且A<0极大/A>0极小/<0鞍点）\n条件极值：Lagrange乘数法"
           },
@@ -1702,7 +1702,7 @@ globalThis.APP_DATA = {
             "images": [
               "gaoshu_duoyuan_q6_jingdian.jpg"
             ],
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50",
             "keyAnswer": "**多元函数解题模板**\n1.定义域 2.一阶偏导找驻点 3.AC-B²判别 4.边界拉格朗日 5.条件极值Lagrange\n陷阱：分段函数分界点用定义求偏导；对称性简化；隐函数∂z/∂x=-F_x/F_z\n⚠️ 需对照具体题目图片确认。"
           },
@@ -1719,7 +1719,7 @@ globalThis.APP_DATA = {
             "images": [
               "gaoshu_duoyuan_q3_kewei.jpg"
             ],
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50",
             "keyAnswer": "**未知题型应对**\n1.归类(极限/偏导/极值?) 2.画图 3.回溯知识点 4.特殊值测试 5.联系已知题型\n新题型记录为薄弱点后续补强。请提供题目图片以便精确分析。"
           }
@@ -1746,7 +1746,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "循环队列指针逻辑",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1765,7 +1765,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "遍历还原二叉树",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1784,7 +1784,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "ROM与RAM区分",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1803,7 +1803,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "主存物理存储结构",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1822,7 +1822,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "标志寄存器4状态位",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1841,7 +1841,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "IO请求流程",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1860,7 +1860,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "随机访问MAC 4协议",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           }
         ]
@@ -1886,7 +1886,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "循环队列判满/元素个数",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1905,7 +1905,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "CF/OF标志位分工",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1924,7 +1924,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "CSMA/CD与CSMA/CA",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           }
         ]
@@ -1950,7 +1950,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "B树增删改查",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1969,7 +1969,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "栈-表达式求值",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -1988,7 +1988,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "Prim vs Dijkstra",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -2007,7 +2007,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "最小生成树",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -2026,7 +2026,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "图的存储方式",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -2045,7 +2045,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "插入排序",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -2064,7 +2064,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "USB总线特性",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -2083,7 +2083,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "微程序操作控制字段",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -2102,7 +2102,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "大小端存储",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -2121,7 +2121,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "三类总线分工",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -2140,7 +2140,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "中断隐指令",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -2159,7 +2159,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "用户态边界",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -2178,7 +2178,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "主存读写参数",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -2197,7 +2197,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "网络协议汇总",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           },
           {
@@ -2216,7 +2216,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "闪存Flash性质",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-30T21:32:50"
           }
         ]
@@ -2242,7 +2242,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "矩阵乘积的秩",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           },
           {
@@ -2261,7 +2261,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "证明矩阵可逆",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           },
           {
@@ -2280,7 +2280,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "方阵秩与行列式、可逆性的等价关系",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           },
           {
@@ -2299,7 +2299,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "秩与行/列向量组相关性的关系",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           },
           {
@@ -2318,7 +2318,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "非方阵秩与线性方程组解的关系",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           },
           {
@@ -2337,7 +2337,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "含参矩阵的秩问题需分类讨论",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           },
           {
@@ -2356,7 +2356,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "矩阵乘积 AB=0 与齐次方程组的转化",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           },
           {
@@ -2375,7 +2375,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "二阶矩阵求逆（伴随法）",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           },
           {
@@ -2394,7 +2394,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "分块矩阵求逆公式",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           }
         ]
@@ -2419,7 +2419,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:数据运算与表示",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           }
         ]
@@ -2444,7 +2444,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:海明码",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           }
         ]
@@ -2469,7 +2469,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:指令流水线",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           }
         ]
@@ -2494,7 +2494,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:RAID 可靠性措施",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           }
         ]
@@ -2519,7 +2519,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:磁盘相关计算",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           }
         ]
@@ -2544,7 +2544,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:中断 I/O 与 DMA 比较",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           }
         ]
@@ -2569,7 +2569,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:存储概念",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           }
         ]
@@ -2594,7 +2594,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:死锁与银行家算法",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           }
         ]
@@ -2619,7 +2619,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:介质访问控制",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           }
         ]
@@ -2644,7 +2644,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:HDLC 协议",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           }
         ]
@@ -2669,7 +2669,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:以太网帧",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           }
         ]
@@ -2694,7 +2694,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:AOE 网（关键路径）",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           }
         ]
@@ -2719,7 +2719,7 @@ globalThis.APP_DATA = {
             "image": "",
             "images": [],
             "name": "总结:基数排序",
-            "score": "未测",
+            "score": 0,
             "lastReview": "2026-07-31T20:47:48"
           }
         ]
@@ -2800,6 +2800,170 @@ globalThis.APP_DATA = {
     {
       "title": "指令系统专题",
       "content": "# 指令系统专题（408 真题匹配版）\n\n> 标注年份=历年408真题大题出处，寻址/数据存放以王道/天勤真题解析为准。\n\n## 一、真题提取的模板 / 公式 / 流程（置顶，先背这些）\n\n### [2012·46] 页表大小计算（计组，常结合指令/存储）\n- 逻辑空间 4TB、页大小 1KB → 页数 = 4TB/1KB = 2^32；页表项 4B\n- 顶级页表大小 = 页数 × 页表项大小（多级页表分散存放省内存）\n- 例题锚点：4TB/1KB=2^32 页，页表项4B，单级页表=2^32×4B\n\n### 通用寻址公式（必背）\n- 直接寻址：EA = A（地址码即有效地址）\n- 间接寻址：EA = (A)（A 指向的单元存地址）\n- 寄存器寻址：EA = Ri\n- 寄存器间接：EA = (Ri)\n- 基址寻址：EA = (BR) + A（面向系统，程序浮动）\n- 变址寻址：EA = (IX) + A（面向用户，数组遍历，IX 变）\n- 相对寻址：EA = (PC) + A（转移指令，与位置无关）\n\n### 大端 / 小端（真题高频）\n- 大端：高位字节存低地址（与人类书写一致）\n- 小端：低位字节存低地址（x86 采用）\n- 边界对齐：字/半字按自然边界存放，不对齐可能多次访存\n\n### 有效地址 / PC / 跳转\n- 有效地址 EA = 操作数在主存的实际地址\n- PC = 下一条要执行指令的地址\n- jump 目标 = PC + 偏移量（相对寻址）\n\n## 二、知识点（系统梳理）\n\n### 1. 指令格式\n- 操作码 + 地址码；定长/变长操作码；零/一/二/三地址指令；指令字长与机器字长关系。\n\n### 2. 一条指令的 5 个执行阶段\n取指 IF → 间址 ID(可选) → 执行 EX → 访存 MEM → 写回 WB（另有中断 INT）。\n- 各阶段对应 CPU 数据通路：PC→MAR→M→MDR→IR，PC+1。\n\n### 3. CISC vs RISC（两条判断维度）\n- ① 指令字定长？CISC 不定长 / RISC 定长\n- ② 除 Load/Store 外能否访存？CISC 能 / RISC 只有 Load/Store 访存\n\n### 4. 数据存放\n- 大端/小端、边界对齐（见上真题模板）。\n\n### 5. 函数调用栈帧（虚拟地址空间 VA）\n- 参数从右到左压栈；返回地址在 ebp+4；旧 ebp 在 ebp；局部变量在 ebp−偏移。\n- PC = ebp+4 是返回地址：call 指令把返回地址压栈后，ebp+4 即该处。\n\n### 6. 历年真题考点小结\n- 寻址方式算 EA 与操作数值（高频小题）\n- CISC/RISC 判断（选择题高频）\n- 大小端 + 边界对齐（给内存字节图判数值）\n- PC 与相对转移算跳转目标（小题/大题结合数据通路）\n- 变址/基址区分（数组、程序浮动场景）"
+    },
+    {
+      "title": "408 专题 · 机组计算",
+      "content": "# 机组计算专题（408 真题匹配版）\n\n> 标注年份=历年408真题大题/小题出处，公式以王道/天勤真题解析为准。真题PDF为图片扫描版，以下模板从解析文字层锚点+知识体系补全。\n\n## 一、真题提取的模板 / 公式 / 流程（置顶，先背这些）\n\n### [2011·11 / 2017·14] IEEE 754 浮点数真值计算\n- 32位布局：1位符号S + 8位阶码E(偏置127) + 23位尾数M；64位：1+11(偏置1023)+52\n- 规格化真值 = (-1)^S × (1.M) × 2^(E-127)\n- 例：x = -1000.01 = -1.00001 × 2^3 → E-127=3 → E=130=10000010B\n- 阶码全0 = 非规格化/±0；阶码全1尾数0 = ±∞；全1尾数非0 = NaN\n- 指数范围 -126 ~ +127（阶码1~254）；[2017] float 特殊值 7F80…=INF\n- [2022·14] 8位阶码偏置127，阶码范围 1~254 → 指数 -126~+127\n\n### [2009·22 / 2012 / 2018] DMA 与 I/O 时间 / CPU 占用率\n- 传输时间 t = 数据量 / 传输率\n  - [2012] 16B×300k/s = 4.8MB/s；[2018] 40MB/1000B = 40000 次传输\n- CPU 占用率 = DMA传输时间 / (DMA传输时间 + CPU处理时间)，或 1 - 总线空闲占比\n- 单/双缓冲总时间：双缓冲可与计算重叠 → 总时间 ≈ max(计算, I/O)×n + 一次I/O\n\n### [2009·43] 取指周期微操作（MAR/MDR）\n- C1: (PC)→MAR\n- C2: M(MAR)→MDR, (PC)+1→PC\n- C3: (MDR)→IR\n- 间址：C1:(MDR)→MAR；C2:M(MAR)→MDR；执行按操作码\n\n### [2013·22] RAID 容量 与 偏移量→磁盘块\n- RAID0 容量 = N×单盘；RAID1 = N/2；RAID5 = (N-1)×单盘\n- 文件偏移量 f_offset → 逻辑块号：块号 = f_offset / B，块内偏移 = f_offset % B\n- 用 inode 索引(直接/一/二级间接) 把逻辑块号映射成物理盘块号\n- 注：与“虚拟地址(段号+偏移)→物理地址”是独立机制，勿混（见文件系统专题）\n\n### [2022·14] 地址计算综合\n- 逻辑地址 = 页号 + 页内偏移；物理地址 = 页框号 + 页内偏移\n- 偏移位数 = log2(页大小)；页号位数 = 地址位数 - 偏移位数\n\n## 二、知识点梳理（机组计算全考点）\n\n### 1. 数据表示与运算\n- 原码：-(2^(n-1)-1) ~ +(2^(n-1)-1)；补码：[-2^(n-1), 2^(n-1)-1]（定点整数）\n- 移码 = 补码符号位取反（用于阶码）\n- 补码一位乘法(Booth)、溢出判断（双符号位 / 符号位+最高数值位进位）\n- 浮点加减：对阶(小阶向大阶)→尾数加减→规格化→舍入→溢出判断\n\n### 2. 存储系统容量\n- 主存容量 = 2^地址位数 × 字/字节；存储器带宽 = 数据量 / 传输时间\n- Cache 容量公式见 Cache 专题\n\n### 3. 指令与流水线\n- 扩展操作码（Huffman 编码法）\n- 吞吐率 TP = n / ((k+n-1)×t)；加速比 = k×n×t / ((k+n-1)×t)（k段n指令t段时长）\n- 冒险：数据相关(前递/旁路)、控制相关(分支预测)、结构相关\n\n### 4. I/O 计算\n- 磁盘访问时间 = 寻道 + 旋转延迟 + 传输时间\n- 调度：SCAN/C-SCAN 移动量计算（见 I/O 设备专题）"
+    },
+    {
+      "title": "408 专题 · Cache",
+      "content": "# Cache 专题（408 真题匹配版）\n\n> 标注年份=历年408真题出处，公式以王道/天勤真题解析为准。真题PDF图片版，模板从解析文字层锚点+知识体系补全。\n\n## 一、真题提取的模板 / 公式 / 流程（置顶）\n\n### [2009·22 / 2011·14] 地址结构与映射\n- 主存地址 = 标记(Tag) + 组索引(Set/行号) + 块内偏移(Offset)\n- 偏移位数 = log2(块大小B)\n  - [2011] 块32B → 偏移5位；[2014] 块32B；[2020] 块64B → 偏移6位；[2022] 块64B\n- 三种映射：\n  - 直接映射：Cache行数=组数，每组1行；行号 = 主存块号 mod 行数\n    - [2009] Cache16行，主存块0,8,16… → 映射第0行\n  - 全相联：组数=1，任意行\n  - 组相联：每组k路，组数 = Cache容量/(k×B)\n    - [2010] 主存地址28位：2^28=256M 主存空间\n\n### [2015·13 / 2020·14] 标记位 & 容量计算\n- 组索引位数 = log2(组数)；标记位数 = 主存地址位数 - 组索引位数 - 偏移位数\n  - [2020] 32KB Cache, 64B块, 8路 → 组数=32KB/(8×64B)=64=2^6 → 组索引6位；Tag=32-6-6=20位\n  - [2022] 32KB Cache, 64B块(偏移6位) → Tag20位\n- Cache 总容量 = 行数 × (标记位 + 1有效位 + 1脏位 + 数据块位)\n  - [2018·15] 8组×2路×(20标记+1+1+132×8数据) = 4464 位（行数=组数×路数=16）\n  - [2014] 16行×32B = 512B 数据部分\n  - [2015] 标记阵列：2^10×20 = 20K 位（标记+控制 18+1+1=20）\n\n### [2012·12 / 2016·15] 命中率 & 冲突\n- 命中率 h = 命中次数 / 总访问次数；缺失率 = 1-h\n  - [2012] h=99%，平均访存 ≈ t_cache + (1-h)×t_mem\n- 直接映射冲突：[2016] a[k] 按 Cache 行大小跨步访问，步长=1行 → 每次缺失\n  - [2016] 地址4099 = 00 0001 0000 0000 0011B，Cache索引 = 0000 0011B = 3\n\n### [2010·12] TLB / Cache / Page 关系\n- CPU→TLB(快表)→页表→物理地址→Cache→主存\n- TLB 命中免访页表；Cache 命中免访主存\n\n## 二、知识点梳理（Cache 全考点）\n\n### 1. 映射方式对比\n| 方式 | 位置判定 | 优点 | 缺点 |\n|------|---------|------|------|\n| 直接映射 | 主存块 mod Cache行 | 简单、查找快 | 易冲突 |\n| 全相联 | 任意行 | 冲突最低 | 查找慢、成本高 |\n| 组相联 | 固定组任意路 | 折中 | 实现复杂 |\n\n### 2. 地址字段计算（必考）\n- 块大小 B → 偏移位 = log2(B)\n- 组数 S → 组索引位 = log2(S)\n- Tag位 = 主存地址位 - 组索引位 - 偏移位（常32位机=32位）\n\n### 3. 替换算法\n- FIFO / LRU / LFU / 随机；LRU 硬件：计数器法 或 栈法(位矩阵)\n\n### 4. 写策略\n- 写命中：写回法(Write-Back, 脏位) / 写直通法(Write-Through, 同时写主存)\n- 写不命中：写分配(调入Cache再写) / 非写分配(直接写主存)\n- 常见搭配：写回+写分配 / 写直通+非写分配\n\n### 5. 性能\n- 平均访存时间 = h×t_hit + (1-h)×t_miss\n- 多级 Cache：L1/L2/L3 各级命中率相乘"
+    },
+    {
+      "title": "408 专题 · 树",
+      "content": "# 树专题（408 真题匹配版）\n\n> 标注年份=历年408真题大题/小题出处，公式以王道/天勤真题解析为准。注意：树题在真题PDF中多为图片版，解析文字层缺失，以下模板基于408历年真题考点体系整理（树相关真题：2010哈夫曼/线索、2011树性质、2012平衡二叉树、2014二叉树遍历、2015 B树、2017二叉树、2018哈夫曼WPL、2019平衡二叉树、2020二叉树、2022森林与二叉树转换、2024二叉树应用）。\n\n## 一、真题提取的模板 / 公式 / 流程（置顶）\n\n### 二叉树性质（[2011]/[2014]/[2020] 常考）\n- 第 i 层最多 2^(i-1) 个结点（i≥1）\n- 深度为 k 的二叉树最多 2^k - 1 个结点\n- **叶子数 n0 = 度为2结点数 n2 + 1**（最重要公式，几乎年年考）\n- n = n0 + n1 + n2；完全二叉树 n1 ∈ {0, 1}\n- 完全二叉树结点 i（1-based）：父=[i/2]，左孩=2i，右孩=2i+1\n\n### 遍历与还原（[2014]/[2017] 常考）\n- 先序(根左右) / 中序(左根右) / 后序(左右根) / 层次\n- **由先序+中序 或 后序+中序 可唯一确定树**（必须含中序！）\n- 先序定根，中序分左右子树，递归还原\n- 中序线索化：空左指针指前驱，空右指针指后继\n\n### 哈夫曼树（[2010]/[2018] 大题）\n- 带权路径长度 WPL = Σ(w_i × l_i)，哈夫曼树 WPL 最小\n- 构造：每次取权值最小的两结点合并，新结点权 = 两子权之和，重复至单根\n- 哈夫曼编码：左分支0右分支1（或反之），WPL = 编码总长；前缀码无歧义\n\n### 平衡二叉树 AVL（[2012]/[2019] 常考）\n- 任一结点 |h(左)-h(右)| ≤ 1；平衡因子 BF = h(左) - h(右) ∈ {-1,0,1}\n- 四种失衡与调整：LL(右单转) / RR(左单转) / LR(左-右双转) / RL(右-左双转)\n- 插入/删除后从最底层失衡结点向上调整\n\n### B树 / B+树（[2015] 大题）\n- m阶B树：根≥1关键字；非根 ⌈m/2⌉-1 ≤ 关键字数 ≤ m-1；所有叶子同层\n- 插入：满则分裂（中间关键字上移）；删除：不足则借/合并\n- B+树：所有关键字在叶子，叶子链表顺序链接，非叶仅索引\n- 区别：B树叶子不链表、关键字分布各层；B+树非叶不存数据\n\n## 二、知识点梳理（树全考点）\n\n### 1. 树与森林\n- 树→二叉树：孩子兄弟表示法（左孩子右兄弟）\n- 森林→二叉树：各树根用右指针链起；可逆\n\n### 2. 二叉树的存储\n- 顺序（完全二叉树数组，i的孩2i/2i+1）；链式(lchild/data/rchild)\n\n### 3. 线索二叉树\n- ltag=0指左孩 / 1指前驱；rtag同理；中序线索化遍历可不借助栈\n\n### 4. 树的应用\n- 并查集(Union-Find)：路径压缩+按秩合并，近乎 O(1)\n- 堆（完全二叉树）：大顶/小顶堆，堆排序 O(nlogn)\n- 二叉排序树 BST：左<根<右；最坏退化成链\n- 红黑树：5条性质保证近似平衡（了解）\n\n### 5. 经典真题题型\n- 给遍历序列画树/写另一种遍历\n- 算 n0/n1/n2 关系\n- 哈夫曼编码+WPL 计算\n- AVL 插入画平衡过程\n- B树插入/删除后状态"
+    },
+    {
+      "title": "408 专题 · 存储系统",
+      "content": "# 存储系统专题（408 真题匹配版）\n\n> 标注年份=历年408真题大题/小题出处，公式以王道/天勤真题解析为准。本专题覆盖【CO】三、存储系统 与【OS】三、内存管理。Cache 地址映射/替换/写策略详见《Cache 专题》；TCP 连接管理详见《TCP 连接管理》专题。\n\n## 一、真题提取的模板 / 公式 / 流程（置顶，先背这些）\n\n### [2010·45 / 2011·45 / 2014·45 / 2016·45 / 2018·45] 地址变换 + 快表 TLB + 缺页\n- 逻辑地址 = 页号 P + 页内偏移 d；页号位数 = 地址位数 - 偏移位数（偏移位数 = log2(页大小)）\n- 物理地址 = 页框号 F + 页内偏移 d（d 不变）\n- 查址顺序：先查 TLB（快表）→ 命中直接得页框号；未命中查页表 → 得页框号并填入 TLB\n- 有效访问时间 EAT = H_tlb·(t_tlb+t_mem) + (1-H_tlb)·(t_tlb + t_mem + t_mem)（TLB 未命中需多访存一次页表）\n- 含缺页：EAT = (1-p)·(命中访问时间) + p·(缺页中断处理时间)，p=缺页率\n\n### [2010·45 / 2016·45 / 2018·45] 页面置换算法（CLOCK / LRU）\n- OPT（最佳）：淘汰最远将来才访问的页（理论最优，无法实现）\n- FIFO：淘汰最早进入的页；**Belady 异常**（分配物理块增多反而缺页率上升，仅 FIFO 有）\n- LRU（最近最久未用）：淘汰最久未访问；硬件用计数器/栈实现\n- CLOCK（时钟/二次机会）：每页框一个访问位，环形扫描，访问位=1改0给二次机会，=0则淘汰\n- 改进 CLOCK：再考察修改位（访问位,修改位）组合优先淘汰(0,0)\n- 真题锚点：CLOCK 置换 2010/2016/2018；LRU 置换 2018/2020\n\n### [2009~2018 / 2020] 半导体存储器与容量扩展（小题高频）\n- SRAM：触发器，快、贵、功耗大，作 Cache/寄存器；不需刷新\n- DRAM：电容，慢、便宜、需刷新（集中/分散/异步刷新）；作主存\n- ROM 类：MROM / PROM / EPROM / EEPROM / Flash（非易失）\n- 地址线数 = log2(容量)；数据线数 = 字长\n- 字扩展：扩地址（片选）；位扩展：扩数据宽度；芯片数 = 目标容量 / 单片容量\n- 主存地址分配真题（ROM/SRAM 映射）：[2009] 4KB ROM、[2016] 56KB SRAM 计算\n\n### [2010·12 / 2012] 双口 RAM 与多体交叉存储器（并行提高带宽）\n- 双口 RAM：两套独立读写端口，防冲突（置“忙”信号）\n- 高位交叉（存储体号在高位）：各体并行，适合并发多请求\n- 低位交叉（存储体号在低位）：模块流水，连续地址跨体；启动间隔 τ、总线传输 T，模块数 m ≥ T/τ 可无冲突流水；连续读 n 个字总时间 ≈ (m + (n-1))·τ\n\n### 通用模板（必背公式）\n- 平均访存时间（Cache-主存）= h·t_c + (1-h)·t_m\n- 多级 Cache：TA = h1·t1 + (1-h1)·(h2·t2+(1-h2)·t_m)\n- 页式逻辑地址拆封：P = 逻辑地址 / 页大小，d = 逻辑地址 % 页大小\n- 内存碎片：分页/固定分区→内部碎片；分段/动态分区→外部碎片\n\n## 二、知识点（系统梳理）\n\n### A. 【CO】存储系统\n1. 存储器层次：CPU 寄存器 → Cache → 主存 → 磁盘缓存 → 辅存；速度↓容量↑成本↓\n2. 分类：SRAM/DRAM；ROM 类；串行/并行；易失/非易失\n3. 性能指标：存储容量、单位成本、存取时间、存取周期、存储器带宽\n4. 主存：DRAM 刷新；地址引脚复用（行/列地址分时）\n5. 并行存储：双口 RAM、多体交叉（高位/低位）\n6. Cache：映射/替换/写策略/性能（见 Cache 专题）\n7. 虚拟存储器：段式/页式/段页式；TLB 快表\n\n### B. 【OS】内存管理\n1. 内存管理概念：装入（绝对/可重定位/动态运行时）、链接（静态/动态）、逻辑地址 vs 物理地址、重定位（静态/动态）\n2. 连续分配：单一连续、固定分区（内部碎片）、动态分区（首次/最佳/最坏/邻近适应，外部碎片）、紧凑/拼接\n3. 非连续分配：\n   - 基本分页：页表（页号→页框号）、快表 TLB、多级页表（解决大地址空间页表过大）、反置页表\n   - 基本分段：段号+段内偏移，段长界限保护（外部碎片）\n   - 段页式：段表→页表（先分段再分页）\n4. 虚拟内存：局部性原理（时间/空间）；请求分页/请求分段；页表项状态位/访问位/修改位/外存地址；缺页中断；地址变换流程\n5. 页面置换算法：OPT / FIFO（Belady）/ LRU / CLOCK（改进）/ 最少使用(LFU) / 工作集 / 抖动(thrashing)\n6. 内存映射文件、覆盖与交换（对换）\n7. 高频辨析：内部碎片（分页、固定分区）vs 外部碎片（分段、动态分区）；TLB 与 Cache 区别（TLB 加速地址变换，Cache 加速数据访问）\n\n### 真题考频锚点（基于解析文字层；2019/2021/2023/2024 图片版以王道/天勤核对）\n- 半导体存储器/容量扩展：2009,2010,2011,2012,2014,2015,2016,2017,2018,2020\n- TLB/地址变换/请求分页：2010,2011,2014,2016,2018,2020\n- 页面置换 CLOCK/LRU：2010,2016,2018,2020\n- 综合大题（45 题）几乎每年考查内存管理/虚拟内存（以王道/天勤核对具体年份题号）\n"
+    },
+    {
+      "title": "408 专题 · 计网协议",
+      "content": "# 计网协议专题（408 真题匹配版）\n\n> 标注年份=历年408真题大题/小题出处，状态机/字段以王道/天勤真题解析为准。本专题按 TCP/IP 层次梳理 408 考过的所有协议；TCP 连接管理（握手/挥手/拥塞）详见《TCP 连接管理》专题。\n\n## 一、真题提取的协议考频（置顶，先背年份分布）\n\n基于解析文字层锚点（2009-2018、2020 有文字层；2019/2021/2023/2024 图片版，以王道/天勤核对）：\n- 数据链路层：CSMA/CD（2011,2013,2015,2016,2018,2022）、CSMA/CA+802.11（2011,2017,2020）、PPP（2012,2014）、HDLC（2013）\n- 网络层：ARP（2011,2012,2014）、ICMP（2012）、RIP（2016,2017）、OSPF（2017）、BGP（2013,2017）、NAT（2011）、IP（贯穿）\n- 传输层：TCP（2009,2011,2012,2013,2016,2017,2018,2022…）、UDP（2012,2014,2017,2018）\n- 应用层：DNS（2010,2014,2016,2018,2022）、FTP（2009,2017,2018）、SMTP（2012,2013,2014,2018）、POP3/IMAP（2012,2015）、HTTP/HTTPS（2011,2015,2018,2022）、DHCP（2015）\n\n## 二、各层协议详解（核心机制 + 易考点）\n\n### 数据链路层\n- **以太网(IEEE 802.3) + CSMA/CD**：载波监听多点接入/碰撞检测；半双工；争用期 51.2μs（10Mbps，512bit）；最短帧 64B；二进制指数退避。CSMA/CA（802.11 无线）用 RTS/CTS 避免冲突而非检测。\n- **PPP（点对点协议）**：面向连接、不可靠（无重传）；组成=链路控制LCP+网络控制NCP；只检错不纠错；用于拨号/广域网。考：[2012·47],[2014·47]\n- **HDLC（高级数据链路）**：面向比特、零比特填充、CRC 检错；可靠（编号确认）。考：[2013·47]\n- **VLAN**：802.1Q 标签；隔离广播域（考纲要求，真题偶考）\n- **滑动窗口/ARQ**：停止-等待、GBN、选择重传（链路层/传输层共用思想）\n\n### 网络层\n- **IP（IPv4）**：无连接、不可靠；首部 20B（固定）+ 选项；分片（标识/标志/片偏移）；首部检验和；TTL 防环。\n- **ARP（地址解析）**：IP→MAC，广播请求单播应答（FF-FF-FF-FF-FF-FF）。考：[2011],[2012],[2014]\n- **RARP**：MAC→IP（已被 DHCP 取代，考纲）\n- **ICMP**：差错报告（目的不可达/超时/重定向）+ 询问（回送 Echo，ping 用）。考：[2012]\n- **IGMP**：组播组成员管理（考纲，真题偶考）\n- **RIP（距离矢量）**：跳数度量，最大 15；30s 广播；慢收敛（计数到无穷）。考：[2016],[2017]\n- **OSPF（链路状态）**：Dijkstra 算最短路；Hello 建立邻接；区域划分；触发更新。考：[2017]\n- **BGP（路径矢量）**：AS 间路由；**基于 TCP**（端口179）；策略路由。考：[2013],[2017]\n- **DHCP**：动态分配 IP；Discover/Offer/Request/ACK；UDP 广播。考：[2015]\n- **NAT**：私有IP↔公有IP转换；缓解 IPv4 耗尽。考：[2011]\n\n### 传输层\n- **TCP**：面向连接、可靠、字节流、全双工；序号/确认号/窗口；三次握手/四次挥手、流量控制（滑动窗口）、拥塞控制（慢开始/拥塞避免/快重传/快恢复）、可靠传输（GBN/选择重传）。考频最高，几乎每年。\n- **UDP**：无连接、不可靠、首部 8B、无拥塞控制；适合实时（DNS/DHCP/视频/语音）。考：[2012],[2014],[2017],[2018]\n\n### 应用层\n- **DNS（域名系统）**：层次域名 + 分布式解析；递归/迭代查询；UDP（≤512B）/TCP（区域传送/大报文）；端口53。考：[2010],[2014],[2016],[2018],[2022]\n- **FTP（文件传输）**：控制连接(21)+数据连接(20)；主动/被动模式。考：[2009],[2017],[2018]\n- **SMTP（发邮件）+ POP3/IMAP（收邮件）**：SMTP 推、端口25；POP3 下载删除(110)、IMAP 联机管理(143)。考：[2012],[2013],[2014],[2018]\n- **HTTP/HTTPS**：请求/响应、无状态（Cookie/Session 维持）；HTTP/1.1 持久连接；HTTPS=HTTP+TLS。考：[2011],[2015],[2018],[2022]\n- **TELNET（远程登录，23）/ SNMP（网络管理，161/162）/ DHCP**：考纲要求。\n\n## 三、高频易混辨析\n- TCP vs UDP：连接/可靠/首部/拥塞（见上）\n- RIP/OSPF/BGP 三类路由协议对比（距离矢量/链路状态/路径矢量）\n- CSMA/CD vs CSMA/CA：检测冲突 vs 避免冲突（有线 vs 无线）\n- ARP vs RARP vs DHCP：地址解析方向不同\n- 端口号速记：DNS53 / FTP21,20 / SMTP25 / POP3110 / IMAP143 / HTTP80 / HTTPS443 / TELNET23 / SNMP161\n\n### 真题考频锚点（网络综合大题 47 题）\n2010(DNS)、2011(TCP+ARP+NAT+HTTP+CSMA+802.11)、2012(TCP/UDP/ARP/ICMP/SMTP/POP3/PPP)、2013(TCP/BGP/HDLC)、2014(UDP/ARP/DNS/SMTP/PPP)、2015(TCP/DHCP/POP3/HTTP/CSMA)、2016(TCP/RIP/DNS)、2017(TCP/UDP/RIP/OSPF/BGP/FTP/802.11)、2018(TCP/UDP/DNS/FTP/SMTP/HTTP/CSMA)、2022(TCP/DNS/HTTP/CSMA)；2019/2021/2023/2024 图片版以王道/天勤核对\n"
+    }
+  ],
+  "quizHistory": [
+    {
+      "round": 1,
+      "date": "2026-07-31",
+      "type": "408知识点抽查",
+      "count": 19,
+      "avg": 1.6,
+      "weakIds": [
+        "009",
+        "010",
+        "011",
+        "037",
+        "039",
+        "051",
+        "049",
+        "052",
+        "053",
+        "055",
+        "061",
+        "062",
+        "063",
+        "069",
+        "071",
+        "072",
+        "073"
+      ],
+      "questions": [
+        {
+          "id": "009",
+          "score": 1,
+          "topic": "Peterson 算法",
+          "chapter": "【OS】二、进程管理"
+        },
+        {
+          "id": "010",
+          "score": 1,
+          "topic": "TSL 指令",
+          "chapter": "【OS】二、进程管理"
+        },
+        {
+          "id": "011",
+          "score": 1,
+          "topic": "进程切换",
+          "chapter": "【OS】二、进程管理"
+        },
+        {
+          "id": "037",
+          "score": 2,
+          "topic": "文件系统磁盘布局：MBR、超级块、inode区、数据区、空闲空间管理",
+          "chapter": "【OS】四、文件管理"
+        },
+        {
+          "id": "039",
+          "score": 1,
+          "topic": "文件系统：open/read/write 系统调用 + 目录结构访存计算",
+          "chapter": "【OS】四、文件管理"
+        },
+        {
+          "id": "051",
+          "score": 2,
+          "topic": "fd与打开文件表",
+          "chapter": "【OS】四、文件管理"
+        },
+        {
+          "id": "049",
+          "score": 1,
+          "topic": "文件读取过程（open+inode索引）",
+          "chapter": "【OS】四、文件管理"
+        },
+        {
+          "id": "052",
+          "score": 1,
+          "topic": "硬链接vs软链接（删除源文件后）",
+          "chapter": "【OS】四、文件管理"
+        },
+        {
+          "id": "053",
+          "score": 2,
+          "topic": "read系统调用：偏移量→逻辑块号",
+          "chapter": "【OS】四、文件管理"
+        },
+        {
+          "id": "054",
+          "score": 4,
+          "topic": "空闲块管理：成组链接法",
+          "chapter": "【OS】四、文件管理"
+        },
+        {
+          "id": "055",
+          "score": 2,
+          "topic": "文件系统磁盘布局（标准版）",
+          "chapter": "【OS】四、文件管理"
+        },
+        {
+          "id": "061",
+          "score": 2,
+          "topic": "数据单位换算（K/M/G/T/P/E/Z）",
+          "chapter": "【CO】一、计算机系统概述"
+        },
+        {
+          "id": "062",
+          "score": 2,
+          "topic": "多级页表：顶级页表 vs 内部页表的大小限制",
+          "chapter": "【OS】三、内存管理"
+        },
+        {
+          "id": "063",
+          "score": 0,
+          "topic": "OS时间计算：操作并行 vs 串行的细节",
+          "chapter": "【OS】三、内存管理"
+        },
+        {
+          "id": "068",
+          "score": 3,
+          "topic": "指令系统学习方法",
+          "chapter": "【CO】四、指令系统"
+        },
+        {
+          "id": "069",
+          "score": 1,
+          "topic": "指令系统中的地址概念",
+          "chapter": "【CO】四、指令系统"
+        },
+        {
+          "id": "071",
+          "score": 2,
+          "topic": "RISC vs CISC 两条判断依据",
+          "chapter": "【CO】四、指令系统"
+        },
+        {
+          "id": "072",
+          "score": 0,
+          "topic": "函数调用时 VA 栈帧布局与参数访问",
+          "chapter": "【CO】四、指令系统"
+        },
+        {
+          "id": "073",
+          "score": 2,
+          "topic": "指令系统 · 边界对齐与存放方式",
+          "chapter": "【CO】四、指令系统"
+        }
+      ]
     }
   ]
 };

@@ -184,6 +184,7 @@
   <div class="tab active" onclick="switchTab('weak')">弱点库</div>
   <div class="tab" onclick="switchTab('log')">复习回顾</div>
   <div class="tab" onclick="switchTab('topic')">专题复习</div>
+  <div class="tab" onclick="switchTab('quiz')">抽测记录</div>
 </div>
 
 <div class="content">
@@ -228,6 +229,18 @@
   <div class="card" id="topic-container"></div>
 </div>
 
+<!-- ==================== 抽测记录 ==================== -->
+<div class="page" id="page-quiz">
+  <div class="section-title">抽测记录（每次抽测结果存档 · 待复习优先队列）</div>
+  <div style="font-size:12px;color:#888;margin-bottom:10px;line-height:1.6;">
+    📌 <b>待复习清单</b>：按「差→未测→中」+ 最久未复习排序，越靠前越该看。点任意一条跳转复习回顾对应题。
+  </div>
+  <div id="quiz-queue"></div>
+
+  <div class="section-title" style="margin-top:18px;">📜 抽测历史</div>
+  <div id="quiz-history"></div>
+</div>
+
 </div><!-- /content -->
 
 <div class="toast" id="toast"></div>
@@ -242,7 +255,7 @@
 // 数据加载（纯 data.js 模式，GitHub Pages 兼容）
 // data/data.js 通过 <script> 标签加载，设置 globalThis.APP_DATA
 let APP_DATA = globalThis.APP_DATA || null;
-let SYLLABUS = {}, LOGS_RAW = [], PROGRESS = { math:0, eng:0, pol:0, cs:0 }, TOPICS = [];
+let SYLLABUS = {}, LOGS_RAW = [], PROGRESS = { math:0, eng:0, pol:0, cs:0 }, TOPICS = [], QUIZ_HISTORY = [];
 let _dataReady = false;
 
 function applyData(data) {
@@ -251,6 +264,7 @@ function applyData(data) {
   LOGS_RAW = (data.logs && data.logs.list) || [];
   TOPICS = data.topics || [];
   PROGRESS = data.progress || { math:0, eng:0, pol:0, cs:0 };
+  QUIZ_HISTORY = data.quizHistory || [];
   _dataReady = true;
   if (typeof onDataLoaded === 'function') onDataLoaded();
 }
@@ -434,7 +448,7 @@ function showToast(msg) {
 let currentWeakFilter = 'all';
 function switchTab(name) {
   document.querySelectorAll('.tab').forEach((t, i) => {
-    const names = ['weak', 'log', 'memo', 'topic'];
+    const names = ['weak', 'log', 'topic', 'quiz'];
     t.classList.toggle('active', names[i] === name);
   });
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -442,6 +456,7 @@ function switchTab(name) {
   if (name === 'weak') renderWeakTree();
   if (name === 'log') renderLog();
   if (name === 'topic') renderTopics();
+  if (name === 'quiz') renderQuiz();
 }
 
 // ========== 弱点库渲染 ==========
@@ -904,6 +919,124 @@ function renderTopics() {
       <div id="topic-body-${idx}" style="display:none;padding:12px 16px;">${mdToHtml(t.content)}</div>
     </div>
   `).join('');
+}
+
+// ========== 抽测记录渲染 ==========
+function normScore(s) {
+  if (typeof s === 'number') return s;
+  const map = { '未测': 0, '差': 1, '中': 2, '良': 3, '优': 4 };
+  return map[s] !== undefined ? map[s] : 0;
+}
+function scoreTag(s) {
+  return ['未测', '差', '中', '良', '优'][s] || '未测';
+}
+function scoreColor(s) {
+  return ['#999', '#a32d2d', '#c77c00', '#185fa5', '#3b6d11'][s] || '#999';
+}
+// 跳转到复习回顾中指定题块（按 data-qid 定位）
+function jumpToQ(qid) {
+  currentLogFilter = 'all';
+  document.querySelectorAll('#page-log .filter-pill').forEach(p => p.classList.remove('active'));
+  const pills = document.querySelectorAll('#page-log .filter-pill');
+  if (pills[1]) pills[1].classList.add('active');
+  switchTab('log');
+  setTimeout(() => {
+    const el = findByQid(qid);
+    if (!el) { showToast('题目块未找到：' + qid); return; }
+    const detail = el.closest('[id^="log-detail-"]');
+    if (detail) detail.style.display = 'block';
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    el.classList.add('highlight');
+    setTimeout(() => el.classList.remove('highlight'), 4000);
+    showToast('已定位到 ' + qid);
+  }, 250);
+}
+// 取所有题目扁平化（含归一化 score）
+function getAllQuestionsFlat() {
+  const arr = [];
+  LOGS_RAW.forEach(l => (l.questions || []).forEach(q => {
+    arr.push({
+      id: String(q.id || ''),
+      score: normScore(q.score),
+      lastReview: q.lastReview || '',
+      chapter: q.chapter || '',
+      subject: q.subject || '',
+      topic: (q.topic || q.name || '')
+    });
+  }));
+  return arr;
+}
+function renderQuiz() {
+  const queueEl = document.getElementById('quiz-queue');
+  const histEl = document.getElementById('quiz-history');
+  const all = getAllQuestionsFlat();
+  const need = all.filter(x => x.score <= 2);
+  // 优先级：差(1) -> 未测(0) -> 中(2)，再按 lastReview 升序（最久未复习优先）
+  const prio = s => s === 1 ? 0 : (s === 0 ? 1 : 2);
+  need.sort((a, b) =>
+    (prio(a.score) - prio(b.score)) ||
+    (a.lastReview < b.lastReview ? -1 : (a.lastReview > b.lastReview ? 1 : 0))
+  );
+  const cnt = {
+    '差': need.filter(x => x.score === 1).length,
+    '未测': need.filter(x => x.score === 0).length,
+    '中': need.filter(x => x.score === 2).length
+  };
+
+  let qhtml = `<div class="stats-row" style="margin-bottom:10px;">
+    <div class="stat-box"><div class="val" style="color:#a32d2d">${cnt['差']}</div><div class="lbl">差(必看)</div></div>
+    <div class="stat-box"><div class="val" style="color:#c77c00">${cnt['未测']}</div><div class="lbl">未测</div></div>
+    <div class="stat-box"><div class="val" style="color:#185fa5">${cnt['中']}</div><div class="lbl">中(巩固)</div></div>
+    <div class="stat-box"><div class="val">${need.length}</div><div class="lbl">待复习总计</div></div>
+  </div>`;
+
+  if (need.length === 0) {
+    qhtml += '<div class="empty">🎉 当前没有待复习知识点</div>';
+  } else {
+    qhtml += '<div class="card"><div style="max-height:380px;overflow:auto;">';
+    need.forEach(x => {
+      const dateStr = x.lastReview ? x.lastReview.slice(0, 10) : '从未复习';
+      qhtml += `<div class="weak-item" style="cursor:pointer;display:flex;align-items:center;gap:8px;padding:8px 10px;border-bottom:1px solid #f0f0ec;" onclick="jumpToQ('${x.id}')">
+        <span class="sev-tag" style="background:${scoreColor(x.score)};">${scoreTag(x.score)}</span>
+        <span class="q-chip">${x.id}</span>
+        <span style="flex:1;font-size:13px;color:#333;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${x.topic}</span>
+        <span style="font-size:11px;color:#999;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${x.chapter}</span>
+        <span style="font-size:11px;color:#bbb;">📅${dateStr}</span>
+      </div>`;
+    });
+    qhtml += '</div></div>';
+  }
+  queueEl.innerHTML = qhtml;
+
+  // 抽测历史
+  if (!QUIZ_HISTORY || QUIZ_HISTORY.length === 0) {
+    histEl.innerHTML = '<div class="empty">暂无抽测记录。下次抽测会自动存档于此。</div>';
+    return;
+  }
+  let hhtml = '<div class="card">';
+  QUIZ_HISTORY.slice().reverse().forEach((r, idx) => {
+    const realIdx = QUIZ_HISTORY.length - 1 - idx;
+    const weakHtml = (r.weakIds && r.weakIds.length)
+      ? '<div style="font-size:12px;color:#a32d2d;margin-bottom:6px;">🔴 薄弱点(' + r.weakIds.length + ')：</div><div style="display:flex;flex-wrap:wrap;gap:6px;">' +
+        r.weakIds.map(id => `<span class="q-chip" style="cursor:pointer;" onclick="jumpToQ('${id}')" title="点击定位">${id}</span>`).join('') + '</div>'
+      : '<div style="font-size:12px;color:#3b6d11;">本轮全部掌握 ✓</div>';
+    hhtml += `<div style="border-bottom:1px solid #eee;padding:10px 12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;cursor:pointer;" onclick="toggleQuizRound(${realIdx})">
+        <span><b>第${r.round}轮</b> · ${r.date} · ${r.type} · ${r.count}题 · 平均${r.avg}分</span>
+        <span id="quiz-round-arrow-${realIdx}" style="color:#888;">▸</span>
+      </div>
+      <div id="quiz-round-body-${realIdx}" style="display:none;margin-top:8px;">${weakHtml}</div>
+    </div>`;
+  });
+  hhtml += '</div>';
+  histEl.innerHTML = hhtml;
+}
+function toggleQuizRound(idx) {
+  const b = document.getElementById('quiz-round-body-' + idx);
+  const a = document.getElementById('quiz-round-arrow-' + idx);
+  if (!b) return;
+  if (b.style.display === 'none') { b.style.display = 'block'; a.textContent = '▾'; }
+  else { b.style.display = 'none'; a.textContent = '▸'; }
 }
 
 // ========== 初始化（等数据加载完再渲染） ==========
