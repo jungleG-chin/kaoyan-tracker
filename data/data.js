@@ -1,6 +1,6 @@
 // 考研追踪数据 - 唯一数据源（GitHub Pages 兼容）
 // 更新时间: 2026-07-31 22:30
-// 总知识点: 127 条 | 日志数: 43 条 | 专题数: 9 个
+// 总知识点: 127 条 | 日志数: 43 条 | 专题数: 11 个
 // 抽测历史: quizHistory 字段（每次抽测自动追加一轮）
 // 数据源：仅此文件，index.html 通过 <script src="data/data.js"> 加载
 
@@ -209,18 +209,18 @@ globalThis.APP_DATA = {
             "chapter": "【OS】一、操作系统概述与运行环境",
             "topic": "OS 运行模式",
             "question": "操作系统运行环境里，CPU 有哪两种运行模式？它们的核心区别是什么？",
-            "userAnswer": "用户态和内核态两种模式。内核态是对所有指令有完全的权限，用户态则对某些指令有权限。这就是确保操作系统的安全。",
-            "status": "掌握",
-            "isWrong": false,
+            "userAnswer": "(未作答，自述不会)",
+            "status": "未掌握",
+            "isWrong": true,
             "knowledgeType": "错题",
-            "missing": "否",
+            "missing": "整题未掌握（OS 运行模式）",
             "keyAnswer": "✓ 标准答案：",
             "thinking": "OS 三种运行模式：内核态/用户态/中断态。用户态不能直接访问硬件，必须通过系统调用切到内核态。R1 (RISC) vs CISC 区别是另一种，不要混。",
             "image": "",
             "images": [],
             "name": "OS 运行模式",
-            "score": 3,
-            "lastReview": "2026-07-30T21:47:31"
+            "score": 1,
+            "lastReview": "2026-08-01T14:08:58"
           },
           {
             "id": "008",
@@ -228,18 +228,18 @@ globalThis.APP_DATA = {
             "chapter": "【OS】二、进程管理",
             "topic": "进程 vs 线程",
             "question": "进程和线程最本质的区别是什么？一个进程里的多个线程是否共享堆栈？",
-            "userAnswer": "进程是资源分配的基本单位，线程是调度的基本单位。进程里的堆栈应该是可以修改的，那我认为多个线程应该是可以共享堆栈的。",
-            "status": "不懂",
+            "userAnswer": "(未作答，自述不会)",
+            "status": "未掌握",
             "isWrong": true,
             "knowledgeType": "错题",
-            "missing": "线程共享的是堆（heap），不共享栈（stack）。栈是线程私有的。",
+            "missing": "整题未掌握（进程 vs 线程）",
             "keyAnswer": "✓ 标准答案：",
             "thinking": "进程 = 资源分配单位（独立地址空间）；线程 = CPU 调度单位（共享进程资源）。线程切换不切换地址空间，所以比进程切换快。",
             "image": "",
             "images": [],
             "name": "进程 vs 线程",
-            "score": 2,
-            "lastReview": "2026-07-30T21:47:31"
+            "score": 1,
+            "lastReview": "2026-08-01T14:08:58"
           },
           {
             "id": "009",
@@ -1384,18 +1384,18 @@ globalThis.APP_DATA = {
             "chapter": "【OS】三、内存管理",
             "topic": "OS时间计算：操作并行 vs 串行的细节",
             "question": "计算两个操作的总时间时，如何判断它们是并行还是串行？",
-            "userAnswer": "(未作答)",
-            "status": "需复习",
-            "isWrong": false,
+            "userAnswer": "(未作答，自述不会)",
+            "status": "未掌握",
+            "isWrong": true,
             "knowledgeType": "总结",
-            "missing": "总结方向正确，补充常见场景判断规则",
+            "missing": "整题未掌握（OS时间计算：操作并行 vs 串行的细节）",
             "keyAnswer": "【核心要点】",
             "thinking": "OS 时间计算：① 串行：时间相加 ② 并行：时间取 max（多个操作同时进行）③ 流水线：分阶段重叠 ④ 排队：先到先服务。例：磁盘读 5ms + 处理 2ms（串行）= 7ms；（读+处理并行）= max(5,2)=5ms。",
             "image": "",
             "images": [],
             "name": "总结:OS时间计算：操作并行 vs 串行的细节",
-            "score": 0,
-            "lastReview": "2026-07-31 21:08:26",
+            "score": 1,
+            "lastReview": "2026-08-01T14:08:58",
             "reviewNote": "【未测】OS时间计算:判断并行/串行看是否有资源依赖。可重叠(如CPU计算与I/O)算并行取max;有先后依赖(如先读后算)算串行相加。"
           }
         ]
@@ -1574,7 +1574,7 @@ globalThis.APP_DATA = {
             "lastReview": "2026-07-31 21:08:26",
             "userAnswer": "(自己看,未作答)",
             "reviewNote": "【未测】函数栈帧:调用func(a,b,c)时,参数从右到左压栈,返回地址在ebp+4,旧ebp在ebp,局部变量在ebp-偏移。PC=ebp+4是返回地址因call指令把返回地址压栈后ebp+4即该处。",
-            "keyAnswer": "**函数调用栈帧（x86）**\n栈帧（高→低）：参数c/b/a → 返回RA(call压栈) → 旧ebp(push ebp) → 局部变量(ebp-N)\nPC在ebp+4：call先push返回地址；进入后push ebp；故[ebp]=旧ebp,[ebp+4]=PC,[ebp+8]=参数a"
+            "keyAnswer": "**函数调用栈帧（x86）**\n栈帧（高→低）：参数c/b/a → 返回RO(call压栈) → 旧ebp(push ebp) → 局部变量(ebp-N)\nPC在ebp+4：call先push返回地址；进入后push ebp；故[ebp]=旧ebp,[ebp+4]=PC,[ebp+8]=参数a"
           }
         ]
       },
@@ -1646,7 +1646,7 @@ globalThis.APP_DATA = {
             "note": "【通用寄存器】\n• EAX：累加器，函数返回值/乘除法被除数/I/O指令\n• EBX：基址寄存器，408考得少\n• ECX：计数器，LOOP每轮ECX-1为0跳出，REP前缀重复次数。≠传参寄存器（cdecl参数走栈）\n• EDX：数据寄存器，乘法高位/除法余数/I/O端口地址，与EAX配对\n• ESI：源变址，字符串操作源地址（MOVSB从哪搬）\n• EDI：目的变址，字符串操作目的地址（MOVSB搬到哪）\n• EBP：栈帧基准指针，函数体内不动。[EBP-offset]访问局部变量，[EBP+offset]访问参数。不存变量，是指向变量区的锚\n• ESP：栈顶指针，push减4/pop加4，随push/pop动态移动\n\n【特殊寄存器】\n• EIP：指令指针=PC，下一条要执行的指令地址。x86叫EIP，MIPS叫PC\n• EFLAGS：标志寄存器，含ZF(零)/SF(符号)/CF(进位)/OF(溢出)，条件跳转靠它\n\n【段寄存器】\n• CS：代码段（指令从哪取）/ DS：数据段 / SS：栈段 / ES：附加段（字符串操作目的段）\n\n【栈帧布局】\n高地址→低地址：参数c[EBP+12] → 参数b[EBP+8] → 返回地址[EBP+4] → 旧EBP[EBP+0] → 局部变量1[EBP-4] → 局部变量2[EBP-8] → ESP\n口诀：EBP是锚（不动），ESP是浪（随push/pop动）；参数在锚上方(+offset)，局部变量在锚下方(-offset)",
             "images": [],
             "score": 0,
-            "lastReview": "2026-07-30T21:32:50",
+            "lastReview": "2026-08-01T13:29:21",
             "keyAnswer": "**408常考寄存器**\nPC/EIP=下条指令地址 SP/ESP=栈顶 BP/EBP=帧指针 MAR=主存地址 MDR=数据 PSW=状态标志\nESP浮动EBP稳定。⚠️ 以王道组原为准。"
           }
         ]
@@ -1747,7 +1747,7 @@ globalThis.APP_DATA = {
             "images": [],
             "name": "循环队列指针逻辑",
             "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "lastReview": "2026-08-01T13:29:21"
           },
           {
             "id": "081",
@@ -1766,7 +1766,7 @@ globalThis.APP_DATA = {
             "images": [],
             "name": "遍历还原二叉树",
             "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "lastReview": "2026-08-01T13:29:21"
           },
           {
             "id": "082",
@@ -1785,7 +1785,7 @@ globalThis.APP_DATA = {
             "images": [],
             "name": "ROM与RAM区分",
             "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "lastReview": "2026-08-01T13:29:21"
           },
           {
             "id": "083",
@@ -1804,7 +1804,7 @@ globalThis.APP_DATA = {
             "images": [],
             "name": "主存物理存储结构",
             "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "lastReview": "2026-08-01T13:29:21"
           },
           {
             "id": "084",
@@ -1823,7 +1823,7 @@ globalThis.APP_DATA = {
             "images": [],
             "name": "标志寄存器4状态位",
             "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "lastReview": "2026-08-01T13:29:21"
           },
           {
             "id": "085",
@@ -1836,13 +1836,13 @@ globalThis.APP_DATA = {
             "isWrong": true,
             "knowledgeType": "错题",
             "missing": "流程顺序乱；DMA、中断驱动、通道的区别与适用场景不清",
-            "keyAnswer": "流程：用户程序发 I/O 系统调用→陷入内核→设备独立性软件/文件系统转命令→设备驱动设寄存器、启动 I/O（或 DMA）→设备执行、CPU 并行干别的→完成发中断→CPU 响应、中断处理程序拷数据入内核缓冲、唤醒进程→进程取数据返用户态。三种控制方式：程序直接控制(忙等)、中断驱动、DMA(块传输仅收尾中断)、通道(专用 I/O 处理器)。",
+            "keyAnswer": "流程：用户程序发 I/O 系统调用→陷入内核→设备独立性软件/文件系统转命令→设备驱动设寄存器、启动 I/O（或 DMA）→设备执行、CPU 并行干别的→完成发中断→CPU 响应、中断处理程序拷数据入内核缓冲、唤醒进程→进程取数据返用户态。三种控制方式：程序直接控制(忙等)、中断驱动、DMO(块传输仅收尾中断)、通道(专用 I/O 处理器)。",
             "thinking": "口诀：系统调用→驱动启动→设备干、CPU 溜→中断收尾→唤醒进程。I/O 软件层次自上而下：用户层 I/O→设备独立性软件→设备驱动→中断处理。易混：DMA 全程不占 CPU 计算，仅块传输完发一次中断；通道是更独立的 I/O 处理器。",
             "image": "",
             "images": [],
             "name": "IO请求流程",
             "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "lastReview": "2026-08-01T13:29:21"
           },
           {
             "id": "086",
@@ -1856,12 +1856,12 @@ globalThis.APP_DATA = {
             "knowledgeType": "错题",
             "missing": "记不全 4 个随机访问协议；分不清 CSMA/CD（有线）与 CSMA/CA（无线）",
             "keyAnswer": "① 纯 ALOHA：任意时刻发，冲突重发，利用率≤18.4%。② 时隙 ALOHA：仅时隙起点发，利用率≤36.8%。③ CSMA：发送前先载波侦听，仍可能因传播延迟冲突。④ CSMA/CD（冲突检测，有线以太网）：先听后发、边发边听、冲突停发+二进制指数退避，半双工。另 CSMA/CA（冲突避免，无线 WiFi）：无法边发边听，用 RTS/CTS+随机退避避免冲突，全双工。",
-            "thinking": "口诀：ALOHA 盲发→CSMA 先听→CD 边听边撞→CA 提前避。CSMA/CD(有线)与 CSMA/CA(无线)最根本区别：能否检测冲突——有线可(CD)，无线难(故用 CA 避免)。退避：CD 用二进制指数退避，CA 用随机退避窗口。",
+            "thinking": "口诀：ALOHA 盲发→CSMA 先听→CD 边听边撞→CA 提前避。CSMA/CD(有线)与 CSMA/CO(无线)最根本区别：能否检测冲突——有线可(CD)，无线难(故用 CA 避免)。退避：CD 用二进制指数退避，CA 用随机退避窗口。",
             "image": "",
             "images": [],
             "name": "随机访问MAC 4协议",
             "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "lastReview": "2026-08-01T13:29:21"
           }
         ]
       },
@@ -1887,7 +1887,7 @@ globalThis.APP_DATA = {
             "images": [],
             "name": "循环队列判满/元素个数",
             "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "lastReview": "2026-08-01T13:29:21"
           },
           {
             "id": "088",
@@ -1906,7 +1906,7 @@ globalThis.APP_DATA = {
             "images": [],
             "name": "CF/OF标志位分工",
             "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "lastReview": "2026-08-01T13:29:21"
           },
           {
             "id": "089",
@@ -1914,18 +1914,18 @@ globalThis.APP_DATA = {
             "chapter": "【CN】三、数据链路层",
             "topic": "CSMA/CD 与 CSMA/CA 区别",
             "question": "随机访问 MAC 有哪 4 类协议？CSMA/CD 与 CSMA/CA 根本区别？",
-            "userAnswer": "CD=碰撞检测，CA=碰撞允许；CD会停止，CA不会停止",
-            "status": "模糊",
-            "isWrong": true,
+            "userAnswer": "CSMA/CD 是检测冲突、CSMA/CA 是避免冲突；CD 用于有线、CA 用于无线；CD 能检测出冲突，CA 检测不出冲突。还有 ALOHA 协议，具体不记得了。考法真题上也有但不太记得。",
+            "status": "未掌握",
+            "isWrong": false,
             "knowledgeType": "错题",
-            "missing": "本质区别没说到点：根本是『能否检测冲突』——有线可边发边听(CD)，无线难检测故用避免(CA)；两者都会退避停止，不是CA不停止",
-            "keyAnswer": "4 类：①纯ALOHA ②时隙ALOHA ③CSMA ④CSMA/CD（有线）与 CSMA/CA（无线）。根本区别：能否检测冲突——CD(Collision Detection)有线以太网可边发边听、冲突即停+二进制指数退避；CA(Collision Avoidance)无线WiFi无法检测冲突，用RTS/CTS+随机退避避免冲突。两者都会退避/停止，不是CA不停止。",
+            "missing": "ALOHA 协议、真题考法（RTS/CTS、二进制指数退避）",
+            "keyAnswer": "4 类：①纯ALOHA ②时隙ALOHA ③CSMA ④CSMA/CD（有线）与 CSMA/CA（无线）。根本区别：能否检测冲突——CD(Collision Detection)有线以太网可边发边听、冲突即停+二进制指数退避；CO(Collision Avoidance)无线WiFi无法检测冲突，用RTS/CTS+随机退避避免冲突。两者都会退避/停止，不是CA不停止。",
             "thinking": "口诀：ALOHA盲发→CSMA先听→CD边听边撞→CA提前避。最根本区别：能否检测冲突（有线可/无线难）。退避：CD二进制指数退避，CA随机退避窗口。",
             "image": "",
             "images": [],
             "name": "CSMA/CD与CSMA/CA",
-            "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "score": 2,
+            "lastReview": "2026-08-01T14:08:58"
           }
         ]
       },
@@ -1940,18 +1940,18 @@ globalThis.APP_DATA = {
             "chapter": "【DS】四、树与二叉树",
             "topic": "B树的插入、删除与查找",
             "question": "m阶B树的定义、查找路径、插入时的分裂、删除时的借位/合并分别怎么做？",
-            "userAnswer": "",
-            "status": "待巩固",
-            "isWrong": true,
+            "userAnswer": "m阶B树：一个节点最多 m-1 个关键字，m 个分叉。查找从根往下，关键字下降，复杂度 log n，但不知道查找路径是什么。插入分裂在叶子节点进行，关键字>m-1 则向上分裂、中位数上移、重复。删除操作不清楚。",
+            "status": "未掌握",
+            "isWrong": false,
             "knowledgeType": "知识卡",
-            "missing": "选择题暴露的薄弱点，需建立完整增删操作流程",
+            "missing": "查找路径含义、删除的借位/兄弟合并",
             "keyAnswer": "定义：每节点最多m棵子树(m-1关键字)；根≥2棵(或1)；非根非叶≥⌈m/2⌉棵(⌈m/2⌉-1关键字)；所有叶同层。查找：从根沿关键字区间下降,O(log n)。插入：在叶插入,若关键字>m-1则分裂(中位数上移父,左右成两节点),可递归到根(增高)。删除：在叶删；删后<⌈m/2⌉-1先向兄弟借(旋转),不够则与兄弟+父关键字合并(树可能变矮)；非叶删除用前驱/后继替换再按叶处理。",
             "thinking": "口诀：插入看\"溢出→分裂上移\"，删除看\"不足→先借后并\"。B+树：非叶只存索引、叶串链表、叶存全部数据。",
             "image": "",
             "images": [],
             "name": "B树增删改查",
-            "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "score": 2,
+            "lastReview": "2026-08-01T14:08:58"
           },
           {
             "id": "091",
@@ -1959,18 +1959,18 @@ globalThis.APP_DATA = {
             "chapter": "【DS】二、栈、队列和数组",
             "topic": "栈实现表达式求值（中缀转后缀、后缀求值）",
             "question": "如何用栈将中缀表达式转后缀？又如何用栈对后缀表达式求值？",
-            "userAnswer": "",
-            "status": "待巩固",
+            "userAnswer": "中缀转后缀：每个运算打括号，把运算符移到对应括号后面去。这两个算法（中缀转后缀、后缀求值）都是贪心算法。",
+            "status": "未掌握",
             "isWrong": true,
             "knowledgeType": "知识卡",
-            "missing": "对\"栈用于表达式求值\"这一应用概念模糊",
+            "missing": "后缀表达式求值（栈：遇数压栈、遇符弹两运算）、中缀转后缀/求值是规则转换而非贪心",
             "keyAnswer": "中缀→后缀(运算符栈)：遇操作数直接输出；遇运算符与栈顶比优先级，栈顶≥当前且非\"(\"则弹出输出再压入；\"(\"压栈；\")\"弹出至\"(\"。后缀求值(操作数栈)：遇操作数压栈；遇运算符弹栈顶两元素(先弹右操作数)运算后压回，栈顶即结果。",
             "thinking": "关键：中缀转后缀时\"(\"优先级最低但压栈后最高；后缀求值是\"后弹出的先 operand\"。",
             "image": "",
             "images": [],
             "name": "栈-表达式求值",
-            "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "score": 2,
+            "lastReview": "2026-08-01T14:08:58"
           },
           {
             "id": "092",
@@ -1978,18 +1978,18 @@ globalThis.APP_DATA = {
             "chapter": "【DS】五、图",
             "topic": "Prim（最小生成树）与 Dijkstra（最短路径）的异同",
             "question": "Prim 和 Dijkstra 算法思想相似，它们的目标、适用、核心数组、能否处理负权有何区别？",
-            "userAnswer": "",
-            "status": "待巩固",
-            "isWrong": true,
+            "userAnswer": "Dijkstra 是单源最短路径，用于动态路由算法，找当前距离原点最短的。Prim 找集合内最短的。Dijkstra 不能处理负权。",
+            "status": "掌握",
+            "isWrong": false,
             "knowledgeType": "知识卡",
-            "missing": "混淆两者目标与核心维护量",
+            "missing": "",
             "keyAnswer": "同：都贪心、都用\"集合/距离\"选最小、朴素O(V²)/堆O(ElogV)。异：Prim目标=最小生成树(连通无向带权,选最小权边扩展已连集合),维护\"到集合最小边权\"；Dijkstra目标=单源最短路径(可含向,dist[v]到源距),维护\"到源距离\"并松弛邻边。关键：Prim用边权扩展、Dijkstra用距离松弛；Dijkstra不能处理负权边(会错),Prim无此限制(只要非负权建树)。",
             "thinking": "记法：Prim\"连点成树看边权\"，Dijkstra\"算距离看路径\"。都从起点开始，一个长树一个长路。",
             "image": "",
             "images": [],
             "name": "Prim vs Dijkstra",
-            "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "score": 3,
+            "lastReview": "2026-08-01T14:08:58"
           },
           {
             "id": "093",
@@ -1997,18 +1997,18 @@ globalThis.APP_DATA = {
             "chapter": "【DS】五、图",
             "topic": "最小生成树（MST）定义与性质",
             "question": "什么是最小生成树？有哪些性质？Prim 与 Kruskal 怎么求？",
-            "userAnswer": "",
-            "status": "待巩固",
+            "userAnswer": "最小生成树，我的理解是不是跟哈夫曼树一样、由哈夫曼输入生成的？",
+            "status": "未掌握",
             "isWrong": true,
             "knowledgeType": "知识卡",
-            "missing": "对MST基本概念与求法不熟",
+            "missing": "最小生成树定义（连通无向图最小权连通子图，V-1条边）、与哈夫曼树区别",
             "keyAnswer": "定义：连通带权无向图的生成子图，含全部V顶点、V-1边、连通无环、边权和最小。性质：①边数固定V-1；②边权互异则MST唯一；③割性质：任一切割跨切割的最小权边必在MST中。求法：Prim(加点,O(V²))、Kruskal(加边+并查集判环,O(ElogE))。",
             "thinking": "MST vs 最短路径树：MST是全局边权和最小，不是到根距离和最小。",
             "image": "",
             "images": [],
             "name": "最小生成树",
-            "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "score": 1,
+            "lastReview": "2026-08-01T14:08:58"
           },
           {
             "id": "094",
@@ -2016,18 +2016,18 @@ globalThis.APP_DATA = {
             "chapter": "【DS】五、图",
             "topic": "图的存储结构（邻接矩阵/表/十字链表/邻接多重表）",
             "question": "图有哪些存储结构？各自空间、适用、查边效率？",
-            "userAnswer": "",
-            "status": "待巩固",
+            "userAnswer": "邻接表用链表存储，空间是顶点个数，插边效率不高；邻接矩阵空间是二维数组，插边常数复杂度。适用情况不知道。",
+            "status": "未掌握",
             "isWrong": true,
             "knowledgeType": "知识卡",
-            "missing": "对四种存储方式对比不清",
+            "missing": "邻接表空间 O(V+E)（非仅顶点数）、邻接表头插边 O(1)（你记反了）、两者适用场景",
             "keyAnswer": "邻接矩阵：|V|×|V|，无向对称；空间O(V²)，查边O(1)，适稠密。邻接表：数组+链表，空间O(V+E)，查边O(度)，适稀疏；有向出边易入边难。十字链表(有向专用，出入边都方便)。邻接多重表(无向，每边只存一次，删边方便)。",
             "thinking": "无向用邻接表/多重表；有向重出边用邻接表、重出入用十字链表；稠密用矩阵。",
             "image": "",
             "images": [],
             "name": "图的存储方式",
-            "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "score": 2,
+            "lastReview": "2026-08-01T14:08:58"
           },
           {
             "id": "095",
@@ -2035,18 +2035,18 @@ globalThis.APP_DATA = {
             "chapter": "【DS】七、排序",
             "topic": "插入排序家族（直接/折半/希尔）",
             "question": "直接插入排序怎么排？时间复杂度与稳定性？希尔排序为什么快？",
-            "userAnswer": "",
-            "status": "待巩固",
-            "isWrong": true,
+            "userAnswer": "直接插入：第 i 个插入前 i-1 已排序序列，从后往前比，复杂度 n²，稳定。希尔用增量排序，不知道为什么快。",
+            "status": "未掌握",
+            "isWrong": false,
             "knowledgeType": "知识卡",
-            "missing": "对插入排序家族及稳定性不熟",
+            "missing": "希尔为什么快（分组使序列基本有序、逆序对大幅减少，后续增量排序代价骤降）",
             "keyAnswer": "直接插入：第i个插入前i-1已排序序列(从后往前比,大则后移),最坏/平均O(n²),最好O(n)(已序),稳定,基本有序时高效。折半插入：找位用折半,比较少但移动仍O(n²)。希尔：按gap分组插入,gap递减至1,O(n^1.3),不稳定(跨距交换破坏稳定)。",
             "thinking": "插排\"稳定+自适应\"；希尔是插排加速版，但失去稳定。",
             "image": "",
             "images": [],
             "name": "插入排序",
-            "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "score": 2,
+            "lastReview": "2026-08-01T14:08:58"
           },
           {
             "id": "096",
@@ -2054,18 +2054,18 @@ globalThis.APP_DATA = {
             "chapter": "【CO】六、总线",
             "topic": "USB 总线的特性与传输类型",
             "question": "USB 总线有哪些关键特性？有哪几种传输类型？",
-            "userAnswer": "",
-            "status": "待巩固",
+            "userAnswer": "USB 这道题真不知道。",
+            "status": "未掌握",
             "isWrong": true,
             "knowledgeType": "知识卡",
-            "missing": "对USB总线特性(尤其传输类型)不清",
+            "missing": "USB 特性（串行/差分/热插拔/主从星型拓扑）与4种传输类型（控制/批量/中断/等时）",
             "keyAnswer": "特性：串行、差分信号抗干扰；拓扑分层星型(主机—集线器—设备)；热插拔即插即用；通信由主机轮询发起(从机不能主动)；半双工(USB3.0起有全双工)。四种传输：控制(命令配置小量可靠)、批量(大文件可靠如U盘)、中断(少量定时如键鼠)、等时(实时音视频不重传)。",
             "thinking": "记：USB\"主机主导、串行差分、四类传输\"。中断传输不是硬件中断，是定时轮询。",
             "image": "",
             "images": [],
             "name": "USB总线特性",
-            "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "score": 1,
+            "lastReview": "2026-08-01T14:08:58"
           },
           {
             "id": "097",
@@ -2073,18 +2073,18 @@ globalThis.APP_DATA = {
             "chapter": "【CO】五、中央处理器",
             "topic": "微程序控制器操作控制字段编码",
             "question": "微程序控制器中，操作控制字段有哪几种编码方式？水平/垂直微指令是什么？",
-            "userAnswer": "",
-            "status": "待巩固",
+            "userAnswer": "(未作答，自述不会)",
+            "status": "未掌握",
             "isWrong": true,
             "knowledgeType": "知识卡",
-            "missing": "对操作控制字段编码方式不熟",
+            "missing": "整题未掌握（微程序控制器操作控制字段编码）",
             "keyAnswer": "编码：①直接编码(每位直接对应一微命令,无需译码快但字长很长)；②字段直接编码(互斥微命令分组,每组译码出一个命令,缩短字长)；③字段间接编码；④混合。微指令格式：水平微指令(一次发多并行微命令,并行度高字长长)、垂直微指令(类似机器指令经译码,字长短并行度低)。另含\"下址字段\"指下条微指令地址。",
             "thinking": "直接=快但长；字段=省但需译码。水平并行高、垂直串行感强。",
             "image": "",
             "images": [],
             "name": "微程序操作控制字段",
-            "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "score": 1,
+            "lastReview": "2026-08-01T14:08:58"
           },
           {
             "id": "098",
@@ -2092,18 +2092,18 @@ globalThis.APP_DATA = {
             "chapter": "【CO】二、数据的表示和运算",
             "topic": "大端序 / 小端序",
             "question": "什么是大端存储、小端存储？如何判断机器字节序？",
-            "userAnswer": "",
-            "status": "待巩固",
+            "userAnswer": "(未作答，自述不会)",
+            "status": "未掌握",
             "isWrong": true,
             "knowledgeType": "知识卡",
-            "missing": "对大小端概念及判断不清",
+            "missing": "整题未掌握（大端序 / 小端序）",
             "keyAnswer": "大端(Big-Endian)：最高有效字节存最低地址(网络/Java常用)。小端(Little-Endian)：最低有效字节存最低地址(x86用)。例0x12345678,地址0存12(大端)/78(小端)。判断：int a=1,取char*看首字节==1即小端。注意字内字节序与字间地址顺序是两个维度。",
             "thinking": "口诀\"大端高字节在低址，小端低字节在低址\"。网络传输用大端(htons转换)。",
             "image": "",
             "images": [],
             "name": "大小端存储",
-            "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "score": 1,
+            "lastReview": "2026-08-01T14:08:58"
           },
           {
             "id": "099",
@@ -2111,18 +2111,18 @@ globalThis.APP_DATA = {
             "chapter": "【CO】六、总线",
             "topic": "数据总线 / 地址总线 / 控制总线分工",
             "question": "数据总线在总线事务中传输哪些内容？它与地址、控制总线如何分工？",
-            "userAnswer": "",
-            "status": "待巩固",
+            "userAnswer": "(未作答，自述不会)",
+            "status": "未掌握",
             "isWrong": true,
             "knowledgeType": "知识卡",
-            "missing": "对三类总线分工、尤其数据总线也传指令不清",
+            "missing": "整题未掌握（数据总线 / 地址总线 / 控制总线分工）",
             "keyAnswer": "数据总线(双向)：传输\"数据\"——读出操作数、写入数据、取指阶段取出的指令代码、中断类型号等。地址总线(单向CPU→)：传输访存/IO地址。控制总线：传输读/写、就绪、中断请求、总线请求等。注：指令本身也经数据总线在取指时送CPU(地址由地址总线给出)。",
             "thinking": "一句话：地址总线给\"位置\"，数据总线给\"内容(数/指令/状态)\"，控制总线给\"动作\"。",
             "image": "",
             "images": [],
             "name": "三类总线分工",
-            "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "score": 1,
+            "lastReview": "2026-08-01T14:08:58"
           },
           {
             "id": "100",
@@ -2130,18 +2130,18 @@ globalThis.APP_DATA = {
             "chapter": "【OS】二、进程管理",
             "topic": "中断隐指令（硬件自动完成的中断响应）",
             "question": "中断响应时由硬件自动完成的\"中断隐指令\"包含哪些动作？",
-            "userAnswer": "",
-            "status": "待巩固",
+            "userAnswer": "(未作答，自述不会)",
+            "status": "未掌握",
             "isWrong": true,
             "knowledgeType": "知识卡",
-            "missing": "对中断隐指令具体动作不熟",
+            "missing": "整题未掌握（中断隐指令（硬件自动完成的中断响应））",
             "keyAnswer": "中断隐指令是CPU响应中断时由硬件自动完成、不在用户程序出现的一串操作，含三步：①关中断(防嵌套丢失)；②保存断点(PC压栈或存特定寄存器)；③引出中断服务程序(据中断向量表取入口地址送PC)。之后才进ISR(保护现场→处理→恢复现场→开中断→中断返回)。",
             "thinking": "隐指令三动作记\"关中断→存断点→取入口\"。用户不可见不可编程。",
             "image": "",
             "images": [],
             "name": "中断隐指令",
-            "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "score": 1,
+            "lastReview": "2026-08-01T14:08:58"
           },
           {
             "id": "101",
@@ -2149,18 +2149,18 @@ globalThis.APP_DATA = {
             "chapter": "【OS】一、操作系统概述与运行环境",
             "topic": "用户态（目态）的权限边界",
             "question": "CPU 处于用户态时，能做什么、不能做什么？什么事件会陷入内核态？",
-            "userAnswer": "",
-            "status": "待巩固",
+            "userAnswer": "(未作答，自述不会)",
+            "status": "未掌握",
             "isWrong": true,
             "knowledgeType": "知识卡",
-            "missing": "对用户态权限边界不清",
+            "missing": "整题未掌握（用户态（目态）的权限边界）",
             "keyAnswer": "用户态(目态)：执行用户程序,只能执行非特权指令,访问受限用户空间；不能直接执行I/O、改PSW/中断屏蔽、清TLB等特权指令。陷入内核态三方式：①系统调用(有意如read/write)；②异常(缺页、除零)；③中断(时钟/IO完成)。进内核态后权限提升可执行特权指令。",
             "thinking": "口诀\"用户态跑自己代码、碰特权就陷内核\"。用户态→内核态必经中断/异常/自陷机制。",
             "image": "",
             "images": [],
             "name": "用户态边界",
-            "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "score": 1,
+            "lastReview": "2026-08-01T14:08:58"
           },
           {
             "id": "102",
@@ -2168,18 +2168,18 @@ globalThis.APP_DATA = {
             "chapter": "【CO】三、存储系统",
             "topic": "主存读/写周期与涉及参数",
             "question": "主存进行一次读/写操作涉及哪些参数（地址、数据、控制信号、时序）？",
-            "userAnswer": "",
-            "status": "待巩固",
+            "userAnswer": "(未作答，自述不会)",
+            "status": "未掌握",
             "isWrong": true,
             "knowledgeType": "知识卡",
-            "missing": "对读写涉及的地址/数据/控制参数及存取时间vs周期不清",
-            "keyAnswer": "一次访存(读)：①CPU将地址送地址总线(MAR)；②发读命令(控制总线Read)；③存储体译码选中单元；④数据送数据总线(MBR)；⑤CPU采样。时序参数：存取时间TA(发地址到数据有效)、存取周期TC(连续两次独立访问最小间隔,TC≥TA)、恢复时间。写：地址+数据送总线,发Write,数据写入。TC>TA(写后需恢复)。",
+            "missing": "整题未掌握（主存读/写周期与涉及参数）",
+            "keyAnswer": "一次访存(读)：①CPU将地址送地址总线(MAR)；②发读命令(控制总线Read)；③存储体译码选中单元；④数据送数据总线(MBR)；⑤CPU采样。时序参数：存取时间TO(发地址到数据有效)、存取周期TC(连续两次独立访问最小间隔,TC≥TA)、恢复时间。写：地址+数据送总线,发Write,数据写入。TC>TO(写后需恢复)。",
             "thinking": "参数链\"地址(MAR)→读/写控制→数据(MBR)\"；TC≥TA是高频考点。",
             "image": "",
             "images": [],
             "name": "主存读写参数",
-            "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "score": 1,
+            "lastReview": "2026-08-01T14:08:58"
           },
           {
             "id": "103",
@@ -2187,18 +2187,18 @@ globalThis.APP_DATA = {
             "chapter": "未分类",
             "topic": "TCP/IP 各层核心协议速查",
             "question": "请汇总 TCP/IP 各层关键协议及作用（ARP/DHCP/DNS/ICMP/TCP/UDP/HTTP/FTP/SMTP…）？",
-            "userAnswer": "",
-            "status": "待巩固",
+            "userAnswer": "(未作答，自述不会)",
+            "status": "未掌握",
             "isWrong": true,
             "knowledgeType": "知识卡",
-            "missing": "对分层协议汇总记忆不全",
+            "missing": "整题未掌握（TCP/IP 各层核心协议速查）",
             "keyAnswer": "应用层：HTTP(网页)FTP(文件)SMTP/POP3/IMAP(邮件)DNS(域名)DHCP(分配IP)TELNET。传输层：TCP(可靠连接)UDP(无连接尽力)。网络层：IP、ICMP(差错报告ping)、ARP(已知IP求MAC)、IGMP、OSPF/RIP/BGP(路由)。链路层：PPP、以太网(CSMA/CD)、WiFi(CSMA/CA)、HDLC。端口：HTTP80/FTP21/SMTP25/DNS53(用UDP)/DHCP67-68。",
             "thinking": "按层背：应(HTTP/FTP/DNS/DHCP)-传(TCP/UDP)-网(IP/ICMP/ARP)-链(PPP/以太)-物。ARP\"IP→MAC\"高频。",
             "image": "",
             "images": [],
             "name": "网络协议汇总",
-            "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "score": 1,
+            "lastReview": "2026-08-01T14:08:58"
           },
           {
             "id": "104",
@@ -2206,18 +2206,18 @@ globalThis.APP_DATA = {
             "chapter": "【CO】三、存储系统",
             "topic": "Flash 闪存的特性与归类",
             "question": "闪存（Flash）属于哪类存储器？有什么特性、优缺点、用途？",
-            "userAnswer": "",
-            "status": "待巩固",
+            "userAnswer": "(未作答，自述不会)",
+            "status": "未掌握",
             "isWrong": true,
             "knowledgeType": "知识卡",
-            "missing": "对Flash归类与特性不清",
+            "missing": "整题未掌握（Flash 闪存的特性与归类）",
             "keyAnswer": "Flash属非易失性半导体存储器(ROM家族/EEPROM演进)，掉电不丢。特性：可电擦除重写,但\"按块(Block)擦除、按页/字节编程(写)\",读快写慢擦最慢；有擦写寿命限制(约万~十万次)；无机械。用途：U盘、SSD、SD卡、BIOS固件。与RAM比：非易失但慢有寿命；与磁盘比：无机械速度快但贵容量小。",
             "thinking": "口诀\"Flash非易失、块擦页写、读快写慢有寿命\"。考题常混：Flash是ROM类不是RAM类。",
             "image": "",
             "images": [],
             "name": "闪存Flash性质",
-            "score": 0,
-            "lastReview": "2026-07-30T21:32:50"
+            "score": 1,
+            "lastReview": "2026-08-01T14:08:58"
           }
         ]
       },
@@ -2307,7 +2307,7 @@ globalThis.APP_DATA = {
             "subject": "数学二",
             "chapter": "十、线性代数（方程组）",
             "topic": "秩与解的结构",
-            "question": "非方阵A(m×n)，设 r=rank(A)、r'=rank(A|b)，Ax=b 的解如何由秩决定？",
+            "question": "非方阵O(m×n)，设 r=rank(A)、r'=rank(A|b)，Ax=b 的解如何由秩决定？",
             "userAnswer": "",
             "status": "不懂",
             "isWrong": false,
@@ -2762,16 +2762,68 @@ globalThis.APP_DATA = {
             "topic": "找主元素（Boyer-Moore投票算法）",
             "name": "找主元素算法",
             "question": "已知整数序列A=(a0,...,a_{n-1})，0≤ai<n。若存在x出现次数m>n/2，则称x为主元素。设计尽可能高效的算法找出A的主元素，存在则输出，否则输出-1。",
-            "userAnswer": "【口述思路】开大小为n的计数数组count[0..n-1]全0；遍历A中每个元素，将元素值作为count数组下标对应位置+1；遍历完后遍历count数组，只要某下标对应值>n/2就确定为主元素。时间O(n)，空间O(n)。",
+            "userAnswer": "(未作答，自述不会)",
             "thinking": "朴素计数法，思路正确但空间不是最优。最优解应为Boyer-Moore投票算法O(1)空间。",
-            "missing": "①未写出最优解（Boyer-Moore投票算法/消去法）②未提到第二遍验证步骤③边界处理不够完整",
+            "missing": "整题未掌握（找主元素（Boyer-Moore投票算法））",
             "keyAnswer": "**最优解：Boyer-Moore投票算法 O(n)时间 O(1)空间**\n\n第一遍（候选投票）：\n初始化c=NULL, count=0\n遍历A:\n  if count==0: c=A[i], count=1\n  elif A[i]==c: count++\n  else: count--\n\n第二遍（验证）：\n重新遍历A统计c出现次数\n若>n/2返回c，否则返回-1\n\n核心思想：主元素> n/2 → 比其他所有元素加起来还多 → 配对消除后剩下的一定是候选\n\n**评分：9-10/13分**（思路正确拿基础分，但未写出最优解扣2-3分）",
-            "status": "需复习",
+            "status": "未掌握",
             "images": [
               " Clipboard_Screenshot.png"
             ],
             "score": 1,
-            "lastReview": "2026-07-31 20:54:47"
+            "lastReview": "2026-08-01T14:08:58",
+            "isWrong": true
+          }
+        ]
+      },
+      {
+        "date": "2026-08-01",
+        "title": "英二翻译真题（2020）",
+        "questions": [
+          {
+            "id": "129",
+            "subject": "英语二",
+            "chapter": "四、翻译（英译汉）",
+            "topic": "翻译真题·2020",
+            "question": "It's almost impossible to go through life without experiencing some kind of failure. But, the wonderful thing about failure is that it's entirely up to us to decide how to look at it. We can choose to see failure as \"the end of the world\". Or, we can look at failure as the incredible learning experience that it often is. Every time we fail at something, we can choose to look for the lesson we're meant to learn. These lessons are very important; they're how we grow, and how we keep from making that same mistake again. Failures stop us only if we let them. Failure can also teach us things about ourselves that we would never have learned otherwise. For instance, failure can help you discover how strong a person you are. Failing at something can help you discover your truest friends, or help you find unexpected motivation to succeed.",
+            "userAnswer": "生活中是不可能不经历一些失败的但庆幸的选择如何看待失败是对我们有好处的我们可以是失败为世界末日但我们也可以视它为一个很平常的得分不高学习经历，每当我们在一些事上失败的我们可以选择去寻求he学习的课程这些课程是很重要的他们告诉我们如何成长并且让我们避免再次犯同样的错，只有我们这样做失败才会停止失败还能教会我从未学到的东西举个例子失败可以帮助你发现你有你是个多么强大的人失败在某些方面可以帮助你发现你真正的朋友或者帮助你去找到那些从没想过的动机去成功",
+            "status": "需复习",
+            "isWrong": false,
+            "knowledgeType": "翻译",
+            "missing": "",
+            "keyAnswer": "【参考译文/标准答案】\n人生几乎不可能不经历某种失败。但是，失败的妙处在于，如何看待它完全由我们自己决定。我们可以选择把失败看作\"世界末日\"。或者，我们也可以把失败看作它常常就是的那种了不起的学习经历。每次我们在某些事情上失败时，我们都可以选择去寻找我们本应学到的教训。这些教训非常重要；它们决定了我们如何成长，以及如何避免再犯同样的错误。失败只有在我们听任它们时才会阻碍我们。失败还能教给我们关于自身的、否则我们永远无法学到的东西。例如，失败能帮助你发现自己是一个多么坚强的人。在某件事上失败能帮你发现最真挚的朋友，或帮你找到意想不到的、走向成功的动力。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "翻译:2020英二",
+            "score": 2,
+            "lastReview": "2026-08-01T22:12:00",
+            "reviewNote": "【批改 评分: 7.5/15分(约50分)】大意抓到约一半，但出现3处反义/严重错译，考研翻译意思译反是大忌，重点修正：\n① 句2 the wonderful thing about failure is that it's entirely up to us to decide how to look at it 译成一团乱（\"庆幸的选择如何看待失败是对我们有好处的\"）→ 应：失败的妙处在于，如何看待它完全由我们自己决定。wonderful=妙处/奇妙，非\"庆幸\"；漏 entirely up to us（完全由我们自己决定）。\n② 句4 incredible learning experience 译\"很平常的得分不高学习经历\"→ 完全反义！incredible=了不起的/难以置信的，非\"平常\"；\"得分不高\"是无中生有。应：它常常就是的那种了不起的学习经历。\n③ 句7 Failures stop us only if we let them 译\"只有我们这样做失败才会停止\"→ 完全理解反了！原意：失败只有在我们听任它们（得逞）时才会阻碍我们。stop us=阻碍我们（非\"失败停止\"）；only if we let them=只有我们放任它们。\n④ 句3 see failure as 结构错（\"是失败为世界末日\"），漏 choose（选择）。\n⑤ 句5 he=the 的音译错字；the lesson we're meant to learn=我们本应学的教训。\n⑥ 句9 \"你有你是个\"重复啰嗦；句10 \"失败在某些方面\"是多加的（Failing at something=在某件事上失败，原文无\"在某些方面\"）。\n建议：incredible / stop us / only if 这类高频词和句型务必准确；意思译反比漏译更扣分。"
+          }
+        ]
+      },
+      {
+        "date": "2026-08-01",
+        "title": "408真题：二叉树WPL计算 + DFS/BFS遍历",
+        "questions": [
+          {
+            "id": "130",
+            "subject": "408",
+            "chapter": "【DS】4、树与二叉树",
+            "topic": "WPL带权路径长度+DFS/BFS遍历",
+            "question": "【408真题 13分】二叉树的带权路径长度(WPL)是二叉树中所有叶结点的带权路径长度之和。给定一棵二叉树T，采用二叉链表存储结构(left/weight/right)，weight存该结点的非负权值，root为指向T的根结点指针。(1)给出计算T的WPL的算法设计思想 (2)C或C++给出二叉树结点的数据类型定义 (3)根据设计思想用C或C++描述算法并注释。\n\n【用户补充】深度优先搜索(DFS)：遍历到左孩子为空时返回上一级然后遍历右孩子直到为空时返回上一级。广度优先搜索(BFS)：代码不会写。",
+            "status": "需复习",
+            "isWrong": false,
+            "knowledgeType": "大题",
+            "missing": "",
+            "keyAnswer": "✓ 标准答案：\n\n【数据类型定义】\ntypedef struct BiTNode {\n    int weight;            // 权值（叶结点为有效权值，非叶可为0）\n    struct BiTNode *left;  // 左孩子\n    struct BiTNode *right; // 右孩子\n} BiTNode, *BiTree;\n\n【算法设计思想】\n方法一（先序DFS递归）：从根出发，对每个结点：\n- 若为叶结点（left==null && right==null），返回 weight × depth（depth为从根到该叶的路径长度）\n- 若非叶结点，递归计算左子树WPL和右子树WPL，返回两者之和\n- 初始 depth=0，每深入一层 depth+1\n\n方法二（层序BFS非递归）：用队列做层次遍历，记录每个结点的深度：\n- 叶结点贡献 = weight × depth\n- 非叶结点将其左右孩子入队（depth+1）\n- 队列空时累加完毕即为WPL\n\n【方法一：先序递归求WPL】\nint WPL(BiTree root) { return _wpl(root, 0); }\nint _wpl(BiTree node, int depth) {\n    if (!node) return 0;\n    // 叶结点：返回 权值×路径长度\n    if (!node->left && !node->right)\n        return node->weight * depth;\n    // 非叶结点：递归左右子树，depth+1\n    return _wpl(node->left, depth+1) + _wpl(node->right, depth+1);\n}\n\n【方法二：层序BFS求WPL】\nint WPL_BFS(BiTree root) {\n    if (!root) return 0;\n    Queue Q; InitQueue(Q);\n    int wpl = 0;\n    // 入队：(结点指针, 深度)\n    EnQueue(Q, {root, 0});\n    while (!IsEmpty(Q)) {\n        auto cur = DeQueue(Q);\n        BiTNode *p = cur.node; int d = cur.depth;\n        if (!p->left && !p->right)\n            wpl += p->weight * d;       // 叶结点累加\n        else {\n            if (p->left)  EnQueue(Q, {p->left, d+1});   // 左孩子入队\n            if (p->right) EnQueue(Q, {p->right, d+1});   // 右孩子入队\n        }\n    }\n    return wpl;\n}\n\n【DFS vs BFS 对比】\nDFS（深度优先）：沿一条路走到底再回溯。\n- 先序/中序/后序都是DFS的不同访问时机。\n- 你说的\"左孩子为空返回上级→遍历右孩子→为空返回上级\"就是标准的先序DFS回溯过程。\n- 实现：递归（系统栈）或显式栈。\n\nBFS（广度优先/层次遍历）：逐层访问，先访问完第k层的所有结点再访问第k+1层。\n- 用队列实现：根入队→出队访问→将其孩子全部入队→重复。\n- 代码模板（你说的不会写）：\nvoid LevelOrder(BiTree root) {\n    if (!root) return;\n    Queue Q; InitQueue(Q);\n    EnQueue(Q, root);              // 根入队\n    while (!IsEmpty(Q)) {\n        BiTNode *p = DeQueue(Q);   // 出队\n        visit(p);                  // 访问（输出/处理）\n        if (p->left)  EnQueue(Q, p->left);   // 左孩子入队\n        if (p->right) EnQueue(Q, p->right);  // 右孩子入队\n    }\n}",
+            "thinking": "WPL本质=Σ(叶结点权值×根到该叶的路径边数)。两种解法：①DFS递归（传depth参数，叶结点直接算贡献）；②BFS层序（队列存<结点,depth>对，叶结点累加）。两种方法时间复杂度均为O(n)，空间复杂度O(n)。考研推荐写递归法（代码短不易错），但BFS法体现队列运用能力。",
+            "image": "",
+            "images": [],
+            "name": "408:WPL+DFS/BFS",
+            "score": 0,
+            "lastReview": "2026-08-01T22:27:00",
+            "reviewNote": ""
           }
         ]
       }
@@ -2803,7 +2855,7 @@ globalThis.APP_DATA = {
     },
     {
       "title": "408 专题 · 机组计算",
-      "content": "# 机组计算专题（408 真题匹配版）\n\n> 标注年份=历年408真题大题/小题出处，公式以王道/天勤真题解析为准。真题PDF为图片扫描版，以下模板从解析文字层锚点+知识体系补全。\n\n## 一、真题提取的模板 / 公式 / 流程（置顶，先背这些）\n\n### [2011·11 / 2017·14] IEEE 754 浮点数真值计算\n- 32位布局：1位符号S + 8位阶码E(偏置127) + 23位尾数M；64位：1+11(偏置1023)+52\n- 规格化真值 = (-1)^S × (1.M) × 2^(E-127)\n- 例：x = -1000.01 = -1.00001 × 2^3 → E-127=3 → E=130=10000010B\n- 阶码全0 = 非规格化/±0；阶码全1尾数0 = ±∞；全1尾数非0 = NaN\n- 指数范围 -126 ~ +127（阶码1~254）；[2017] float 特殊值 7F80…=INF\n- [2022·14] 8位阶码偏置127，阶码范围 1~254 → 指数 -126~+127\n\n### [2009·22 / 2012 / 2018] DMA 与 I/O 时间 / CPU 占用率\n- 传输时间 t = 数据量 / 传输率\n  - [2012] 16B×300k/s = 4.8MB/s；[2018] 40MB/1000B = 40000 次传输\n- CPU 占用率 = DMA传输时间 / (DMA传输时间 + CPU处理时间)，或 1 - 总线空闲占比\n- 单/双缓冲总时间：双缓冲可与计算重叠 → 总时间 ≈ max(计算, I/O)×n + 一次I/O\n\n### [2009·43] 取指周期微操作（MAR/MDR）\n- C1: (PC)→MAR\n- C2: M(MAR)→MDR, (PC)+1→PC\n- C3: (MDR)→IR\n- 间址：C1:(MDR)→MAR；C2:M(MAR)→MDR；执行按操作码\n\n### [2013·22] RAID 容量 与 偏移量→磁盘块\n- RAID0 容量 = N×单盘；RAID1 = N/2；RAID5 = (N-1)×单盘\n- 文件偏移量 f_offset → 逻辑块号：块号 = f_offset / B，块内偏移 = f_offset % B\n- 用 inode 索引(直接/一/二级间接) 把逻辑块号映射成物理盘块号\n- 注：与“虚拟地址(段号+偏移)→物理地址”是独立机制，勿混（见文件系统专题）\n\n### [2022·14] 地址计算综合\n- 逻辑地址 = 页号 + 页内偏移；物理地址 = 页框号 + 页内偏移\n- 偏移位数 = log2(页大小)；页号位数 = 地址位数 - 偏移位数\n\n## 二、知识点梳理（机组计算全考点）\n\n### 1. 数据表示与运算\n- 原码：-(2^(n-1)-1) ~ +(2^(n-1)-1)；补码：[-2^(n-1), 2^(n-1)-1]（定点整数）\n- 移码 = 补码符号位取反（用于阶码）\n- 补码一位乘法(Booth)、溢出判断（双符号位 / 符号位+最高数值位进位）\n- 浮点加减：对阶(小阶向大阶)→尾数加减→规格化→舍入→溢出判断\n\n### 2. 存储系统容量\n- 主存容量 = 2^地址位数 × 字/字节；存储器带宽 = 数据量 / 传输时间\n- Cache 容量公式见 Cache 专题\n\n### 3. 指令与流水线\n- 扩展操作码（Huffman 编码法）\n- 吞吐率 TP = n / ((k+n-1)×t)；加速比 = k×n×t / ((k+n-1)×t)（k段n指令t段时长）\n- 冒险：数据相关(前递/旁路)、控制相关(分支预测)、结构相关\n\n### 4. I/O 计算\n- 磁盘访问时间 = 寻道 + 旋转延迟 + 传输时间\n- 调度：SCAN/C-SCAN 移动量计算（见 I/O 设备专题）"
+      "content": "# 机组计算专题（408 真题匹配版）\n\n> 标注年份=历年408真题大题/小题出处，公式以王道/天勤真题解析为准。真题PDF为图片扫描版，以下模板从解析文字层锚点+知识体系补全。\n\n## 一、真题提取的模板 / 公式 / 流程（置顶，先背这些）\n\n### [2011·11 / 2017·14] IEEE 754 浮点数真值计算\n- 32位布局：1位符号S + 8位阶码O(偏置127) + 23位尾数M；64位：1+11(偏置1023)+52\n- 规格化真值 = (-1)^S × (1.M) × 2^(E-127)\n- 例：x = -1000.01 = -1.00001 × 2^3 → E-127=3 → E=130=10000010B\n- 阶码全0 = 非规格化/±0；阶码全1尾数0 = ±∞；全1尾数非0 = NaN\n- 指数范围 -126 ~ +127（阶码1~254）；[2017] float 特殊值 7F80…=INF\n- [2022·14] 8位阶码偏置127，阶码范围 1~254 → 指数 -126~+127\n\n### [2009·22 / 2012 / 2018] DMA 与 I/O 时间 / CPU 占用率\n- 传输时间 t = 数据量 / 传输率\n  - [2012] 16B×300k/s = 4.8MB/s；[2018] 40MB/1000B = 40000 次传输\n- CPU 占用率 = DMA传输时间 / (DMA传输时间 + CPU处理时间)，或 1 - 总线空闲占比\n- 单/双缓冲总时间：双缓冲可与计算重叠 → 总时间 ≈ max(计算, I/O)×n + 一次I/O\n\n### [2009·43] 取指周期微操作（MAR/MDR）\n- C1: (PC)→MAR\n- C2: M(MAR)→MDR, (PC)+1→PC\n- C3: (MDR)→IR\n- 间址：C1:(MDR)→MAR；C2:M(MAR)→MDR；执行按操作码\n\n### [2013·22] RAID 容量 与 偏移量→磁盘块\n- RAID0 容量 = N×单盘；RAID1 = N/2；RAID5 = (N-1)×单盘\n- 文件偏移量 f_offset → 逻辑块号：块号 = f_offset / B，块内偏移 = f_offset % B\n- 用 inode 索引(直接/一/二级间接) 把逻辑块号映射成物理盘块号\n- 注：与“虚拟地址(段号+偏移)→物理地址”是独立机制，勿混（见文件系统专题）\n\n### [2022·14] 地址计算综合\n- 逻辑地址 = 页号 + 页内偏移；物理地址 = 页框号 + 页内偏移\n- 偏移位数 = log2(页大小)；页号位数 = 地址位数 - 偏移位数\n\n## 二、知识点梳理（机组计算全考点）\n\n### 1. 数据表示与运算\n- 原码：-(2^(n-1)-1) ~ +(2^(n-1)-1)；补码：[-2^(n-1), 2^(n-1)-1]（定点整数）\n- 移码 = 补码符号位取反（用于阶码）\n- 补码一位乘法(Booth)、溢出判断（双符号位 / 符号位+最高数值位进位）\n- 浮点加减：对阶(小阶向大阶)→尾数加减→规格化→舍入→溢出判断\n\n### 2. 存储系统容量\n- 主存容量 = 2^地址位数 × 字/字节；存储器带宽 = 数据量 / 传输时间\n- Cache 容量公式见 Cache 专题\n\n### 3. 指令与流水线\n- 扩展操作码（Huffman 编码法）\n- 吞吐率 TP = n / ((k+n-1)×t)；加速比 = k×n×t / ((k+n-1)×t)（k段n指令t段时长）\n- 冒险：数据相关(前递/旁路)、控制相关(分支预测)、结构相关\n\n### 4. I/O 计算\n- 磁盘访问时间 = 寻道 + 旋转延迟 + 传输时间\n- 调度：SCAN/C-SCAN 移动量计算（见 I/O 设备专题）"
     },
     {
       "title": "408 专题 · Cache",
@@ -2820,6 +2872,18 @@ globalThis.APP_DATA = {
     {
       "title": "408 专题 · 计网协议",
       "content": "# 计网协议专题（408 真题匹配版）\n\n> 标注年份=历年408真题大题/小题出处，状态机/字段以王道/天勤真题解析为准。本专题按 TCP/IP 层次梳理 408 考过的所有协议；TCP 连接管理（握手/挥手/拥塞）详见《TCP 连接管理》专题。\n\n## 一、真题提取的协议考频（置顶，先背年份分布）\n\n基于解析文字层锚点（2009-2018、2020 有文字层；2019/2021/2023/2024 图片版，以王道/天勤核对）：\n- 数据链路层：CSMA/CD（2011,2013,2015,2016,2018,2022）、CSMA/CA+802.11（2011,2017,2020）、PPP（2012,2014）、HDLC（2013）\n- 网络层：ARP（2011,2012,2014）、ICMP（2012）、RIP（2016,2017）、OSPF（2017）、BGP（2013,2017）、NAT（2011）、IP（贯穿）\n- 传输层：TCP（2009,2011,2012,2013,2016,2017,2018,2022…）、UDP（2012,2014,2017,2018）\n- 应用层：DNS（2010,2014,2016,2018,2022）、FTP（2009,2017,2018）、SMTP（2012,2013,2014,2018）、POP3/IMAP（2012,2015）、HTTP/HTTPS（2011,2015,2018,2022）、DHCP（2015）\n\n## 二、各层协议详解（核心机制 + 易考点）\n\n### 数据链路层\n- **以太网(IEEE 802.3) + CSMA/CD**：载波监听多点接入/碰撞检测；半双工；争用期 51.2μs（10Mbps，512bit）；最短帧 64B；二进制指数退避。CSMA/CA（802.11 无线）用 RTS/CTS 避免冲突而非检测。\n- **PPP（点对点协议）**：面向连接、不可靠（无重传）；组成=链路控制LCP+网络控制NCP；只检错不纠错；用于拨号/广域网。考：[2012·47],[2014·47]\n- **HDLC（高级数据链路）**：面向比特、零比特填充、CRC 检错；可靠（编号确认）。考：[2013·47]\n- **VLAN**：802.1Q 标签；隔离广播域（考纲要求，真题偶考）\n- **滑动窗口/ARQ**：停止-等待、GBN、选择重传（链路层/传输层共用思想）\n\n### 网络层\n- **IP（IPv4）**：无连接、不可靠；首部 20B（固定）+ 选项；分片（标识/标志/片偏移）；首部检验和；TTL 防环。\n- **ARP（地址解析）**：IP→MAC，广播请求单播应答（FF-FF-FF-FF-FF-FF）。考：[2011],[2012],[2014]\n- **RARP**：MAC→IP（已被 DHCP 取代，考纲）\n- **ICMP**：差错报告（目的不可达/超时/重定向）+ 询问（回送 Echo，ping 用）。考：[2012]\n- **IGMP**：组播组成员管理（考纲，真题偶考）\n- **RIP（距离矢量）**：跳数度量，最大 15；30s 广播；慢收敛（计数到无穷）。考：[2016],[2017]\n- **OSPF（链路状态）**：Dijkstra 算最短路；Hello 建立邻接；区域划分；触发更新。考：[2017]\n- **BGP（路径矢量）**：AS 间路由；**基于 TCP**（端口179）；策略路由。考：[2013],[2017]\n- **DHCP**：动态分配 IP；Discover/Offer/Request/ACK；UDP 广播。考：[2015]\n- **NAT**：私有IP↔公有IP转换；缓解 IPv4 耗尽。考：[2011]\n\n### 传输层\n- **TCP**：面向连接、可靠、字节流、全双工；序号/确认号/窗口；三次握手/四次挥手、流量控制（滑动窗口）、拥塞控制（慢开始/拥塞避免/快重传/快恢复）、可靠传输（GBN/选择重传）。考频最高，几乎每年。\n- **UDP**：无连接、不可靠、首部 8B、无拥塞控制；适合实时（DNS/DHCP/视频/语音）。考：[2012],[2014],[2017],[2018]\n\n### 应用层\n- **DNS（域名系统）**：层次域名 + 分布式解析；递归/迭代查询；UDP（≤512B）/TCP（区域传送/大报文）；端口53。考：[2010],[2014],[2016],[2018],[2022]\n- **FTP（文件传输）**：控制连接(21)+数据连接(20)；主动/被动模式。考：[2009],[2017],[2018]\n- **SMTP（发邮件）+ POP3/IMAP（收邮件）**：SMTP 推、端口25；POP3 下载删除(110)、IMAP 联机管理(143)。考：[2012],[2013],[2014],[2018]\n- **HTTP/HTTPS**：请求/响应、无状态（Cookie/Session 维持）；HTTP/1.1 持久连接；HTTPS=HTTP+TLS。考：[2011],[2015],[2018],[2022]\n- **TELNET（远程登录，23）/ SNMP（网络管理，161/162）/ DHCP**：考纲要求。\n\n## 三、高频易混辨析\n- TCP vs UDP：连接/可靠/首部/拥塞（见上）\n- RIP/OSPF/BGP 三类路由协议对比（距离矢量/链路状态/路径矢量）\n- CSMA/CD vs CSMA/CA：检测冲突 vs 避免冲突（有线 vs 无线）\n- ARP vs RARP vs DHCP：地址解析方向不同\n- 端口号速记：DNS53 / FTP21,20 / SMTP25 / POP3110 / IMAP143 / HTTP80 / HTTPS443 / TELNET23 / SNMP161\n\n### 真题考频锚点（网络综合大题 47 题）\n2010(DNS)、2011(TCP+ARP+NAT+HTTP+CSMA+802.11)、2012(TCP/UDP/ARP/ICMP/SMTP/POP3/PPP)、2013(TCP/BGP/HDLC)、2014(UDP/ARP/DNS/SMTP/PPP)、2015(TCP/DHCP/POP3/HTTP/CSMA)、2016(TCP/RIP/DNS)、2017(TCP/UDP/RIP/OSPF/BGP/FTP/802.11)、2018(TCP/UDP/DNS/FTP/SMTP/HTTP/CSMA)、2022(TCP/DNS/HTTP/CSMA)；2019/2021/2023/2024 图片版以王道/天勤核对\n"
+    },
+    {
+      "title": "408 数据结构：十大排序算法全景对比（希尔/快速/冒泡/基数/插入/选择/堆/归并）",
+      "content": "# 408 数据结构 · 排序算法全景对比\n\n> 考研 408 常考的 8 种比较排序（插入 / 希尔 / 冒泡 / 快速 / 选择 / 堆 / 归并）+ 基数排序。\n> 下方给出每类的**时间/空间复杂度、稳定性、排序方式**，以及**逐趟变化示例**。\n\n## 一、核心结论速查表\n\n| 算法 | 最好 | 平均 | 最坏 | 空间 | 稳定性 | 排序方式 |\n|---|---|---|---|---|---|---|\n| 直接插入排序 | O(n) | O(n²) | O(n²) | O(1) | 稳定 | 插入 |\n| 希尔排序 | O(n^1.3) | O(n^1.3) | O(n^1.3) | O(1) | 不稳定 | 插入 |\n| 冒泡排序 | O(n) | O(n²) | O(n²) | O(1) | 稳定 | 交换 |\n| 快速排序 | O(n log n) | O(n log n) | O(n²) | O(log n) | 不稳定 | 交换 |\n| 简单选择排序 | O(n²) | O(n²) | O(n²) | O(1) | 不稳定 | 选择 |\n| 堆排序 | O(n log n) | O(n log n) | O(n log n) | O(1) | 不稳定 | 选择 |\n| 归并排序 | O(n log n) | O(n log n) | O(n log n) | O(n) | 稳定 | 归并 |\n| 基数排序（LSD） | O(d(n+r)) | O(d(n+r)) | O(d(n+r)) | O(n+r) | 稳定 | 分配 |\n\n（d = 关键字位数，r = 基数；基数排序针对整数 / 字符串关键字）\n\n## 二、逐趟变化示例（以序列 [5, 2, 8, 3, 1] 为例）\n\n### 冒泡排序（稳定，升序）\n初始：5 2 8 3 1\n第1趟：2 5 3 1 8 （最大 8 沉底）\n第2趟：2 3 1 5 8\n第3趟：2 1 3 5 8\n第4趟：1 2 3 5 8 （有序）\n共 4 趟，每趟把当前最大元素「浮」到末尾。\n\n### 直接插入排序（稳定）\n初始：5 2 8 3 1\n第1趟：2 5 8 3 1 （插入 2）\n第2趟：2 5 8 3 1 （8 已在位）\n第3趟：2 3 5 8 1 （插入 3）\n第4趟：1 2 3 5 8 （插入 1）\n边插边有序，适合近乎有序的序列。\n\n### 希尔排序（不稳定，gap=2 为例）\n初始：5 2 8 3 1 （分组 [5,3]、[2,1]、[8]）\n第1趟(gap=2)：各组内插入排序 → 3 1 8 5 2\n（5,3 → 3,5；2,1 → 1,2；8 → 8）\n最终再做一遍 gap=1 得 1 2 3 5 8。\n注意：相同元素可能跨组移动，导致不稳定。\n\n### 快速排序（不稳定，选首位 5 为 pivot）\n初始：5 2 8 3 1\npartition：1 2 3 _ 8 → 交换得 1 2 3 5 8 （5 落位）\n左子 1 2 3 递归；右子 8 递归 → 最终 1 2 3 5 8。\n一趟把 pivot 放到最终位置。\n\n### 基数排序（稳定，LSD 从个位起）\n初始：170 45 75 90 2 802 24 66\n第1趟(个位)：45 75 90 2 24 66 170 802\n第2趟(十位)：按十位重排\n第3趟(百位)：最终有序。\n多关键字分配-收集，稳定但需额外空间。\n\n## 三、稳定性与「为什么」\n\n- **稳定** = 相等元素相对顺序不变（插入 / 冒泡 / 归并 / 基数 / 计数）。\n- **不稳定** = 可能跨位置交换（希尔 / 快速 / 选择 / 堆）。\n- 快排不稳定原因：pivot 分区时相等元素可能被换到另一侧。\n- 归并稳定原因：只在相等时取左半部分先输出。\n\n## 四、空间复杂度要点\n\n- O(1) 原地：插入 / 冒泡 / 选择 / 希尔 / 堆。\n- O(log n) 递归栈：快排（平均）。\n- O(n) 辅助数组：归并 / 基数。\n\n## 五、考研易错点\n\n1. 希尔排序增量序列须递减到 1（如 Shell 原序 n/2, n/4…）；\n2. 快排最坏退化为 O(n²) 当序列已有序且总选端点为 pivot；\n3. 堆排序建堆 O(n) 而非 O(n log n)；\n4. 基数排序只适用于**关键字可拆分成位**的类型（整数、定长字符串）。\n"
+    },
+    {
+      "title": "408 数据结构：线索二叉树（前/中/后序线索化）",
+      "content": "# 408 数据结构 · 线索二叉树（前/中/后序线索化）\n\n> 用户原话定义：前/中/后序线索化就是把二叉树按该遍历次序排列后，**左线索指向前一个（前驱）、右线索指向后一个（后继）**。\n\n## 一、核心定义\n\n线索化（threading）是把二叉树按某种遍历次序（前序 / 中序 / 后序）线性化：\n- 对每个结点，若**左孩子为空**，令左指针指向**该遍历序列中的前驱结点**；\n- ToString 若**右孩子为空**，令右指针指向**该遍历序列中的后继结点**。\n原本为 null 的左右指针被「线索」取代，分别指向前驱 / 后继。\n\n## 二、三种线索化对照\n\n| 线索化方式 | 左线索指向 | 右线索指向 | 考研最常考 |\n|---|---|---|---|\n| 中序线索化 | 中序前驱 | 中序后继 | ✅ 最常用 |\n| 前序线索化 | 前序前驱 | 前序后继 | |\n| 后序线索化 | 后序前驱 | 后序后继 | |\n\n## 三、为什么这样能干\n\n- 空指针不浪费：n 个结点的二叉树有 n+1 个空指针，全部改成线索复用；\n- 中序线索化下，找前驱 / 后继 O(1)，遍历可**不用栈**（顺藤摸瓜）；\n- 普通二叉树找前驱需栈或 O(n)，线索化后免递归 / 免栈遍历。\n\n## 四、考研易错点\n\n1. 中序线索化：左线索 = 中序前驱、右线索 = 中序后继（即用户原话）；\n2. 前序线索化时，左线索指**前序前驱**而非中序前驱 —— 别混；\n3. 线索二叉树**仍是一棵二叉树**，只是空指针被复用；结点结构多两个标志位（ltag / rtag）；\n4. 线索化遍历不需要栈 / 递归，但**建立线索**仍需一次原遍历 O(n)。\n"
+    },
+    {
+      "title": "408 数据结构：树 / 森林 / 二叉树的相互转换（必会）",
+      "content": "# 408 数据结构 · 树 / 森林 / 二叉树的相互转换（必会）\n\n> 用户原话：树、森林、二叉树这三个数据结构互相转换得会。下面给出**三种转换的规则 + 画法 + 考研易错点**。\n\n## 一、树 → 二叉树（孩子兄弟表示法）\n\n规则：**左指针 = 第一个孩子，右指针 = 右兄弟**（左孩子、右兄弟）。\n\n画法步骤：\n1. 连线：在每个结点，把它所有的孩子从左到右用线连成一串（第一个孩子连到该结点左下方，其余孩子依次连成\"兄弟链\"）；\n2. 去线：删掉每个结点到**第二个及以后孩子**的原有连线（只保留到第一个孩子的）；\n3. 旋转：把整棵树顺时针旋转约 45°，让\"兄弟链\"变成右子树方向。\n\n## 二、森林 → 二叉树\n\n两步：\n1. 先把森林里**每一棵树**各自用\"孩子兄弟法\"转成二叉树；\n2. 兄弟相连：第 i 棵树的根，作为第 i+1 棵树根的**右孩子**（把所有树根用右指针串成兄弟链）。\n\n## 三、二叉树 → 树（逆过程）\n\n规则：**左孩子 ↔ 第一个孩子，右孩子 ↔ 右兄弟**（孩子兄弟法的逆）。\n画法：把每个结点的右链（一直往右走的所有右孩子）全部\"摊开\"成它的兄弟；再把这些兄弟各自连回其父结点作为孩子。\n\n## 四、二叉树 → 森林\n\n条件：**二叉树的根有右孩子**才能转成森林（否则只是一棵树）。\n步骤：\n1. 把根结点与其**右孩子**之间的连线断开；\n2. 对断开后分离出的每棵\"以右孩子为根的子树\"重复此过程（递归断开右链）；\n3. 每一段（以某棵子树根为起点的部分）各自用\"二叉树→树\"还原成一棵树，合起来就是森林。\n\n## 五、转换关系速记表\n\n| 转换 | 核心规则 | 注意 |\n|---|---|---|\n| 树→二叉树 | 左孩子右兄弟 | 只保留到第一个孩子的原有连线 |\n| 森林→二叉树 | 各树先转，根用右指针串兄弟 | 第 i 树根是第 i+1 树根的右孩子 |\n| 二叉树→树 | 左孩子=第一孩子、右孩子=右兄弟 | 右链摊开成兄弟 |\n| 二叉树→森林 | 根有右孩子才可转，递归断右链 | 每段还原成一棵树 |\n\n## 六、考研易错点\n\n1. 树→二叉树**不是**\"左孩子=左子树、右孩子=右子树\"，而是**左孩子=第一个孩子、右孩子=右兄弟**；\n2. 二叉树转森林的前提：**根有右孩子**，否则只是单棵树；\n3. 森林转二叉树后，原森林中**不同树的根之间**变成了兄弟（右链），不再是父子；\n4. 任何树/森林都能唯一对应一棵二叉树（孩子兄弟表示法是一一映射），这是存储一般树常用此法的原因。\n"
     }
   ],
   "quizHistory": [
@@ -2962,6 +3026,178 @@ globalThis.APP_DATA = {
           "score": 2,
           "topic": "指令系统 · 边界对齐与存放方式",
           "chapter": "【CO】四、指令系统"
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "date": "2026-08-01T13:29:21",
+      "type": "408",
+      "count": 10,
+      "avg": 0,
+      "weakIds": [
+        "075",
+        "080",
+        "081",
+        "082",
+        "083",
+        "084",
+        "085",
+        "086",
+        "087",
+        "088"
+      ],
+      "questions": [
+        {
+          "id": "075",
+          "q": "408常考哪些寄存器？EBP/ESP/EIP/通用寄存器各自的功能？"
+        },
+        {
+          "id": "080",
+          "q": "循环队列 front/rear 指针含义、入队出队、判空判满、元素个数计算"
+        },
+        {
+          "id": "081",
+          "q": "已知先序+中序、或后序+中序唯一确定二叉树并写出另一种遍历；先序+后序能否确定中序？"
+        },
+        {
+          "id": "082",
+          "q": "ROM 和 RAM 的易失性、读写特性、用途区别；SRAM/DRAM/Flash 的归属"
+        },
+        {
+          "id": "083",
+          "q": "存储元→存储单元→存储体的层次；地址线/数据线/片选/读写；字扩展与位扩展"
+        },
+        {
+          "id": "084",
+          "q": "CF/ZF/SF/OF 的含义，及在运算结果判断、条件转移指令中的应用"
+        },
+        {
+          "id": "085",
+          "q": "一次 I/O 请求从用户程序发出到完成的完整流程；三种 I/O 控制方式区别"
+        },
+        {
+          "id": "086",
+          "q": "随机访问 MAC 的 4 类协议及特点；CSMA/CD 与 CSMA/CA 区别"
+        },
+        {
+          "id": "087",
+          "q": "循环队列（牺牲单元法）判满条件？元素个数怎么算？"
+        },
+        {
+          "id": "088",
+          "q": "CF 和 OF 分别管有符号还是无符号数溢出？比大小分别看哪些标志？"
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "date": "2026-08-01T14:08:58",
+      "type": "408",
+      "count": 20,
+      "avg": 1.35,
+      "weakIds": [
+        "089",
+        "090",
+        "091",
+        "092",
+        "093",
+        "094",
+        "095",
+        "096",
+        "097",
+        "098",
+        "099",
+        "100",
+        "101",
+        "102",
+        "103",
+        "104",
+        "008",
+        "007",
+        "128",
+        "063"
+      ],
+      "questions": [
+        {
+          "id": "089",
+          "q": "随机访问 MAC 有哪 4 类协议？CSMA/CD 与 CSMA/CA 根本区别？"
+        },
+        {
+          "id": "090",
+          "q": "m阶B树的定义、查找路径、插入时的分裂、删除时的借位/合并分别怎么做？"
+        },
+        {
+          "id": "091",
+          "q": "如何用栈将中缀表达式转后缀？又如何用栈对后缀表达式求值？"
+        },
+        {
+          "id": "092",
+          "q": "Prim 和 Dijkstra 算法思想相似，它们的目标、适用、核心数组、能否处理负权有何区别？"
+        },
+        {
+          "id": "093",
+          "q": "什么是最小生成树？有哪些性质？Prim 与 Kruskal 怎么求？"
+        },
+        {
+          "id": "094",
+          "q": "图有哪些存储结构？各自空间、适用、查边效率？"
+        },
+        {
+          "id": "095",
+          "q": "直接插入排序怎么排？时间复杂度与稳定性？希尔排序为什么快？"
+        },
+        {
+          "id": "096",
+          "q": "USB 总线有哪些关键特性？有哪几种传输类型？"
+        },
+        {
+          "id": "097",
+          "q": "微程序控制器中，操作控制字段有哪几种编码方式？水平/垂直微指令是什么？"
+        },
+        {
+          "id": "098",
+          "q": "什么是大端存储、小端存储？如何判断机器字节序？"
+        },
+        {
+          "id": "099",
+          "q": "数据总线在总线事务中传输哪些内容？它与地址、控制总线如何分工？"
+        },
+        {
+          "id": "100",
+          "q": "中断响应时由硬件自动完成的\"中断隐指令\"包含哪些动作？"
+        },
+        {
+          "id": "101",
+          "q": "CPU 处于用户态时，能做什么、不能做什么？什么事件会陷入内核态？"
+        },
+        {
+          "id": "102",
+          "q": "主存进行一次读/写操作涉及哪些参数（地址、数据、控制信号、时序）？"
+        },
+        {
+          "id": "103",
+          "q": "请汇总 TCP/IP 各层关键协议及作用（ARP/DHCP/DNS/ICMP/TCP/UDP/HTTP/FTP/SMTP…）？"
+        },
+        {
+          "id": "104",
+          "q": "闪存（Flash）属于哪类存储器？有什么特性、优缺点、用途？"
+        },
+        {
+          "id": "008",
+          "q": "进程和线程最本质的区别是什么？一个进程里的多个线程是否共享堆栈？"
+        },
+        {
+          "id": "007",
+          "q": "操作系统运行环境里，CPU 有哪两种运行模式？它们的核心区别是什么？"
+        },
+        {
+          "id": "128",
+          "q": "已知整数序列A=(a0,...,a_{n-1})，0≤ai<n。若存在x出现次数m>n/2，则称x为主元素。设计尽可能高效的算法找出A的主元素，存在则输出，否则输出-1。"
+        },
+        {
+          "id": "063",
+          "q": "计算两个操作的总时间时，如何判断它们是并行还是串行？"
         }
       ]
     }
