@@ -2826,6 +2826,52 @@ globalThis.APP_DATA = {
             "reviewNote": ""
           }
         ]
+      },
+      {
+        "date": "2026-08-02",
+        "title": "数二复习记录：微分章节（高阶导数/曲率公式薄弱）",
+        "questions": [
+          {
+            "id": "131",
+            "subject": "数学二",
+            "chapter": "二、一元函数微分学",
+            "topic": "高阶导数",
+            "question": "高阶导数：莱布尼茨公式 (uv)^(n) = Σ C(n,k) u^(k) v^(n-k)；常见函数 n 阶导数公式（e^(ax)、sin/cos、ln(1+x)、(1+x)^α、1/(ax+b)）；抽象复合函数高阶导。今日自评：掌握不太好，需重点复习。",
+            "userAnswer": "",
+            "status": "未掌握",
+            "isWrong": false,
+            "knowledgeType": "薄弱点",
+            "missing": "",
+            "keyAnswer": "✓ 高阶导数核心公式：\n① 莱布尼茨公式：(uv)^(n)=Σ_{k=0}^{n} C(n,k) u^(k) v^(n-k)（注意与二项式区别：导数阶数相加=n）。\n② 常用 n 阶导数：\n  (e^(ax+b))^(n)=a^n e^(ax+b)\n  (sin(ax+b))^(n)=a^n sin(ax+b+nπ/2)\n  (cos(ax+b))^(n)=a^n cos(ax+b+nπ/2)\n  (1/(ax+b))^(n)=(-1)^n n! a^n /(ax+b)^(n+1)\n  (ln(1+x))^(n)=(-1)^(n-1)(n-1)!/(1+x)^n\n  ((1+x)^α)^(n)=α(α-1)...(α-n+1)(1+x)^(α-n)\n③ 隐函数/参数方程高阶导：逐阶对 t 求导再除以 dx/dt。",
+            "thinking": "高阶导套路：先求一阶找规律→归纳 n 阶；或套莱布尼茨（一个因式高阶导数易求、另一个低阶就截断）。参数方程二阶导 d²y/dx²=(d/dt(dy/dx))/(dx/dt)。",
+            "image": "",
+            "images": [],
+            "name": "数二:高阶导数",
+            "score": 1,
+            "lastReview": "2026-08-02T20:58:00",
+            "reviewNote": ""
+          },
+          {
+            "id": "132",
+            "subject": "数学二",
+            "chapter": "二、一元函数微分学",
+            "topic": "曲率公式",
+            "question": "曲率公式：曲线 y=f(x) 的曲率 K=|y双撇|/(1+y一撇^2)^{3/2}；曲率半径 ρ=1/K；曲率圆。今日自评：掌握不太好，需重点复习。",
+            "userAnswer": "",
+            "status": "未掌握",
+            "isWrong": false,
+            "knowledgeType": "薄弱点",
+            "missing": "",
+            "keyAnswer": "✓ 曲率（curvature）核心：\n① 显式 y=f(x)：K=|y双撇|/(1+y一撇^2)^{3/2}\n② 参数方程 x=x(t),y=y(t)：K=|x一撇y双撇 - y一撇x双撇|/(x一撇^2+y一撇^2)^{3/2}\n③ 曲率半径 ρ=1/K；曲率圆：与曲线在该点相切、曲率相同、凹向相同，半径=ρ。\n④ 直线曲率=0；圆半径 R 的曲率=1/R（常数）。",
+            "thinking": "曲率衡量弯曲程度。计算时先求 y一撇、y双撇，套公式；常考“求曲率最大点”（如抛物线顶点处曲率最大）或给定曲率求参数。",
+            "image": "",
+            "images": [],
+            "name": "数二:曲率公式",
+            "score": 1,
+            "lastReview": "2026-08-02T20:58:00",
+            "reviewNote": ""
+          }
+        ]
       }
     ]
   },
