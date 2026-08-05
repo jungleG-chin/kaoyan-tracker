@@ -1,6 +1,6 @@
 // 考研追踪数据 - 唯一数据源（GitHub Pages 兼容）
 // 更新时间: 2026-07-31 22:30
-// 总知识点: 127 条 | 日志数: 43 条 | 专题数: 11 个
+// 总知识点: 133 条 | 日志数: 44 条 | 专题数: 12 个
 // 抽测历史: quizHistory 字段（每次抽测自动追加一轮）
 // 数据源：仅此文件，index.html 通过 <script src="data/data.js"> 加载
 
@@ -2921,6 +2921,183 @@ globalThis.APP_DATA = {
             "name": "408:单链表重排",
             "score": 0,
             "lastReview": "2026-08-03T19:32:00",
+            "reviewNote": ""
+          }
+        ]
+      },
+      {
+        "date": "2026-08-05",
+        "title": "英二翻译真题（2018）",
+        "questions": [
+          {
+            "id": "135",
+            "subject": "英语二",
+            "chapter": "四、翻译（英译汉）",
+            "topic": "翻译真题·2018",
+            "question": "A fifth grader gets a homework assignment to select his future career path from a list of occupations. He ticks \"astronaut\" but quickly adds \"scientist\" to the list and selects it as well. The boy is convinced that if he reads enough, he can explore as many career paths as he likes. And so he reads—everything from encyclopedias to science fiction novels. He reads so passionately that his parents have to institute a \"no reading policy\" at the dinner table. That boy was Bill Gates, and he hasn't stopped reading yet—not even after becoming one of the most successful people on the planet. Nowadays, his reading material has changed from science fiction and reference books: recently, he revealed that he reads at least 50 nonfiction books a year. Gates chooses nonfiction titles because they explain how the world works.",
+            "userAnswer": "提高五年级的学生被指派了一个家庭作业去从以列的工作里选择一条未来的职业路径。他想到了宇航员但快速的把科学家加到这个列表上并选了他这个男孩相信只要他读得够多他就可以发现任何他喜欢的职业路径并且正因如此他阅读任何东西，从赛博百科到科幻小说。他对月度太有热情了，以至于父母必须设立一个规则，就是在晚饭时不能阅读的政策。这个男孩就是比尔盖茨并且他并没有因此而停止阅读即使在他成为地球上最成功的男人之一他阅读的材料已经从科幻小说改变到文献书籍。最近，他透露说他一年至少阅读50本纪实书籍。盖兹选择这些纪实类的因为他们解释了世界如何工作",
+            "status": "需复习",
+            "isWrong": false,
+            "knowledgeType": "翻译",
+            "missing": "",
+            "keyAnswer": "【参考译文 / 标准答案】\n一名五年级学生收到一份家庭作业：从一系列职业中选择自己未来的职业道路。他勾选了\"宇航员\"，但很快又给列表加上\"科学家\"并也选中了它。这个男孩相信，只要他读得足够多，就能探索尽可能多的自己喜欢的职业道路。于是他什么都读——从百科全书到科幻小说。他读得如此痴迷，以至于他的父母不得不定下一条\"餐桌不许读书\"的规定。那个男孩就是比尔·盖茨，他至今没有停止阅读——即便在成为这个星球上最成功的人士之一后也没有。如今，他的阅读素材已经从科幻小说和工具书变成了别的：最近他透露，自己一年至少读50本非虚构类书籍。盖茨选择非虚构类书籍，是因为它们解释了世界是如何运转的。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "翻译:2018英二",
+            "score": 2,
+            "lastReview": "2026-08-05 20:05:00",
+            "reviewNote": "【批改 评分: 10/15分(约67分)】大意基本抓到，有3处实质性错译+3处输入错字，重点修正：\n① 句1 \"提高五年级\"→\"一个五年级\"、\"以列\"→\"一列\"为输入错字；\"工作里\"应为\"一系列职业/职业清单\"(a list of occupations)。\n② 句2 选了\"他\"→应为\"它\"(指代scientist)；\"想到了\"弱化了ticks(勾选)。\n③ 句4 encyclopedias 译\"赛博百科\"→错译！应为\"百科全书\"；\"赛博\"是cyber音译，原文无此义。\n④ 句5 \"月度\"→\"阅读\"输入错字；\"政策\"译rule略生硬，宜\"规定/规矩\"。\n⑤ 句7 nonfiction 译\"文献书籍\"→错译！应为\"非虚构类书籍\"；\"文献\"是documents/literature，非nonfiction。后句\"纪实书籍\"反而是对的，前后不一致需注意。\n⑥ 句6/8 比尔盖茨/盖兹→标准译名\"盖茨\"；\"地球上最成功的男人\"→\"星球上最成功的人士之一\"更贴(to people/planet)。\n建议：专有名词(encyclopedias=百科全书、nonfiction=非虚构类)和高频词必须准确；代词指代(选了它)是易错点。"
+          }
+        ]
+      },
+      {
+        "date": "2026-08-05",
+        "title": "408真题：表达式树转中缀表达式（2017综合41）",
+        "questions": [
+          {
+            "id": "136",
+            "subject": "408",
+            "chapter": "【DS】3、树与二叉树",
+            "topic": "表达式树→中缀表达式（中序遍历应用）",
+            "question": "【2017 408 综合题41，13分】给定一个表达式树（二叉树），每个结点存储操作数或操作符（data[10]）。请设计一个算法，将给定的表达式树转换为等价的**中缀表达式**并输出，要求通过括号反映操作符的计算次序。例如输入表达式树，输出分别为 (a+b)×(c×(-d)) 和 (a×b)+(-(c-d))。\ntypedef struct node { char data[10]; struct node *left, *right; } BTree;\n要求：(1)算法设计思想 (2)C/C++描述算法并注释 (3)时间/空间复杂度",
+            "status": "需复习",
+            "isWrong": false,
+            "knowledgeType": "大题",
+            "missing": "",
+            "keyAnswer": "✓ 标准答案：\n【设计思想】对表达式树做中序遍历，规则：\n- 叶子结点（操作数，left==right==null）：直接输出 data\n- 非叶子结点（操作符）：输出 ( 左子树结果 + 操作符 + 右子树结果 )，但**整棵树的根结点不加最外层括号**\n即：除根外，每个操作符结点都用一对括号把左右子树结果包起来，正确反映计算优先级。\n\n【C代码】\nvoid InorderExp(BTree *root) { _in(root, 1); }   // 1 表示根\nvoid _in(BTree *p, int isRoot) {\n    if (!p) return;\n    if (!p->left && !p->right) {        // 叶子：操作数\n        printf(\"%s\", p->data);\n        return;\n    }\n    if (!isRoot) printf(\"(\");           // 非根的操作符结点加左括号\n    _in(p->left, 0);\n    printf(\"%s\", p->data);              // 输出操作符\n    _in(p->right, 0);\n    if (!isRoot) printf(\")\");           // 对应右括号\n}\n\n【复杂度】时间 O(n)（每结点访问一次）；空间 O(h)（递归栈深度=树高 h）。",
+            "thinking": "本质是二叉树中序遍历，难点在\"何时加括号\"：根不加，其余非叶子操作符结点都加一对括号包裹左右子树结果。与之前\"中缀转后缀加括号移位\"是同一棵表达式树的两种线性化视角。",
+            "image": "",
+            "images": [],
+            "name": "408:表达式树转中缀",
+            "score": 0,
+            "lastReview": "2026-08-05T19:35:00",
+            "reviewNote": ""
+          }
+        ]
+      },
+      {
+        "date": "2026-08-05",
+        "title": "数二 二重积分解题套路（6 张）",
+        "questions": [
+          {
+            "id": "137",
+            "subject": "数学二",
+            "chapter": "五、多元函数积分学",
+            "topic": "极坐标·x+y=c 型区域",
+            "question": "积分区域含 x+y=c（第一象限直线）时，用极坐标处理：x=r cosθ, y=r sinθ，则 x+y=r(cosθ+sinθ)=c，得 r=c/(cosθ+sinθ)，θ 范围由区域角域确定。",
+            "userAnswer": "",
+            "status": "需复习",
+            "isWrong": false,
+            "knowledgeType": "套路",
+            "missing": "",
+            "keyAnswer": "✓ 套路（极坐标化直线边界）：\n① 区域边界为 x+y=c（或含 x²+y²、xy 等径向/角向特征）且在第一象限 → 选极坐标 x=r cosθ, y=r sinθ。\n② x+y=r(cosθ+sinθ)，定 r 上界 r=c/(cosθ+sinθ)；θ 由区域所跨角域定（如 0≤θ≤π/2 或其中一段）。\n③ 面积元 dxdy=rdrdθ，被积函数同步替换。\n要点：直线边界在极坐标下变为 r=常数/三角式，常比直角坐标好积。",
+            "thinking": "见到 x+y=c、x²+y²≤R²、xy 等优先想极坐标；先定 θ 范围再定 r 上下限。今日总结，公式以本卡为准，做题时对照教材核对。",
+            "image": "",
+            "images": [],
+            "name": "数二:极坐标x+y=c",
+            "score": 0,
+            "lastReview": "",
+            "reviewNote": ""
+          },
+          {
+            "id": "138",
+            "subject": "数学二",
+            "chapter": "五、多元函数积分学",
+            "topic": "三角降幂·cos⁴x+sin⁴x",
+            "question": "cos⁴x+sin⁴x 可通过二倍角公式化简。",
+            "userAnswer": "",
+            "status": "需复习",
+            "isWrong": false,
+            "knowledgeType": "套路",
+            "missing": "",
+            "keyAnswer": "✓ 正确化简：\ncos⁴x+sin⁴x = (cos²x+sin²x)² − 2sin²x cos²x = 1 − 2sin²x cos²x = 1 − ½ sin²(2x) = 1 − ½·(1−cos4x)/2 = ¾ + ¼ cos(4x)。\n中间结果 1 − ½ sin²(2x) 也常直接记用。\n通用降幂：sin²x=(1−cos2x)/2，cos²x=(1+cos2x)/2，sin²x cos²x=¼ sin²(2x)。",
+            "thinking": "用户口述“化成1+cos²(2x)”不准确，正确为 1 − ½ sin²(2x)（或 ¾+¼cos4x）；以本卡公式为准，做题时对照教材核对。",
+            "image": "",
+            "images": [],
+            "name": "数二:cos4+sin4降幂",
+            "score": 0,
+            "lastReview": "",
+            "reviewNote": ""
+          },
+          {
+            "id": "139",
+            "subject": "数学二",
+            "chapter": "五、多元函数积分学",
+            "topic": "二重积分·max 型被积函数",
+            "question": "被积函数含 max{f(x,y), g(x,y)} 时，令两函数相等找交线，划分积分区间分别积分。",
+            "userAnswer": "",
+            "status": "需复习",
+            "isWrong": false,
+            "knowledgeType": "套路",
+            "missing": "",
+            "keyAnswer": "✓ 套路（去 max 分段）：\n① 令 f(x,y)=g(x,y) 求出分界曲线，把区域 D 分成 D₁(f≥g) 与 D₂(g≥f)。\n② ∬_D max{f,g} dσ = ∬_{D₁} f dσ + ∬_{D₂} g dσ。\n③ min 同理：∬_D min{f,g} = ∬_{f≤g} f + ∬_{g≤f} g；也可利用 max+min=f+g 化简。\n要点：见到 max/min 先找相等边界，化成分段普通积分。",
+            "thinking": "去掉 max/min 的本质是分段；分界曲线把区域切成两块，各自取较大/较小者。",
+            "image": "",
+            "images": [],
+            "name": "数二:max型被积",
+            "score": 0,
+            "lastReview": "",
+            "reviewNote": ""
+          },
+          {
+            "id": "140",
+            "subject": "数学二",
+            "chapter": "五、多元函数积分学",
+            "topic": "二倍角·cos²x−sin²x",
+            "question": "cos²x−sin²x 与二倍角的关系（注意系数）。",
+            "userAnswer": "",
+            "status": "需复习",
+            "isWrong": false,
+            "knowledgeType": "套路",
+            "missing": "",
+            "keyAnswer": "✓ 二倍角公式：\ncos(2x) = cos²x − sin²x = 2cos²x − 1 = 1 − 2sin²x。\n由此降幂：cos²x=(1+cos2x)/2，sin²x=(1−cos2x)/2。\n含 cos²x/sin²x 的积分先降幂成一次余弦再积。",
+            "thinking": "用户口述“cos²−sin²=½cos²(2x)”有误，正确是 cos²−sin²=cos(2x)（无 ½、无平方）；以本卡为准，核对教材。",
+            "image": "",
+            "images": [],
+            "name": "数二:cos2x二倍角",
+            "score": 0,
+            "lastReview": "",
+            "reviewNote": ""
+          },
+          {
+            "id": "141",
+            "subject": "数学二",
+            "chapter": "五、多元函数积分学",
+            "topic": "极坐标·交换积分次序",
+            "question": "极坐标积分交换次序是重点。",
+            "userAnswer": "",
+            "status": "需复习",
+            "isWrong": false,
+            "knowledgeType": "套路",
+            "missing": "",
+            "keyAnswer": "✓ 套路（极坐标交换次序）：\n① 极坐标积分 ∬ f·r dr dθ，常见先 r 后 θ；当 r 限依赖 θ 分段、或 θ 范围依赖 r 时，需改为先对 θ 积、再对 r 积（固定 r，找该半径圆周上满足区域的 θ 区间）。\n② 关键是先画区域草图，按新积分顺序重新描述边界、重新定限。\n③ 直角坐标下的交换次序同理，只是极坐标多了 r、θ 角色互换（本质是重画区域）。",
+            "thinking": "交换次序前一定先画 D 草图；极坐标交换常是“先 θ 后 r”更易定限。",
+            "image": "",
+            "images": [],
+            "name": "数二:极坐标交换次序",
+            "score": 0,
+            "lastReview": "",
+            "reviewNote": ""
+          },
+          {
+            "id": "142",
+            "subject": "数学二",
+            "chapter": "五、多元函数积分学",
+            "topic": "二重积分·y=x 对称性",
+            "question": "只要积分区域关于直线 x=y 对称，这个条件肯定用得上。",
+            "userAnswer": "",
+            "status": "需复习",
+            "isWrong": false,
+            "knowledgeType": "套路",
+            "missing": "",
+            "keyAnswer": "✓ 套路（y=x 对称性）：\n① 若 D 关于 y=x 对称（(x,y)∈D ⟺ (y,x)∈D），则 ∬_D f(x,y)dσ = ∬_D f(y,x)dσ（交换变量积分不变）。\n② 常用技巧：令 I=∬_D f(x,y)，则 2I=∬_D [f(x,y)+f(y,x)]dσ，构造对称式化简。例：含 x/(x+y) 与 y/(x+y) 配对得 1，大幅简化。\n③ 前提：区域对称 + 被积函数可交换变量；若 f(x,y)+f(y,x) 比原式简单则必用。",
+            "thinking": "见到区域关于 y=x 对称，立刻想“交换 x,y 积分不变”，配对 f(x,y)+f(y,x) 化简。",
+            "image": "",
+            "images": [],
+            "name": "数二:y=x对称",
+            "score": 0,
+            "lastReview": "",
             "reviewNote": ""
           }
         ]
