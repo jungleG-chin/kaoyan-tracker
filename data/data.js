@@ -2872,6 +2872,58 @@ globalThis.APP_DATA = {
             "reviewNote": ""
           }
         ]
+      },
+      {
+        "date": "2026-08-03",
+        "title": "英二翻译真题（2019）",
+        "questions": [
+          {
+            "id": "133",
+            "subject": "英语二",
+            "chapter": "四、翻译（英译汉）",
+            "topic": "翻译真题·2019",
+            "question": "It is easy to underestimate English writer James Herriot. He had such a pleasant, readable style that one might think that anyone could imitate it. How many times have I heard people say, \"I could write a book. I just haven't the time.\" Easily said. Not so easily done. James Herriot, contrary to popular opinion, did not find it easy in his early days of, as he put it, \"having a go at the writing game.\" While he obviously had an abundance of natural talent, the final, polished work that he gave to the world was the result of years of practising, re-writing and reading. Like the majority of authors, he had to suffer many disappointments and rejections along the way, but these made him all the more determined to succeed. Everything he achieved in life was earned the hard way and his success in the literary field was no exception.",
+            "userAnswer": "英国作家g h很容易被人低估，他的风格很客气也很易读，导致读者认为谁都能创作出来他这样的作品。我已经多次听到人们说我可以写出来这样的书我只是没有时间。说起来容易但是做起来是很难的，jh，和主流的观点相反在他早年的作品里并没有发现很容易这一段我不会翻，就像他在书里写的一样只是把写作当成一个游戏就行了但是他确实是有那种随机发挥天然才能最终他给世打磨过后的作品是数年的练习重复写阅读的结果像大部分成年人一样他肯定也是经历了很多失望和拒绝在这条路上但这些使得他更坚定了去成功。这条艰难道路上所有他所经历的在生活中都是值得的并且他在文学领域的成功是不意外的",
+            "status": "需复习",
+            "isWrong": false,
+            "knowledgeType": "翻译",
+            "missing": "",
+            "keyAnswer": "【参考译文 / 标准答案】\n人们很容易低估英国作家詹姆斯·赫里奥特。他的文风如此亲切、易读，让人觉得似乎谁都能模仿。我听过多少次人们说\"我能写本书，我只是没时间\"？说起来容易，做起来可没那么容易。与大众观点相反，詹姆斯·赫里奥特在他早年——正如他所说——\"试着玩写作游戏\"时，并不觉得这很容易。虽然他显然有着过人的天赋，但他留给世人的、经过打磨的最终作品，是多年练习、重写和阅读的结果。像大多数作家一样，他在途中不得不承受许多失望与拒绝，但这些反而让他更加坚定地去追求成功。他在生活中取得的一切成就都是来之不易的，他在文学领域的成功也不例外。",
+            "thinking": "",
+            "image": "",
+            "images": [],
+            "name": "翻译:2019英二",
+            "score": 1,
+            "lastReview": "2026-08-03T19:49:00",
+            "reviewNote": "【批改 评分: 7/15分（约47分）】大意抓到约六成，但出现 6 处明显错译 + 1 句自述不会翻，考研翻译\"意思译反/译偏\"是大忌，重点修正：\n① 句2 pleasant=亲切/平易近人（非\"客气\"）；imitate=模仿（非\"创作出来\"）。应为：他的文风如此亲切、易读，让人觉得谁都能模仿。\n② 句5 \"contrary to popular opinion... did not find it easy... having a go at the writing game\" 你自述不会翻——标准：与大众看法相反，他早年\"试着玩写作游戏\"（as he put it 正如他所说）时并不觉得容易。having a go=试一试/尝试，非\"把写作当游戏就行了\"。\n③ 句6 abundance of natural talent=丰富的天赋/过人的才华（abundance=丰富，非\"随机发挥\"）。\n④ 句7 the majority of authors=大多数作家（非\"大部分成年人\"，authors=作家）。\n⑤ 句8 earned the hard way=来之不易/靠艰辛获得（非\"值得的\"）；no exception=也不例外（非\"不意外的\"）。\n⑥ 专有名词 James Herriot 应写全（詹姆斯·赫里奥特），勿写\"g h / jh\"。\n建议：pleasant / imitate / abundance / majority of authors / earned the hard way / no exception 这类高频词务必准确；意思译偏比漏译更扣分。"
+          }
+        ]
+      },
+      {
+        "date": "2026-08-03",
+        "title": "408真题：单链表重排（2019综合题41）",
+        "questions": [
+          {
+            "id": "134",
+            "subject": "408",
+            "chapter": "【DS】2、线性表",
+            "topic": "单链表重排 L=(a1,an,a2,an-1,...)",
+            "question": "【2019年408 数据结构 综合题41 (13分)】设线性表 L=(a1, a2, ..., an) 采用带头结点的单链表保存，结点定义如下：\ntypedef struct node { int data; struct node *next; } NODE;\n请设计一个空间复杂度为 O(1) 且时间上尽可能高效的算法，重新排列 L 中的各结点，得到线性表 L'=(a1, an, a2, an-1, a3, an-2, ...)。\n要求：(1) 给出算法的基本设计思想 (2) 根据设计思想，采用 C 或 C++ 语言描述算法，关键之处给出注释 (3) 说明你所设计的算法的时间复杂度。",
+            "userAnswer": "",
+            "status": "需复习",
+            "isWrong": false,
+            "knowledgeType": "大题",
+            "missing": "",
+            "keyAnswer": "✓ 标准答案（单链表重排 L'=(a1,an,a2,an-1,...)）：\n【设计思想】分三步：\n① 用快慢指针找到链表中点，将链表从中点处断开为前后两段（前段含 a1..a⌈n/2⌉，后段含 a⌈n/2⌉+1..an）；\n② 将后段原地逆置，得到 an, an-1, ..., a⌈n/2⌉+1；\n③ 将前段与逆置后的后段交替合并（p1 取前段结点、p2 取后段结点交叉连接），得到 a1,an,a2,an-1,...\n\n【C 代码】\nvoid Rearrange(NODE *h) {\n    NODE *slow = h->next, *fast = h->next, *pre = NULL;\n    while (fast && fast->next) {        // 快慢指针找中点\n        pre = slow;\n        slow = slow->next;\n        fast = fast->next->next;\n    }\n    pre->next = NULL;                    // 前段尾置空，断开链表\n    NODE *p2 = Reverse(slow);           // 逆置后段\n    NODE *p1 = h->next, *r;\n    while (p1 && p2) {                   // 交替合并\n        r = p2->next;                    // 暂存后段下一结点\n        p2->next = p1->next;             // 后段结点插入前段结点之后\n        p1->next = p2;\n        p1 = p2->next;                   // 前段指针后移\n        p2 = r;                          // 后段指针后移\n    }\n}\nNODE *Reverse(NODE *p) {                 // 原地逆置\n    NODE *q = NULL, *r;\n    while (p) { r = p->next; p->next = q; q = p; p = r; }\n    return q;\n}\n\n【时间复杂度】O(n)（找中点、逆置、合并各遍历一遍，常数倍）；\n【空间复杂度】O(1)（仅用常数个指针变量）。",
+            "thinking": "经典三步法：快慢指针找中点断开 → 后段逆置 → 交替归并。空间O(1)靠原地逆置+指针交叉实现；时间O(n)。注意奇数/偶数个结点时中点划分边界（前段取⌈n/2⌉）。",
+            "image": "",
+            "images": [],
+            "name": "408:单链表重排",
+            "score": 0,
+            "lastReview": "2026-08-03T19:32:00",
+            "reviewNote": ""
+          }
+        ]
       }
     ]
   },
